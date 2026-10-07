@@ -1,69 +1,504 @@
 <!doctype html>
-<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IPv4 — Die Maske setzt die Grenzen</title>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>IPv4 · Maskenwerkstatt · FISI AP2</title>
 <style>
-:root{color-scheme:light;--bg:#f2f6fa;--surface:#fff;--ink:#15283b;--dim:#536477;--accent:#145f99;--line:#d8e2ec;--tint:#e5eff8}*{box-sizing:border-box}html{font-size:17px}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI Variable","Segoe UI",sans-serif;line-height:1.45}button,input,textarea{font:inherit;color:inherit}button{cursor:pointer;background:white;border:1px solid var(--dim);border-radius:4px;padding:8px 16px;line-height:1.2}button:hover{border-color:var(--accent);background:var(--tint)}button:disabled{cursor:default;opacity:.55}:focus-visible{outline:3px solid var(--accent);outline-offset:3px}[hidden]{display:none!important}h1,h2,h3,p,figure{margin:0}h1,h2{font-family:Bahnschrift,"Segoe UI",sans-serif;font-weight:600;line-height:1.12}h1{font-size:2.25rem}h2{font-size:1.625rem}h3{font-size:1rem}small{font-size:.75rem}.mono,code{font-family:"Cascadia Mono",Consolas,monospace;font-variant-numeric:tabular-nums}body{display:grid;grid-template-columns:232px minmax(0,1fr);height:100vh}aside{background:var(--surface);border-right:1px solid var(--line);padding:24px 16px;display:flex;flex-direction:column;gap:16px}aside .brand{font:600 1.625rem Bahnschrift,sans-serif;color:var(--accent)}aside p{color:var(--dim);font-size:.875rem}nav{display:grid;gap:16px}.group h2{font:600 1rem "Segoe UI",sans-serif;margin-bottom:8px}.navgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.navgrid button{padding:8px 4px;display:grid;gap:4px;justify-items:center;min-height:52px}.navgrid small{font:400 .75rem "Segoe UI",sans-serif}.navgrid [aria-current=page]{background:var(--accent);color:white;border-color:var(--accent)}.legend{font-size:.75rem;line-height:1.5;color:var(--dim)}.utility{margin-top:auto;display:grid;gap:8px}.utility button{font-size:.875rem;padding:8px}.save{font-size:.75rem;color:var(--dim);min-height:32px}main{min-width:0;display:grid;grid-template-rows:72px minmax(0,1fr) 76px;padding:0 32px}header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);gap:24px}header p{font-size:.875rem;color:var(--dim)}.stage{min-height:0;padding:24px 0 16px;display:flex;flex-direction:column;gap:16px}.head{display:grid;gap:8px}.lead{color:var(--dim);max-width:75ch}.content{flex:1;min-height:0;display:flex;flex-direction:column;gap:16px}.split{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:24px;flex:1;min-height:0}.split>*{min-width:0}.question{display:flex;flex-direction:column;gap:16px;min-height:0}.question figure{flex:1}.answer{border-left:1px solid var(--line);padding-left:24px;display:flex;flex-direction:column;gap:12px}.fields{display:grid;gap:12px}.field{display:grid;grid-template-columns:150px minmax(0,1fr);align-items:center;gap:8px}.field input{min-width:0;width:100%;padding:8px;border:1px solid var(--dim);border-radius:4px;background:white;font-family:"Cascadia Mono",Consolas,monospace;font-size:.875rem}.feedback{grid-column:1/-1;color:var(--dim);font-size:.875rem;min-height:0}.actions{display:flex;gap:8px;flex-wrap:wrap}.primary{background:var(--accent);color:white;border-color:var(--accent)}.primary:hover{background:#114e80;color:white}.status{font-size:.875rem;color:var(--dim)}figure{display:flex;flex-direction:column;min-height:0;gap:8px}.drawing{flex:1;min-height:0;display:flex;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:16px}svg{display:block;width:100%;height:100%;max-height:440px;min-height:220px;font-family:"Segoe UI",sans-serif;overflow:visible}svg text{fill:var(--ink);font-size:16px}svg .small{font-size:14px;fill:var(--dim)}svg .bit{font-family:"Cascadia Mono",Consolas,monospace;font-size:16px}svg .edge{fill:none;stroke:var(--dim);stroke-width:1.5;marker-end:url(#arrow)}svg .el{font-size:14px;fill:var(--dim);paint-order:stroke;stroke:white;stroke-width:4px;stroke-linejoin:round}svg .node{fill:white;stroke:var(--dim);stroke-width:1.5}svg .key{fill:var(--tint);stroke:var(--accent);stroke-width:2}svg .divider{stroke:var(--accent);stroke-width:2;stroke-dasharray:6 4}figcaption{font-size:.875rem;color:var(--dim)}.entry{display:grid;grid-template-columns:1fr 1fr;gap:24px}.entry article{border-top:1px solid var(--dim);padding-top:12px;display:grid;gap:8px}.entry p{max-width:48ch}.stepbar{display:flex;align-items:center;justify-content:space-between;gap:16px}.stepbar p{font-size:.875rem;max-width:62ch}.tasktag{font-size:.875rem;color:var(--dim)}textarea{width:100%;resize:none;border:1px solid var(--dim);border-radius:4px;background:white;padding:12px;min-height:120px}.criteria{display:grid;gap:8px;font-size:.875rem}.criteria label{display:flex;align-items:flex-start;gap:8px}.criteria input{margin-top:4px}footer{border-top:1px solid var(--line);display:grid;grid-template-columns:120px 1fr 120px;gap:24px;align-items:center}.position{display:grid;gap:8px;justify-items:center}.position p{font-size:.875rem}progress{width:100%;height:8px;accent-color:var(--accent)}dialog{color:var(--ink);background:white;border:1px solid var(--dim);border-radius:10px;padding:32px;max-width:740px;width:calc(100% - 64px);max-height:calc(100vh - 64px)}dialog::backdrop{background:rgb(21 40 59 / .35)}dialog h2{margin-bottom:16px}dialog .body{display:grid;gap:16px}dialog .actions{margin-top:24px}dialog li{margin:8px 0}dialog textarea{height:180px}dialog a{color:var(--accent)}.notice{font-size:.875rem;color:var(--dim)}@media(max-height:800px){aside{padding-top:16px;gap:12px}nav{gap:12px}main{grid-template-rows:64px minmax(0,1fr) 64px}.stage{padding-top:16px;gap:12px}.navgrid button{min-height:48px}.field{grid-template-columns:128px 1fr}.fields{gap:8px}.answer{gap:8px}svg{max-height:360px}.entry{gap:16px}}
-
-aside{padding:16px;gap:8px;min-height:0}aside p{font-size:.75rem}nav{gap:8px}.group h2{margin-bottom:4px}.navgrid{gap:4px}.navgrid button{min-width:0;min-height:44px;padding:4px 2px}.navgrid small{font-size:.75rem}.utility{grid-template-columns:1fr 1fr;gap:8px}.utility button{padding:8px 4px}.save{grid-column:1/-1;margin:0;min-height:32px}main{min-height:0}.drawing svg[viewBox="0 0 640 360"] .small{font-size:16px}
-.feedback:empty{display:none}.field{gap:4px 8px}
+:root{color-scheme:light;--ink:#17343d;--bg:#f3f7f8;--paper:#fff;--green:#087a6b;--blue:#235ca4;--ochre:#865600;--muted:#4a606a;--line:#b2c3ca;--net:#e3f2ed;--host:#e7effa;--warm:#fff2d9;font-family:"Segoe UI Variable","Segoe UI",sans-serif;font-size:16px;color:var(--ink);background:var(--bg)}*{box-sizing:border-box}body{margin:0}button,input,textarea,select{font:inherit}button{cursor:pointer;border:1px solid var(--line);border-radius:4px;background:white;color:var(--ink);padding:8px 14px;font-weight:600;min-height:36px}button:hover{border-color:var(--green);background:#e3f2ed}button:disabled{cursor:default;color:#52666e;background:#eef2f3}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}.primary{background:var(--green);color:white;border-color:var(--green)}.primary:hover{background:#066254;color:white}h1,h2,h3,p,figure{margin:0}h1,h2,h3,.display{font-family:"Bahnschrift","Segoe UI",sans-serif}h1{font-size:32px;line-height:1.12;letter-spacing:-.02em}h2{font-size:24px;line-height:1.15}h3{font-size:18px}p{line-height:1.5}code,.address{font-family:"Cascadia Mono",Consolas,monospace;font-variant-numeric:tabular-nums}.shell{height:100vh;min-height:720px;display:grid;grid-template-columns:248px minmax(0,1fr)}aside{background:var(--ink);color:#fff;padding:24px 20px;display:flex;flex-direction:column;gap:16px}aside .brand{display:flex;gap:12px;align-items:center}.brand .stamp{padding:12px 8px;background:#d5eee5;color:var(--ink);font:700 24px Bahnschrift}.brand strong{font-size:20px;display:block}.brand small{font-size:12px;color:#cadce1}.aside-intro{color:#d4e2e6;font-size:14px;line-height:1.45}.nav-group{margin-top:12px}.nav-group:first-child{margin-top:0}.nav-group h3{font:600 13px "Segoe UI",sans-serif;color:#e2eff2;margin-bottom:6px}.nav-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px}.nav-grid button{min-height:30px;padding:4px 0;background:#294952;color:#fff;border:1px solid #5e7b84;font-size:12px;position:relative}.nav-grid button.current{outline:2px solid #fff;outline-offset:1px;background:#087a6b}.nav-grid button[data-status="solo"]{border-bottom:4px solid #ace0cc}.nav-grid button[data-status="hint"]{border-bottom:4px dashed #f0cb81}.nav-grid button[data-status="solution"]{border-bottom:4px double #b3d1ff}.nav-grid button[data-status="review"]{border-bottom:4px solid #b3d1ff}.legend{margin-top:auto;font-size:12px;color:#dbe7eb;line-height:1.7}.legend span{display:block}main{min-width:0;padding:20px 24px 12px;display:grid;grid-template-rows:42px 68px minmax(0,1fr) 48px;gap:14px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px}.top-title{display:flex;gap:12px;align-items:baseline}.kicker{font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}.top small{color:var(--muted);font-size:12px}.tools{display:flex;gap:8px}.tools button{font-size:14px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{background:white;border:1px solid #c9d7dc;border-radius:10px;display:flex;align-items:center;gap:14px;padding:10px 20px;box-shadow:0 2px 6px #17343d06}.stat strong{font:600 32px Bahnschrift;color:var(--green)}.stat span{font-size:13px;display:block}.stat small{font-size:12px;display:block;color:var(--muted)}.stat progress{width:84px;height:4px;display:block;margin-top:4px;accent-color:var(--green)}.page{min-height:0;display:grid;grid-template-rows:64px minmax(0,1fr);gap:12px}.page-head{display:flex;gap:16px;align-items:center}.page-head .number{font:500 44px Bahnschrift;color:var(--green);min-width:54px}.tags{display:flex;gap:8px;margin-bottom:8px}.tag{display:inline-block;font-size:12px;font-weight:600;padding:3px 8px;border-radius:4px;background:var(--net);color:#075e53}.tag.blue{background:var(--host);color:var(--blue)}.tag.gold{background:var(--warm);color:var(--ochre)}.stage{background:white;border:1px solid #c8d6dc;border-radius:12px;min-height:0;box-shadow:0 8px 24px #17343d09;overflow:hidden}.lesson{height:100%;padding:20px 24px;display:flex;flex-direction:column;gap:12px}.lead{max-width:76ch;color:var(--muted)}.figure-wrap{flex:1;min-height:0;background-color:#f5f9fa;background-image:radial-gradient(#d0dfe4 .8px,transparent .8px);background-size:16px 16px;border-radius:8px;display:flex;align-items:center;justify-content:center}.figure-wrap svg{width:100%;max-height:100%;display:block}.figure-wrap.large{padding:8px}.figcaption,figcaption{font-size:14px;color:var(--muted);line-height:1.4;margin-top:8px}svg text{font-family:"Segoe UI",sans-serif;font-size:16px;fill:var(--ink)}svg .mono{font-family:"Cascadia Mono",Consolas,monospace}svg .big{font-family:Bahnschrift,sans-serif;font-size:28px}svg .sub{font-size:14px;fill:var(--muted)}svg .edge{stroke:#57717b;stroke-width:2;fill:none;marker-end:url(#arrow)}svg .edge-label{font-size:14px;paint-order:stroke;stroke:#f5f9fa;stroke-width:4px;stroke-linejoin:round}svg .node{fill:#fff;stroke:#809ba5;stroke-width:1.5}svg .net{fill:var(--net);stroke:var(--green);stroke-width:1.5}svg .host{fill:var(--host);stroke:var(--blue);stroke-width:1.5}svg .broadcast{fill:var(--warm);stroke:var(--ochre);stroke-width:1.5}svg .bit{font-size:16px;font-family:"Cascadia Mono",Consolas,monospace}svg .dim-shape{opacity:.3}svg .strong{font-weight:700}.caption-row{display:flex;justify-content:space-between;gap:16px;align-items:center}.step-controls{display:flex;gap:8px;align-items:center;flex-shrink:0}.step-controls span{font-size:13px;min-width:78px}.entry{height:100%;display:grid;grid-template-columns:340px minmax(0,1fr);gap:24px;padding:24px}.entry-copy{display:flex;flex-direction:column;justify-content:space-between;gap:16px}.entry-copy section{padding:12px 0;border-bottom:1px solid #d8e2e6}.entry-copy h3{color:var(--green);margin-bottom:8px}.entry-copy p{font-size:16px}.entry figure{display:flex;flex-direction:column;min-width:0}.entry figure .figure-wrap{flex:1}.exercise{height:100%;display:grid;grid-template-columns:1fr 1fr}.prompt-side{padding:20px 24px;display:flex;flex-direction:column;gap:12px;background:#f8fbfb;min-width:0}.prompt-side .question{line-height:1.5}.context{color:var(--muted);font-size:13px}.prompt-side figure{flex:1;min-height:0;display:flex;flex-direction:column}.prompt-side .figure-wrap{min-height:160px}.prompt-side figcaption{font-size:13px}.help-buttons{display:flex;gap:8px}.help-buttons button{font-size:14px}.origin{font-size:12px;line-height:1.4;color:var(--muted)}.answers{padding:20px 24px;border-left:1px solid #d2dfe4;display:flex;flex-direction:column;gap:12px;min-width:0}.answer-title{display:flex;justify-content:space-between;align-items:center;gap:12px}.state{font-size:12px;border:1px solid var(--line);padding:4px 8px;border-radius:4px;max-width:180px}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}.field label{display:block;font-size:14px;margin-bottom:5px;font-weight:600}.field input,.field select{width:100%;height:40px;border:1px solid #819ba4;border-radius:4px;padding:8px;background:white;color:var(--ink);font-size:16px}.feedback{font-size:12px;line-height:1.3;min-height:32px;margin-top:5px;color:var(--muted)}.feedback.good{color:#075e53}.feedback.bad{color:#7a3d00}.field input[aria-invalid="true"],.field select[aria-invalid="true"]{border:2px solid var(--ochre)}.form-guide{color:var(--muted);font-size:13px}.check-row{display:flex;gap:8px;align-items:center}.check-row span{font-size:13px}.notes-block{margin-top:auto}.notes-block label{display:block;font-size:13px;font-weight:600;margin-bottom:4px}textarea{resize:none;border:1px solid #819ba4;border-radius:4px;padding:8px;width:100%;color:var(--ink);background:white}#notes{height:48px;font-size:14px}.written{height:152px;line-height:1.5;font-size:16px}.written-feedback{font-size:13px;color:var(--muted);min-height:28px}footer{display:flex;align-items:center;justify-content:space-between;gap:16px}footer .center{display:flex;flex-direction:column;align-items:center;gap:5px}footer span{font-size:13px}footer progress{width:220px;height:4px;accent-color:var(--green)}.save-status{font-size:12px;color:var(--muted);max-width:330px}dialog{border:1px solid #75929d;border-radius:12px;padding:0;max-width:800px;width:calc(100vw - 64px);max-height:calc(100vh - 64px);color:var(--ink);box-shadow:0 20px 80px #17343d40}dialog::backdrop{background:#17343d88}.dialog-head{padding:20px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ccdbe1}.dialog-content{padding:20px 24px;overflow:auto;max-height:calc(100vh - 180px)}.dialog-content p{margin:0 0 12px}.dialog-content h3{margin:16px 0 8px}.dialog-content ul{padding-left:24px;line-height:1.7}.solution-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.solution-grid div{padding:12px;background:var(--bg);border-radius:4px}.solution-grid span{font-size:13px;display:block}.solution-grid strong{font-size:18px;display:block;margin-top:4px}.criterion{display:flex;align-items:flex-start;gap:12px;margin:12px 0;font-size:16px;line-height:1.4}.criterion input{width:20px;height:20px;flex-shrink:0}.dialog-content a{color:var(--blue)}[hidden]{display:none!important}@media(max-height:800px){aside{padding-top:20px;padding-bottom:16px;gap:12px}main{padding-top:16px;gap:12px}.lesson{padding:16px 24px;gap:8px}.entry{padding:20px 24px;gap:20px}.prompt-side,.answers{padding:16px 24px;gap:10px}.page{gap:10px}.fields{gap:8px 16px}}@media print{.shell{height:auto}aside,.top,.stats,footer,.help-buttons,.check-row{display:none}main{display:block}.stage{overflow:visible;border:0;box-shadow:none}.page{display:block}.exercise{min-height:600px}.page-head{margin:16px 0}dialog{display:none}button{display:none}}
+/* Compact navigation preserves every chapter and state at 1366 × 768. */
+aside{min-height:0;padding:16px 20px;gap:10px}aside .brand strong{font-size:18px}.aside-intro{display:none}.nav-group{margin-top:8px}.nav-grid button{min-height:26px;padding:3px 0}.legend{line-height:1.5}main{min-height:0}.entry,.exercise{grid-template-rows:minmax(0,1fr)}.entry-copy,.entry figure,.prompt-side,.answers{min-height:0}.figure-wrap{position:relative}.figure-wrap svg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.figure-wrap.large svg{padding:8px}.prompt-side svg text{font-size:18px}.prompt-side svg text.big{font-size:28px}.prompt-side svg text.sub,.prompt-side svg text.edge-label{font-size:16px}
 </style></head><body>
-<aside><div class="brand">IPv4 / Maske</div><p>FISI AP2 · 07.10.2026</p><nav aria-label="Kapitel und Seiten" id="chapters"></nav><div class="legend">○ offen · ✓ ohne Hilfe<br>△ mit Hinweis · ■ Lösung gesehen</div><div class="utility"><button id="spanish">Español</button><button id="notes">Notizen</button><button id="export">Exportieren</button><button id="sources">Quellen</button><p class="save" id="save" role="status"></p></div></aside>
-<main><header><p>Netzadresse, Broadcast und nutzbare Hosts</p><p id="chapter"></p></header><section class="stage" id="stage" aria-label="Aktuelle Lernseite"></section><footer><button data-nav="prev">Zurück</button><div class="position"><p data-page-indicator></p><progress id="progress" aria-label="Position im Workshop"></progress></div><button data-nav="next">Weiter</button></footer></main>
-<dialog id="dialog" aria-labelledby="dialogtitle"><h2 id="dialogtitle"></h2><div class="body" id="dialogbody"></div><div class="actions"><button id="close">Schließen</button></div></dialog><noscript>Dieser Workshop benötigt JavaScript im Browser. Er stellt keine Internetverbindung her.</noscript>
-<script>
+<div class="shell"><aside aria-label="Workshop-Navigation"><div class="brand"><div class="stamp">/27</div><div><strong>Maskenwerkstatt</strong><small>FISI AP2 · 07.10.2026</small></div></div><p class="aside-intro">IPv4 verstehen.<br>Grenzen berechnen.<br>Auf Deutsch begründen.</p><nav id="side" aria-label="Kapitel und Aufgaben"></nav><div class="legend"><strong>Bearbeitungsweg</strong><span>○ Offen · heller Rahmen = aktuell</span><span>━ Ohne Hilfe · ┄ Mit Hinweis</span><span>═ Lösung gesehen · ▰ Selbstvergleich</span><span>Aufgaben 17–20: Zusatzpraxis</span><span>60 Minuten · ohne Zeitdruck</span></div></aside>
+<main><header class="top"><div class="top-title"><span class="kicker">IPv4 / AP2</span><small>Netz · Broadcast · Hosts</small></div><div class="tools"><button id="spanish" type="button">Español</button><button id="sources" type="button">Quellen</button><button id="export" type="button">Antworten exportieren</button></div></header><section class="stats" aria-label="Deine Übung"><div class="stat"><strong id="solved">0</strong><div><span>Gelöst / verglichen</span><small id="solved-label">von 24 Aufgaben</small><progress id="solved-bar" max="24" value="0" aria-label="Gelöste Aufgaben"></progress></div></div><div class="stat"><strong id="first">0</strong><div><span>Richtig im ersten Versuch</span><small>Rechenfelder · ohne Hilfe</small></div></div><div class="stat"><strong id="pending">24</strong><div><span>Noch offen</span><small>Kein Urteil über Beherrschung</small></div></div></section><section class="page" aria-labelledby="page-title"><div class="page-head"><span class="number" id="page-number"></span><div><div class="tags" id="tags"></div><h1 id="page-title"></h1></div></div><div class="stage" id="stage"></div></section><footer><button type="button" data-nav="prev">← Zurück</button><span class="save-status" id="save-status" role="status"></span><div class="center"><span data-page-indicator>Seite 1 / 30</span><progress id="page-bar" max="30" value="1" aria-label="Seitenfortschritt"></progress></div><button class="primary" type="button" data-nav="next">Weiter →</button></footer></main></div>
+<dialog id="modal" aria-labelledby="modal-title"><div class="dialog-head"><h2 id="modal-title"></h2><button id="close" type="button" aria-label="Dialog schließen">Schließen</button></div><div class="dialog-content" id="modal-body"></div></dialog>
+<script id="exercise-data" type="application/json">
+[
+ {
+  "id": 1,
+  "kind": "bits",
+  "chapter": "Anwenden",
+  "group": "Masken lesen",
+  "title": "Die Grenze im Büro-LAN",
+  "company": "Büro Rheinblick",
+  "ip": "192.168.10.42",
+  "p": 24,
+  "keys": [
+   "prefix",
+   "hbits"
+  ],
+  "operator": "nennen",
+  "question": "Die Maske lautet {mask}. Nennen Sie die Anzahl der Netzbits und Hostbits.",
+  "scaffold": true
+ },
+ {
+  "id": 2,
+  "kind": "mask",
+  "chapter": "Anwenden",
+  "group": "Masken lesen",
+  "title": "Eine binäre Maske übersetzen",
+  "company": "Hotel Lindenhof",
+  "ip": "10.20.4.150",
+  "p": 26,
+  "keys": [
+   "prefix",
+   "mask"
+  ],
+  "operator": "vervollständigen",
+  "question": "Die Maske endet binär auf {maskbinary}; die ersten drei Oktette sind 255. Vervollständigen Sie Präfix und dezimale Maske.",
+  "scaffold": true
+ },
+ {
+  "id": 3,
+  "kind": "mask",
+  "chapter": "Anwenden",
+  "group": "Masken lesen",
+  "title": "/27 als Schablone",
+  "company": "Medienagentur Nord",
+  "ip": "172.18.3.69",
+  "p": 27,
+  "keys": [
+   "mask",
+   "hbits"
+  ],
+  "operator": "berechnen",
+  "question": "Ermitteln Sie aus /{prefix} die dezimale Subnetzmaske und die Zahl der Hostbits.",
+  "scaffold": true
+ },
+ {
+  "id": 4,
+  "kind": "mask",
+  "chapter": "Anwenden",
+  "group": "Masken lesen",
+  "title": "Vier Hostbits bleiben frei",
+  "company": "Dentallabor Heller",
+  "ip": "192.168.8.21",
+  "p": 28,
+  "keys": [
+   "mask",
+   "maskbinary"
+  ],
+  "operator": "vervollständigen",
+  "question": "Vervollständigen Sie für /{prefix} die dezimale Maske und das letzte Maskenoktett in 8-Bit-Binärschreibweise."
+ },
+ {
+  "id": 5,
+  "kind": "and",
+  "chapter": "Üben",
+  "group": "Netz bestimmen",
+  "title": "UND statt Abschneiden",
+  "company": "Werkstatt Adler",
+  "ip": "192.168.16.77",
+  "p": 26,
+  "keys": [
+   "netbinary",
+   "network"
+  ],
+  "operator": "berechnen",
+  "question": "Berechnen Sie die Netzadresse. Geben Sie auch das letzte Oktett des Ergebnisses als acht Bits an."
+ },
+ {
+  "id": 6,
+  "kind": "net",
+  "chapter": "Üben",
+  "group": "Netz bestimmen",
+  "title": "Das Gerät gehört zu welchem Netz?",
+  "company": "Logistik West",
+  "ip": "10.4.2.119",
+  "p": 27,
+  "keys": [
+   "network",
+   "mask"
+  ],
+  "operator": "berechnen",
+  "question": "Bestimmen Sie die Netzadresse des Scanners und die dezimale Subnetzmaske."
+ },
+ {
+  "id": 7,
+  "kind": "broadcast",
+  "chapter": "Üben",
+  "group": "Grenzen finden",
+  "title": "Alle Hostbits auf eins",
+  "company": "Schreinerei Eiche",
+  "ip": "172.16.5.37",
+  "p": 28,
+  "keys": [
+   "broadcast",
+   "bcBinary"
+  ],
+  "operator": "berechnen",
+  "question": "Ermitteln Sie den Broadcast und dessen letztes Oktett in 8-Bit-Binärschreibweise."
+ },
+ {
+  "id": 8,
+  "kind": "range",
+  "chapter": "Üben",
+  "group": "Grenzen finden",
+  "title": "Welche IPs dürfen die PCs nutzen?",
+  "company": "Steuerbüro Kern",
+  "ip": "192.168.7.171",
+  "p": 25,
+  "keys": [
+   "first",
+   "last"
+  ],
+  "operator": "nennen",
+  "question": "Nennen Sie die erste und letzte nutzbare Hostadresse dieses Netzes."
+ },
+ {
+  "id": 9,
+  "kind": "count",
+  "chapter": "Üben",
+  "group": "Hosts zählen",
+  "title": "Adressen sind nicht gleich Hosts",
+  "company": "Kiosk Lichtblick",
+  "ip": "10.12.0.42",
+  "p": 29,
+  "keys": [
+   "total",
+   "hosts"
+  ],
+  "operator": "berechnen",
+  "question": "Berechnen Sie die Zahl aller Adressen und der nutzbaren Hostadressen."
+ },
+ {
+  "id": 10,
+  "kind": "role",
+  "chapter": "Üben",
+  "group": "Adressen zuordnen",
+  "title": "Eine .64 ist nicht immer ein Host",
+  "company": "Galerie Blau",
+  "ip": "10.5.4.64",
+  "p": 26,
+  "keys": [
+   "role",
+   "network"
+  ],
+  "operator": "zuordnen",
+  "question": "Ordnen Sie die angegebene Adresse als Netzadresse, Hostadresse oder Broadcast ein. Bestimmen Sie die Netzadresse."
+ },
+ {
+  "id": 11,
+  "kind": "role",
+  "chapter": "Üben",
+  "group": "Adressen zuordnen",
+  "title": "Eine .255 kann ein Host sein",
+  "company": "Campus Süd",
+  "ip": "172.20.8.255",
+  "p": 23,
+  "keys": [
+   "role",
+   "broadcast"
+  ],
+  "operator": "zuordnen",
+  "question": "Ordnen Sie die Adresse ein und berechnen Sie den Broadcast. Beachten Sie die Maske /{prefix}."
+ },
+ {
+  "id": 12,
+  "kind": "role",
+  "chapter": "Üben",
+  "group": "Adressen zuordnen",
+  "title": "Eine .0 kann ein Host sein",
+  "company": "Lager Hafen",
+  "ip": "10.8.1.0",
+  "p": 23,
+  "keys": [
+   "role",
+   "network"
+  ],
+  "operator": "zuordnen",
+  "question": "Ordnen Sie die Adresse ein und berechnen Sie die Netzadresse. Entscheidend sind alle Hostbits."
+ },
+ {
+  "id": 13,
+  "kind": "range",
+  "chapter": "Üben",
+  "group": "Grenzen finden",
+  "title": "Zwei Geräte, vier Adressen",
+  "company": "Messlabor Delta",
+  "ip": "192.168.9.10",
+  "p": 30,
+  "keys": [
+   "network",
+   "broadcast",
+   "first",
+   "last"
+  ],
+  "operator": "berechnen",
+  "question": "Vervollständigen Sie Netzadresse, Broadcast und beide nutzbaren Hostgrenzen."
+ },
+ {
+  "id": 14,
+  "kind": "net",
+  "chapter": "Üben",
+  "group": "Netz bestimmen",
+  "title": "Die Grenze liegt im dritten Oktett",
+  "company": "Klinik Park",
+  "ip": "172.22.19.203",
+  "p": 22,
+  "keys": [
+   "network",
+   "broadcast"
+  ],
+  "operator": "berechnen",
+  "question": "Berechnen Sie Netzadresse und Broadcast. Die Hostbits verteilen sich auf zwei Oktette."
+ },
+ {
+  "id": 15,
+  "kind": "count",
+  "chapter": "Üben",
+  "group": "Hosts zählen",
+  "title": "Ein größeres Netz zählen",
+  "company": "Fertigung Berg",
+  "ip": "10.44.19.65",
+  "p": 20,
+  "keys": [
+   "hbits",
+   "total",
+   "hosts"
+  ],
+  "operator": "berechnen",
+  "question": "Bestimmen Sie Hostbits, Gesamtzahl der Adressen und nutzbare Hostadressen."
+ },
+ {
+  "id": 16,
+  "kind": "repair",
+  "chapter": "Üben",
+  "group": "Fehler korrigieren",
+  "title": "Die .255-Abkürzung versagt",
+  "company": "Druckerei Punkt",
+  "ip": "192.168.33.142",
+  "p": 27,
+  "keys": [
+   "broadcast",
+   "last"
+  ],
+  "operator": "vervollständigen",
+  "question": "Im Protokoll steht „Broadcast .255, letzter Host .254“. Korrigieren Sie beide vollständigen Adressen."
+ },
+ {
+  "id": 17,
+  "kind": "net",
+  "chapter": "Üben",
+  "group": "Zusatzpraxis",
+  "title": "Keine Oktettgrenze als Hilfe",
+  "company": "Stadtarchiv Ost",
+  "ip": "10.70.173.210",
+  "p": 18,
+  "keys": [
+   "network",
+   "broadcast"
+  ],
+  "operator": "berechnen",
+  "question": "Ermitteln Sie Netzadresse und Broadcast ohne vorgegebene Zwischenwerte.",
+  "extra": true
+ },
+ {
+  "id": 18,
+  "kind": "range",
+  "chapter": "Üben",
+  "group": "Zusatzpraxis",
+  "title": "Der Hostbereich endet nicht bei .254",
+  "company": "Versand Hausen",
+  "ip": "172.28.13.55",
+  "p": 21,
+  "keys": [
+   "first",
+   "last"
+  ],
+  "operator": "berechnen",
+  "question": "Bestimmen Sie die erste und letzte nutzbare Hostadresse.",
+  "extra": true
+ },
+ {
+  "id": 19,
+  "kind": "compare",
+  "chapter": "Üben",
+  "group": "Zusatzpraxis",
+  "title": "Gleiche IP, andere Maske",
+  "company": "Fotostudio Leise",
+  "ip": "192.168.60.130",
+  "p": 24,
+  "p2": 26,
+  "keys": [
+   "network",
+   "network2",
+   "hosts2"
+  ],
+  "operator": "vervollständigen",
+  "question": "Vergleichen Sie dieselbe IP mit /24 und /26: Netzadresse jeweils und nutzbare Hostzahl bei /26.",
+  "extra": true
+ },
+ {
+  "id": 20,
+  "kind": "repair",
+  "chapter": "Üben",
+  "group": "Zusatzpraxis",
+  "title": "32 Geräte passen nicht in /27",
+  "company": "Schulungszentrum Tal",
+  "ip": "192.168.74.95",
+  "p": 27,
+  "keys": [
+   "role",
+   "hosts",
+   "last"
+  ],
+  "operator": "begründen",
+  "question": "Ein Techniker zählt 32 nutzbare Hosts und vergibt die angegebene IP. Prüfen Sie Adressrolle, Hostzahl und letzte nutzbare IP.",
+  "extra": true
+ },
+ {
+  "id": 21,
+  "kind": "official",
+  "chapter": "Prüfungsaufgabe",
+  "group": "IHK und Schreiben",
+  "title": "Drei Broadcast-Adressen",
+  "company": "IHK-Multimedia-Agentur · 1234-IT-Systemhaus GmbH",
+  "ip": "203.0.113.65",
+  "p": 30,
+  "keys": [
+   "wan",
+   "lan",
+   "dmz"
+  ],
+  "operator": "ermitteln",
+  "question": "Ermitteln Sie für die drei am Router angeschlossenen Netze jeweils die Broadcast-Adresse.",
+  "official": true,
+  "nets": [
+   {
+    "key": "wan",
+    "label": "WAN",
+    "ip": "203.0.113.65",
+    "p": 30
+   },
+   {
+    "key": "lan",
+    "label": "LAN",
+    "ip": "172.16.0.0",
+    "p": 16
+   },
+   {
+    "key": "dmz",
+    "label": "DMZ",
+    "ip": "10.10.0.0",
+    "p": 26
+   }
+  ]
+ },
+ {
+  "id": 22,
+  "kind": "written",
+  "chapter": "Prüfungsaufgabe",
+  "group": "IHK und Schreiben",
+  "title": "a) Grenzen nachvollziehbar berechnen",
+  "company": "Ausgangssituation: Mosaik GmbH beauftragt Ihr Systemhaus mit der Adressprüfung eines Arbeitsraums.",
+  "ip": "192.168.80.174",
+  "p": 27,
+  "operator": "berechnen",
+  "question": "Berechnen Sie nachvollziehbar Netzadresse, Broadcast und Hostbereich. Schreiben Sie Ihre Zwischenrechnung auf. 4 Punkte (orientierend).",
+  "rubric": [
+   "Netzadresse mit Rechnung: 1 Punkt",
+   "Broadcast mit Hostbits auf 1: 1 Punkt",
+   "Erster nutzbarer Host: 1 Punkt",
+   "Letzter nutzbarer Host: 1 Punkt"
+  ]
+ },
+ {
+  "id": 23,
+  "kind": "written",
+  "chapter": "Prüfungsaufgabe",
+  "group": "IHK und Schreiben",
+  "title": "b) Warum werden zwei abgezogen?",
+  "company": "Mosaik GmbH · Fortsetzung: Ein Kollege behauptet, /27 biete 32 nutzbare Hostadressen.",
+  "ip": "192.168.80.174",
+  "p": 27,
+  "operator": "erläutern",
+  "question": "Erläutern Sie den Fehler anhand der beiden reservierten Adressen und berechnen Sie die nutzbare Hostzahl. 3 Punkte (orientierend).",
+  "rubric": [
+   "Hostbits alle 0: Netzadresse, kein einzelner Host (1 P.)",
+   "Hostbits alle 1: Broadcast, kein einzelner Host (1 P.)",
+   "{hbits} Hostbits: 2^{hbits} − 2 = {hosts} nutzbare Adressen (1 P.)"
+  ]
+ },
+ {
+  "id": 24,
+  "kind": "written",
+  "chapter": "Prüfungsaufgabe",
+  "group": "IHK und Schreiben",
+  "title": "c) Die Maske ändert die Aussage",
+  "company": "Mosaik GmbH · Fortsetzung: Das Gerät behält seine IP; die Maske wird von /27 auf /26 geändert.",
+  "ip": "192.168.80.174",
+  "p": 26,
+  "p2": 27,
+  "operator": "begründen",
+  "question": "Begründen Sie, weshalb dieselbe IP nun eine andere Netzadresse und Hostzahl hat. Nennen Sie beide Netzadressen und Hostzahlen. 4 Punkte (orientierend).",
+  "rubric": [
+   "Die Maske legt die Trennung fest: 1 Punkt",
+   "/{prefix2}: Netz {network2}, {hosts2} Hosts: 1 Punkt",
+   "/{prefix}: Netz {network}, {hosts} Hosts: 1 Punkt",
+   "Ein Netzbit weniger lässt ein Hostbit mehr variieren: 1 Punkt"
+  ]
+ }
+]
+</script><script>
 'use strict';
-// Ein Modell liefert Bitzeilen, Grenzen, Felder und Musterlösungen.
-function model(ip,prefix){const octets=ip.split('.').map(Number);if(octets.length!==4||octets.some(x=>!Number.isInteger(x)||x<0||x>255)||!Number.isInteger(prefix)||prefix<1||prefix>30)throw Error('Ungültiges Modell');const value=octets.reduce((a,x)=>a*256+x,0),size=2**(32-prefix),net=Math.floor(value/size)*size,bcast=net+size-1;const address=n=>[24,16,8,0].map(s=>Math.floor(n/2**s)%256).join('.');const bits=n=>n.toString(2).padStart(32,'0');return{ip,prefix,net:address(net),broadcast:address(bcast),first:address(net+1),last:address(bcast-1),mask:address(2**32-size),hostbits:32-prefix,hosts:size-2,size,ipbits:bits(value),maskbits:'1'.repeat(prefix)+'0'.repeat(32-prefix),netbits:bits(net),bcastbits:bits(bcast)};}
-const examples={alternate:model('192.168.10.77',24),base:model('192.168.10.77',26),guided:model('192.168.10.77',26),solo:model('192.168.10.173',28),wide:model('172.16.5.77',23),wan:model('203.0.113.65',30),lan:model('172.16.0.0',16),dmz:model('10.10.0.0',26)};
-const specs=[
-{chapter:'Einstieg',type:'Orientieren',title:'Die Maske setzt die Grenzen',kind:'entry',es:'La máscara separa los bits de red de los bits de host. Así sabes qué direcciones puedes asignar a equipos. Aquí aprenderás a calcular los extremos y a explicar el mecanismo por escrito.'},
-{chapter:'Verstehen',type:'Trennen',title:'Eine 1 hält fest. Eine 0 lässt frei.',kind:'mask',es:'Cada 1 de la máscara fija un bit de la red. Cada 0 deja variar un bit de host. /26 son 26 unos seguidos y 6 ceros; la separación puede estar dentro de un octeto.'},
-{chapter:'Verstehen',type:'Verknüpfen',title:'UND löscht nur den Hostanteil',kind:'and',es:'La operación AND entre IP y máscara conserva los bits de red y pone a cero los de host. No es una suma. La red puede terminar en .64, no necesariamente en .0.'},
-{chapter:'Verstehen',type:'Abgrenzen',title:'Zwei Randadressen bleiben reserviert',kind:'bounds',es:'Host bits todos cero: dirección de red. Todos uno: broadcast. Las direcciones entre los extremos se asignan a hosts. Aquí usamos redes normales de /1 a /30; /31 y /32 quedan fuera.'},
-{chapter:'Anwenden',type:'Nachvollziehen',title:'Vom Auftrag zum fertigen Adressbereich',kind:'step',es:'Avanza tú el cálculo: máscara, red, broadcast y rango utilizable. Solo cambia el resultado que se está calculando; nada avanza automáticamente.'},
-{chapter:'Anwenden',type:'Vervollständigen',title:'Ergänze die Grenzen mit sichtbaren Bits',kind:'exercise',key:'guided',fields:['hostbits','net','broadcast'],hint:'Die sechs Stellen rechts der Grenze sind Hostbits. Setze sie für das Netz auf 0, für den Broadcast auf 1.',es:'Ejercicio guiado: usa los seis bits visibles a la derecha del corte para obtener red y broadcast.'},
-{chapter:'Üben',type:'Berechnen',title:'Jetzt ohne die ausgefüllten Bitzeilen',kind:'exercise',key:'solo',fields:['net','broadcast','first','last','hosts'],hint:'/28 lässt vier Hostbits. Der Bereich hat 16 Adressen. Finde den 16er-Block, in dem .173 liegt.',es:'Ya no hay filas binarias resueltas. Encuentra el bloque de 16 que contiene .173, reserva sus extremos y completa los campos.'},
-{chapter:'Üben',type:'Übertragen',title:'Die Grenze folgt der Maske, nicht dem Punkt',kind:'exercise',key:'wide',fields:['mask','net','broadcast','hosts'],hint:'/23 endet im dritten Oktett. Sein letztes Bit und alle acht Bits des vierten Oktetts gehören zum Hostanteil.',es:'La misma regla sirve cuando la frontera está en el tercer octeto. /23 deja nueve bits de host y el rango atraviesa dos valores del tercer octeto.'},
-{chapter:'Prüfungsaufgabe',type:'Ermitteln',title:'a) Drei Netze, drei Broadcast-Adressen',kind:'official',fields:['wan','lan','dmz'],hint:'Behalte in jedem Netz die Netzbits. Setze alle übrigen Bits auf 1. Beim LAN /16 betrifft das zwei Oktette.',es:'Tarea oficial Sommer 2024, AEN 1ab, 3 puntos: determina los broadcasts de los tres segmentos. Los datos proceden del plano original; solo se reorganiza su presentación.'},
-{chapter:'Prüfungsaufgabe',type:'Erläutern',title:'b) Erkläre die Wirkung der Maske',kind:'written',key:'b',points:3,prompt:'Erläutern Sie, wie die Subnetzmaske aus 192.168.10.77/26 die Netzadresse bestimmt.',criteria:['1 P: Führende Einsen kennzeichnen die Netzbits; Nullen die Hostbits.','1 P: Bitweises UND erhält die Netzbits und setzt Hostbits auf null.','1 P: Ergebnis 192.168.10.64 mit unverändertem Netzanteil.'],solution:'Die Maske /26 hat 26 führende Einsen und sechs Nullen. Die Einsen kennzeichnen den Netzanteil. Beim bitweisen UND von IP-Adresse und Maske bleiben diese Bits erhalten; die sechs Hostbits werden null. Damit ergibt sich die Netzadresse '+examples.base.net+'.',es:'Escribe en alemán por qué AND produce la red. Compara tu respuesta con cada criterio y el modelo; no hay puntuación automática por palabras.'},
-{chapter:'Prüfungsaufgabe',type:'Begründen',title:'c) Begründe die nutzbaren Host-Adressen',kind:'written',key:'c',points:2,prompt:'Begründen Sie, warum von den 64 Adressen des /26-Netzes nur 62 an Hosts vergeben werden können.',criteria:['1 P: Sechs Hostbits ergeben 2⁶ = 64 Kombinationen.','1 P: Alle Hostbits 0 = Netz; alle 1 = Broadcast. Zwei Adressen bleiben reserviert.'],solution:'Sechs Hostbits ermöglichen 2⁶ = 64 Adressen. Die Kombination mit ausschließlich Nullen bezeichnet das Netz; die Kombination mit ausschließlich Einsen den Broadcast. Beide werden nicht an Hosts vergeben. Daher bleiben '+examples.base.hosts+' nutzbare Host-Adressen.',es:'Justifica en alemán las 62 direcciones utilizables. La explicación debe conectar los seis bits con 64 combinaciones y con los dos extremos reservados.'}
-];
-const fieldNames={hostbits:'Hostbits',net:'Netzadresse',broadcast:'Broadcast',first:'Erster Host',last:'Letzter Host',hosts:'Nutzbare Hosts',mask:'Subnetzmaske',wan:'WAN-Broadcast',lan:'LAN-Broadcast',dmz:'DMZ-Broadcast'};
-const storageKey='fisi-ipv4-mask-2026-10-07-v1';let state={answers:{},help:{},checked:{},criteria:{},notes:'',page:0},storageOK=true;try{const old=JSON.parse(localStorage.getItem(storageKey)||'null');if(old&&old.answers&&old.help&&old.checked&&old.criteria)state={...state,...old};}catch(e){storageOK=false;}let current=Math.max(0,Math.min(specs.length-1,Number(state.page)||0)),step=0;
-const $=s=>document.querySelector(s),escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function persist(){state.page=current;try{localStorage.setItem(storageKey,JSON.stringify(state));storageOK=true;}catch(e){storageOK=false;}$('#save').textContent=storageOK?'Lokal in diesem Browser gespeichert.':'Lokales Speichern nicht möglich. Bitte exportieren.';}
-function stateLabel(i){if(state.help[i]==='solution')return['■','Lösung'];if(state.help[i]==='hint')return['△','Hinweis'];if(state.checked[i])return['✓','ohne Hilfe'];return['○','offen'];}
-function nav(){let out='';for(const c of [...new Set(specs.map(s=>s.chapter))]){out+='<div class="group"><h2>'+c+'</h2><div class="navgrid">';specs.forEach((s,i)=>{if(s.chapter===c){const [symbol,label]=stateLabel(i);out+=`<button data-jump="${i}" ${i===current?'aria-current="page"':''} aria-label="Seite ${i+1}: ${s.type}; ${label}"><span>${i+1} ${symbol}</span><small>${['Start','Bits','UND','Ränder','Schritte','Felder','Rechnen','Transfer','Ermitteln','Erklären','Grund'][i]}</small></button>`;}});out+='</div></div>';}$('#chapters').innerHTML=out;$('#chapters').querySelectorAll('button').forEach(b=>b.onclick=()=>show(+b.dataset.jump));}
-function svg(inner,vb='0 0 960 360'){return `<svg viewBox="${vb}" role="img" aria-label="${escape(specs[current].title)}"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="#536477"/></marker></defs>${inner}</svg>`;}
-function fig(inner,caption,vb){return `<figure><div class="drawing">${svg(inner,vb)}</div><figcaption>Abb. ${current+1}: ${caption}</figcaption></figure>`;}
-function bitRow(label,bits,y,prefix,highlight=false){let out=`<text x="24" y="${y+25}" class="small">${label}</text>`;for(let n=0;n<32;n++){const x=168+n*23+(Math.floor(n/8)*8);out+=`<rect x="${x}" y="${y}" width="21" height="40" class="${highlight&&n>=prefix?'key':'node'}"/><text x="${x+10.5}" y="${y+25}" text-anchor="middle" class="bit">${bits[n]}</text>`;}return out;}
-function bitsFigure(kind,m=examples.base){const boundary=168+m.prefix*23+Math.floor(m.prefix/8)*8-1;let inner=`<text x="168" y="32" class="small">${m.prefix} Netzbits: bleiben gleich</text><text x="${Math.min(boundary+16,770)}" y="32" class="small">${m.hostbits} Hostbits</text>`;inner+=bitRow('IP-Adresse',m.ipbits,64,m.prefix);inner+=bitRow('Maske /'+m.prefix,m.maskbits,136,m.prefix);if(kind==='mask'){inner+=`<path class="edge" d="M${boundary} 240H${boundary-144}"/><text x="${boundary-132}" y="220" class="el">legt die Grenze fest</text><text x="168" y="296" class="small">${m.ip} / ${m.prefix}</text><text x="520" y="296" class="small">Maske ${m.mask}</text>`;}else{inner+=bitRow(kind==='and'?'Netz (UND)':'Broadcast',kind==='and'?m.netbits:m.bcastbits,224,m.prefix,true);inner+=`<text x="168" y="328" class="small">${kind==='and'?m.net:m.broadcast} — Netzbits bleiben erhalten.</text>`;}inner+=`<line x1="${boundary}" y1="48" x2="${boundary}" y2="276" class="divider"/>`;return fig(inner,kind==='mask'?'Die Maske ordnet jede Bitposition dem Netz oder dem Host zu.':'Nur die Hostbits ändern sich; der Netzanteil bleibt erhalten.');}
-function range(m,hide=false,compact=false){const inner=`<path class="edge" d="M80 200H${compact?540:880}"/><text x="${compact?304:480}" y="180" class="el" text-anchor="middle">ordnet Adressen aufsteigend</text><rect x="48" y="56" width="${compact?144:224}" height="80" class="node"/><rect x="${compact?208:312}" y="56" width="${compact?224:336}" height="80" class="key"/><rect x="${compact?448:688}" y="56" width="${compact?144:224}" height="80" class="node"/><text x="${compact?120:160}" y="88" text-anchor="middle">Netz</text><text x="${compact?320:480}" y="88" text-anchor="middle">Nutzbare Hosts</text><text x="${compact?520:800}" y="88" text-anchor="middle">Broadcast</text><text x="${compact?120:160}" y="116" text-anchor="middle" class="small">Hostbits: nur 0</text><text x="${compact?320:480}" y="116" text-anchor="middle" class="small">${hide?'zwischen den Grenzen':m.hosts+' Adressen'}</text><text x="${compact?520:800}" y="116" text-anchor="middle" class="small">Hostbits: nur 1</text><text x="${compact?120:160}" y="248" text-anchor="middle" class="small">${hide?'?':m.net}</text><text x="${compact?320:480}" y="248" text-anchor="middle" class="small">${hide?'?':m.first}</text><text x="${compact?320:480}" y="280" text-anchor="middle" class="small">${hide?'?':m.last}</text><text x="${compact?520:800}" y="248" text-anchor="middle" class="small">${hide?'?':m.broadcast}</text><text x="${compact?320:480}" y="328" text-anchor="middle" class="small">${hide?'IP '+m.ip+' /'+m.prefix:m.size+' insgesamt − 2 reserviert'}</text>`;return fig(inner,'Die beiden Randadressen gehören nicht zum nutzbaren Hostbereich.',compact?'0 0 640 360':undefined);}
-function relation(){return fig(`<path class="edge" d="M280 112H408"/><path class="edge" d="M552 112H688"/><text x="344" y="88" class="el" text-anchor="middle">trennt</text><text x="616" y="88" class="el" text-anchor="middle">begrenzt</text><rect x="48" y="64" width="232" height="96" class="node"/><rect x="408" y="64" width="144" height="96" class="key"/><rect x="688" y="64" width="224" height="96" class="node"/><text x="164" y="104" text-anchor="middle">IP + Maske</text><text x="164" y="132" text-anchor="middle" class="small">32 Bit + Grenze</text><text x="480" y="104" text-anchor="middle">Netz / Host</text><text x="480" y="132" text-anchor="middle" class="small">fest / variabel</text><text x="800" y="104" text-anchor="middle">Adressbereich</text><text x="800" y="132" text-anchor="middle" class="small">Netz bis Broadcast</text><text x="48" y="232">Gleiche IP: 192.168.10.77</text><text x="48" y="280" class="small">/24: Netz .${examples.alternate.net.split('.').at(-1)}, Broadcast .${examples.alternate.broadcast.split('.').at(-1)}</text><text x="488" y="280" class="small">/26: Netz .${examples.base.net.split('.').at(-1)}, Broadcast .${examples.base.broadcast.split('.').at(-1)}</text>`,'Die IP allein legt die Grenzen nicht fest.');}
-function stepper(){const m=examples.base,values=[['Auftrag',m.ip+' /'+m.prefix],['Maske',m.mask],['Netz',m.net],['Broadcast',m.broadcast],['Hosts',m.first+' – '+m.last]];let inner='';const verbs=['übersetzt','verknüpft mit UND','setzt Hostbits auf 1','schließt Ränder aus'];
-for(let i=0;i<4;i++){const x=32+i*184;inner+=`<path class="edge" d="M${x+152} 144H${x+168}V248H${x+260}V208"/><text x="${x+184}" y="288" class="el" text-anchor="middle">${verbs[i]}</text>`;}
-for(let i=0;i<5;i++){const x=32+i*184;inner+=`<rect x="${x}" y="80" width="152" height="128" class="${i===step?'key':'node'}"/><text x="${x+76}" y="112" text-anchor="middle">${i+1}. ${values[i][0]}</text><text x="${x+76}" y="152" text-anchor="middle" class="small">${i>step?'noch offen':(i===0?m.ip:i===4?m.first:values[i][1])}</text><text x="${x+76}" y="184" text-anchor="middle" class="small">${i>step?'':(i===0?'/'+m.prefix:i===4?m.last:'')}</text>`;}
-const caption=['Du prüfst eine neue Arbeitsplatzadresse.','/26 wird zu 26 Einsen und sechs Nullen.','UND setzt die sechs Hostbits auf null.','Für den Broadcast setzt du die Hostbits auf eins.','Zwischen Netz und Broadcast liegen 62 nutzbare Adressen.'][step];return fig(inner,'Der Rechenauftrag wird in fünf selbst gewählten Schritten ausgeführt.')+`<div class="stepbar"><button data-step="prev" ${step===0?'disabled':''}>Schritt zurück</button><p aria-live="polite">Schritt ${step+1} / 5: ${caption}</p><button data-step="next" ${step===4?'disabled':''}>Nächster Schritt</button></div>`;}
-function expected(s,f){return s.kind==='official'?examples[f].broadcast:String(examples[s.key][f]);}
-function exercise(s){const official=s.kind==='official',m=official?examples.dmz:examples[s.key];let question=official?`<p class="tasktag">Offiziell: Sommer 2024 · AEN · 1ab · 3 Punkte</p><p>Ausgangssituation: Ein Systemhaus betreut das Netzwerk einer Multimedia-Agentur. Ermitteln Sie für die drei am Router angeschlossenen Netze jeweils die Broadcast-Adresse.</p><p class="mono">WAN: ${examples.wan.ip}/${examples.wan.prefix}<br>LAN: ${examples.lan.ip}/${examples.lan.prefix}<br>DMZ: ${examples.dmz.ip}/${examples.dmz.prefix}</p>`:`<p class="tasktag">Eigene Aufgabe, nicht offiziell IHK</p><p>Vervollständigen Sie die Felder für <strong class="mono">${m.ip}/${m.prefix}</strong>.</p>`;
-let fields=s.fields.map(f=>`<div class="field"><label for="f-${f}">${fieldNames[f]}</label><input id="f-${f}" name="${f}" autocomplete="off" spellcheck="false" aria-describedby="fb-${f}" value="${escape((state.answers[current]||{})[f]||'')}"><p class="feedback" id="fb-${f}" aria-live="polite"></p></div>`).join('');let drawing=s.key==='guided'?guidedFigure(m):range(m,true,true);
-if(official)drawing=fig(`<rect x="40" y="48" width="536" height="208" class="node"/><text x="64" y="88">Drei unabhängig bestimmte Grenzen</text><text x="64" y="144" class="small">WAN /${examples.wan.prefix}: ${examples.wan.hostbits} Hostbits</text><text x="64" y="184" class="small">LAN /${examples.lan.prefix}: ${examples.lan.hostbits} Hostbits</text><text x="64" y="224" class="small">DMZ /${examples.dmz.prefix}: ${examples.dmz.hostbits} Hostbits</text><text x="40" y="312" class="small">Je richtiger Broadcast-Adresse: 1 Punkt.</text>`,'Jede Maske bestimmt ihren eigenen Broadcast.','0 0 640 360');
-return `<div class="split"><div class="question">${question}${drawing}</div><form class="answer" id="exercise"><h2>Deine Ergebnisse</h2><div class="fields">${fields}</div><div class="actions"><button class="primary" type="submit">Prüfen</button><button type="button" data-help="hint">Hinweis</button><button type="button" data-help="solution">${official?'Offizielle Lösung':'Lösung'}</button></div><p class="status" id="result" aria-live="polite">${stateLabel(current)[1]} · Keine Aussage über Beherrschung.</p></form></div>`;}
-function guidedFigure(m){let inner=`<text x="32" y="40">Letztes Oktett: .77</text>`;for(let r=0;r<3;r++){const labels=['IP','Maske','Grenze'],bits=[m.ipbits.slice(24),m.maskbits.slice(24),m.netbits.slice(24,26)+'?'.repeat(m.hostbits)];inner+=`<text x="32" y="${104+r*72}" class="small">${labels[r]}</text>`;for(let i=0;i<8;i++){let x=152+i*52;inner+=`<rect x="${x}" y="${80+r*72}" width="44" height="40" class="${i>=2?'key':'node'}"/><text x="${x+22}" y="${105+r*72}" text-anchor="middle" class="bit">${bits[r][i]}</text>`;}}inner+=`<line x1="252" y1="64" x2="252" y2="288" class="divider"/><text x="152" y="328" class="small">192.168.10 bleibt unverändert.</text>`;return fig(inner,'Sechs Hostbits variieren; die zwei Netzbits bleiben 01.','0 0 640 360');}
-function written(s){return `<div class="split"><div class="question"><p class="tasktag">Eigene Aufgabe, nicht offiziell IHK · ${s.points} Punkte orientierend</p><p>Ausgangssituation: Sie dokumentieren für einen Kollegen die Adressvergabe eines Büro-LANs.</p><p>${s.prompt}</p>${range(examples.base,false,true)}</div><div class="answer"><label for="written">Deine Antwort auf Deutsch</label><textarea id="written">${escape((state.answers[current]||{}).text||'')}</textarea><div class="actions"><button data-help="hint">Kriterien</button><button data-help="solution">Musterlösung</button></div><p class="notice">Vergleiche jeden Punkt selbst. Keine automatische Textbewertung.</p><div id="criteria" class="criteria"></div><p class="status">${stateLabel(current)[1]}</p></div></div>`;}
-function fitLabels(){document.querySelectorAll('svg text').forEach(t=>{const scale=t.getScreenCTM().a;const size=(t.classList.contains('small')||t.classList.contains('el'))?14:16;t.style.fontSize=(size/scale)+'px';});}
-window.addEventListener('resize',fitLabels);
-function show(i){current=i;nav();const s=specs[i];$('#chapter').textContent=s.chapter;const chapterQuestions={Einstieg:'Wozu brauchst du das?',Verstehen:'Wie bestimmt die Maske die Grenzen?',Anwenden:'Wie leitest du die Ergebnisse ab?',Üben:'Kannst du denselben Mechanismus ohne ausgefüllte Zeilen anwenden?',Prüfungsaufgabe:'Wie formulierst du eine prüfbare Antwort?'};let lead=s.kind==='entry'?'Die Subnetzmaske trennt eine IPv4-Adresse in Netz- und Hostanteil.':chapterQuestions[s.chapter];let body='';if(s.kind==='entry')body=`<div class="entry"><article><h2>Im Betrieb</h2><p>Du vergibst im Büro-LAN eine Arbeitsplatzadresse. Netz und Broadcast dürfen keine Geräteadressen werden.</p></article><article><h2>In der AP2</h2><p>Sommer 2024, AEN 1ab: drei Broadcast-Adressen ermitteln (3 Punkte).</p></article></div>${relation()}<p>Danach bestimmst du Netz, Broadcast und Hosts und begründest die Grenzen schriftlich.</p>`;
-else if(s.kind==='mask')body=bitsFigure('mask')+'<p class="notice">Eine Masken-1 übernimmt das IP-Bit, auch wenn dieses 0 ist. /26 zählt die führenden Einsen.</p>';
-else if(s.kind==='and')body=bitsFigure('and')+'<p class="notice">UND: 1 mit 1 ergibt 1; jede Verknüpfung mit 0 ergibt 0. Die Netzadresse muss nicht auf .0 enden.</p>';
-else if(s.kind==='bounds')body=range(examples.base)+'<p class="notice">Für normale IPv4-Netze /1 bis /30: 2<sup>Hostbits</sup> − 2 Hosts. Sonderfälle /31 und /32 sind hier ausgenommen.</p>';
-else if(s.kind==='step')body=stepper();else if(s.kind==='written')body=written(s);else body=exercise(s);
-$('#stage').innerHTML=`<div class="head"><h1 tabindex="-1">${s.title}</h1><p class="lead">${lead}</p></div><div class="content">${body}</div>`;document.querySelector('[data-page-indicator]').textContent=`Seite ${i+1} / ${specs.length}`;document.querySelector('[data-nav="prev"]').disabled=i===0;document.querySelector('[data-nav="next"]').disabled=i===specs.length-1;$('#progress').max=specs.length;$('#progress').value=i+1;
-fitLabels();const form=$('#exercise');if(form){form.onsubmit=e=>{e.preventDefault();check();};form.querySelectorAll('input').forEach(el=>el.oninput=()=>{state.answers[current]||={};state.answers[current][el.name]=el.value;el.removeAttribute('aria-invalid');$('#fb-'+el.name).textContent='';persist();});}
-document.querySelectorAll('[data-help]').forEach(b=>b.onclick=()=>help(b.dataset.help));if($('#written')){$('#written').oninput=e=>{state.answers[current]||={};state.answers[current].text=e.target.value;persist();};if(state.help[current])renderCriteria();}if(document.querySelector('[data-step="next"]')){document.querySelector('[data-step="next"]').onclick=()=>{step++;show(current);};document.querySelector('[data-step="prev"]').onclick=()=>{step--;show(current);};}persist();}
-function check(){const s=specs[current];let good=0;s.fields.forEach(f=>{const input=$('#f-'+f),value=input.value.trim(),target=expected(s,f),numeric=['hostbits','hosts'].includes(f),valid=numeric?/^\d+$/.test(value)&&Number(value)===Number(target):value===target;input.setAttribute('aria-invalid',String(!valid));let message;if(!value)message='Bitte einen Wert eintragen.';else if(valid){message='Richtig.';good++;}else if(numeric)message=f==='hosts'?'Falsch: 2^Hostbits − 2; zwei Ränder reserviert.':'Falsch: Hostbits = 32 − Präfixlänge.';else if(f==='mask')message='Falsch: Führende Einsen, danach Nullen.';else message=f==='net'?'Falsch: Netzbits behalten; Hostbits auf 0.':f==='first'?'Falsch: Erster Host = Netzadresse + 1.':f==='last'?'Falsch: Letzter Host = Broadcast − 1.':'Falsch: Netzbits behalten; Hostbits auf 1.';$('#fb-'+f).textContent=message;});state.checked[current]=true;$('#result').textContent=`${good} / ${s.fields.length} Felder richtig · ${stateLabel(current)[1]}.`;nav();persist();}
-function openDialog(title,html){$('#dialogtitle').textContent=title;$('#dialogbody').innerHTML=html;$('#dialog').showModal();}
-function help(kind){const s=specs[current];if(state.help[current]!=='solution')state.help[current]=kind;nav();persist();if(s.kind==='written'){renderCriteria();if(kind==='solution')openDialog('Musterlösung — eigene Aufgabe',`<p>${s.solution}</p><p class="notice">Sachlich gleichwertige Formulierungen sind möglich. Vergleiche deine Antwort nach jedem Kriterium.</p>`);return;}const content=kind==='hint'?`<p>${s.hint}</p>`:`<dl>${s.fields.map(f=>`<dt>${fieldNames[f]}</dt><dd class="mono">${expected(s,f)}</dd>`).join('')}</dl><p>${s.kind==='official'?'Vergleich mit den offiziellen Lösungshinweisen Sommer 2024, AEN, PDF-Seite 2. Je Adresse 1 Punkt.':'Netzbits bleiben gleich. Hostbits: alle 0 für Netz; alle 1 für Broadcast. Nutzbare Adressen liegen dazwischen.'}</p>`;openDialog(kind==='hint'?'Hinweis ohne Ergebnis':s.kind==='official'?'Offizielle Lösung — Sommer 2024, AEN 1ab':'Lösung — eigene Aufgabe',content);}
-function renderCriteria(){const s=specs[current];$('#criteria').innerHTML='<p>Selbstvergleich, keine offizielle Bewertung:</p>'+s.criteria.map((c,j)=>`<label><input type="checkbox" data-criterion="${j}" ${(state.criteria[current]||[]).includes(j)?'checked':''}><span>${c}</span></label>`).join('');$('#criteria').querySelectorAll('input').forEach(el=>el.onchange=()=>{state.criteria[current]=[...$('#criteria').querySelectorAll('input:checked')].map(x=>+x.dataset.criterion);persist();});}
-document.querySelector('[data-nav="next"]').onclick=()=>{if(current<specs.length-1)show(current+1);};document.querySelector('[data-nav="prev"]').onclick=()=>{if(current>0)show(current-1);};document.addEventListener('keydown',e=>{if($('#dialog').open||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)||e.altKey||e.ctrlKey||e.metaKey)return;if(e.key==='ArrowRight'&&current<specs.length-1){e.preventDefault();show(current+1);}if(e.key==='ArrowLeft'&&current>0){e.preventDefault();show(current-1);}});$('#close').onclick=()=>$('#dialog').close();$('#spanish').onclick=()=>openDialog('Español — página '+(current+1),`<p lang="es">${specs[current].es}</p>`);$('#notes').onclick=()=>{openDialog('Deine Notizen',`<label for="noteinput">Eigene Merksätze und offene Fragen</label><textarea id="noteinput">${escape(state.notes)}</textarea><p class="notice">Die Notizen werden mit deinen Antworten exportiert.</p>`);$('#noteinput').oninput=e=>{state.notes=e.target.value;persist();};};$('#export').onclick=()=>{persist();const payload={workshop:'IPv4 Maske',date:'2026-10-07',notes:state.notes,pages:specs.map((s,i)=>({page:i+1,title:s.title,answers:state.answers[i]||{},status:stateLabel(i)[1],help:state.help[i]||'none',checked:!!state.checked[i],selfCriteria:state.criteria[i]||[]}))};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='IPv4-Antworten-2026-10-07.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};$('#sources').onclick=()=>openDialog('Quellen und Geltungsbereich',`<p>Zisler: Computer-Netzwerke, 7. Auflage (2022). Lokale Quelle: sources/02_Zisler_Computer-Netzwerke_7A_2022.pdf, PDF-Seiten 148, 150, 154–155. Gedruckte Seitenzahlen nicht identifiziert.</p><p>AP2 Sommer 2024, Analyse und Entwicklung von Netzwerken, 1ab: Frage PDF 2, Anlage PDF 3, offizielle Lösung PDF 2. Nur a) ist offiziell. b), c) und vorherige Übungen sind eigene Aufgaben.</p><p>Konventionen: binäre Bitzeilen und Netz/Host-Grenze nach Cisco; Lehrdarstellung nach ALP Schulnetz. Alle Zeichnungen sind selbst erstellt. URLs und Nachweise stehen in REPORTE-taller.md.</p><p>Normale IPv4-Netze /1 bis /30. Keine Behandlung der Sonderfälle /31 und /32. Der Workshop benötigt keine Netzwerkverbindung.</p>`);
-show(current);
+const tasks=JSON.parse(document.getElementById('exercise-data').textContent);
+const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function ipNum(ip){return ip.split('.').reduce((n,v)=>n*256+Number(v),0)}
+function dotted(n){return [24,16,8,0].map(b=>Math.floor(n/2**b)%256).join('.')}
+function model(ip,p){const n=ipNum(ip),hbits=32-p,total=2**hbits,net=Math.floor(n/total)*total,bc=net+total-1;return {ip,prefix:p,hbits,total,hosts:total-2,network:dotted(net),broadcast:dotted(bc),first:dotted(net+1),last:dotted(bc-1),mask:dotted(2**32-total),maskbinary:(256-total%256).toString(2).padStart(8,'0').slice(-8),netbinary:(net%256).toString(2).padStart(8,'0'),bcBinary:(bc%256).toString(2).padStart(8,'0'),role:n===net?'Netzadresse':n===bc?'Broadcast':'Hostadresse',net,bc};}
+function answers(t){let m=model(t.ip,t.p);if(t.kind==='official')return Object.fromEntries(t.nets.map(n=>[n.key,model(n.ip,n.p).broadcast]));if(t.p2){const n=model(t.ip,t.p2);m={...m,network2:n.network,hosts2:n.hosts,prefix2:t.p2}}return m}
+function wording(t,s){const a=answers(t);return s.replace(/\{([a-zA-Z]+)\}/g,(_,k)=>a[k]??'');}
+const demo={ip:'192.168.10.77',p:26};
+window.IPV4={model,answers,tasks};
+const labels={prefix:'Netzbits / Präfix',hbits:'Hostbits',mask:'Maske (dezimal)',maskbinary:'Maskenoktett (8 Bits)',netbinary:'Netzoktett (8 Bits)',bcBinary:'Broadcast-Oktett (8 Bits)',network:'Netzadresse',broadcast:'Broadcast',first:'Erster Host',last:'Letzter Host',total:'Adressen insgesamt',hosts:'Nutzbare Hosts',role:'Adressrolle',network2:'Netzadresse bei /26',hosts2:'Hosts bei /26',wan:'WAN-Broadcast',lan:'LAN-Broadcast',dmz:'DMZ-Broadcast'};
+const errors={prefix:'Zähle die führenden Einsen der Maske.',hbits:'Ziehe die Netzbits von 32 ab.',mask:'Netzbits: 1. Hostbits: 0.',maskbinary:'Setze nur die Netzbits auf 1.',netbinary:'UND setzt alle Hostbits auf 0.',bcBinary:'Im Broadcast sind alle Hostbits 1.',network:'Netzadresse: alle Hostbits sind 0.',broadcast:'Broadcast: alle Hostbits sind 1.',first:'Beginne eine Adresse nach dem Netz.',last:'Ende eine Adresse vor dem Broadcast.',total:'Zähle alle Kombinationen der Hostbits.',hosts:'Netz und Broadcast belegen zwei IPs.',role:'Prüfe alle Hostbits, nicht nur .0/.255.',network2:'Wende hier die Maske /26 an.',hosts2:'Zähle nur die Hostbits bei /26.',wan:'WAN: zwei Hostbits, alle auf 1.',lan:'LAN: beide Hostoktette auf 1.',dmz:'DMZ: sechs Hostbits, alle auf 1.'};
+const pages=[{type:'entry',title:'Die Maske bestimmt, wer zusammengehört.',chapter:'Einstieg'},
+{type:'lesson',lesson:1,title:'Eine IP allein verrät die Grenze nicht.',chapter:'Verstehen'},
+{type:'lesson',lesson:2,title:'UND lässt nur die Netzbits stehen.',chapter:'Verstehen'},
+{type:'lesson',lesson:3,title:'Zwei Grenzen, dazwischen die Hosts.',chapter:'Verstehen'},
+{type:'lesson',lesson:4,title:'Weniger Hostbits: kleinerer Adressblock.',chapter:'Verstehen'},
+{type:'example',title:'Vom Gerät zu allen Grenzen.',chapter:'Anwenden'},...tasks.map(t=>({type:'task',title:t.title,chapter:t.chapter,t}))];
+let pageIndex=0,step=0,lastFocus=null;
+const STORAGE='fisi-ipv4-masken-2026-10-07-v1';let states={};let saved=true;
+try{const parsed=JSON.parse(localStorage.getItem(STORAGE)||'{}');if(parsed&&typeof parsed==='object'&&!Array.isArray(parsed))states=parsed;}catch(e){saved=false}
+function state(t){if(!states[t.id]||typeof states[t.id]!=='object')states[t.id]={values:{},attempts:0,hint:false,solution:false,done:false,first:false,notes:'',text:'',criteria:[],compared:false};const s=states[t.id];if(!s.values||typeof s.values!=='object')s.values={};return s}
+function save(){try{localStorage.setItem(STORAGE,JSON.stringify(states));saved=true}catch(e){saved=false}$('#save-status').textContent=saved?'Lokal in diesem Browser gespeichert.':'Lokales Speichern nicht möglich. Bitte exportieren.'}
+function status(t){const s=state(t);return s.solution?'solution':s.hint?'hint':s.done?(t.kind==='written'?'review':'solo'):'open'}
+function statusLabel(t){const s=state(t);return s.solution?'Lösung gesehen':s.hint?'Mit Hinweis':s.done?(t.kind==='written'?'Selbstvergleich':'Ohne Hilfe'):'Offen'}
+function updateStats(){const n=tasks.filter(t=>state(t).done).length;$('#solved').textContent=n;$('#solved-bar').value=n;$('#first').textContent=tasks.filter(t=>state(t).first).length;$('#pending').textContent=tasks.length-n;$('#solved-label').textContent=`${tasks.filter(t=>t.kind!=='written'&&state(t).done).length} geprüft · ${tasks.filter(t=>t.kind==='written'&&state(t).done).length} selbst verglichen`;renderSide()}
+function renderSide(){const groups=[['Einstieg · Wozu?',[0]],['Verstehen · Der Mechanismus',[1,2,3,4]],['Anwenden · Masken lesen',[5,6,7,8,9]],['Üben · Netz bestimmen',[10,11,19]],['Üben · Grenzen finden',[12,13,18]],['Üben · Hosts zählen',[14,20]],['Üben · Adressen zuordnen',[15,16,17]],['Üben · Fehler korrigieren',[21]],['Üben · Zusatzpraxis 17–20',[22,23,24,25]],['Prüfungsaufgabe · Schreiben',[26,27,28,29]]];$('#side').innerHTML=groups.map(([name,nums])=>`<section class="nav-group"><h3>${name}</h3><div class="nav-grid">${nums.map(i=>{const t=pages[i].t;const text=t?String(t.id).padStart(2,'0'):i===0?'Start':i===5?'Bsp.':String(i);return `<button type="button" data-page="${i}" class="${i===pageIndex?'current':''}" ${i===pageIndex?'aria-current="page"':''} data-status="${t?status(t):'open'}" aria-label="${esc(pages[i].title)}${t?', '+statusLabel(t):''}">${text}</button>`}).join('')}</div></section>`).join('');$('#side').querySelectorAll('button').forEach(b=>b.onclick=()=>navigate(Number(b.dataset.page)));}
+function svg(inner,view='0 0 960 344',name='IPv4-Mechanismus'){return `<svg viewBox="${view}" role="img" aria-label="${esc(name)}"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#57717b"/></marker></defs>${inner}</svg>`}
+function node(x,y,w,h,label,cls='node',sub=''){return `<rect class="${cls}" x="${x}" y="${y}" width="${w}" height="${h}" rx="8"/><text x="${x+16}" y="${y+28}" class="strong">${esc(label)}</text>${sub?`<text x="${x+16}" y="${y+54}" class="sub">${esc(sub)}</text>`:''}`}
+function bitsRow(y,label,val,p=26){const arr=val.split('.').map(Number),x0=200,cell=20;let res=`<text x="24" y="${y+27}">${esc(label)}</text>`;for(let i=0;i<32;i++){let x=x0+i*cell+Math.floor(i/8)*12+(i>=p?24:0);const v=(arr[Math.floor(i/8)]>>(7-i%8))&1;res+=`<rect x="${x}" y="${y}" width="18" height="40" rx="3" class="${i<p?'net':'host'}"/><text class="bit" text-anchor="middle" x="${x+9}" y="${y+27}">${v}</text>`}return res}
+function fullBits(){const m=model(demo.ip,demo.p);return svg(`<text x="24" y="32">${m.ip}/${m.prefix}</text><text x="224" y="32" class="sub">1 der Maske = Netzbit · 0 der Maske = Hostbit</text>${bitsRow(72,'IP-Adresse',m.ip,m.prefix)}${bitsRow(160,'Maske',m.mask,m.prefix)}<text x="200" y="140" class="sub">Oktett 1</text><text x="372" y="140" class="sub">Oktett 2</text><text x="544" y="140" class="sub">Oktett 3</text><text x="790" y="140" class="sub">Oktett 4</text><path d="M768 48V224" stroke="#17343d" stroke-width="3"/><text x="200" y="264" class="strong">${m.prefix} feste Netzbits</text><text x="736" y="264" class="strong">${m.hbits} Hostbits</text><text x="200" y="296" class="sub">Grün + N: bleiben im Netz gleich</text><text x="664" y="296" class="sub">Blau + H: dürfen variieren</text>`,'0 0 920 328','32 IP-Bits und Maskenbits untereinander; die Grenze nach 26 Bits liegt im vierten Oktett.');}
+function andFigure(){const m=model(demo.ip,demo.p);return svg(`<path class="edge" d="M760 104V152"/><text x="784" y="146" class="edge-label">verknüpft mit UND</text>${node(40,40,320,80,'IP: '+m.ip,'node','Letztes Oktett: '+(ipNum(m.ip)%256).toString(2).padStart(8,'0'))}${node(400,40,480,80,'Maske: '+m.mask,'net','Letztes Oktett: '+m.maskbinary)}<rect x="40" y="160" width="648" height="144" rx="8" class="node"/><text x="64" y="192" class="sub">Nur 1 UND 1 ergibt 1.</text><text x="64" y="232" class="mono big">${(ipNum(m.ip)%256).toString(2).padStart(8,'0')}</text><text x="264" y="232">UND</text><text x="336" y="232" class="mono big">${m.maskbinary}</text><text x="64" y="280" class="mono big">${m.netbinary} = ${m.net%256}</text>${node(720,168,200,104,'Netzadresse','net',m.network)}<path d="M296 248H352" stroke="#087a6b" stroke-width="3"/><text x="392" y="280" class="sub">Hostbits werden 0</text>`,'0 0 960 336','Bitweises UND von IP und Maske ergibt im letzten Oktett 64; vollständige Netzadresse 192.168.10.64.');}
+function rangeFigure(){const m=model(demo.ip,demo.p);return svg(`<text x="40" y="32" class="strong">${m.ip}/${m.prefix}: Netzbits bleiben gleich.</text><path class="edge" d="M248 120H312"/><text x="264" y="76" class="edge-label">erhöht um 1</text><path class="edge" d="M616 120H704"/><text x="628" y="76" class="edge-label">erhöht um 1</text>${node(40,96,208,88,'Netz: .'+m.net%256,'net','Hostbits '+'0'.repeat(m.hbits))}${node(312,96,304,88,'Hosts: .'+(m.net+1)%256+' bis .'+(m.bc-1)%256,'host',m.hosts+' nutzbare Adressen')}${node(704,96,208,88,'Broadcast: .'+m.bc%256,'broadcast','Hostbits '+'1'.repeat(m.hbits))}<rect x="40" y="224" width="872" height="64" rx="8" class="node"/><text x="64" y="252">Netzadresse + 1</text><text x="360" y="252">Hostbereich</text><text x="696" y="252">Broadcast − 1</text><text x="64" y="276" class="sub">Grenzen sind reserviert; einzelne Hosts liegen dazwischen.</text>`,'0 0 960 328','Adressintervall mit reservierten Grenzen Netz .64 und Broadcast .127 und Hostbereich .65 bis .126.');}
+function relationFigure(){const m=model(demo.ip,demo.p);return svg(`<path class="edge" d="M240 80H312"/><text x="248" y="48" class="edge-label">lässt frei</text><path class="edge" d="M512 80H584"/><text x="520" y="48" class="edge-label">erzeugt</text><path class="edge" d="M736 120V160H488V192"/><text x="592" y="184" class="edge-label">reserviert zwei Grenzen</text>${node(32,48,208,80,'Maske /'+m.prefix,'net',m.prefix+' Einsen, '+m.hbits+' Nullen')}${node(312,48,200,80,m.hbits+' Hostbits','host','32 − '+m.prefix+' = '+m.hbits)}${node(584,48,328,80,m.total+' Adressen insgesamt','node','2^'+m.hbits+' Kombinationen')}${node(336,208,320,88,m.hosts+' nutzbare Hosts','host',m.total+' − 2 = '+m.hosts)}<text x="32" y="288" class="sub">Gilt hier für normale Netze mit /16 bis /30.</text>`,'0 0 960 336','Abhängigkeit der Maske, Hostbits, Adresskombinationen und nutzbaren Hosts.');}
+function exampleFigure(k){const m=model(demo.ip,demo.p),netB=m.netbinary,bcB=m.bcBinary;const lines=[['IP-Adresse',(ipNum(m.ip)%256).toString(2).padStart(8,'0'),ipNum(m.ip)%256],['Maske',m.maskbinary,ipNum(m.mask)%256],['UND / Netz',k>=1?netB:'????????',k>=1?m.net%256:'?'],['Broadcast',k>=2?bcB:'????????',k>=2?m.bc%256:'?']];return svg(`<text x="40" y="32" class="strong">Letztes Oktett · erste drei Oktette: 192.168.10</text>${lines.map((r,i)=>{let y=56+i*56;return `<text x="40" y="${y+28}">${r[0]}</text>`+Array.from(r[1]).map((b,j)=>`<rect x="${240+j*48}" y="${y}" width="40" height="40" rx="4" class="${j<2?'net':'host'}${(i<2&&k>0)||(i===2&&k!==1)||(i===3&&k!==2)?' dim-shape':''}"/><text x="${252+j*48}" y="${y+27}" class="bit">${b}</text>`).join('')+`<text x="680" y="${y+28}" class="mono">= ${r[2]}</text>`}).join('')}<path d="M328 48V272" stroke="#17343d" stroke-width="3"/><text x="240" y="308" class="sub">N: fest</text><text x="392" y="308" class="sub">H: sechs variable Bits</text>${k===3?`<text x="672" y="288" class="strong">${m.first}</text><text x="672" y="316" class="strong">bis ${m.last}</text>`:''}`,'0 0 960 344','Schrittweise Berechnung von Netz, Broadcast und Hostbereich für 192.168.10.77/26.');}
+function exerciseFigure(t){
+ if(t.official)return svg(`<text x="24" y="28" class="strong">Daten der Prüfungsanlage</text>${t.nets.map((n,i)=>node(24,48+i*64,432,48,n.label+' · '+n.ip+'/'+n.p)).join('')}`,'0 0 480 240','Prüfungsdaten für WAN /30, LAN /16 und DMZ /26.');
+ const m=model(t.ip,t.p), x=24,barW=432,netW=barW*t.p/32;
+ return svg(`<text x="24" y="32" class="big mono">${esc(t.ip)}/${t.p}</text><path class="edge" d="M240 104V148"/><text x="264" y="132" class="edge-label">legt Grenzen fest</text><rect x="${x}" y="56" width="${netW}" height="44" class="net"/><rect x="${x+netW}" y="56" width="${barW-netW}" height="44" class="host"/><text x="40" y="84" class="strong">N · Netz</text><text x="${x+netW+8}" y="84" class="strong">H</text><text x="24" y="132" class="sub">N: fest · H: variabel</text>${node(24,160,192,48,'Netz: Hostbits 0','net')}${node(256,160,200,48,'Broadcast: H = 1','broadcast')}`,'0 0 480 224',`IP ${t.ip}/${t.p}, fester Netzteil und variabler Hostteil; untere und obere Grenze gesucht.`);
+}
+function showDialog(title,html){lastFocus=document.activeElement;$('#modal-title').textContent=title;$('#modal-body').innerHTML=html;$('#modal').showModal();$('#close').focus()}
+$('#close').onclick=()=>$('#modal').close();$('#modal').addEventListener('close',()=>{if(lastFocus?.isConnected)lastFocus.focus()});
+function lessonRender(p){const captions={1:'Die Maske legt die Grenze innerhalb der 32 Bits fest.',2:'IP UND Maske ergibt die Netzadresse.',3:'Netz und Broadcast begrenzen den nutzbaren Hostbereich.',4:'Die Maske bestimmt die Zahl der Hostbits und damit die Blockgröße.'};const lead={1:'Welche Bits gehören zum Netz? Eine Eins in der Maske markiert ein Netzbit; eine Null markiert ein Hostbit.',2:'Wie entsteht die Netzadresse? Bitweises UND erhält den Netzteil und setzt jedes Hostbit auf null. Es ist keine arithmetische Addition.',3:'Welche IPs sind nutzbar? Hostbits alle null benennen das Netz; Hostbits alle eins bilden den Broadcast. Dazwischen liegen die Hostadressen.',4:'Wie viele Hosts passen hinein? Mit h Hostbits gibt es 2ʰ Kombinationen. Netzadresse und Broadcast sind reserviert; 2ʰ − 2 bleiben nutzbar.'};const figures={1:fullBits,2:andFigure,3:rangeFigure,4:relationFigure};return `<div class="lesson"><p class="lead">${lead[p.lesson]}</p><figure class="figure-wrap large">${figures[p.lesson]()}</figure><figcaption>Fig. ${p.lesson} · ${captions[p.lesson]}</figcaption></div>`;}
+function entryRender(){return `<div class="entry"><div class="entry-copy"><section><h3>Im Betrieb</h3><p>Ein neuer Praxis-PC braucht eine gültige IP im richtigen Netz.</p></section><section><h3>In der IHK</h3><p>Sommer 2024, AEN 1 ab: Broadcast-Adressen für drei Netze ermitteln.</p></section><section><h3>Am Ende</h3><p>Du berechnest Grenzen und Hosts und begründest sie auf Deutsch.</p></section><p class="context">Eine Stunde: Einstieg, Mechanismus, Übung, Prüfung.</p></div><figure><div class="figure-wrap">${svg(`<text x="24" y="40" class="strong">Praxis-PC konfigurieren</text>${node(24,64,432,80,'IP-Adresse + Maske','node','192.168.10.77/26')}<path class="edge" d="M240 144V208"/><text x="264" y="184" class="edge-label">bestimmen</text>${node(24,224,192,88,'Netzgrenze','net','Hostbits: 0')}${node(256,224,200,88,'Broadcast','broadcast','Hostbits: 1')}<rect x="24" y="360" width="432" height="72" rx="8" class="host"/><text x="40" y="388" class="strong">Hostadressen dazwischen</text><text x="40" y="414" class="sub">Daraus wählst du eine freie Geräte-IP.</text>`,'0 0 480 456','Ein Praxis-PC erhält eine IP; IP und Maske bestimmen Netzgrenze, Broadcast und gültige Hostadressen. Diese müssen zusätzlich frei sein.')}</div><figcaption>Fig. 0 · Die Maske definiert den nutzbaren Bereich.</figcaption></figure></div>`;}
+const stepCaptions=['Maske anlegen: zwei Netzbits im letzten Oktett bleiben fest.','UND berechnen: 01001101 UND 11000000 ergibt 01000000.','Broadcast erzeugen: dieselben Netzbits, alle sechs Hostbits auf 1.','Hostgrenzen bestimmen: Netz + 1 und Broadcast − 1.'];
+function exampleRender(){return `<div class="lesson"><p class="lead">Wie leite ich alle Grenzen ab? Rechne einen Schritt nach dem anderen. Die IP lautet 192.168.10.77/26.</p><figure class="figure-wrap large">${exampleFigure(step)}</figure><div class="caption-row"><figcaption>Fig. 5 · ${stepCaptions[step]}</figcaption><div class="step-controls"><button type="button" id="step-prev" ${step===0?'disabled':''}>Schritt zurück</button><span>Schritt ${step+1} / 4</span><button type="button" data-step="next" ${step===3?'disabled':''}>Nächster Schritt</button></div></div></div>`;}
+function fieldHTML(t,k){const s=state(t),lab=k==='network'&&t.kind==='compare'?'Netzadresse bei /24':labels[k];let control=k==='role'?`<select id="field-${k}" data-key="${k}" aria-describedby="fb-${k}"><option value="">Bitte wählen</option>${['Netzadresse','Hostadresse','Broadcast'].map(v=>`<option ${s.values[k]===v?'selected':''}>${v}</option>`).join('')}</select>`:`<input id="field-${k}" data-key="${k}" value="${esc(s.values[k]||'')}" spellcheck="false" autocomplete="off" aria-describedby="fb-${k}" ${['prefix','hbits','total','hosts','hosts2'].includes(k)?'inputmode="numeric"':''}>`;return `<div class="field"><label for="field-${k}">${lab}</label>${control}<p class="feedback" id="fb-${k}">${s.feedback?.[k]?esc(s.feedback[k]):'Noch nicht geprüft.'}</p></div>`}
+function taskRender(t){const s=state(t);const opening=t.id===1?'Wie wende ich die Maske an? ':t.id===5?'Wie finde ich die Grenzen selbst? ':t.id===21?'Wie fragt die IHK nach den Grenzen? ':'';return `<div class="exercise"><section class="prompt-side"><p class="context">${esc(t.company)}</p><p class="question">${opening}${esc(wording(t,t.question))}</p><figure><div class="figure-wrap">${exerciseFigure(t)}</div><figcaption>${t.scaffold?'Die Hilfe ist vorgegeben; ab Aufgabe 4 entfällt sie.':'Netzteil festhalten, Hostteil prüfen.'}</figcaption></figure><div class="help-buttons"><button type="button" id="hint">Hinweis</button><button type="button" id="solution">${t.official?'Offizielle Lösung vergleichen':'Lösung ansehen'}</button></div><p class="origin">${t.official?'IHK Sommer 2024 · AEN · 1 ab · 3 Punkte<br>Aufgabenwortlaut; relevante Anlagendaten neu angeordnet.':'Eigene Aufgabe, nicht offiziell IHK.'}${t.extra?' Zusatzpraxis nach der Stunde.':''}</p></section><section class="answers"><div class="answer-title"><h2>Deine Antworten</h2><span class="state">${statusLabel(t)}</span></div>${t.kind==='written'?`<label for="written" class="form-guide">Antworte auf Deutsch. Keine automatische Textbewertung.</label><textarea class="written" id="written" spellcheck="true" lang="de">${esc(s.text)}</textarea><p class="written-feedback" role="status">${s.compared?'Mit Kriterien selbst verglichen.':'Vergleiche deine Begründung anschließend Punkt für Punkt.'}</p><button type="button" class="primary" id="compare">Kriterien und Modell vergleichen</button>`:`<p class="form-guide">Vollständige IPs; Zahlen ohne Einheit; Binärfelder mit acht Bits.</p><div class="fields">${t.keys.map(k=>fieldHTML(t,k)).join('')}</div><div class="check-row"><button class="primary" type="button" id="check">Felder prüfen</button><span id="result" role="status">${s.done?'Alle Felder richtig.':''}</span></div>`}<div class="notes-block"><label for="notes">Deine Notizen zu dieser Aufgabe</label><textarea id="notes">${esc(s.notes)}</textarea></div></section></div>`;}
+function render(){const p=pages[pageIndex];$('#page-number').textContent=p.t?String(p.t.id).padStart(2,'0'):p.type==='entry'?'IP':p.type==='example'?'Bsp.':String(p.lesson);$('#page-number').style.fontSize=p.type==='example'?'32px':'44px';$('#page-title').textContent=p.title;$('#tags').innerHTML=`<span class="tag ${p.t&&['net','and','broadcast','range','count','compare'].includes(p.t.kind)?'blue':p.t&&['role','repair','official','written'].includes(p.t.kind)?'gold':''}">${p.t?(p.t.extra?({net:'Netz bestimmen',range:'Hostgrenzen',compare:'Masken vergleichen',repair:'Fehler korrigieren'}[p.t.kind]||p.t.group):p.t.group):p.chapter}</span>${p.t?`<span class="tag blue">Operator: ${p.t.operator}</span>`:'<span class="tag blue">Eine Idee pro Seite</span>'}${p.t?.extra?'<span class="tag gold">Zusatzpraxis</span>':''}`;$('#stage').innerHTML=p.type==='entry'?entryRender():p.type==='lesson'?lessonRender(p):p.type==='example'?exampleRender():taskRender(p.t);$('[data-nav="prev"]').disabled=pageIndex===0;$('[data-nav="next"]').disabled=pageIndex===pages.length-1;$('[data-page-indicator]').textContent=`Seite ${pageIndex+1} / ${pages.length}`;$('#page-bar').value=pageIndex+1;renderSide();if(p.type==='example'){const next=$('[data-step="next"]');next.onclick=()=>{step++;render();$('[data-step="next"]').focus()};$('#step-prev').onclick=()=>{step--;render();$('#step-prev').focus()}}if(p.t)bindTask(p.t);}
+function navigate(i){pageIndex=Math.max(0,Math.min(pages.length-1,i));step=0;render();}
+$('[data-nav="next"]').onclick=()=>navigate(pageIndex+1);$('[data-nav="prev"]').onclick=()=>navigate(pageIndex-1);
+document.addEventListener('keydown',e=>{if($('#modal').open||['INPUT','TEXTAREA','SELECT','BUTTON'].includes(e.target.tagName)||e.ctrlKey||e.altKey||e.metaKey)return;if(e.key==='ArrowRight'){e.preventDefault();navigate(pageIndex+1)}if(e.key==='ArrowLeft'){e.preventDefault();navigate(pageIndex-1)}});
+function canonical(raw,k){let v=String(raw).trim();if(k==='role')return v;if(['prefix','hbits','total','hosts','hosts2'].includes(k)){if(k==='prefix')v=v.replace(/^\//,'');return /^\d+$/.test(v)?String(Number(v)):null}if(['maskbinary','netbinary','bcBinary'].includes(k))return /^[01]{8}$/.test(v)?v:null;const a=v.split('.');return a.length===4&&a.every(x=>/^\d{1,3}$/.test(x)&&Number(x)<=255)?a.map(Number).join('.'):null}
+function checkTask(t){const s=state(t),a=answers(t);let all=true;s.attempts++;s.feedback={};t.keys.forEach(k=>{const v=s.values[k]||'',f=$('#field-'+k),fb=$('#fb-'+k);const good=canonical(v,k)===String(a[k]);all=all&&good;const text=good?'Richtig.':!String(v).trim()?'Leer: Trage eine Antwort ein.':errors[k];fb.textContent=text;fb.className='feedback '+(good?'good':'bad');f.setAttribute('aria-invalid',String(!good));s.feedback[k]=text});if(all){s.done=true;if(s.attempts===1&&!s.hint&&!s.solution)s.first=true;}else{s.done=false;}$('#result').textContent=all?'Alle Felder richtig.':'Prüfe die Hinweise je Feld.';save();updateStats();$('.state').textContent=statusLabel(t)}
+function hintText(t){if(t.official)return 'Arbeite für jedes Netz getrennt. Erhalte die Netzbits und setze sämtliche Hostbits auf eins; beim LAN betrifft das zwei ganze Oktette.';if(t.kind==='compare')return 'Lege jede Maske einzeln an dieselbe IP. Bei /26 bleiben sechs Hostbits; bei /24 acht.';if(t.kind==='written')return 'Notiere zuerst die Anzahl der Hostbits. Zeige dann die Netzbits und die beiden extremen Kombinationen im Hostteil. Begründe mit dieser Maske, nicht mit der Endziffer.';return ({bits:'Eine IPv4-Adresse hat 32 Bits. /n zählt die führenden Einsen; der Rest sind Hostbits.',mask:'Setze die ersten n Maskenbits auf 1 und alle übrigen auf 0. Die Stellenwerte eines Oktetts sind 128, 64, 32, 16, 8, 4, 2, 1.',and:'Schreibe IP und Maske bitweise untereinander. Nur 1 UND 1 bleibt 1; alle Hostbits werden 0.',net:'Die Netzadresse entsteht durch IP UND Maske. Setze alle Hostbits auf 0; Netzbits bleiben unverändert.',broadcast:'Erhalte die Netzbits. Setze alle Hostbits auf 1; das Ergebnis ist die höchste Adresse des Blocks.',range:'Ermittle Netz und Broadcast. Die erste Hostadresse liegt um 1 höher als das Netz; die letzte um 1 niedriger als der Broadcast.',count:'Mit h Hostbits gibt es 2ʰ Adressen. Zwei gehören Netz und Broadcast; ziehe sie für die nutzbare Hostzahl ab.',role:'Prüfe den ganzen Hostteil: alles 0 bedeutet Netzadresse, alles 1 bedeutet Broadcast. Andere Kombinationen sind Hostadressen.',repair:'Bestimme den vollständigen Hostteil aus der Maske. Die Endziffer allein sagt nicht, ob eine Adresse reserviert ist.'})[t.kind]||'Die Maske ist die Grenze: Netzbits bleiben fest, Hostbits variieren.';}
+function solutionText(t){const m=answers(t);if(t.official)return `<p>Lösungshinweise Sommer 2024 · AEN 1 ab · PDF-Seite 2: 1 Punkt je korrekt zugeordnetem Broadcast.</p><div class="solution-grid">${t.keys.map(k=>`<div><span>${labels[k]}</span><strong class="address">${m[k]}</strong></div>`).join('')}</div><p style="margin-top:16px">Vergleich: WAN /30 hat zwei Hostbits; LAN /16 hat 16; DMZ /26 hat sechs. Jeweils alle auf 1 setzen. Deine Eingaben bleiben erhalten.</p>`;if(t.kind==='written'){return `<p>${writtenModel(t)}</p><h3>Kriterien · Selbstvergleich</h3>${t.rubric.map((c,i)=>`<label class="criterion"><input type="checkbox" data-criterion="${i}" ${state(t).criteria.includes(i)?'checked':''}><span>${esc(wording(t,c))}</span></label>`).join('')}<button type="button" class="primary" id="mark-compared">Selbstvergleich speichern</button><p style="margin-top:12px">Markiere nur, was deine eigene Antwort enthält. Die Anwendung vergibt keine Punkte für freien Text.</p>`}return `<div class="solution-grid">${t.keys.map(k=>`<div><span>${labels[k]}</span><strong class="address">${esc(m[k])}</strong></div>`).join('')}</div><h3>Warum?</h3><p>${explanation(t)}</p>`;}
+function writtenModel(t){const m=model(t.ip,t.p),oct=ipNum(t.ip)%256;const zero='0'.repeat(m.hbits),one='1'.repeat(m.hbits);if(t.id===22)return `Bei /${m.prefix} bleiben ${m.hbits} Hostbits: 2^${m.hbits} = ${m.total} Adressen. ${oct} liegt im Block ${m.net%256}–${m.bc%256} (⌊${oct}/${m.total}⌋ × ${m.total} = ${m.net%256}). Netz: ${m.network}, Broadcast: ${m.broadcast}. Die Hostbits sind an den Grenzen ${zero} und ${one}. Nutzbar: ${m.first} bis ${m.last}.`;if(t.id===23)return `Bei /${m.prefix} bleiben ${m.hbits} Hostbits, also ${m.total} Kombinationen. Alle Hostbits 0 bezeichnen das Netz ${m.network}; alle Hostbits 1 den Broadcast ${m.broadcast}. Beide sind für einzelne Geräte reserviert. Damit bleiben 2^${m.hbits} − 2 = ${m.hosts} nutzbare Hostadressen.`;const n=model(t.ip,t.p2);return `Die IP allein legt den Netzteil nicht fest. /${n.prefix} erhält ${n.prefix} Netzbits: Netz ${n.network}, ${n.hbits} Hostbits und ${n.hosts} Hosts. /${m.prefix} erhält nur ${m.prefix} Netzbits: Netz ${m.network}, ${m.hbits} Hostbits und ${m.hosts} Hosts. Ein bisher festes Netzbit gehört nun zum variablen Hostteil; dadurch verdoppelt sich der Adressblock.`;}
+function explanation(t){const m=model(t.ip,t.p),h=m.hbits;let text=`/${t.p} lässt ${h} Hostbits frei: 2^${h} = ${m.total} Adressen. Alle Hostbits 0 ergeben ${m.network}; alle Hostbits 1 ergeben ${m.broadcast}. Nutzbar: ${m.first} bis ${m.last}, also ${m.hosts} Hosts.`;if(t.kind==='role'||t.id===20)text+=` Die gegebene IP ist eine ${m.role}. Entscheidend ist der ganze Hostteil.`;if(t.p2){const n=model(t.ip,t.p2);text+=` Bei /${t.p2}: Netz ${n.network}, ${n.hbits} Hostbits und ${n.hosts} nutzbare Hosts.`}return text;}
+function help(t,isSolution){const s=state(t);if(isSolution)s.solution=true;else s.hint=true;save();updateStats();$('.state').textContent=statusLabel(t);showDialog(isSolution?(t.official?'Vergleich mit der offiziellen Lösung':'Modell und Lösungsweg'):'Hinweis ohne vollständige Lösung',isSolution?solutionText(t):`<p>${esc(hintText(t))}</p>`);if(t.kind==='written'&&isSolution){$('#mark-compared').onclick=()=>{if(!s.text.trim()){showDialog('Zuerst deine Antwort','<p>Schreibe zuerst deine eigene Antwort auf Deutsch. Danach kannst du sie mit den Kriterien vergleichen.</p>');return}s.criteria=[...$('#modal-body').querySelectorAll('[data-criterion]:checked')].map(b=>Number(b.dataset.criterion));s.compared=true;s.done=true;save();updateStats();$('#modal').close();render();};}}
+function bindTask(t){const s=state(t);$('#notes').oninput=e=>{s.notes=e.target.value;save()};$('#hint').onclick=()=>help(t,false);$('#solution').onclick=()=>help(t,true);if(t.kind==='written'){$('#written').oninput=e=>{s.text=e.target.value;s.done=false;s.compared=false;save();updateStats();$('.written-feedback').textContent='Antwort geändert. Vergleiche sie erneut.'};$('#compare').onclick=()=>help(t,true)}else{document.querySelectorAll('[data-key]').forEach(f=>{f.oninput=()=>{s.values[f.dataset.key]=f.value;s.done=false;s.feedback={};$('#result').textContent='Antwort geändert; erneut prüfen.';$('#fb-'+f.dataset.key).textContent='Noch nicht geprüft.';f.removeAttribute('aria-invalid');save();updateStats();$('.state').textContent=statusLabel(t)}});$('#check').onclick=()=>checkTask(t);}}
+$('#spanish').onclick=()=>{const p=pages[pageIndex],t=p.t;showDialog('Apoyo en español · separado del alemán',`<div lang="es"><p>La máscara indica qué bits pertenecen a la red y cuáles al host. Conserva los de red: host todo 0 da la dirección de red; host todo 1 da el broadcast. Las direcciones utilizables están entre ambos límites.</p><p>${t?`En este ejercicio (${esc(t.company)}), el operador «${esc(t.operator)}» te pide ${['berechnen','ermitteln'].includes(t.operator)?'calcular los campos indicados':t.operator==='erläutern'?'explicar el mecanismo con una justificación':t.operator==='begründen'?'justificar tu conclusión':t.operator==='zuordnen'?'clasificar la dirección':'completar o nombrar lo solicitado'}.`:'Avanza a tu ritmo y después practica por campos. Las flechas del teclado funcionan fuera de los campos de escritura.'}</p><p>La respuesta escrita final debe estar en alemán. Esta ayuda de idioma no muestra resultados ni cambia el registro de pistas.</p></div>`)};
+$('#sources').onclick=()=>showDialog('Quellen und Grenzen',`<p>Didaktik: Zisler, <cite>Computer-Netzwerke, 7. Auflage 2022</cite>, §3.5, lokale Datei 02_Zisler_Computer-Netzwerke_7A_2022.pdf. PDF-Seiten 145, 148, 152–155; Abbildung 3.2 auf PDF 800. Gedruckte Seitenzahl nicht identifiziert.</p><p>IHK Sommer 2024, Analyse und Entwicklung von Netzwerken, 1 ab (3 Punkte); Aufgabe und Lösungshinweise PDF 2, zugehörige Netzwerk-Anlage. Sommer 2022, AEN 1 aa, dient als Vorbild für die Feldformate.</p><p>Bildkonventionen: Cisco, „Konfigurieren der IP-Adressen und eindeutigen Subnetze“, Dokument 13788; „Host- und Subnetzmengen“, Dokument 13790; Elektronik-Kompendium „Subnetting“; ipcalc. Die Zeichnungen sind eigene SVGs.</p><p>Dieser Workshop behandelt normale IPv4-Netze mit /16 bis /30. Die Formel 2ʰ − 2 wird nicht auf /31 oder /32 übertragen. Keine Aussage über Prüfungserfolg oder Beherrschung.</p><p>Alle Inhalte sind eingebettet. Quellen-URLs und genaue Prüfprotokolle stehen im begleitenden REPORTE-taller.md; keine Netzwerkverbindung erforderlich.</p>`);
+$('#export').onclick=()=>{const data={workshop:'IPv4 Maskenwerkstatt',date:'2026-10-07',exportedAt:new Date().toISOString(),currentPage:pageIndex+1,answers:tasks.map(t=>({id:t.id,title:t.title,ip:t.ip,prefix:t.p,official:!!t.official,...state(t)}))};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a'),u=URL.createObjectURL(blob);a.href=u;a.download='IPv4-Antworten-2026-10-07.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),2000)};
+save();updateStats();render();
 </script></body></html>
