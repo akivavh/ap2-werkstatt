@@ -1,0 +1,2753 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Disponibilidad · USV · Plataforma | FISI AP2</title>
+<style>
+:root{--ink:#182c43;--muted:#506279;--nav:#15283f;--teal:#126c65;--gold:#c58122;--paper:#fffdf8;--line:#cbd4db;--wash:#edf3f4}
+*{box-sizing:border-box}body{margin:0;font:16px/1.55 'Segoe UI',Arial,sans-serif;color:var(--ink);background:var(--wash)}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{cursor:default;opacity:.5}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #d99325;outline-offset:3px}[hidden]{display:none!important}
+.app{display:grid;grid-template-columns:304px minmax(0,1fr);height:100vh;min-height:650px}aside{background:var(--nav);color:#f8fbff;padding:16px 14px;display:flex;flex-direction:column;gap:6px;overflow:auto}.brand{font-size:13px;letter-spacing:.15em;color:#bee9dd}.side-title{font-size:21px;font-weight:700;line-height:1.2;margin:2px 0 8px}.nav-heading{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#c5d3e1;margin:5px 0}.lesson-nav{display:grid;gap:2px}.exercise-nav{display:grid;grid-template-columns:1fr 1fr;gap:3px 5px}.nav-item{display:flex;align-items:center;gap:7px;border:0;background:transparent;color:#f2f6fa;text-align:left;padding:2px 6px;border-radius:5px;font-size:13px;line-height:18px;min-height:22px}.exercise-nav .nav-item{min-height:32px;font-size:12px;line-height:14px}.nav-item .num{width:20px;flex-shrink:0;color:#b2cdc9;font-variant-numeric:tabular-nums}.nav-item.current{background:#2d635e;color:white;box-shadow:inset 3px 0 #ecc078}.nav-item:hover{background:#30465e}.nav-item.current .num{color:#fff}.main{display:grid;grid-template-rows:70px minmax(0,1fr) 66px;min-width:0;min-height:0}.topbar{display:flex;justify-content:space-between;align-items:center;padding:0 30px;background:#fffdf8;border-bottom:1px solid var(--line);gap:15px}.top-label{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--teal)}.top-tools{display:flex;align-items:center;gap:8px}.top-tools button,.footer button,.actions button,dialog button,.check button{border:1px solid #a6b7c6;border-radius:7px;background:white;color:var(--ink);padding:7px 14px;font-size:14px;font-weight:600}.top-tools .selected{background:var(--nav);color:white;border-color:var(--nav)}.top-tools button.primary,.actions .primary,.check button.primary{background:var(--teal);color:white;border-color:var(--teal)}.viewport{overflow:auto;padding:26px 30px 32px;scrollbar-gutter:stable;min-height:0}.eyebrow{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--teal);margin:0 0 8px}h1{font-size:31px;line-height:1.18;margin:0 0 22px;letter-spacing:-.02em}h2{font-size:20px;line-height:1.3;margin:0 0 12px}h3{font-size:17px;margin:16px 0 8px}p{margin:0 0 17px}.lesson-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(290px,1fr);gap:26px;align-items:start}.reading{background:var(--paper);border-top:4px solid var(--teal);padding:24px 26px;border-radius:2px 2px 12px 12px;box-shadow:0 5px 18px #20374b0b}.reading p:last-child{margin-bottom:0}.visual-card{background:#e2edea;border:1px solid #bccfca;padding:20px;border-radius:12px}.visual-card p{font-size:14px;margin:12px 0 0}.visual-title{font-size:13px;font-weight:700;letter-spacing:.05em;margin-bottom:12px}.flow{display:flex;flex-direction:column;align-items:stretch;gap:9px}.node{border:1px solid #9ebbb4;background:#fffdf8;border-radius:7px;text-align:center;padding:11px 8px;font-size:15px;font-weight:600}.arrow{font-size:19px;line-height:20px;text-align:center;color:var(--teal)}.visual-card .split{display:grid;grid-template-columns:1fr 1fr;gap:12px}.small{font-size:13px;color:var(--muted)}.bar{height:32px;background:#cfdcdb;display:flex;border-radius:6px;overflow:hidden;margin:12px 0}.bar .up{background:#176f65;color:white;display:flex;align-items:center;justify-content:center;font-size:13px}.bar .down{background:#b0542b}.legend{font-size:13px;display:flex;justify-content:space-between;gap:12px;margin-bottom:12px}.metric{font:700 34px/1.25 Georgia,serif;color:var(--teal);margin:10px 0}.formula{background:#19374a;color:#fff;padding:13px 15px;border-radius:7px;margin:14px 0;font-variant-numeric:tabular-nums;font-size:16px}.check{margin-top:22px;padding:20px 24px;background:#fff8e7;border-left:4px solid var(--gold);border-radius:0 10px 10px 0}.check textarea{width:100%;min-height:66px;background:#fffdf8;margin:8px 0}.check .model{margin-top:14px}.check-head{font-size:15px;font-weight:700;margin-bottom:7px}.footer{border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:10px 30px;background:#fffdf8;gap:14px}.footer [data-page-indicator]{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}.footer .next{background:var(--nav);color:#fff;border-color:var(--nav)}.footer-left{display:flex;align-items:center;gap:16px}.progress-line{height:3px;background:#e2e8e8;position:absolute;left:304px;right:0;top:68px}.progress-line span{display:block;height:3px;background:var(--gold)}
+.exam-head{display:flex;align-items:start;justify-content:space-between;gap:20px}.points{white-space:nowrap;padding:9px 16px;background:#e5ede7;color:#215343;font-weight:700;border-radius:9px}.badge{display:inline-block;font-size:12px;border:1px solid #b9c9d0;border-radius:4px;padding:3px 8px;margin:0 5px 10px 0;background:#fffdf8}.exam-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:24px;align-items:start}.material{background:var(--paper);border:1px solid #c2cdd5;border-radius:10px;padding:20px}.material .case{font-size:15px}.instructions{font-weight:600;font-size:15px}table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:9px 10px;border:1px solid #a9bac5;vertical-align:top;text-align:left}th{background:#e5eceb;font-weight:600}table caption{font-size:12px;text-align:left;font-weight:700;color:var(--muted);margin:0 0 9px}.answer-table th:first-child{width:44%}.answer-table th:last-child{width:45px}.answer-table td{background:#fffdf8}.answer-table input,.answer-table select{width:100%;min-width:0}.answer-table textarea{width:100%;min-height:80px;resize:vertical;background-color:#fffdf8;background-image:linear-gradient(transparent 25px,#dbe2e3 26px);background-size:100% 27px;line-height:27px}.answer-table label{font-size:14px;font-weight:600;display:block}.answer-table .field-msg{font-size:12px;margin-top:6px;min-height:18px}input,textarea,select{border:1px solid #98aab7;border-radius:4px;padding:7px;color:var(--ink);background:white}input.good,select.good{border:2px solid #1c6b52}input.bad,select.bad{border:2px solid #a13428}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}.feedback{padding:13px 16px;background:#e6edf2;border-left:4px solid #2c5776;margin-top:14px;font-size:14px}.review{grid-column:1/-1;margin-top:0;background:#fffdf8;border-top:4px solid var(--gold);padding:23px;border-radius:0 0 10px 10px}.review-block{border-bottom:1px solid #cdd6db;padding:10px 0 18px}.review-block:last-child{border:0}.review .model{background:#edf4f0;border-radius:7px;padding:13px;font-size:15px}.criterion{display:grid;grid-template-columns:1fr 160px;gap:18px;align-items:center;margin:12px 0;font-size:14px}.criterion select{font-size:13px}.solution{grid-column:1/-1;background:#edf4f0;padding:22px;border:1px solid #aac8bc;border-radius:9px;margin-top:0}.source-note{margin-top:18px;font-size:12px;color:var(--muted)}svg{width:100%;height:auto;display:block;overflow:visible}svg text{font-family:'Segoe UI',Arial,sans-serif;fill:#173044;font-size:13px}svg rect{fill:#fffdf8;stroke:#758f99;stroke-width:1.2}svg .wire{stroke:#1a7969;stroke-width:2.5;fill:none}svg .battery{stroke:#a76321;stroke-dasharray:6 4;stroke-width:2;fill:none}.circuit-title{font-weight:700;margin:14px 0 4px;font-size:14px}dialog{border:1px solid #9db2bf;border-radius:14px;padding:25px;width:560px;max-width:80vw;max-height:78vh;overflow:auto;background:#fffdf8;color:var(--ink);box-shadow:0 15px 60px #0003}dialog::backdrop{background:#11233899}dialog textarea{width:100%;height:230px}.dialog-actions{display:flex;justify-content:flex-end;margin-top:15px}.status{font-size:12px;max-width:140px;line-height:1.3;color:var(--muted)}.status.warning{color:#8b3521}.sources p{font-size:14px} .score{font-weight:700;color:var(--teal)}
+@media(max-height:800px){aside{padding:10px 12px;gap:4px}.side-title{font-size:18px;margin-bottom:5px}.nav-heading{margin:3px 0}.viewport{padding:20px 26px 28px}.reading{padding:20px 23px}.topbar,.footer{padding-left:26px;padding-right:26px}h1{font-size:28px}.exercise-nav .nav-item{min-height:30px}body{font-size:15px}}
+/* Navigation remains in the sticky header; the document can scroll naturally.
+   This also gives the generic verifier real text rectangles without clipped descendants. */
+.app{height:auto;min-height:100vh}.app aside{position:fixed;top:0;left:0;bottom:0;width:304px}.main{grid-column:2;display:flex;flex-direction:column;min-height:100vh}.topbar{height:70px;flex-shrink:0;position:sticky;top:0;z-index:20;order:1}.footer{height:66px;flex-shrink:0;position:sticky;top:70px;z-index:20;order:2;border-bottom:1px solid var(--line);border-top:0}.viewport{order:3;overflow:visible;min-height:calc(100vh - 136px)}.progress-line{position:fixed;z-index:22}.lesson-layout.wide-diagrams{grid-template-columns:1fr}.wide-diagrams svg{max-width:650px;margin:auto}.wide-diagrams .visual-card{max-width:none}.wide-diagrams .circuit-title{margin-top:26px}.exam-layout.wide-diagrams{grid-template-columns:1fr}.exam-layout.wide-diagrams svg{max-width:740px;margin:16px auto}.answer-table .field-msg{margin-top:8px}.source-note{line-height:1.5}.review button{border:1px solid var(--teal);background:var(--teal);color:white;border-radius:7px;padding:8px 14px;font-size:14px;font-weight:600}
+
+.free-answers .part{margin-bottom:18px}.part-head{display:flex;align-items:start;justify-content:space-between;gap:16px;font-weight:600;font-size:15px;margin-bottom:9px}.part-head span{white-space:nowrap;color:var(--teal)}.free-answers textarea{width:100%;min-height:155px;line-height:27px;background:#fffdf8;background-image:linear-gradient(transparent 25px,#dbe2e3 26px);background-size:100% 27px}.field-msg{font-size:12px;min-height:18px;margin:6px 0}.matrix th:first-child{width:24%}.matrix th:last-child{width:auto}.matrix textarea{min-height:120px}.matrix label{font-size:12px;font-weight:400}.exam-layout:has(.matrix){grid-template-columns:1fr}.exam-layout:has(.matrix) .material{max-width:none}
+</style></head><body>
+<div class="app"><aside aria-label="Navegación del taller"><div class="brand">FISI · AP2 / 16.10.2026</div><div class="side-title" id="sideTitle"></div><nav aria-label="Explicaciones"><div class="nav-heading" id="learnLabel"></div><div class="lesson-nav" id="lessonNav"></div></nav><nav aria-label="Ejercicios"><div class="nav-heading" id="taskLabel"></div><div class="exercise-nav" id="taskNav"></div></nav></aside>
+<main class="main"><header class="topbar"><div class="top-label" id="courseLabel"></div><div class="top-tools"><button id="langES" lang="es" data-lang="es">Español</button><button id="langDE" lang="de" data-lang="de">Deutsch</button><button id="sourcesButton"></button><button id="exportButton" class="primary"></button><div class="status" id="saveStatus" role="status"></div></div></header><div class="progress-line" aria-hidden="true"><span id="progress"></span></div><div id="viewport" class="viewport"><article id="page"></article></div><footer class="footer"><div class="footer-left"><button data-nav="prev" id="prev"></button><span data-page-indicator></span></div><button id="notesButton"></button><button data-nav="next" class="next" id="next"></button></footer></main></div>
+<dialog id="notesDialog" aria-labelledby="notesTitle"><h2 id="notesTitle"></h2><label id="noteLabel" for="noteText"></label><textarea id="noteText" maxlength="20000"></textarea><p class="small" id="noteHelp"></p><div class="dialog-actions"><button id="closeNotes"></button></div></dialog>
+<dialog id="sourcesDialog" aria-labelledby="sourcesTitle"><h2 id="sourcesTitle"></h2><div class="sources" id="sourcesContent"></div><div class="dialog-actions"><button id="closeSources"></button></div></dialog>
+<script>
+'use strict';
+const LESSONS=[
+  {
+    "short": [
+      "Servicio disponible",
+      "Dienst verfügbar"
+    ],
+    "title": [
+      "Que el trabajo pueda continuar",
+      "Damit die Arbeit weitergehen kann"
+    ],
+    "body": [
+      "Una tienda usa una aplicación para cobrar. El servidor puede estar encendido y aun así nadie puede cobrar: quizá falla la aplicación o el switch que conecta las cajas. Un servicio está disponible cuando los usuarios autorizados pueden utilizarlo correctamente cuando lo necesitan. Por eso medimos el servicio completo, desde la caja hasta los datos, y no solo el servidor.\n\nLa disponibilidad responde «¿puedo usarlo ahora?». La fiabilidad responde «¿funciona sin fallar durante un intervalo?». Un servicio que se reinicia muchas veces pero se recupera enseguida puede tener mucha disponibilidad y poca fiabilidad. Una operación también debe dar resultados correctos: una caja que calcula mal no cumple su función.\n\nRecuerda lo anterior solo para distinguir funciones: RAID permite continuar ante determinados fallos de discos; un backup permite recuperar datos anteriores; la restauración tarda. Ninguno garantiza por sí solo que el servicio siga disponible ante una avería del servidor, del switch o de la corriente. Antes de elegir equipo, pregunta qué trabajo se detiene y cuánto puede esperar la empresa.",
+      "Ein Geschäft nutzt eine Kassenanwendung. Der Server kann eingeschaltet sein, obwohl niemand kassieren kann: Vielleicht ist die Anwendung oder der Switch zwischen Kassen und Server ausgefallen. Ein Dienst ist verfügbar, wenn berechtigte Benutzer ihn zum benötigten Zeitpunkt ordnungsgemäß nutzen können. Deshalb betrachten wir den gesamten Dienst von der Kasse bis zu den Daten, nicht nur den Server.\n\nVerfügbarkeit beantwortet „Kann ich den Dienst jetzt nutzen?“. Zuverlässigkeit beschreibt den störungsfreien Betrieb über einen Zeitraum. Ein Dienst mit vielen kurzen Neustarts kann eine hohe Verfügbarkeit, aber eine geringe Zuverlässigkeit haben. Auch fachlich korrekte Ergebnisse gehören zur ordnungsgemäßen Funktion: Eine falsch rechnende Kasse erfüllt ihre Aufgabe nicht.\n\nAktiviere das Vorwissen nur zur Abgrenzung: RAID ermöglicht den Weiterbetrieb bei bestimmten Festplattenausfällen. Ein Backup ermöglicht die Wiederherstellung früherer Daten; diese Wiederherstellung braucht Zeit. Beides allein hält den Dienst bei einem Server-, Switch- oder Stromausfall nicht verfügbar. Vor der Hardwareauswahl klären wir, welcher Geschäftsprozess ausfällt und wie lange das Unternehmen warten kann."
+    ],
+    "visual": "chain",
+    "check": [
+      "El servidor funciona, pero el switch falla. ¿La caja tiene un servicio disponible? Explica por qué.",
+      "Der Server läuft, aber der Switch fällt aus. Ist der Kassendienst verfügbar? Begründe."
+    ],
+    "answer": [
+      "No: la caja necesita también la conexión. Si confundiste servidor con servicio, vuelve a seguir la cadena antes de continuar.",
+      "Nein: Die Kasse benötigt auch die Verbindung. Falls du Server und Dienst gleichgesetzt hast, gehe die Kette erneut durch."
+    ]
+  },
+  {
+    "short": [
+      "Medir disponibilidad",
+      "Verfügbarkeit messen"
+    ],
+    "title": [
+      "De las horas al porcentaje",
+      "Von den Stunden zum Prozentsatz"
+    ],
+    "body": [
+      "Primero fijamos cuándo se necesita el servicio. Supón que debe funcionar durante 100 horas. Los registros muestran dos horas de caída dentro de ese período. Quedan 100 − 2 = 98 horas de funcionamiento. Por cada 100 horas requeridas funcionó 98: la disponibilidad es 98 %.\n\nSi el período es de 200 horas y hay dos de caída, funciona 198 horas. Dividir 198 entre 200 expresa qué parte del tiempo funcionó: 0,99. Multiplicar por 100 lo convierte en 99 %. Las dos horas de caída son iguales, pero representan una parte menor de un período mayor. No compares porcentajes sin conocer el período y qué fallos se cuentan.\n\nAhora podemos abreviar. T significa tiempo total requerido; D, tiempo de caída contado; U, tiempo disponible. Usa la misma unidad para los tres, por ejemplo horas. Primero U = T − D. A significa disponibilidad como fracción: A = U / T. En porcentaje: disponibilidad = A × 100 %. No dividas el tiempo total entre el tiempo disponible: obtendrías un valor mayor que 100 %.",
+      "Zuerst legen wir fest, wann der Dienst benötigt wird. Er soll beispielsweise 100 Stunden funktionieren. Das Protokoll zeigt innerhalb dieses Zeitraums zwei Ausfallstunden. Es bleiben 100 − 2 = 98 Betriebsstunden. Von jeweils 100 erforderlichen Stunden war der Dienst 98 Stunden verfügbar: Die Verfügbarkeit beträgt 98 %.\n\nBei 200 erforderlichen Stunden und zwei Ausfallstunden funktioniert der Dienst 198 Stunden. Der Quotient 198 / 200 beschreibt den verfügbaren Anteil: 0,99. Die Multiplikation mit 100 ergibt 99 %. Die Ausfallzeit ist gleich, ihr Anteil am längeren Zeitraum jedoch kleiner. Vergleiche Prozentsätze nur mit bekanntem Bezugszeitraum und bekannten Ausfallregeln.\n\nNun die Kurzschreibweise: T ist die gesamte erforderliche Zeit, D die berücksichtigte Ausfallzeit und U die verfügbare Zeit. Alle drei brauchen dieselbe Einheit, beispielsweise Stunden. Zuerst gilt U = T − D. A bezeichnet die Verfügbarkeit als Anteil: A = U / T. In Prozent: Verfügbarkeit = A × 100 %. Teile nicht die Gesamtzeit durch die verfügbare Zeit; das würde mehr als 100 % ergeben."
+    ],
+    "visual": "uptime",
+    "check": [
+      "En 50 horas requeridas hay una hora de caída. ¿Cuántas funcionan y qué porcentaje es?",
+      "In 50 erforderlichen Stunden fällt der Dienst eine Stunde aus. Wie viele Stunden läuft er und wie hoch ist die Verfügbarkeit?"
+    ],
+    "answer": [
+      "49 h; 49 / 50 × 100 = 98 %. Si no coincide, calcula primero las horas que funcionan y después su parte del total.",
+      "49 h; 49 / 50 × 100 = 98 %. Falls es nicht passt, berechne zuerst die Betriebsstunden, danach ihren Anteil."
+    ]
+  },
+  {
+    "short": [
+      "Caída permitida",
+      "Erlaubte Ausfallzeit"
+    ],
+    "title": [
+      "Convertir una promesa en tiempo",
+      "Eine Zusage in Zeit umrechnen"
+    ],
+    "body": [
+      "Una disponibilidad exigida de 99,9 % deja 100 − 99,9 = 0,1 % para caídas. «Por ciento» significa por cada cien: 0,1 / 100 = 0,001 del tiempo. En un año de 365 días con servicio las 24 horas, hay 365 × 24 = 8 760 horas requeridas. Una milésima de ese año son 8 760 × 0,001 = 8,76 horas de caída permitida. Al multiplicar por 60, son 525,6 minutos. 8,76 h no significa 8 h y 76 min: son 8 h y 45,6 min.\n\nCon 99,99 % queda una diezmilésima: 0,0001 × 8 760 = 0,876 h = 52,56 min. Esa cifra exige recuperaciones mucho más breves. Es un presupuesto total del período; no autoriza una caída de esa duración cada día.\n\nLa fórmula abrevia esa idea: Dmáx = T × (1 − A), donde Dmáx es la caída máxima, T el tiempo requerido y A el porcentaje dividido entre 100. Si el servicio solo se exige 8 h al día durante 250 días, T = 2 000 h. Con 99,9 % permite 2 h. Lee siempre si el contrato incluye el mantenimiento programado; en nuestras tareas se declara explícitamente.",
+      "Eine geforderte Verfügbarkeit von 99,9 % lässt 100 − 99,9 = 0,1 % für Ausfälle übrig. Prozent bedeutet je hundert: 0,1 / 100 = 0,001 der Zeit. Ein Jahr mit 365 Tagen und 24-Stunden-Betrieb umfasst 365 × 24 = 8 760 erforderliche Stunden. Ein Tausendstel davon sind 8 760 × 0,001 = 8,76 erlaubte Ausfallstunden. Mal 60 ergibt das 525,6 Minuten. 8,76 h sind nicht 8 h und 76 min, sondern 8 h und 45,6 min.\n\nBei 99,99 % bleibt ein Zehntausendstel: 0,0001 × 8 760 = 0,876 h = 52,56 min. Dafür muss die Wiederherstellung erheblich kürzer sein. Es handelt sich um das gesamte Ausfallbudget des Zeitraums, nicht um eine täglich erlaubte Ausfallzeit.\n\nDie Formel kürzt diesen Gedanken ab: Dmax = T × (1 − A). Dmax ist die maximale Ausfallzeit, T die erforderliche Zeit und A der Prozentsatz geteilt durch 100. Wird ein Dienst nur 8 h täglich an 250 Tagen benötigt, gilt T = 2 000 h. Bei 99,9 % sind dann 2 h Ausfall erlaubt. Prüfe stets, ob geplante Wartung mitzählt. Unsere Aufgaben nennen diese Regel ausdrücklich."
+    ],
+    "visual": "budget",
+    "check": [
+      "Un mes tiene 30 días de servicio 24/7. Con 99 % de disponibilidad, ¿se permiten 7,2 h o 72 h?",
+      "Ein Monat hat 30 Tage im 24/7-Betrieb. Sind bei 99 % Verfügbarkeit 7,2 h oder 72 h erlaubt?"
+    ],
+    "answer": [
+      "7,2 h: 30 × 24 = 720 h y el 1 % es 720 / 100. Si elegiste 72, revisa qué significa por ciento.",
+      "7,2 h: 30 × 24 = 720 h; ein Prozent davon ist 720 / 100. Prüfe bei 72 h die Bedeutung von Prozent."
+    ]
+  },
+  {
+    "short": [
+      "Punto único de fallo",
+      "Einzelner Ausfallpunkt"
+    ],
+    "title": [
+      "Duplicar donde el fallo detiene el servicio",
+      "Dort verdoppeln, wo ein Ausfall den Dienst stoppt"
+    ],
+    "body": [
+      "Un punto único de fallo es una pieza cuya avería por sí sola interrumpe el servicio. Su término habitual es Single Point of Failure, abreviado SPOF. En una cadena caja → switch → servidor → almacenamiento, cada pieza necesaria puede ser uno. Tener muchos servidores no ayuda si todos dependen del mismo switch averiado.\n\nRedundancia significa disponer de otra pieza o ruta capaz de asumir la función. Dos fuentes de alimentación permiten seguir funcionando cuando una falla, si una sola soporta toda la carga. Dos interfaces de red necesitan también rutas y switches útiles: conectar ambas al mismo switch no cubre la avería de ese switch. El RAID cubre ciertos fallos de discos; para cubrir el fallo del controlador o del NAS hace falta otra solución.\n\nHay que mirar las causas comunes. Dos fuentes conectadas a la misma regleta pierden ambas la corriente si falla esa regleta. Rutas de alimentación separadas y correctamente diseñadas reducen esa dependencia. Dos equipos en el mismo local siguen expuestos al incendio del local. Duplica según el fallo que debes soportar, no según cuántos componentes puedes comprar.",
+      "Ein Single Point of Failure, kurz SPOF, ist eine einzelne Komponente, deren Ausfall allein den Dienst unterbricht. In der Kette Kasse → Switch → Server → Speicher kann jede notwendige Komponente ein SPOF sein. Viele Server helfen nicht, wenn sie alle denselben ausgefallenen Switch benötigen.\n\nRedundanz bedeutet, eine weitere Komponente oder einen weiteren Pfad zu haben, der die Funktion übernehmen kann. Zwei Netzteile ermöglichen den Weiterbetrieb bei Ausfall eines Netzteils, sofern ein einzelnes die gesamte Last tragen kann. Zwei Netzwerkkarten benötigen ebenfalls funktionsfähige Wege und Switches. Beide am selben Switch schützen nicht vor dessen Ausfall. RAID deckt bestimmte Festplattenausfälle ab; gegen einen Controller- oder NAS-Ausfall ist eine andere Lösung nötig.\n\nBeachte gemeinsame Ursachen. Zwei Netzteile an derselben Steckdosenleiste verlieren beide die Versorgung, wenn diese Leiste ausfällt. Getrennte, fachgerecht geplante Versorgungspfade reduzieren diese Abhängigkeit. Zwei Geräte im selben Raum bleiben einem Brand in diesem Raum ausgesetzt. Verdopple Komponenten passend zum abzudeckenden Fehler, nicht nach der Zahl möglicher Anschaffungen."
+    ],
+    "visual": "powerpaths",
+    "check": [
+      "Dos servidores usan un único NAS. ¿Qué avería sigue deteniendo ambos?",
+      "Zwei Server nutzen ein einziges NAS. Welcher Ausfall stoppt weiterhin beide?"
+    ],
+    "answer": [
+      "La avería completa del NAS, incluso si sus discos usan RAID. Si pensaste solo en discos, distingue disco, NAS y servicio.",
+      "Der vollständige NAS-Ausfall, auch bei RAID-Festplatten. Unterscheide Festplatte, NAS und Dienst."
+    ]
+  },
+  {
+    "short": [
+      "Redundancia y conmutación",
+      "Redundanz und Failover"
+    ],
+    "title": [
+      "La reserva necesita poder asumir el trabajo",
+      "Die Reserve muss die Arbeit übernehmen können"
+    ],
+    "body": [
+      "Una pieza de reserva guardada en una caja reduce el tiempo de reparación, pero alguien debe instalarla. Una reserva preparada puede asumir el servicio mediante conmutación por fallo, llamada failover. Un clúster coordina varios equipos para ofrecer el servicio; debe detectar el fallo y decidir quién continúa. No basta con comprar dos equipos.\n\nEn un clúster de virtualización, una máquina virtual es un ordenador lógico con su propio sistema operativo. El host físico ejecuta esas máquinas mediante un hipervisor. Si se rompe el host, otro puede reiniciarlas con sus datos accesibles. Ese reinicio tarda; alta disponibilidad no significa ausencia de toda interrupción. Una aplicación con réplicas activas puede reducir más la pausa, pero exige coordinación y datos coherentes. La migración de una máquina todavía funcionando sirve para mantenimiento; no rescata por sí sola un host que ya está apagado.\n\nTambién hace falta capacidad de reserva. La memoria se expresa aquí en GiB (gibibytes), una unidad binaria: 1 GiB = 2³⁰ bytes = 1 073 741 824 bytes. No equivale a 1 GB = 10⁹ bytes (unidad decimal, solo como contraste). Como todas las cantidades siguientes usan GiB, se pueden comparar y restar directamente. Dos hosts con 96 GiB de memoria utilizable cada uno pueden alojar en total 120 GiB mientras ambos funcionan. Al perder uno solo quedan 96 GiB: faltan 24 GiB. Para tolerar esa avería, la carga protegida debe caber en los supervivientes; comprueba memoria, CPU, almacenamiento y red. N+1 significa añadir una unidad de reserva a las N necesarias para la carga.",
+      "Ein Ersatzteil im Schrank verkürzt die Reparatur, muss aber erst eingebaut werden. Eine betriebsbereite Reserve kann den Dienst durch Failover übernehmen. Ein Cluster koordiniert mehrere Rechner für einen Dienst. Er muss den Ausfall erkennen und festlegen, wer übernimmt. Zwei gekaufte Rechner allein bilden noch keine Hochverfügbarkeitslösung.\n\nEine virtuelle Maschine ist ein logischer Rechner mit eigenem Betriebssystem. Der physische Host führt diese Maschinen über einen Hypervisor aus. Fällt der Host aus, kann ein anderer Host die VMs neu starten, sofern ihre Daten erreichbar sind. Dieser Neustart dauert: Hochverfügbarkeit bedeutet nicht völlige Unterbrechungsfreiheit. Aktive Anwendungsreplikate können die Pause weiter verkürzen, benötigen aber Koordination und konsistente Daten. Live-Migration einer noch laufenden VM hilft bei Wartung; sie rettet allein keinen bereits ausgefallenen Host.\n\nAußerdem braucht die Reserve genügend Kapazität. RAM wird hier in GiB (Gibibyte), einer binären Einheit, angegeben: 1 GiB = 2³⁰ Byte = 1 073 741 824 Byte. Das ist nicht 1 GB = 10⁹ Byte (dezimal, nur zum Vergleich). Alle folgenden Angaben verwenden GiB und können daher direkt verglichen und subtrahiert werden. Zwei Hosts mit jeweils 96 GiB nutzbarem RAM können gemeinsam 120 GiB Last aufnehmen. Nach Ausfall eines Hosts bleiben nur 96 GiB: Es fehlen 24 GiB. Die geschützte Last muss in die verbleibenden Systeme passen. Prüfe RAM, CPU, Speicher und Netzwerk. N+1 bedeutet eine zusätzliche Reserveeinheit zu den N für die Last erforderlichen Einheiten."
+    ],
+    "visual": "capacity",
+    "check": [
+      "Dos hosts tienen 128 GiB útiles cada uno; la carga total necesita 110 GiB. ¿Cabe tras perder uno? ¿Eso prueba toda la disponibilidad?",
+      "Zwei Hosts haben je 128 GiB nutzbares RAM; die Gesamtlast braucht 110 GiB. Passt sie nach einem Hostausfall? Beweist das die gesamte Verfügbarkeit?"
+    ],
+    "answer": [
+      "Sí, quedan 18 GiB; solo prueba la memoria. Aún faltan datos accesibles, conmutación y rutas. Revisa la diferencia entre capacidad y funcionamiento.",
+      "Ja, 18 GiB bleiben frei. Das prüft nur RAM; Datenzugriff, Failover und Pfade müssen ebenfalls funktionieren."
+    ]
+  },
+  {
+    "short": [
+      "USV y apagado",
+      "USV und Abschaltung"
+    ],
+    "title": [
+      "Comprar tiempo cuando se corta la corriente",
+      "Bei Stromausfall Zeit gewinnen"
+    ],
+    "body": [
+      "Una USV es un sistema de alimentación ininterrumpida; las siglas alemanas significan Unterbrechungsfreie Stromversorgung. Se coloca entre la red eléctrica y los equipos. Contiene una batería: almacena energía mientras hay corriente y la entrega durante un corte. El inversor convierte la corriente continua de la batería en corriente alterna para los equipos. El rectificador hace la conversión contraria para el circuito de carga.\n\nLa USV puede salvar un corte breve o dar tiempo para apagar de forma ordenada. No crea energía ilimitada. Si el corte dura más que la batería, el servidor debe haber terminado de cerrar aplicaciones y guardar datos antes de agotarla. Para ello necesita comunicación con la USV, por ejemplo mediante USB o una interfaz de red, y un agente o servicio de apagado configurado.\n\nIncluye también el almacenamiento y los componentes de red que el servicio necesita. Alimentar solo el servidor no mantiene accesible la aplicación si se apaga su switch. Define una secuencia: detectar el corte, esperar solo si hay margen, cerrar aplicaciones, apagar máquinas y hosts, manteniendo almacenamiento y red hasta que ya no hagan falta. Un generador puede sostener un corte largo; la USV cubre el intervalo de arranque. Verifica la secuencia con un ensayo controlado y monitoriza el estado de las baterías.",
+      "USV bedeutet Unterbrechungsfreie Stromversorgung. Das Gerät liegt zwischen Stromnetz und Verbrauchern. Eine Batterie speichert Energie bei vorhandener Netzversorgung und stellt sie bei einem Ausfall bereit. Der Wechselrichter wandelt Batterie-Gleichstrom in Wechselstrom für die Geräte um. Der Gleichrichter übernimmt die umgekehrte Wandlung für den Ladekreis.\n\nDie USV kann einen kurzen Ausfall überbrücken oder Zeit für ein geordnetes Herunterfahren schaffen. Sie liefert keine unbegrenzte Energie. Dauert der Ausfall länger als die Batterie reicht, müssen Anwendungen und Server vorher ordnungsgemäß beendet sein. Dafür braucht der Server eine Kommunikation mit der USV, etwa per USB oder Netzwerkschnittstelle, und einen konfigurierten Abschaltagenten oder Dienst.\n\nBerücksichtige auch Speicher und erforderliche Netzwerkkomponenten. Nur den Server zu versorgen hält die Anwendung nicht erreichbar, wenn der Switch abschaltet. Plane die Reihenfolge: Ausfall erkennen, nur mit ausreichender Reserve warten, Anwendungen beenden, VMs und Hosts herunterfahren; Speicher und Netzwerk bleiben bis zum Ende ihrer benötigten Funktion versorgt. Ein Generator kann längere Ausfälle abdecken; die USV überbrückt dessen Anlaufzeit. Prüfe die Abschaltkette in einem kontrollierten Test und überwache den Batteriezustand."
+    ],
+    "visual": "shutdown",
+    "check": [
+      "Autonomía 12 min; apagar tarda 4 min; reserva 2 min. ¿Hasta cuándo puedes esperar como máximo?",
+      "Laufzeit 12 min; Herunterfahren 4 min; Reserve 2 min. Wie lange darfst du höchstens warten?"
+    ],
+    "answer": [
+      "6 min: 12 − 4 − 2. Si esperarías los 12 min, vuelve a separar funcionamiento, apagado y reserva.",
+      "6 min: 12 − 4 − 2. Trenne bei 12 min Wartezeit erneut Betrieb, Abschaltung und Reserve."
+    ]
+  },
+  {
+    "short": [
+      "Tres tipos de USV",
+      "Drei USV-Arten"
+    ],
+    "title": [
+      "Seguir el camino de la energía",
+      "Den Energiepfad verfolgen"
+    ],
+    "body": [
+      "Offline o standby (VFD): normalmente la red eléctrica alimenta la carga mediante un filtro. Durante un corte, un conmutador conecta la salida al inversor alimentado por la batería. Esa conmutación tarda un intervalo breve que el equipo debe tolerar. VFD significa Voltage and Frequency Dependent: tensión y frecuencia de salida dependen de la red durante el funcionamiento normal.\n\nLine-interactive (VI): añade regulación de tensión, llamada AVR. Corrige ciertas subidas y bajadas sin descargar la batería. En un corte utiliza batería e inversor y también necesita conmutar. VI significa Voltage Independent: regula la tensión; la frecuencia sigue dependiendo de la red. Frente a una offline sencilla ofrece mejor tratamiento de esas fluctuaciones y evita algunas descargas, a cambio de mayor coste y complejidad.\n\nOnline de doble conversión (VFI): en modo normal, el rectificador convierte la corriente de red a continua y el inversor produce la alterna de salida. La batería se conecta al circuito de continua: al faltar la red, el inversor ya estaba alimentando la carga. No hay interrupción por conmutación a batería en ese modo. VFI significa Voltage and Frequency Independent. Un bypass permite rodear la doble conversión en condiciones previstas; en bypass ya no hay el mismo acondicionamiento. La conversión continua suele añadir pérdidas y coste. Elige según calidad de red, tolerancia de la carga y datos del fabricante.",
+      "Offline oder Standby (VFD): Im Normalbetrieb versorgt das Netz die Last über einen Filter. Bei Netzausfall verbindet ein Umschalter den Ausgang mit dem batteriegespeisten Wechselrichter. Diese kurze Umschaltzeit muss die Last vertragen. VFD bedeutet Voltage and Frequency Dependent: Ausgangsspannung und -frequenz hängen im Normalbetrieb vom Netz ab.\n\nLine-Interactive (VI): Eine automatische Spannungsregelung, AVR, gleicht bestimmte Unter- und Überspannungen ohne Batterieentladung aus. Bei Netzausfall versorgen Batterie und Wechselrichter die Last; auch hier wird umgeschaltet. VI bedeutet Voltage Independent: Die Spannung wird geregelt, die Frequenz bleibt netzabhängig. Gegenüber einer einfachen Offline-USV werden solche Schwankungen besser ausgeglichen und manche Batterieentladungen vermieden. Dafür steigen Kosten und Komplexität.\n\nOnline mit Doppelwandlung (VFI): Im Normalbetrieb wandelt der Gleichrichter Netzwechselstrom in Gleichstrom und der Wechselrichter erzeugt den Ausgangswechselstrom. Die Batterie ist am Gleichstromkreis angeschlossen. Beim Netzausfall versorgt der Wechselrichter die Last bereits; in diesem Betriebsmodus entsteht keine Unterbrechung beim Wechsel auf Batterie. VFI bedeutet Voltage and Frequency Independent. Ein Bypass kann die Doppelwandlung unter vorgesehenen Bedingungen umgehen; dort besteht nicht derselbe Schutz. Die dauernde Wandlung verursacht meist zusätzliche Verluste und Kosten. Entscheidend sind Netzqualität, Toleranz der Last und Herstellerdaten."
+    ],
+    "visual": "ups",
+    "check": [
+      "¿Cuál corrige algunas variaciones de tensión sin usar la batería, pero sigue necesitando conmutación en un corte?",
+      "Welche USV regelt bestimmte Spannungsschwankungen ohne Batterieeinsatz, muss bei Netzausfall aber umschalten?"
+    ],
+    "answer": [
+      "Line-interactive, VI. Si elegiste online, compara el regulador con la doble conversión continua.",
+      "Line-Interactive, VI. Vergleiche bei Online als Antwort Spannungsregelung und dauernde Doppelwandlung."
+    ]
+  },
+  {
+    "short": [
+      "Dimensionar: W y VA",
+      "Auslegen: W und VA"
+    ],
+    "title": [
+      "Por qué hay W y VA",
+      "Warum es W und VA gibt"
+    ],
+    "body": [
+      "La tensión es la diferencia de potencial eléctrico entre dos puntos: indica cuánta energía se transfiere por unidad de carga. La representamos con U y la medimos en voltios (V). La corriente indica cuánta carga eléctrica pasa por segundo; la representamos con I y la medimos en amperios (A). Para alimentar un equipo hacen falta ambas. En corriente alterna, U e I serán sus valores efectivos, es decir, valores equivalentes para comparar su efecto térmico, no los picos instantáneos.\n\nLa potencia expresa energía por tiempo. La potencia activa P, en vatios (W), es la transferencia media de energía que el equipo consume: se convierte en procesamiento, luz o calor, incluidas sus pérdidas. En corriente alterna, tensión y corriente pueden estar desfasadas o la corriente puede tener una forma no sinusoidal. Parte de la energía puede ir y volver en cada ciclo. Por eso el producto de los valores efectivos no siempre coincide con la transferencia media de energía. La potencia aparente S es ese producto: S = U × I, en voltamperios (VA). Aunque P sea menor, la USV y sus conductores tienen que soportar toda la corriente I. S puede ser mayor que P; con factor de potencia uno son iguales.\n\nEjemplo: una carga a 230 V toma 1 A efectivo. Exige 230 × 1 = 230 VA. Si el medidor registra 184 W, su factor de potencia FP es la relación P / S: 184 / 230 = 0,8, sin unidad. De cada 230 VA de exigencia resultan 184 W de consumo activo; los 46 de diferencia no son 46 W de pérdida. Con FP conocido, P = S × FP. Si necesitamos S, buscamos qué número multiplicado por 0,8 da P: S = P / FP. Para 184 W: 184 / 0,8 = 230 VA. FP no es rendimiento: el rendimiento compara energía de entrada y salida; FP relaciona dos magnitudes eléctricas de una misma carga.\n\nDos servidores de 220 W, un NAS de 40 W y un switch de 20 W necesitan 500 W. Todas las cargas del ejemplo tienen FP 0,8; su exigencia aparente es 500 / 0,8 = 625 VA. Un margen de dimensionamiento del 25 % sobre la carga exige 500 × 1,25 = 625 W y 625 × 1,25 = 781,25 VA. Debemos comprobar cada límite del fabricante por separado: 600 W / 1 000 VA falla por W; 675 W / 750 VA falla por VA; 900 W / 1 000 VA supera ambos. La potencia nominal de una fuente no es automáticamente el consumo de su equipo.\n\nEse margen deja capacidad para crecimiento o variaciones de carga; no indica minutos de batería. La autonomía se comprueba aparte en la tabla del fabricante para la carga real prevista. Tampoco es igual añadir 20 % a la carga que dejar 20 % de la capacidad libre. Si 480 W pueden ocupar como máximo el 80 % de la capacidad, hay que encontrar la capacidad cuyo 80 % es 480 W: 480 / 0,8 = 600 W.",
+      "Spannung ist die elektrische Potenzialdifferenz zwischen zwei Punkten: Sie beschreibt die übertragene Energie je Ladungseinheit. Wir bezeichnen sie mit U und messen sie in Volt (V). Stromstärke beschreibt die Ladungsmenge je Sekunde; ihr Zeichen ist I, ihre Einheit Ampere (A). Zur Versorgung eines Geräts werden beide benötigt. Bei Wechselstrom verwenden wir für U und I Effektivwerte: Vergleichswerte für die Wärmewirkung, keine momentanen Spitzenwerte.\n\nLeistung beschreibt Energie je Zeit. Die Wirkleistung P in Watt (W) ist die mittlere Energieübertragung, die das Gerät aufnimmt: Sie wird in Verarbeitung, Licht oder Wärme umgesetzt, einschließlich der Verluste des Geräts. Bei Wechselstrom können Strom und Spannung zeitlich verschoben sein oder der Strom kann von der Sinusform abweichen. Energie kann innerhalb eines Zyklus auch hin- und zurückfließen. Deshalb entspricht das Produkt der Effektivwerte nicht immer der mittleren Energieübertragung. Die Scheinleistung S ist dieses Produkt: S = U × I, in Voltampere (VA). Auch bei kleinerem P müssen USV und Leitungen die gesamte Stromstärke I tragen. S kann größer als P sein; bei Leistungsfaktor eins sind sie gleich.\n\nBeispiel: Eine Last nimmt bei 230 V einen Effektivstrom von 1 A auf. Sie beansprucht 230 × 1 = 230 VA. Misst das Messgerät 184 W, ist ihr Leistungsfaktor FP das Verhältnis P / S: 184 / 230 = 0,8, ohne Einheit. 230 VA Beanspruchung entsprechen hier 184 W Wirkleistungsaufnahme; die Differenz von 46 bedeutet nicht 46 W Verlust. Bei bekanntem FP gilt P = S × FP. Für S suchen wir die Zahl, die mit 0,8 multipliziert P ergibt: S = P / FP. Für 184 W gilt 184 / 0,8 = 230 VA. FP ist kein Wirkungsgrad: Wirkungsgrad vergleicht Eingangs- und Ausgangsenergie; FP vergleicht zwei elektrische Größen derselben Last.\n\nZwei Server mit je 220 W, ein NAS mit 40 W und ein Switch mit 20 W benötigen 500 W. Alle Lasten im Beispiel haben FP 0,8; die Scheinlast beträgt 500 / 0,8 = 625 VA. 25 % Auslegungsreserve als Lastzuschlag verlangen 500 × 1,25 = 625 W und 625 × 1,25 = 781,25 VA. Beide Herstellergrenzen werden einzeln geprüft: 600 W / 1 000 VA scheitern an W; 675 W / 750 VA an VA; 900 W / 1 000 VA erfüllen beide. Die Nennleistung eines Netzteils ist nicht automatisch die Leistungsaufnahme des Geräts.\n\nDiese Reserve schafft Kapazität für Wachstum oder Lastschwankungen; sie gibt keine Batterieminuten an. Die Laufzeit wird gesondert anhand der Herstellertabelle bei der tatsächlich vorgesehenen Last geprüft. 20 % Lastzuschlag sind auch nicht dasselbe wie 20 % freie Nennkapazität. Dürfen 480 W höchstens 80 % der Kapazität belegen, suchen wir die Kapazität, deren 80 % gleich 480 W sind: 480 / 0,8 = 600 W."
+    ],
+    "visual": "limits",
+    "check": [
+      "480 W deben ser como máximo el 80 % de la capacidad en W. Prueba 576 W y 600 W: ¿cuál cumple?",
+      "480 W dürfen höchstens 80 % der W-Kapazität beanspruchen. Prüfe 576 W und 600 W: Welche passt?"
+    ],
+    "answer": [
+      "600 W: su 80 % son 480 W. En 576 W son 460,8 W: no alcanza. Como 480 W representan 80 partes, una parte son 6 W y 100 partes son 600 W; de ahí 480 / 0,8. Añadir 20 % no equivale a dejar 20 % de capacidad libre.",
+      "600 W: 80 % davon sind 480 W. Bei 576 W sind es 460,8 W, zu wenig. 480 W entsprechen 80 Teilen; ein Teil sind 6 W, 100 Teile 600 W. Daher 480 / 0,8. 20 % Lastzuschlag bedeuten nicht 20 % freie Kapazität."
+    ]
+  },
+  {
+    "short": [
+      "Energía y autonomía",
+      "Energie und Laufzeit"
+    ],
+    "title": [
+      "Cuánta energía hay, cuánta sale cada hora",
+      "Wie viel Energie vorhanden ist und stündlich gebraucht wird"
+    ],
+    "body": [
+      "Una batería guarda energía, pero Ah no es una unidad de energía. Ah significa amperios hora y mide capacidad de carga eléctrica: corriente por tiempo bajo las condiciones nominales de ensayo. Por ejemplo, 7 Ah corresponden a 1 A durante 7 h en un modelo ideal; A indica la corriente en ese momento y Ah la carga acumulada. Una batería real no entrega necesariamente 7 Ah a cualquier corriente o temperatura.\n\nLa tensión indica energía por carga. Por eso, al multiplicar la tensión nominal por la capacidad de carga obtenemos energía nominal aproximada: una batería de 12 V y 7 Ah contiene 12 × 7 = 84 Wh. Wh significa vatios hora. Un equipo de 100 W usa 100 Wh por hora. Si tenemos 200 Wh útiles, caben dos consumos de una hora: 200 Wh / 100 W = 2 h. Energía es el depósito; potencia es la rapidez con que lo vaciamos.\n\nEn una conexión en serie hay un único camino cerrado. La misma corriente atraviesa cada batería: si salen 1 A durante una hora, cada una entrega 1 Ah, no una cuarta parte. Cuatro baterías iguales de 12 V y 7 Ah suman sus tensiones porque cada una aporta energía a la misma carga que pasa: 12 + 12 + 12 + 12 = 48 V. Todas se agotan al entregar sus 7 Ah en el modelo; la cadena sigue teniendo 7 Ah. Su energía es 48 × 7 = 336 Wh, igual a cuatro veces 84 Wh. Sumar también los Ah contaría las baterías dos veces. El dibujo es conceptual, no una instrucción de instalación.\n\nPara pasar de energía nominal a útil hay que considerar las pérdidas. Un bloque de 24 V y 9 Ah tiene aproximadamente 216 Wh nominales. Si el rendimiento global de descarga e inversor es 85 %, salen 216 × 0,85 = 183,6 Wh útiles. Con carga constante de 306 W caben 183,6 / 306 = 0,6 consumos de una hora: 0,6 h × 60 = 36 min. Ahora abreviamos: E es energía nominal en Wh; η (eta), rendimiento como fracción; P, potencia activa de la carga en W; t, tiempo en horas. El modelo es t = E × η / P. Si E ya se midió como energía útil a la salida, no aplicamos η otra vez.\n\nEste modelo idealizado supone baterías iguales y cargadas, tensión nominal aproximada, carga constante y rendimiento dado. No garantiza autonomía real. La descarga rápida, temperatura, envejecimiento y límite de corte reducen la energía disponible. Para decidir una compra o un apagado usa la curva o tabla del fabricante a la carga real de todos los equipos protegidos. El margen de potencia y el tiempo reservado para apagar son comprobaciones distintas.",
+      "Eine Batterie speichert Energie, aber Ah ist keine Energieeinheit. Ah bedeutet Amperestunden und bezeichnet elektrische Ladungskapazität: Stromstärke mal Zeit unter den Nennbedingungen des Tests. Beispielsweise entsprechen 7 Ah im idealen Modell 1 A während 7 h. A bezeichnet den momentanen Strom, Ah die insgesamt abgegebene Ladung. Eine reale Batterie liefert nicht bei beliebigem Strom oder beliebiger Temperatur stets 7 Ah.\n\nSpannung beschreibt Energie je Ladung. Nennspannung mal Ladungskapazität ergibt deshalb näherungsweise die Nennenergie: Eine Batterie mit 12 V und 7 Ah enthält 12 × 7 = 84 Wh. Wh bedeutet Wattstunden. Ein Gerät mit 100 W braucht stündlich 100 Wh. In 200 Wh nutzbarer Energie passen zwei Stundenbedarfe: 200 Wh / 100 W = 2 h. Energie ist der Vorrat; Leistung beschreibt, wie schnell wir ihn verbrauchen.\n\nEine Reihenschaltung hat einen einzigen geschlossenen Strompfad. Derselbe Strom fließt durch jede Batterie: Bei 1 A während einer Stunde gibt jede 1 Ah ab, nicht ein Viertel davon. Vier gleiche Batterien mit je 12 V und 7 Ah addieren ihre Spannungen, weil jede derselben durchfließenden Ladung Energie zuführt: 12 + 12 + 12 + 12 = 48 V. Jede erreicht nach Abgabe ihrer 7 Ah im Modell ihre Grenze; die Kette hat weiterhin 7 Ah. Ihre Energie ist 48 × 7 = 336 Wh, also viermal 84 Wh. Zusätzliches Addieren der Ah würde die Batterien doppelt zählen. Die Abbildung erklärt den Zusammenhang, sie ist keine Installationsanleitung.\n\nVon der Nennenergie zur nutzbaren Energie berücksichtigen wir Verluste. Ein Block mit 24 V und 9 Ah enthält näherungsweise 216 Wh. Bei 85 % Gesamtwirkungsgrad für Entladung und Wechselrichter kommen 216 × 0,85 = 183,6 Wh nutzbar an. Bei konstanter Last von 306 W sind das 183,6 / 306 = 0,6 Stundenbedarfe: 0,6 h × 60 = 36 min. Nun die Kurzform: E ist Nennenergie in Wh; η (Eta) der Wirkungsgrad als Anteil; P die Wirkleistung der Last in W; t die Zeit in Stunden. Das Modell lautet t = E × η / P. Ist E bereits nutzbare Ausgangsenergie, wird η nicht nochmals angewendet.\n\nDieses idealisierte Modell setzt gleiche, geladene Batterien, angenäherte Nennspannung, konstante Last und den vorgegebenen Wirkungsgrad voraus. Es garantiert keine reale Laufzeit. Schnelle Entladung, Temperatur, Alterung und Abschaltgrenze beeinflussen die verfügbare Energie. Verwenden Sie für Beschaffung oder Abschaltung die Herstellerkennlinie oder -tabelle bei der tatsächlichen Last aller geschützten Geräte. Leistungsreserve und Zeitreserve zum Herunterfahren werden getrennt geprüft."
+    ],
+    "visual": "energy",
+    "check": [
+      "Energía ya útil: 180 Wh, carga 360 W. ¿Cuánto aguanta? ¿Debes restar rendimiento otra vez?",
+      "Bereits nutzbare Energie: 180 Wh, Last 360 W. Wie lange reicht sie? Muss erneut ein Wirkungsgrad abgezogen werden?"
+    ],
+    "answer": [
+      "0,5 h = 30 min; no. Si multiplicaste otra vez por un rendimiento, revisa dónde se midió la energía.",
+      "0,5 h = 30 min; nein. Prüfe bei erneutem Wirkungsgradabzug, wo die Energie gemessen wurde."
+    ]
+  },
+  {
+    "short": [
+      "Plataformas y requisitos",
+      "Plattformen und Anforderungen"
+    ],
+    "title": [
+      "Elegir dónde y cómo corre la aplicación",
+      "Wo und wie die Anwendung laufen soll"
+    ],
+    "body": [
+      "Plataforma es la base de hardware, sistema operativo y ejecución de una aplicación. Comienza por requisitos verificables: software compatible, carga y crecimiento, conexiones a equipos locales, tiempo de recuperación, operación y costes. Un servidor físico dedicado ofrece control directo, pero una avería completa puede detener sus aplicaciones.\n\nLa virtualización reparte un host entre máquinas virtuales con sistemas operativos separados. Un hipervisor de tipo 1 funciona directamente sobre la base física; es habitual en producción. Uno de tipo 2 se ejecuta sobre un sistema operativo anfitrión; es útil para pruebas en un puesto de trabajo. Varios servicios en un único host comparten su fallo. Para recuperarlos automáticamente en otro host necesitas un clúster, capacidad y datos accesibles. «Virtual» no significa «alta disponibilidad». Ejemplos de tipo 1 son Microsoft Hyper-V y KVM; de tipo 2, Oracle VirtualBox y VMware Workstation. Los productos ilustran la arquitectura, no sustituyen los requisitos.\n\nCloud describe un lugar y un modelo de prestación, no una protección automática contra todo fallo. IaaS alquila infraestructura como máquinas virtuales; tú administras sistema y aplicaciones. SaaS entrega la aplicación operada por el proveedor. Para comparar con un sistema local, pregunta quién administra qué, qué disponibilidad promete y cómo accedes si falla Internet. Una aplicación que debe funcionar sin Internet puede requerir una plataforma local o un modo offline comprobado. Decide por requisitos y consecuencias; una marca por sí sola no es una justificación.",
+      "Eine Plattform ist die Grundlage aus Hardware, Betriebssystem und Ausführungsumgebung einer Anwendung. Beginne mit überprüfbaren Anforderungen: Softwarekompatibilität, Last und Wachstum, lokale Geräteanbindung, Wiederherstellungszeit, Betrieb und Kosten. Ein dedizierter physischer Server bietet direkte Kontrolle; ein vollständiger Hardwareausfall kann jedoch seine Anwendungen stoppen.\n\nVirtualisierung verteilt einen Host auf VMs mit getrennten Betriebssystemen. Ein Typ-1-Hypervisor läuft direkt auf der physischen Grundlage und ist im Produktionsbetrieb üblich. Ein Typ-2-Hypervisor läuft auf einem Wirtsbetriebssystem und eignet sich beispielsweise für Tests am Arbeitsplatz. Mehrere Dienste auf nur einem Host teilen dessen Ausfall. Für einen automatischen Neustart auf einem anderen Host braucht man Cluster, Kapazität und erreichbare Daten. Virtuell bedeutet nicht automatisch hochverfügbar. Beispiele für Typ 1 sind Microsoft Hyper-V und KVM; für Typ 2 Oracle VirtualBox und VMware Workstation. Produkte veranschaulichen die Architektur, ersetzen aber keine Anforderungen.\n\nCloud beschreibt Bereitstellungsort und Betriebsmodell, keinen automatischen Schutz gegen jeden Ausfall. IaaS vermietet Infrastruktur wie VMs; Betriebssystem und Anwendungen administriert der Kunde. SaaS liefert eine vom Anbieter betriebene Anwendung. Für den Vergleich mit lokalem Betrieb kläre Verantwortung, zugesagte Verfügbarkeit und Zugriff bei Internetausfall. Ein Dienst, der ohne Internet funktionieren muss, benötigt gegebenenfalls eine lokale Plattform oder einen geprüften Offline-Modus. Entscheide anhand von Anforderungen und Ausfallfolgen; ein Markenname allein begründet keine Auswahl."
+    ],
+    "visual": "platform",
+    "check": [
+      "Tres máquinas virtuales están en un solo host. ¿Qué pasa al averiarse ese host sin clúster?",
+      "Drei VMs laufen auf einem Host. Was passiert bei dessen Ausfall ohne Cluster?"
+    ],
+    "answer": [
+      "Se detienen las tres. La separación lógica no duplica el hardware. Vuelve al dibujo si esperabas que una VM sobreviviera sola.",
+      "Alle drei stoppen. Logische Trennung verdoppelt keine Hardware. Prüfe das Schichtenbild erneut."
+    ]
+  },
+  {
+    "short": [
+      "Comparar consecuencias",
+      "Ausfallfolgen vergleichen"
+    ],
+    "title": [
+      "De la necesidad a una recomendación defendible",
+      "Von der Anforderung zur begründeten Empfehlung"
+    ],
+    "body": [
+      "Imagina un taller industrial: debe seguir trabajando sin Internet y no puede detener su aplicación más de diez minutos. Un servidor local con restauración probada de dos horas incumple el tiempo. Un clúster local con reinicio probado de cuatro minutos lo cumple ante la avería de un host, si las demás dependencias están protegidas. Una aplicación cloud sin modo offline incumple el requisito de seguir trabajando al caer Internet. Para este caso elegiríamos el clúster local y comprobaríamos alimentación, red y almacenamiento; la comparación todavía no prueba la respuesta a un incendio.\n\nEl acuerdo de nivel de servicio, SLA (Service Level Agreement), debe decir qué servicio se mide, en qué período y qué exclusiones existen. La disponibilidad del proveedor no equivale siempre a la disponibilidad que percibe el usuario: también depende de tu conexión. El tiempo de respuesta del soporte es el tiempo hasta que te atienden; no es el tiempo hasta reparar. Pide objetivos y ensayos de recuperación, capacidad al fallar un nodo, responsabilidades de backup y costes totales de operación.\n\nPara picos de carga, escalado vertical significa dar más recursos a una máquina; horizontal significa añadir instancias. Más instancias pueden repartir carga y soportar un fallo, pero solo con encaminamiento, capacidad y datos adecuados. Una decisión de examen une requisito → característica de la alternativa → consecuencia del fallo. Incluye también un límite de tu recomendación.",
+      "Ein Industriebetrieb muss ohne Internet weiterarbeiten und darf seine Anwendung höchstens zehn Minuten verlieren. Ein lokaler Einzelserver mit erprobter Wiederherstellung in zwei Stunden verfehlt die Zeit. Ein lokaler Cluster mit erprobtem Neustart in vier Minuten erfüllt sie bei einem Hostausfall, sofern weitere Abhängigkeiten geschützt sind. Eine Cloud-Anwendung ohne Offline-Modus verfehlt den Betrieb bei Internetausfall. Hier wählen wir den lokalen Cluster und prüfen Versorgung, Netzwerk und Speicher. Damit ist der Schutz gegen einen Raumbrand noch nicht nachgewiesen.\n\nDas Service Level Agreement, SLA, muss Dienst, Messzeitraum und Ausnahmen festlegen. Die Verfügbarkeit des Providers entspricht nicht immer der vom Benutzer erlebten Verfügbarkeit: Auch die eigene Anbindung zählt. Support-Reaktionszeit bedeutet Zeit bis zur Bearbeitung, nicht bis zur Reparatur. Verlange Wiederherstellungsziele und Tests, Kapazität nach Knotenausfall, Backup-Verantwortlichkeiten und gesamte Betriebskosten.\n\nFür Lastspitzen bedeutet vertikale Skalierung mehr Ressourcen für eine Maschine; horizontale Skalierung fügt Instanzen hinzu. Weitere Instanzen können Last verteilen und Ausfälle abfangen, benötigen dafür aber geeignete Verkehrsverteilung, Kapazität und Datenhaltung. Eine Prüfungsbegründung verbindet Anforderung → Eigenschaft der Alternative → Ausfallfolge. Nenne auch eine Grenze der Empfehlung."
+    ],
+    "visual": "decision",
+    "check": [
+      "El soporte responde en 15 min. ¿Eso demuestra que el servicio vuelve en 15 min?",
+      "Der Support reagiert in 15 min. Ist damit bewiesen, dass der Dienst nach 15 min wieder läuft?"
+    ],
+    "answer": [
+      "No: hace falta un tiempo de restauración o recuperación definido y comprobado. Si los igualaste, distingue atención y reparación.",
+      "Nein: Eine definierte und geprüfte Wiederherstellungszeit fehlt. Unterscheide Reaktion und Reparatur."
+    ]
+  },
+  {
+    "short": [
+      "Responder en alemán",
+      "Auf Deutsch antworten"
+    ],
+    "title": [
+      "Expresar la relación, no solo el nombre",
+      "Den Zusammenhang statt nur den Namen nennen"
+    ],
+    "body": [
+      "En el examen, nennen pide nombrar; erläutern pide explicar cómo o por qué; begründen pide justificar con los requisitos del caso; berechnen pide calcular mostrando el procedimiento. Lee también la unidad, el período y los puntos. No respondas «USV» cuando te piden explicar: escribe que mantiene la alimentación durante un corte y permite un apagado ordenado antes de agotarse.\n\nDespués de entender en español, cambia a alemán y explica sin copiar. Modelo: «Zwei Netzteile ermöglichen den Weiterbetrieb beim Ausfall eines Netzteils. Jedes Netzteil muss die gesamte Last tragen können; getrennte Versorgungspfade vermeiden einen gemeinsamen Ausfall.» Significa que cada fuente debe sostener toda la carga y que dos rutas separadas evitan compartir ese punto de fallo. Nombra la medida y une causa con efecto.\n\nPara esta hora: dedica unos 30 minutos a las explicaciones y sus comprobaciones, 25 a las tareas 01, 03, 06, 09, 12 y 18, y cinco a corregir y exportar. Son orientaciones, no un límite automático. Las otras tareas quedan como práctica extra. Mañana, antes del caso integrado, intenta sin ayuda 04, 14 y 19 y vuelve a explicar por qué RAID no sustituye un backup. Si una comprobación falla, repasa esa relación antes de añadir la siguiente.",
+      "In der Prüfung fordert nennen eine Benennung; erläutern verlangt eine Erklärung von Funktion oder Zusammenhang; begründen verlangt den Bezug zu den Anforderungen des Falls; berechnen verlangt eine nachvollziehbare Rechnung. Beachte Einheit, Bezugszeitraum und Punkte. Antworte bei einer Erläuterung nicht nur „USV“: Erkläre, dass sie bei Netzausfall die Versorgung aufrechterhält und vor Batterieentladung ein geordnetes Herunterfahren ermöglicht.\n\nNach dem Verstehen auf Spanisch wechsle auf Deutsch und erkläre ohne Abschreiben. Muster: „Zwei Netzteile ermöglichen den Weiterbetrieb beim Ausfall eines Netzteils. Jedes Netzteil muss die gesamte Last tragen können; getrennte Versorgungspfade vermeiden einen gemeinsamen Ausfall.“ Benenne die Maßnahme und verknüpfe Ursache mit Wirkung.\n\nFür diese Stunde sind etwa 30 Minuten für Erklärungen und Verständnischecks, 25 Minuten für Aufgaben 01, 03, 06, 09, 12 und 18 sowie fünf Minuten für Korrektur und Export vorgesehen. Das sind Orientierungen, keine automatische Begrenzung. Die weiteren Aufgaben sind Zusatzübung. Versuche morgen vor dem integrierten Fall die Aufgaben 04, 14 und 19 ohne Hilfe und erkläre erneut, warum RAID kein Backup ersetzt. Scheitert ein Verständnischeck, wiederhole diese Beziehung, bevor du die nächste hinzunimmst."
+    ],
+    "visual": "operators",
+    "check": [
+      "Explica en alemán por qué dos fuentes en la misma regleta no cubren todos los fallos de alimentación.",
+      "Erkläre auf Deutsch, warum zwei Netzteile an derselben Steckdosenleiste nicht jeden Versorgungsausfall abdecken."
+    ],
+    "answer": [
+      "Modelo: Fällt die gemeinsame Steckdosenleiste aus, verlieren beide Netzteile die Versorgung. Getrennte Versorgungspfade reduzieren diesen gemeinsamen Ausfallpunkt. Comprueba que tu frase contiene fallo, dependencia y consecuencia.",
+      "Muster: Fällt die gemeinsame Steckdosenleiste aus, verlieren beide Netzteile die Versorgung. Getrennte Versorgungspfade reduzieren diesen gemeinsamen Ausfallpunkt. Prüfe Ausfall, Abhängigkeit und Folge."
+    ]
+  }
+];
+const TASKS=[
+  {
+    "id": 1,
+    "title": [
+      "Registro de caja",
+      "Kassenprotokoll"
+    ],
+    "case": [
+      "Una tienda revisa el servicio de caja. Toda caída dentro del período cuenta.",
+      "Ein Geschäft prüft den Kassendienst. Jeder Ausfall im Bezugszeitraum zählt."
+    ],
+    "instruction": [
+      "Calcula la disponibilidad. Muestra el procedimiento.",
+      "Berechnen Sie die Verfügbarkeit mit nachvollziehbarem Rechenweg."
+    ],
+    "headers": [
+      [
+        "Dato",
+        "Valor"
+      ],
+      [
+        "Angabe",
+        "Wert"
+      ]
+    ],
+    "rows": [
+      [
+        [
+          "Tiempo requerido",
+          "Erforderliche Zeit"
+        ],
+        "100 h"
+      ],
+      [
+        [
+          "Caída total",
+          "Gesamtausfall"
+        ],
+        "2 h"
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "Disponibilidad (%)",
+          "Verfügbarkeit (%)"
+        ],
+        "type": "number",
+        "answer": 98,
+        "points": 2,
+        "tol": 0.0001
+      },
+      {
+        "label": [
+          "Procedimiento",
+          "Rechenweg"
+        ],
+        "type": "written",
+        "model": [
+          "(100 − 2) / 100 × 100 = 98 %.",
+          "(100 − 2) / 100 × 100 = 98 %."
+        ],
+        "criteria": [
+          [
+            "La relación entre magnitudes y las operaciones son correctas.",
+            "Größenbeziehung und Rechenoperationen sind richtig."
+          ]
+        ],
+        "points": 1
+      }
+    ],
+    "ref": [
+      "Práctica propia guiada de disponibilidad: Grundstufe 03b §3.8.4; no reproduce un apartado IHK completo.",
+      "Eigene angeleitete Verfügbarkeitsübung: Grundstufe 03b §3.8.4; keine vollständige IHK-Teilaufgabe."
+    ],
+    "hint": [
+      "Resta la caída del tiempo requerido antes de dividir.",
+      "Ziehen Sie die Ausfallzeit von der erforderlichen Zeit ab, bevor Sie teilen."
+    ],
+    "visual": null,
+    "points": 3,
+    "core": true,
+    "short": [
+      "Registro de caja",
+      "Kassenprotokoll"
+    ]
+  },
+  {
+    "id": 2,
+    "title": [
+      "Horario de oficina",
+      "Bürozeiten"
+    ],
+    "case": [
+      "Una agencia solo exige su servicio durante 200 h de horario laboral al mes. Las interrupciones fuera de ese horario no cuentan.",
+      "Eine Agentur benötigt den Dienst monatlich für 200 h Bürozeit. Unterbrechungen außerhalb dieser Zeit zählen nicht."
+    ],
+    "instruction": [
+      "Calcula la disponibilidad dentro del horario exigido.",
+      "Berechnen Sie die Verfügbarkeit innerhalb der geforderten Betriebszeit."
+    ],
+    "headers": [
+      [
+        "Registro",
+        "Duración"
+      ],
+      [
+        "Protokoll",
+        "Dauer"
+      ]
+    ],
+    "rows": [
+      [
+        [
+          "Caída dentro del horario",
+          "Ausfall innerhalb der Betriebszeit"
+        ],
+        "1 h"
+      ],
+      [
+        [
+          "Caída fuera del horario",
+          "Ausfall außerhalb der Betriebszeit"
+        ],
+        "5 h"
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "Disponibilidad (%)",
+          "Verfügbarkeit (%)"
+        ],
+        "type": "number",
+        "answer": 99.5,
+        "points": 2,
+        "tol": 0.0001
+      },
+      {
+        "label": [
+          "Procedimiento",
+          "Rechenweg"
+        ],
+        "type": "written",
+        "model": [
+          "(200 − 1) / 200 × 100 = 99,5 %; las 5 h externas no cuentan.",
+          "(200 − 1) / 200 × 100 = 99,5 %; die 5 h außerhalb zählen nicht."
+        ],
+        "criteria": [
+          [
+            "La relación entre magnitudes y las operaciones son correctas.",
+            "Größenbeziehung und Rechenoperationen sind richtig."
+          ]
+        ],
+        "points": 1
+      }
+    ],
+    "ref": [
+      "Práctica propia guiada de disponibilidad: Grundstufe 03b §3.8.4; no reproduce un apartado IHK completo.",
+      "Eigene angeleitete Verfügbarkeitsübung: Grundstufe 03b §3.8.4; keine vollständige IHK-Teilaufgabe."
+    ],
+    "hint": [
+      "El denominador son las 200 h requeridas.",
+      "Der Nenner sind die 200 erforderlichen Stunden."
+    ],
+    "visual": null,
+    "points": 3,
+    "core": false,
+    "short": [
+      "Horario de oficina",
+      "Bürozeiten"
+    ]
+  },
+  {
+    "id": 3,
+    "title": [
+      "SLA anual",
+      "Jährliches SLA"
+    ],
+    "case": [
+      "Un mayorista contrata 99,9 % de disponibilidad anual para su portal. Año de 365 días, 24/7; mantenimiento incluido.",
+      "Ein Großhändler vereinbart jährlich 99,9 % Verfügbarkeit für sein Portal. 365 Tage, 24/7; Wartung zählt mit."
+    ],
+    "instruction": [
+      "Calcula el presupuesto máximo de caída en horas y minutos.",
+      "Berechnen Sie die maximal zulässige Ausfallzeit in Stunden und Minuten."
+    ],
+    "headers": [
+      [
+        "Contrato",
+        "Valor"
+      ],
+      [
+        "Vertrag",
+        "Wert"
+      ]
+    ],
+    "rows": [
+      [
+        [
+          "Disponibilidad mínima",
+          "Mindestverfügbarkeit"
+        ],
+        "99,9 %"
+      ],
+      [
+        [
+          "Período",
+          "Zeitraum"
+        ],
+        "365 × 24 h"
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "Caída máxima (h)",
+          "Maximaler Ausfall (h)"
+        ],
+        "type": "number",
+        "answer": 8.76,
+        "points": 1,
+        "tol": 0.0001
+      },
+      {
+        "label": [
+          "Caída máxima (min)",
+          "Maximaler Ausfall (min)"
+        ],
+        "type": "number",
+        "answer": 525.6,
+        "points": 1,
+        "tol": 0.0001
+      },
+      {
+        "label": [
+          "Procedimiento",
+          "Rechenweg"
+        ],
+        "type": "written",
+        "model": [
+          "365 × 24 = 8 760 h; (100 − 99,9) / 100 = 0,001; 8 760 × 0,001 = 8,76 h; × 60 = 525,6 min.",
+          "365 × 24 = 8 760 h; (100 − 99,9) / 100 = 0,001; 8 760 × 0,001 = 8,76 h; × 60 = 525,6 min."
+        ],
+        "criteria": [
+          [
+            "La relación entre magnitudes y las operaciones son correctas.",
+            "Größenbeziehung und Rechenoperationen sind richtig."
+          ]
+        ],
+        "points": 1
+      }
+    ],
+    "ref": [
+      "Práctica propia guiada de disponibilidad: Grundstufe 03b §3.8.4; no reproduce un apartado IHK completo.",
+      "Eigene angeleitete Verfügbarkeitsübung: Grundstufe 03b §3.8.4; keine vollständige IHK-Teilaufgabe."
+    ],
+    "hint": [
+      "Convierte primero el porcentaje no disponible en una fracción.",
+      "Wandeln Sie zuerst den nicht verfügbaren Prozentsatz in einen Anteil um."
+    ],
+    "visual": null,
+    "points": 3,
+    "core": true,
+    "short": [
+      "SLA anual",
+      "Jährliches SLA"
+    ]
+  },
+  {
+    "id": 4,
+    "title": [
+      "Mes de 30 días",
+      "30-Tage-Monat"
+    ],
+    "case": [
+      "Un centro logístico exige 99,95 % de disponibilidad en un mes de 30 días. Servicio 24/7; toda caída cuenta.",
+      "Ein Logistikzentrum fordert 99,95 % Verfügbarkeit in einem Monat mit 30 Tagen. 24/7; alle Ausfälle zählen."
+    ],
+    "instruction": [
+      "Calcula la caída máxima en minutos.",
+      "Berechnen Sie die maximal zulässige Ausfallzeit in Minuten."
+    ],
+    "headers": [
+      [
+        "Requisito",
+        "Valor"
+      ],
+      [
+        "Anforderung",
+        "Wert"
+      ]
+    ],
+    "rows": [
+      [
+        [
+          "Días",
+          "Tage"
+        ],
+        "30"
+      ],
+      [
+        [
+          "Disponibilidad",
+          "Verfügbarkeit"
+        ],
+        "99,95 %"
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "Caída máxima (min)",
+          "Maximaler Ausfall (min)"
+        ],
+        "type": "number",
+        "answer": 21.6,
+        "points": 2,
+        "tol": 0.0001
+      },
+      {
+        "label": [
+          "Procedimiento",
+          "Rechenweg"
+        ],
+        "type": "written",
+        "model": [
+          "30 × 24 × 60 = 43 200 min; 43 200 × 0,0005 = 21,6 min.",
+          "30 × 24 × 60 = 43 200 min; 43 200 × 0,0005 = 21,6 min."
+        ],
+        "criteria": [
+          [
+            "La relación entre magnitudes y las operaciones son correctas.",
+            "Größenbeziehung und Rechenoperationen sind richtig."
+          ]
+        ],
+        "points": 1
+      }
+    ],
+    "ref": [
+      "Práctica propia guiada de disponibilidad: Grundstufe 03b §3.8.4; no reproduce un apartado IHK completo.",
+      "Eigene angeleitete Verfügbarkeitsübung: Grundstufe 03b §3.8.4; keine vollständige IHK-Teilaufgabe."
+    ],
+    "hint": [
+      "Expresa el período completo en minutos.",
+      "Drücken Sie den gesamten Zeitraum in Minuten aus."
+    ],
+    "visual": null,
+    "points": 3,
+    "core": false,
+    "short": [
+      "Mes de 30 días",
+      "30-Tage-Monat"
+    ]
+  },
+  {
+    "id": 5,
+    "title": [
+      "Mantenimiento incluido",
+      "Wartung zählt mit"
+    ],
+    "case": [
+      "Una editorial mide 160 h requeridas en el mes. Su contrato incluye el mantenimiento como caída.",
+      "Ein Verlag misst monatlich 160 erforderliche Stunden. Geplante Wartung zählt laut Vertrag als Ausfall."
+    ],
+    "instruction": [
+      "Calcula la disponibilidad con tres decimales.",
+      "Berechnen Sie die Verfügbarkeit auf drei Nachkommastellen."
+    ],
+    "headers": [
+      [
+        "Evento",
+        "Duración"
+      ],
+      [
+        "Ereignis",
+        "Dauer"
+      ]
+    ],
+    "rows": [
+      [
+        [
+          "Mantenimiento dentro del período",
+          "Wartung im Bezugszeitraum"
+        ],
+        "2 h"
+      ],
+      [
+        [
+          "Avería dentro del período",
+          "Störung im Bezugszeitraum"
+        ],
+        "1 h"
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "Disponibilidad (%)",
+          "Verfügbarkeit (%)"
+        ],
+        "type": "number",
+        "answer": 98.125,
+        "points": 2,
+        "tol": 0.0001
+      },
+      {
+        "label": [
+          "Procedimiento",
+          "Rechenweg"
+        ],
+        "type": "written",
+        "model": [
+          "(160 − 2 − 1) / 160 × 100 = 98,125 %.",
+          "(160 − 2 − 1) / 160 × 100 = 98,125 %."
+        ],
+        "criteria": [
+          [
+            "La relación entre magnitudes y las operaciones son correctas.",
+            "Größenbeziehung und Rechenoperationen sind richtig."
+          ]
+        ],
+        "points": 1
+      }
+    ],
+    "ref": [
+      "Práctica propia guiada de disponibilidad: Grundstufe 03b §3.8.4; no reproduce un apartado IHK completo.",
+      "Eigene angeleitete Verfügbarkeitsübung: Grundstufe 03b §3.8.4; keine vollständige IHK-Teilaufgabe."
+    ],
+    "hint": [
+      "Las dos interrupciones deben entrar en la misma suma.",
+      "Beide Unterbrechungen gehen in dieselbe Summe ein."
+    ],
+    "visual": null,
+    "points": 3,
+    "core": false,
+    "short": [
+      "Mantenimiento",
+      "Wartung zählt"
+    ]
+  },
+  {
+    "id": 6,
+    "title": [
+      "Componentes duplicados",
+      "Redundante Komponenten"
+    ],
+    "case": [
+      "Una cadena comercial compra un servidor para sus cajas. El RAID ya está previsto. Debes completar otras dos medidas.",
+      "Eine Handelskette beschafft einen Kassenserver. RAID ist bereits vorgesehen. Ergänzen Sie zwei weitere Maßnahmen."
+    ],
+    "instruction": [
+      "Completa la tabla con una medida y su efecto por componente.",
+      "Ergänzen Sie je Komponente eine Maßnahme und erläutern Sie deren Wirkung."
+    ],
+    "headers": [
+      [
+        "Componente",
+        "Estado actual"
+      ],
+      [
+        "Komponente",
+        "Ist-Zustand"
+      ]
+    ],
+    "rows": [
+      [
+        [
+          "Discos",
+          "Festplatten"
+        ],
+        "RAID 1"
+      ],
+      [
+        [
+          "Alimentación",
+          "Stromversorgung"
+        ],
+        [
+          "Una fuente",
+          "Ein Netzteil"
+        ]
+      ],
+      [
+        [
+          "Red",
+          "Netzwerk"
+        ],
+        [
+          "Una NIC, un switch",
+          "Eine NIC, ein Switch"
+        ]
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "Alimentación: medida y efecto",
+          "Stromversorgung: Maßnahme und Wirkung"
+        ],
+        "type": "written",
+        "model": [
+          "Dos fuentes, cada una para la carga completa, con rutas separadas; si una fuente falla, la otra continúa.",
+          "Zwei Netzteile, jeweils für die gesamte Last, an getrennten Versorgungspfaden; bei Netzteilausfall versorgt das andere weiter."
+        ],
+        "criteria": [
+          [
+            "Propone dos fuentes capaces de sostener toda la carga.",
+            "Zwei für die volle Last ausgelegte Netzteile werden vorgeschlagen."
+          ],
+          [
+            "Explica continuidad y evita la dependencia de una alimentación compartida.",
+            "Weiterbetrieb und Vermeidung eines gemeinsamen Versorgungspfads werden erläutert."
+          ]
+        ],
+        "points": 2
+      },
+      {
+        "label": [
+          "Red: medida y efecto",
+          "Netzwerk: Maßnahme und Wirkung"
+        ],
+        "type": "written",
+        "model": [
+          "Dos interfaces con rutas a switches distintos y failover configurado; si falla una interfaz o un switch, queda otra ruta.",
+          "Zwei Netzwerkkarten mit Pfaden zu getrennten Switches und konfiguriertem Failover; bei NIC- oder Switchausfall bleibt ein Pfad."
+        ],
+        "criteria": [
+          [
+            "Propone interfaces y switches o rutas redundantes.",
+            "Redundante Schnittstellen und Switches beziehungsweise Pfade werden vorgeschlagen."
+          ],
+          [
+            "Explica la conmutación y el fallo que se puede soportar.",
+            "Failover und der abgedeckte Ausfall werden erklärt."
+          ]
+        ],
+        "points": 2
+      }
+    ],
+    "ref": [
+      "Vorübung zu KAIT Sommer 2024 · 4c. Práctica parcial; la variante completa de tres medidas explicadas está en T18 b).",
+      "Vorübung zu KAIT Sommer 2024 · 4c. Teilübung; die vollständige Variante mit drei erläuterten Maßnahmen steht in T18 b)."
+    ],
+    "hint": [
+      "Relaciona cada medida con un fallo concreto que ya no detiene el servicio.",
+      "Ordnen Sie jede Maßnahme einem konkreten abgedeckten Ausfall zu."
+    ],
+    "visual": null,
+    "points": 4,
+    "core": true,
+    "short": [
+      "Componentes",
+      "Komponenten"
+    ]
+  },
+  {
+    "id": 7,
+    "title": [
+      "Buscar puntos de fallo",
+      "Ausfallpunkte finden"
+    ],
+    "case": [
+      "Un laboratorio ha duplicado los hosts. El plano muestra toda la ruta necesaria para acceder a sus datos.",
+      "Ein Labor hat die Hosts verdoppelt. Der Plan zeigt den vollständigen für den Datenzugriff benötigten Pfad."
+    ],
+    "instruction": [
+      "Identifica dos puntos únicos de fallo y propone una mejora para cada uno.",
+      "Identifizieren Sie zwei Single Points of Failure und schlagen Sie je eine Verbesserung vor."
+    ],
+    "headers": [
+      [
+        "Equipo",
+        "Dirección"
+      ],
+      [
+        "Gerät",
+        "Adresse"
+      ]
+    ],
+    "rows": [
+      [
+        [
+          "Cliente",
+          "Client"
+        ],
+        "10.20.0.10/24"
+      ],
+      [
+        "SW1",
+        "10.20.0.2/24"
+      ],
+      [
+        "H1 / H2",
+        "10.20.0.21 / .22"
+      ],
+      [
+        "NAS1",
+        "10.20.0.30/24"
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "Primer punto y mejora",
+          "Erster Punkt und Verbesserung"
+        ],
+        "type": "written",
+        "model": [
+          "Orden libre: SW1 desconecta ambos hosts si falla; un segundo switch y rutas redundantes con conmutación mantienen el acceso. También puede ir primero NAS1: su fallo completo impide a ambos hosts acceder a los datos; almacenamiento redundante con replicación y conmutación probadas cubre ese fallo. Explica el otro punto distinto en el segundo campo.",
+          "Freie Reihenfolge: SW1 trennt bei Ausfall beide Hosts; ein zweiter Switch und redundante Pfade mit Failover erhalten den Zugriff. Auch NAS1 darf zuerst stehen: Sein vollständiger Ausfall verhindert den Datenzugriff beider Hosts; redundanter Speicher mit geprüfter Replikation und Übernahme schützt davor. Erläutern Sie den anderen, unterschiedlichen Punkt im zweiten Feld."
+        ],
+        "criteria": [
+          [
+            "Identifica SW1 o NAS1 y explica cómo su fallo afecta al acceso de ambos hosts; cualquier orden es válido.",
+            "SW1 oder NAS1 und die Auswirkung seines Ausfalls auf den Zugriff beider Hosts werden erklärt; beide Reihenfolgen sind zulässig."
+          ],
+          [
+            "Propone una mejora adecuada al punto explicado: segundo switch con rutas operativas y conmutación, o almacenamiento redundante con replicación y conmutación probadas más allá de RAID interno; acepta equivalentes.",
+            "Passende Verbesserung zum erläuterten Punkt: zweiter Switch mit betriebsfähigen Pfaden und Failover oder redundanter Speicher mit geprüfter Replikation und Übernahme über internes RAID hinaus; gleichwertige Lösungen gelten."
+          ]
+        ],
+        "points": 2
+      },
+      {
+        "label": [
+          "Segundo punto y mejora",
+          "Zweiter Punkt und Verbesserung"
+        ],
+        "type": "written",
+        "model": [
+          "Si primero explicaste SW1, aquí explica NAS1: su fallo completo impide a ambos hosts acceder a los datos; almacenamiento redundante con replicación y conmutación probadas cubre ese fallo. Si primero explicaste NAS1, aquí explica SW1: su fallo desconecta ambos hosts; segundo switch y rutas redundantes con conmutación. Deben ser dos puntos distintos, no dos formulaciones del mismo fallo.",
+          "Nach SW1 erläutern Sie hier NAS1: Sein vollständiger Ausfall verhindert den Datenzugriff beider Hosts; redundanter Speicher mit geprüfter Replikation und Übernahme schützt davor. Nach NAS1 erläutern Sie hier SW1: Sein Ausfall trennt beide Hosts; zweiter Switch und redundante Pfade mit Failover. Zwei unterschiedliche Punkte sind erforderlich, nicht zwei Formulierungen desselben Ausfalls."
+        ],
+        "criteria": [
+          [
+            "Identifica el otro punto, SW1 o NAS1, y explica su efecto sobre ambos hosts. Debe ser distinto del primero; repetir el mismo fallo no obtiene este punto.",
+            "Der andere Punkt, SW1 oder NAS1, und seine Auswirkung auf beide Hosts werden erklärt. Er muss vom ersten verschieden sein; derselbe Ausfall erneut erhält diesen Punkt nicht."
+          ],
+          [
+            "Para ese segundo punto distinto, propone segundo switch y rutas operativas con conmutación, o almacenamiento redundante con replicación y conmutación probadas más allá de RAID interno; acepta equivalentes. Repetir la mejora del mismo fallo no obtiene este punto.",
+            "Zum zweiten, unterschiedlichen Punkt wird ein zweiter Switch mit betriebsfähigen Pfaden und Failover oder redundanter Speicher mit geprüfter Replikation und Übernahme über internes RAID hinaus vorgeschlagen; gleichwertige Lösungen gelten. Die Verbesserung desselben Ausfalls erneut erhält diesen Punkt nicht."
+          ]
+        ],
+        "points": 2
+      }
+    ],
+    "ref": [
+      "Vorübung zu KAIT Sommer 2024 · 4c. Práctica parcial; la variante completa de tres medidas explicadas está en T18 b).",
+      "Vorübung zu KAIT Sommer 2024 · 4c. Teilübung; die vollständige Variante mit drei erläuterten Maßnahmen steht in T18 b)."
+    ],
+    "hint": [
+      "Sigue las rutas: ¿qué pieza comparten los dos hosts?",
+      "Verfolgen Sie die Pfade: Welche Komponenten benötigen beide Hosts?"
+    ],
+    "visual": "spof",
+    "points": 4,
+    "core": false,
+    "short": [
+      "Puntos de fallo",
+      "Ausfallpunkte"
+    ]
+  },
+  {
+    "id": 8,
+    "title": [
+      "Capacidad tras una avería",
+      "Kapazität nach Ausfall"
+    ],
+    "case": [
+      "Una consultora quiere proteger todas sus máquinas virtuales contra la avería de un host. CPU, red y almacenamiento son suficientes.",
+      "Eine Beratung will alle VMs gegen einen Hostausfall schützen. CPU, Netzwerk und Speicher sind ausreichend."
+    ],
+    "instruction": [
+      "Calcula el déficit, decide si protege toda la carga y propone una corrección. Indica el procedimiento.",
+      "Berechnen Sie den Fehlbetrag, beurteilen Sie den Schutz der gesamten Last und schlagen Sie eine Korrektur vor. Der Rechenweg ist anzugeben."
+    ],
+    "headers": [
+      [
+        "Elemento",
+        "RAM utilizable"
+      ],
+      [
+        "Element",
+        "Nutzbarer RAM"
+      ]
+    ],
+    "rows": [
+      [
+        [
+          "Host 1",
+          "Host 1"
+        ],
+        "96 GiB"
+      ],
+      [
+        [
+          "Host 2",
+          "Host 2"
+        ],
+        "96 GiB"
+      ],
+      [
+        [
+          "Todas las VMs",
+          "Alle VMs"
+        ],
+        "120 GiB"
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "Déficit de memoria (GiB)",
+          "RAM-Fehlbetrag (GiB)"
+        ],
+        "type": "number",
+        "answer": 24,
+        "points": 1,
+        "tol": 0.0001
+      },
+      {
+        "label": [
+          "Decisión y procedimiento",
+          "Entscheidung und Rechenweg"
+        ],
+        "type": "written",
+        "model": [
+          "No: solo quedan 96 GiB, pero hacen falta 120 GiB; faltan 120 − 96 = 24 GiB. Aumentar capacidad superviviente o reducir la carga protegida.",
+          "Nein: Es verbleiben 96 GiB für 120 GiB Bedarf. 120 − 96 = 24 GiB fehlen. Verbleibende Kapazität erhöhen oder geschützte Last reduzieren."
+        ],
+        "criteria": [
+          [
+            "Compara 120 GiB con los 96 GiB supervivientes.",
+            "120 GiB Bedarf werden mit 96 GiB verbleibender Kapazität verglichen."
+          ],
+          [
+            "Rechaza la protección completa y propone una corrección coherente.",
+            "Vollständiger Schutz wird verneint und eine passende Korrektur vorgeschlagen."
+          ]
+        ],
+        "points": 2
+      }
+    ],
+    "ref": [
+      "Vorübung zu KAIT Sommer 2024 · 4c. Práctica parcial; la variante completa de tres medidas explicadas está en T18 b).",
+      "Vorübung zu KAIT Sommer 2024 · 4c. Teilübung; die vollständige Variante mit drei erläuterten Maßnahmen steht in T18 b)."
+    ],
+    "hint": [
+      "No sumes el host que ya está averiado.",
+      "Der ausgefallene Host darf nicht mitgerechnet werden."
+    ],
+    "visual": null,
+    "points": 3,
+    "core": false,
+    "short": [
+      "Capacidad restante",
+      "Restkapazität"
+    ]
+  },
+  {
+    "id": 9,
+    "title": [
+      "Clases de USV",
+      "USV-Klassen"
+    ],
+    "case": [
+      "Un distribuidor revisa las fichas de sus USV. Completa abreviatura y significado para cada tipo.",
+      "Ein Händler prüft die USV-Datenblätter. Ergänzen Sie Abkürzung und ausgeschriebene Bedeutung je Typ."
+    ],
+    "instruction": [
+      "Completa las casillas como en una tabla de asignación.",
+      "Füllen Sie die Felder der Zuordnungstabelle aus."
+    ],
+    "headers": [
+      [
+        "Tipo",
+        "Uso de la empresa"
+      ],
+      [
+        "Typ",
+        "Einsatz im Betrieb"
+      ]
+    ],
+    "rows": [
+      [
+        [
+          "Online",
+          "Online"
+        ],
+        [
+          "Rack crítico",
+          "Kritisches Rack"
+        ]
+      ],
+      [
+        [
+          "Offline",
+          "Offline"
+        ],
+        [
+          "Puesto sencillo",
+          "Einfacher Arbeitsplatz"
+        ]
+      ],
+      [
+        [
+          "Line-interactive",
+          "Line-Interactive"
+        ],
+        [
+          "Pequeña red",
+          "Kleines Netzwerk"
+        ]
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "Online: clase",
+          "Online: Klasse"
+        ],
+        "type": "written",
+        "model": [
+          "VFI",
+          "VFI"
+        ],
+        "criteria": [
+          [
+            "Identifica correctamente la clase o el tipo sin lista de respuesta.",
+            "Klasse beziehungsweise Typ wird ohne Antwortauswahl richtig zugeordnet."
+          ]
+        ],
+        "points": 1
+      },
+      {
+        "label": [
+          "Online: significado",
+          "Online: Bedeutung"
+        ],
+        "type": "written",
+        "model": [
+          "Voltage and Frequency Independent: tensión y frecuencia independientes de la red.",
+          "Voltage and Frequency Independent: Spannung und Frequenz unabhängig vom Netz."
+        ],
+        "criteria": [
+          [
+            "Expande VFI correctamente; se acepta una explicación equivalente.",
+            "VFI wird korrekt ausgeschrieben; eine gleichwertige Erklärung ist zulässig."
+          ]
+        ],
+        "points": 1
+      },
+      {
+        "label": [
+          "Offline: clase",
+          "Offline: Klasse"
+        ],
+        "type": "written",
+        "model": [
+          "VFD",
+          "VFD"
+        ],
+        "criteria": [
+          [
+            "Identifica correctamente la clase o el tipo sin lista de respuesta.",
+            "Klasse beziehungsweise Typ wird ohne Antwortauswahl richtig zugeordnet."
+          ]
+        ],
+        "points": 1
+      },
+      {
+        "label": [
+          "Offline: significado",
+          "Offline: Bedeutung"
+        ],
+        "type": "written",
+        "model": [
+          "Voltage and Frequency Dependent: tensión y frecuencia dependientes de la red.",
+          "Voltage and Frequency Dependent: Spannung und Frequenz abhängig vom Netz."
+        ],
+        "criteria": [
+          [
+            "Expande VFD correctamente o explica la misma dependencia.",
+            "VFD wird korrekt ausgeschrieben oder die gleiche Abhängigkeit erklärt."
+          ]
+        ],
+        "points": 1
+      },
+      {
+        "label": [
+          "Line-interactive: clase",
+          "Line-Interactive: Klasse"
+        ],
+        "type": "written",
+        "model": [
+          "VI",
+          "VI"
+        ],
+        "criteria": [
+          [
+            "Identifica correctamente la clase o el tipo sin lista de respuesta.",
+            "Klasse beziehungsweise Typ wird ohne Antwortauswahl richtig zugeordnet."
+          ]
+        ],
+        "points": 1
+      },
+      {
+        "label": [
+          "Line-interactive: significado",
+          "Line-Interactive: Bedeutung"
+        ],
+        "type": "written",
+        "model": [
+          "Voltage Independent: tensión regulada, frecuencia dependiente de la red.",
+          "Voltage Independent: geregelte Spannung, Frequenz netzabhängig."
+        ],
+        "criteria": [
+          [
+            "Expande VI correctamente o explica su regulación de tensión.",
+            "VI wird korrekt ausgeschrieben oder seine Spannungsregelung erläutert."
+          ]
+        ],
+        "points": 1
+      }
+    ],
+    "ref": [
+      "Tema relacionado con KAIT Sommer 2023 · 2ab, pregunta local anotada, PDF p. 4. Modelo del taller propio; solución oficial original local cotejada, PDF p. 3. La pregunta sigue siendo una copia anotada. No se afirma equivalencia oficial.",
+      "Themenbezug zu KAIT Sommer 2023 · 2ab, lokal annotierte Frage, PDF S. 4. Eigene Musterlösung; lokale offizielle Originallösung abgeglichen, PDF S. 3. Die Frage bleibt eine annotierte Kopie. Keine Behauptung offizieller Gleichwertigkeit."
+    ],
+    "hint": [
+      "Independent = independiente; dependent = dependiente.",
+      "Independent = unabhängig; dependent = abhängig."
+    ],
+    "visual": null,
+    "points": 6,
+    "core": true,
+    "short": [
+      "Clases de USV",
+      "USV-Klassen"
+    ],
+    "layout": "ups-table"
+  },
+  {
+    "id": 10,
+    "title": [
+      "Leer esquemas de USV",
+      "USV-Schaltungen lesen"
+    ],
+    "case": [
+      "Un centro de datos recibe dos esquemas simplificados. Las flechas continuas muestran el camino de alimentación normal; las discontinuas, la batería.",
+      "Ein Rechenzentrum erhält zwei vereinfachte Schaltungen. Durchgezogene Pfeile zeigen den normalen Versorgungspfad, gestrichelte den Batteriepfad."
+    ],
+    "instruction": [
+      "Asigna cada esquema a un tipo y explica la diferencia decisiva.",
+      "Ordnen Sie jeder Schaltung einen Typ zu und erläutern Sie den entscheidenden Unterschied."
+    ],
+    "headers": [
+      [
+        "Material",
+        "Nota"
+      ],
+      [
+        "Material",
+        "Hinweis"
+      ]
+    ],
+    "rows": [
+      [
+        [
+          "Esquemas A y B",
+          "Schaltungen A und B"
+        ],
+        [
+          "Bypass omitido para leer el camino normal",
+          "Bypass zur Lesbarkeit des Normalpfads weggelassen"
+        ]
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "Esquema A",
+          "Schaltung A"
+        ],
+        "type": "written",
+        "model": [
+          "Online",
+          "Online"
+        ],
+        "criteria": [
+          [
+            "Identifica correctamente la clase o el tipo sin lista de respuesta.",
+            "Klasse beziehungsweise Typ wird ohne Antwortauswahl richtig zugeordnet."
+          ]
+        ],
+        "points": 1
+      },
+      {
+        "label": [
+          "Esquema B",
+          "Schaltung B"
+        ],
+        "type": "written",
+        "model": [
+          "Offline",
+          "Offline"
+        ],
+        "criteria": [
+          [
+            "Identifica correctamente la clase o el tipo sin lista de respuesta.",
+            "Klasse beziehungsweise Typ wird ohne Antwortauswahl richtig zugeordnet."
+          ]
+        ],
+        "points": 1
+      },
+      {
+        "label": [
+          "Diferencia del camino normal",
+          "Unterschied des Normalpfads"
+        ],
+        "type": "written",
+        "model": [
+          "A alimenta siempre por rectificador e inversor; B normalmente alimenta desde la red y conmuta al inversor de batería durante un corte.",
+          "A versorgt ständig über Gleichrichter und Wechselrichter. B versorgt normalerweise direkt vom Netz und schaltet bei Netzausfall zum Batterie-Wechselrichter."
+        ],
+        "criteria": [
+          [
+            "Reconoce la doble conversión permanente de A.",
+            "Die dauernde Doppelwandlung von A wird erkannt."
+          ],
+          [
+            "Explica el camino directo y la conmutación de B.",
+            "Direkter Netzpfad und Umschaltung bei B werden erläutert."
+          ]
+        ],
+        "points": 2
+      }
+    ],
+    "ref": [
+      "Tema relacionado con KAIT Sommer 2023 · 2aa, pregunta local anotada, PDF p. 4. Modelo del taller propio; solución oficial original local cotejada, PDF p. 3. La pregunta sigue siendo una copia anotada. No se afirma equivalencia oficial.",
+      "Themenbezug zu KAIT Sommer 2023 · 2aa, lokal annotierte Frage, PDF S. 4. Eigene Musterlösung; lokale offizielle Originallösung abgeglichen, PDF S. 3. Die Frage bleibt eine annotierte Kopie. Keine Behauptung offizieller Gleichwertigkeit."
+    ],
+    "hint": [
+      "Observa si el inversor está en el camino normal de la carga.",
+      "Prüfen Sie, ob der Wechselrichter im normalen Lastpfad liegt."
+    ],
+    "visual": "circuits",
+    "points": 4,
+    "core": false,
+    "short": [
+      "Esquemas USV",
+      "USV-Schaltungen"
+    ]
+  },
+  {
+    "id": 11,
+    "title": [
+      "Comparar VI y VFD",
+      "VI und VFD vergleichen"
+    ],
+    "case": [
+      "Una imprenta tiene fluctuaciones frecuentes de tensión. Hoy usa una USV offline sencilla; estudia cambiar a line-interactive con AVR.",
+      "Eine Druckerei hat häufige Spannungsschwankungen. Eine einfache Offline-USV soll eventuell durch Line-Interactive mit AVR ersetzt werden."
+    ],
+    "instruction": [
+      "a) Explica dos ventajas de VI frente a offline para la imprenta (2 puntos). b) Explica dos desventajas basadas en los datos (2 puntos).",
+      "a) Erläutern Sie zwei Vorteile von VI gegenüber Offline für die Druckerei (2 Punkte). b) Erläutern Sie zwei anhand der Angaben begründete Nachteile (2 Punkte)."
+    ],
+    "headers": [
+      [
+        "Comparación",
+        "Características dadas"
+      ],
+      [
+        "Vergleich",
+        "Vorgegebene Eigenschaften"
+      ]
+    ],
+    "rows": [
+      [
+        [
+          "Offline actual",
+          "Aktuelle Offline-USV"
+        ],
+        [
+          "Sin regulación AVR; menor coste y complejidad",
+          "Ohne AVR; geringere Kosten und Komplexität"
+        ]
+      ],
+      [
+        [
+          "VI propuesta",
+          "Vorgeschlagene VI"
+        ],
+        [
+          "AVR; mayor coste y complejidad",
+          "AVR; höhere Kosten und Komplexität"
+        ]
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "a) Ventajas",
+          "a) Vorteile"
+        ],
+        "type": "written",
+        "model": [
+          "AVR corrige fluctuaciones sin batería; así evita descargas por esas fluctuaciones y reduce ciclos de batería.",
+          "AVR regelt Spannungsschwankungen ohne Batterieeinsatz; dadurch werden entsprechende Entladungen und Batteriezyklen vermieden."
+        ],
+        "criteria": [
+          [
+            "Explica la regulación de tensión sin batería.",
+            "Spannungsregelung ohne Batterieeinsatz wird erläutert."
+          ],
+          [
+            "Explica la reducción de descargas o ciclos por esas fluctuaciones.",
+            "Weniger Entladungen oder Batteriezyklen wegen dieser Schwankungen werden erläutert."
+          ]
+        ],
+        "points": 2
+      },
+      {
+        "label": [
+          "b) Desventajas",
+          "b) Nachteile"
+        ],
+        "type": "written",
+        "model": [
+          "El mayor precio de compra exige a la imprenta una inversión inicial más alta que el modelo offline sencillo. La mayor complejidad técnica añade componentes y funciones que deben mantenerse y diagnosticarse, aumentando el esfuerzo de mantenimiento y búsqueda de fallos. No se puede deducir una conmutación más larga sin datos del fabricante.",
+          "Der höhere Anschaffungspreis verlangt von der Druckerei eine höhere Anfangsinvestition als das einfache Offline-Modell. Die höhere technische Komplexität fügt Komponenten und Funktionen hinzu, die gewartet und diagnostiziert werden müssen; Wartung und Fehlersuche werden aufwendiger. Eine längere Umschaltzeit lässt sich ohne Herstellerdaten nicht ableiten."
+        ],
+        "criteria": [
+          [
+            "Explica una desventaja con característica y consecuencia: mayor precio de compra → mayor inversión inicial de la imprenta; acepta otra desventaja justificada con los datos. Nombrarla sin consecuencia no basta.",
+            "Ein Nachteil wird mit Eigenschaft und Folge erläutert: höherer Anschaffungspreis → höhere Anfangsinvestition der Druckerei; andere anhand der Angaben begründete Nachteile gelten. Nur Nennen genügt nicht."
+          ],
+          [
+            "Explica otra desventaja distinta con característica y consecuencia: mayor complejidad → más componentes o funciones que mantener y diagnosticar, con mayor esfuerzo. Acepta equivalentes justificados con los datos; nombrar o repetir la primera no basta.",
+            "Ein zweiter, unterschiedlicher Nachteil wird mit Eigenschaft und Folge erläutert: höhere Komplexität → mehr zu wartende und zu diagnostizierende Komponenten oder Funktionen, dadurch höherer Aufwand. Gleichwertige anhand der Angaben begründete Antworten gelten; bloßes Nennen oder Wiederholen genügt nicht."
+          ]
+        ],
+        "points": 2
+      }
+    ],
+    "ref": [
+      "Tema relacionado con KAIT Sommer 2023 · 2ac, pregunta local anotada, PDF p. 4. Modelo del taller propio; solución oficial original local cotejada, PDF p. 3. La pregunta sigue siendo una copia anotada. No se afirma equivalencia oficial.",
+      "Themenbezug zu KAIT Sommer 2023 · 2ac, lokal annotierte Frage, PDF S. 4. Eigene Musterlösung; lokale offizielle Originallösung abgeglichen, PDF S. 3. Die Frage bleibt eine annotierte Kopie. Keine Behauptung offizieller Gleichwertigkeit."
+    ],
+    "hint": [
+      "Relaciona la mejora con las fluctuaciones, y los costes con la compra y operación.",
+      "Beziehen Sie die Verbesserung auf Schwankungen und die Nachteile auf Beschaffung und Betrieb."
+    ],
+    "visual": null,
+    "points": 4,
+    "core": false,
+    "short": [
+      "VI frente a VFD",
+      "VI gegen VFD"
+    ]
+  },
+  {
+    "id": 12,
+    "title": [
+      "Elegir una USV",
+      "Eine USV auswählen"
+    ],
+    "case": [
+      "Una oficina protege dos servidores de 220 W, un NAS de 40 W y un switch de 20 W. Todas las cargas tienen FP 0,8. Se exige 25 % de reserva sobre W y VA y al menos 10 min a la carga actual.",
+      "Ein Büro schützt zwei Server mit je 220 W, ein NAS mit 40 W und einen Switch mit 20 W. Alle Lasten haben FP 0,8. Gefordert sind 25 % Zuschlag auf W und VA sowie mindestens 10 min bei aktueller Last."
+    ],
+    "instruction": [
+      "a) Calcula W y VA actuales (2 puntos). b) Calcula W y VA mínimos con 25 % de margen (2 puntos). c) Indica y justifica la oferta que cumple las tres condiciones (2 puntos). Muestra el procedimiento de cada cálculo.",
+      "a) Berechnen Sie aktuelle W und VA (2 Punkte). b) Berechnen Sie die Mindestkapazitäten mit 25 % Zuschlag (2 Punkte). c) Geben Sie das geeignete Angebot an und begründen Sie die Erfüllung aller drei Bedingungen (2 Punkte). Der Rechenweg ist anzugeben."
+    ],
+    "headers": [
+      [
+        "Oferta",
+        "W / VA",
+        "Autonomía a 500 W"
+      ],
+      [
+        "Angebot",
+        "W / VA",
+        "Laufzeit bei 500 W"
+      ]
+    ],
+    "rows": [
+      [
+        "A",
+        "600 / 1 000",
+        "15 min"
+      ],
+      [
+        "B",
+        "675 / 750",
+        "15 min"
+      ],
+      [
+        "C",
+        "900 / 1 000",
+        "12 min"
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "a) Calcula la carga activa y aparente.",
+          "a) Berechnen Sie Wirk- und Scheinlast."
+        ],
+        "type": "written",
+        "model": [
+          "220 + 220 + 40 + 20 = 500 W; S = 500 / 0,8 = 625 VA.",
+          "220 + 220 + 40 + 20 = 500 W; S = 500 / 0,8 = 625 VA."
+        ],
+        "criteria": [
+          [
+            "Suma la carga real: 500 W.",
+            "Die reale Last wird zu 500 W addiert."
+          ],
+          [
+            "Usa S = P / FP, resultado 625 VA con unidad.",
+            "S = P / FP wird verwendet; Ergebnis 625 VA mit Einheit."
+          ]
+        ],
+        "points": 2
+      },
+      {
+        "label": [
+          "b) Calcula ambas capacidades mínimas con margen.",
+          "b) Berechnen Sie beide Mindestkapazitäten mit Reserve."
+        ],
+        "type": "written",
+        "model": [
+          "500 × 1,25 = 625 W; 625 × 1,25 = 781,25 VA.",
+          "500 × 1,25 = 625 W; 625 × 1,25 = 781,25 VA."
+        ],
+        "criteria": [
+          [
+            "Aplica 25 % sobre W: 625 W.",
+            "25 % Zuschlag auf W ergibt 625 W."
+          ],
+          [
+            "Aplica 25 % sobre VA: 781,25 VA.",
+            "25 % Zuschlag auf VA ergibt 781,25 VA."
+          ]
+        ],
+        "points": 2
+      },
+      {
+        "label": [
+          "c) Indica la oferta y justifica cada descarte y la autonomía.",
+          "c) Geben Sie das Angebot an und begründen Sie Ausschlüsse und Laufzeit."
+        ],
+        "type": "written",
+        "model": [
+          "C: 900 ≥ 625 W y 1 000 ≥ 781,25 VA. A falla por 600 W; B por 750 VA. Los 12 min a 500 W superan 10 min; el margen de potencia no calcula autonomía.",
+          "C: 900 ≥ 625 W und 1 000 ≥ 781,25 VA. A scheitert an 600 W, B an 750 VA. 12 min bei 500 W übertreffen 10 min; Leistungsreserve berechnet keine Laufzeit."
+        ],
+        "criteria": [
+          [
+            "Elige C y descarta A por W y B por VA.",
+            "C wird gewählt; A wegen W und B wegen VA ausgeschlossen."
+          ],
+          [
+            "Comprueba 12 ≥ 10 min a la carga actual.",
+            "12 ≥ 10 min bei aktueller Last werden geprüft."
+          ]
+        ],
+        "points": 2
+      }
+    ],
+    "ref": [
+      "Práctica técnica propia de dimensionamiento y autonomía: Grundstufe 03b §3.9.1, pp. 375 y 382–384; Fachstufe 04b §4.3.5, pp. 357–358. No reproduce el formato ni alcance de KAIT Sommer 2023 · 2a.",
+      "Eigene technische Übung zu Auslegung und Laufzeit: Grundstufe 03b §3.9.1, S. 375 und 382–384; Fachstufe 04b §4.3.5, S. 357–358. Kein Format- oder Umfangsäquivalent zu KAIT Sommer 2023 · 2a."
+    ],
+    "hint": [
+      "Comprueba W, VA y minutos por separado. La reserva se refiere a la carga, no a la capacidad nominal.",
+      "Prüfen Sie W, VA und Minuten getrennt. Der Zuschlag bezieht sich auf die Last, nicht auf die Nennkapazität."
+    ],
+    "visual": null,
+    "points": 6,
+    "core": true,
+    "short": [
+      "Elegir USV",
+      "USV auswählen"
+    ]
+  },
+  {
+    "id": 13,
+    "title": [
+      "Como máximo 80 %",
+      "Höchstens 80 %"
+    ],
+    "case": [
+      "Una oficina técnica necesita 480 W. FP 0,8. La USV no debe superar el 80 % de utilización ni en W ni en VA. Todas las ofertas duran más de lo requerido.",
+      "Ein technisches Büro braucht 480 W bei FP 0,8. Die USV darf weder bei W noch bei VA über 80 % ausgelastet sein. Alle Angebote erfüllen die Laufzeit."
+    ],
+    "instruction": [
+      "a) Calcula los W nominales mínimos (2 puntos). b) Calcula los VA nominales mínimos (2 puntos). c) Indica la oferta y justifica la elección frente a las otras dos (2 puntos). Muestra el procedimiento.",
+      "a) Berechnen Sie die minimale W-Nennkapazität (2 Punkte). b) Berechnen Sie die minimale VA-Nennkapazität (2 Punkte). c) Geben Sie das Angebot an und begründen Sie die Auswahl gegenüber den beiden anderen (2 Punkte). Der Rechenweg ist anzugeben."
+    ],
+    "headers": [
+      [
+        "Equipo",
+        "Capacidad nominal"
+      ],
+      [
+        "Gerät",
+        "Nennkapazität"
+      ]
+    ],
+    "rows": [
+      [
+        "A",
+        "576 W / 800 VA"
+      ],
+      [
+        "B",
+        "600 W / 800 VA"
+      ],
+      [
+        "C",
+        "600 W / 700 VA"
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "a) Calcula la capacidad mínima en W.",
+          "a) Berechnen Sie die minimale W-Kapazität."
+        ],
+        "type": "written",
+        "model": [
+          "480 / 0,8 = 600 W; el 80 % de 600 W son 480 W.",
+          "480 / 0,8 = 600 W; 80 % von 600 W sind 480 W."
+        ],
+        "criteria": [
+          [
+            "Divide entre la utilización máxima, no suma 20 %.",
+            "Es wird durch die maximale Auslastung geteilt, nicht 20 % addiert."
+          ],
+          [
+            "Obtiene 600 W y comprueba su 80 %.",
+            "600 W werden ermittelt und mit 80 % geprüft."
+          ]
+        ],
+        "points": 2
+      },
+      {
+        "label": [
+          "b) Calcula la capacidad mínima en VA.",
+          "b) Berechnen Sie die minimale VA-Kapazität."
+        ],
+        "type": "written",
+        "model": [
+          "S = 480 / FP 0,8 = 600 VA; capacidad nominal = 600 / utilización 0,8 = 750 VA.",
+          "S = 480 / FP 0,8 = 600 VA; Nennkapazität = 600 / Auslastung 0,8 = 750 VA."
+        ],
+        "criteria": [
+          [
+            "Convierte W a VA usando FP: 600 VA.",
+            "W werden mit FP in 600 VA umgerechnet."
+          ],
+          [
+            "Divide aparte entre utilización: 750 VA.",
+            "Gesonderte Division durch Auslastung ergibt 750 VA."
+          ]
+        ],
+        "points": 2
+      },
+      {
+        "label": [
+          "c) Indica y justifica la oferta.",
+          "c) Geben Sie das Angebot an und begründen Sie es."
+        ],
+        "type": "written",
+        "model": [
+          "B cumple 600 W y 800 ≥ 750 VA. A falla por 576 < 600 W; C por 700 < 750 VA. La autonomía está dada como suficiente en las tres ofertas.",
+          "B erfüllt 600 W und 800 ≥ 750 VA. A scheitert an 576 < 600 W; C an 700 < 750 VA. Die Laufzeit ist für alle Angebote als ausreichend vorgegeben."
+        ],
+        "criteria": [
+          [
+            "Elige B con las dos capacidades.",
+            "B wird anhand beider Kapazitäten gewählt."
+          ],
+          [
+            "Justifica los descartes por W y VA.",
+            "Ausschlüsse werden mit W beziehungsweise VA begründet."
+          ]
+        ],
+        "points": 2
+      }
+    ],
+    "ref": [
+      "Práctica técnica propia de dimensionamiento y autonomía: Grundstufe 03b §3.9.1, pp. 375 y 382–384; Fachstufe 04b §4.3.5, pp. 357–358. No reproduce el formato ni alcance de KAIT Sommer 2023 · 2a.",
+      "Eigene technische Übung zu Auslegung und Laufzeit: Grundstufe 03b §3.9.1, S. 375 und 382–384; Fachstufe 04b §4.3.5, S. 357–358. Kein Format- oder Umfangsäquivalent zu KAIT Sommer 2023 · 2a."
+    ],
+    "hint": [
+      "El 80 % aparece con dos significados distintos: factor de potencia y utilización. Haz ambas comprobaciones.",
+      "0,8 tritt als Leistungsfaktor und als Auslastungsgrenze auf. Prüfen Sie beide Beziehungen."
+    ],
+    "visual": null,
+    "points": 6,
+    "core": false,
+    "short": [
+      "Máximo 80 %",
+      "Höchstens 80 %"
+    ]
+  },
+  {
+    "id": 14,
+    "title": [
+      "Autonomía calculada",
+      "Laufzeit berechnen"
+    ],
+    "case": [
+      "Una empresa de servicios quiere estimar si su USV permite terminar operaciones pendientes. Su batería nominal es de 24 V y 9 Ah y la carga constante del ensayo es 306 W. El modelo idealizado fija un rendimiento global de descarga e inversor del 85 %.",
+      "Ein Dienstleister will abschätzen, ob seine USV laufende Vorgänge abschließen lässt. Die Batterie hat nominell 24 V und 9 Ah; die konstante Testlast beträgt 306 W. Das idealisierte Modell setzt 85 % Gesamtwirkungsgrad für Entladung und Wechselrichter voraus."
+    ],
+    "instruction": [
+      "a) Calcula la energía nominal (2 puntos). b) Calcula la energía útil (2 puntos). c) Calcula la autonomía en minutos y explica qué falta para confirmar el tiempo real (3 puntos). Muestra el procedimiento.",
+      "a) Berechnen Sie die Nennenergie (2 Punkte). b) Berechnen Sie die nutzbare Energie (2 Punkte). c) Berechnen Sie die Laufzeit in Minuten und erläutern Sie den erforderlichen Praxisnachweis (3 Punkte). Der Rechenweg ist anzugeben."
+    ],
+    "headers": [
+      [
+        "Magnitud",
+        "Valor"
+      ],
+      [
+        "Größe",
+        "Wert"
+      ]
+    ],
+    "rows": [
+      [
+        [
+          "Batería",
+          "Batterie"
+        ],
+        "24 V / 9 Ah"
+      ],
+      [
+        [
+          "Rendimiento",
+          "Wirkungsgrad"
+        ],
+        "85 %"
+      ],
+      [
+        [
+          "Carga",
+          "Last"
+        ],
+        "306 W"
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "a) Energía nominal: desarrollo y resultado.",
+          "a) Nennenergie: Rechenweg und Ergebnis."
+        ],
+        "type": "written",
+        "model": [
+          "24 V × 9 Ah = 216 Wh.",
+          "24 V × 9 Ah = 216 Wh."
+        ],
+        "criteria": [
+          [
+            "Multiplica tensión por capacidad de carga.",
+            "Spannung mal Ladungskapazität wird verwendet."
+          ],
+          [
+            "Obtiene 216 Wh con unidad de energía.",
+            "216 Wh mit Energieeinheit werden ermittelt."
+          ]
+        ],
+        "points": 2
+      },
+      {
+        "label": [
+          "b) Energía útil: desarrollo y resultado.",
+          "b) Nutzbare Energie: Rechenweg und Ergebnis."
+        ],
+        "type": "written",
+        "model": [
+          "216 Wh × 0,85 = 183,6 Wh útiles.",
+          "216 Wh × 0,85 = 183,6 Wh nutzbar."
+        ],
+        "criteria": [
+          [
+            "Aplica rendimiento dado una vez.",
+            "Der vorgegebene Wirkungsgrad wird einmal angewendet."
+          ],
+          [
+            "Obtiene 183,6 Wh útiles.",
+            "183,6 Wh nutzbar werden ermittelt."
+          ]
+        ],
+        "points": 2
+      },
+      {
+        "label": [
+          "c) Autonomía y límite práctico.",
+          "c) Laufzeit und praktische Grenze."
+        ],
+        "type": "written",
+        "model": [
+          "183,6 Wh / 306 W = 0,6 h; × 60 = 36 min. Solo modelo idealizado; en la instalación se comprueba tabla del fabricante a 306 W y estado de batería.",
+          "183,6 Wh / 306 W = 0,6 h; × 60 = 36 min. Nur idealisiertes Modell; praktisch Herstellertabelle bei 306 W und Batteriezustand prüfen."
+        ],
+        "criteria": [
+          [
+            "Divide energía útil entre carga real.",
+            "Nutzbare Energie wird durch reale Last geteilt."
+          ],
+          [
+            "Convierte 0,6 h a 36 min.",
+            "0,6 h werden in 36 min umgerechnet."
+          ],
+          [
+            "No garantiza autonomía real; exige curva/tabla a la carga.",
+            "Keine reale Laufzeitgarantie; Kennlinie/Tabelle bei der Last wird gefordert."
+          ]
+        ],
+        "points": 3
+      }
+    ],
+    "ref": [
+      "Práctica técnica propia de dimensionamiento y autonomía: Grundstufe 03b §3.9.1, pp. 375 y 382–384; Fachstufe 04b §4.3.5, pp. 357–358. No reproduce el formato ni alcance de KAIT Sommer 2023 · 2a.",
+      "Eigene technische Übung zu Auslegung und Laufzeit: Grundstufe 03b §3.9.1, S. 375 und 382–384; Fachstufe 04b §4.3.5, S. 357–358. Kein Format- oder Umfangsäquivalent zu KAIT Sommer 2023 · 2a."
+    ],
+    "hint": [
+      "Wh dividido entre W da horas.",
+      "Wh geteilt durch W ergibt Stunden."
+    ],
+    "visual": null,
+    "points": 7,
+    "core": false,
+    "short": [
+      "Autonomía",
+      "Laufzeit"
+    ]
+  },
+  {
+    "id": 15,
+    "title": [
+      "Baterías en serie",
+      "Batterien in Reihe"
+    ],
+    "case": [
+      "Un estudio de ingeniería necesita estimar el tiempo de respaldo de sus equipos. El bloque está formado por cuatro baterías iguales de 12 V y 7 Ah conectadas en serie. La carga constante es 448 W; el modelo idealizado supone baterías cargadas y un rendimiento global de descarga e inversor del 80 %.",
+      "Ein Ingenieurbüro will die Überbrückungszeit seiner Geräte abschätzen. Der Block besteht aus vier gleichen, in Reihe geschalteten Batterien mit je 12 V und 7 Ah. Die konstante Last beträgt 448 W; das idealisierte Modell setzt geladene Batterien und 80 % Gesamtwirkungsgrad für Entladung und Wechselrichter voraus."
+    ],
+    "instruction": [
+      "a) Explica la tensión total y la capacidad en Ah del bloque (3 puntos). b) Calcula energía nominal (2 puntos). c) Calcula autonomía idealizada (2 puntos). Muestra el procedimiento de cada cálculo.",
+      "a) Erläutern Sie Gesamtspannung und Ah-Kapazität des Blocks (3 Punkte). b) Berechnen Sie die Nennenergie (2 Punkte). c) Berechnen Sie die idealisierte Laufzeit (2 Punkte). Der Rechenweg ist anzugeben."
+    ],
+    "headers": [
+      [
+        "Dato",
+        "Valor"
+      ],
+      [
+        "Angabe",
+        "Wert"
+      ]
+    ],
+    "rows": [
+      [
+        [
+          "Cada batería",
+          "Je Batterie"
+        ],
+        "12 V / 7 Ah"
+      ],
+      [
+        [
+          "Número en serie",
+          "Anzahl in Reihe"
+        ],
+        "4"
+      ],
+      [
+        [
+          "Carga",
+          "Last"
+        ],
+        "448 W"
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "a) Explica tensión y Ah del bloque.",
+          "a) Erläutern Sie Spannung und Ah des Blocks."
+        ],
+        "type": "written",
+        "model": [
+          "El mismo flujo de corriente pasa por las cuatro baterías. Se suman 4 × 12 = 48 V; cada batería entrega la misma carga, de modo que permanecen 7 Ah.",
+          "Derselbe Strom fließt durch alle vier Batterien. 4 × 12 = 48 V addieren sich; jede gibt dieselbe Ladung ab, deshalb bleiben 7 Ah."
+        ],
+        "criteria": [
+          [
+            "Explica que la corriente es igual por cada elemento.",
+            "Gleicher Strom durch jedes Element wird erklärt."
+          ],
+          [
+            "Suma tensiones a 48 V.",
+            "Spannungen werden zu 48 V addiert."
+          ],
+          [
+            "Conserva 7 Ah y explica por qué no se suman.",
+            "7 Ah bleiben; Nichtaddition wird begründet."
+          ]
+        ],
+        "points": 3
+      },
+      {
+        "label": [
+          "b) Energía nominal: desarrollo y resultado.",
+          "b) Nennenergie: Rechenweg und Ergebnis."
+        ],
+        "type": "written",
+        "model": [
+          "48 V × 7 Ah = 336 Wh; también 4 × 84 Wh.",
+          "48 V × 7 Ah = 336 Wh; ebenfalls 4 × 84 Wh."
+        ],
+        "criteria": [
+          [
+            "Usa 48 V y 7 Ah sin doble conteo.",
+            "48 V und 7 Ah ohne Doppelzählung werden benutzt."
+          ],
+          [
+            "Obtiene 336 Wh.",
+            "336 Wh werden ermittelt."
+          ]
+        ],
+        "points": 2
+      },
+      {
+        "label": [
+          "c) Autonomía idealizada: desarrollo y resultado.",
+          "c) Idealisierte Laufzeit: Rechenweg und Ergebnis."
+        ],
+        "type": "written",
+        "model": [
+          "336 Wh × 0,8 = 268,8 Wh útiles; 268,8 / 448 = 0,6 h = 36 min.",
+          "336 Wh × 0,8 = 268,8 Wh nutzbar; 268,8 / 448 = 0,6 h = 36 min."
+        ],
+        "criteria": [
+          [
+            "Obtiene energía útil con rendimiento 0,8.",
+            "Nutzbare Energie wird mit Wirkungsgrad 0,8 ermittelt."
+          ],
+          [
+            "Divide entre 448 W y convierte a 36 min.",
+            "Division durch 448 W und Umrechnung in 36 min sind richtig."
+          ]
+        ],
+        "points": 2
+      }
+    ],
+    "ref": [
+      "Práctica técnica propia de dimensionamiento y autonomía: Grundstufe 03b §3.9.1, pp. 375 y 382–384; Fachstufe 04b §4.3.5, pp. 357–358. No reproduce el formato ni alcance de KAIT Sommer 2023 · 2a.",
+      "Eigene technische Übung zu Auslegung und Laufzeit: Grundstufe 03b §3.9.1, S. 375 und 382–384; Fachstufe 04b §4.3.5, S. 357–358. Kein Format- oder Umfangsäquivalent zu KAIT Sommer 2023 · 2a."
+    ],
+    "hint": [
+      "Calcula primero la tensión de todo el bloque.",
+      "Berechnen Sie zuerst die Spannung des gesamten Blocks."
+    ],
+    "visual": null,
+    "points": 7,
+    "core": false,
+    "short": [
+      "Baterías en serie",
+      "Batterien in Reihe"
+    ]
+  },
+  {
+    "id": 16,
+    "title": [
+      "Curva y apagado",
+      "Kennlinie und Abschaltung"
+    ],
+    "case": [
+      "Un archivo municipal tiene 600 W de carga. El apagado necesita 4 min y se reservan 2 min. Además, el pliego exige 15 min de autonomía a carga actual.",
+      "Ein kommunales Archiv hat 600 W Last. Abschaltung braucht 4 min, Reserve 2 min. Zusätzlich fordert die Ausschreibung 15 min Laufzeit bei aktueller Last."
+    ],
+    "instruction": [
+      "a) Calcula la espera máxima antes del apagado (2 puntos). b) Evalúa el cumplimiento de 15 min y propone una corrección comprobable (2 puntos). Muestra el procedimiento. La tabla es material de ensayo ficticio del caso.",
+      "a) Berechnen Sie die maximale Wartezeit vor der Abschaltung (2 Punkte). b) Beurteilen Sie die Erfüllung von 15 min und schlagen Sie eine überprüfbare Korrektur vor (2 Punkte). Der Rechenweg ist anzugeben. Die Tabelle enthält fiktive Testdaten des Falls."
+    ],
+    "headers": [
+      [
+        "Carga (W)",
+        "Autonomía medida (min)"
+      ],
+      [
+        "Last (W)",
+        "Gemessene Laufzeit (min)"
+      ]
+    ],
+    "rows": [
+      [
+        "300",
+        "25"
+      ],
+      [
+        "600",
+        "12"
+      ],
+      [
+        "900",
+        "7"
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "a) Espera máxima: desarrollo y resultado.",
+          "a) Maximale Wartezeit: Rechenweg und Ergebnis."
+        ],
+        "type": "written",
+        "model": [
+          "La fila de 600 W da 12 min. 12 − 4 − 2 = 6 min de espera máxima.",
+          "Die Zeile 600 W gibt 12 min an. 12 − 4 − 2 = 6 min maximale Wartezeit."
+        ],
+        "criteria": [
+          [
+            "Usa la fila de 600 W, sin interpolar otra carga.",
+            "Zeile 600 W wird verwendet."
+          ],
+          [
+            "Resta apagado y margen, obtiene 6 min.",
+            "Abschaltzeit und Reserve werden abgezogen; Ergebnis 6 min."
+          ]
+        ],
+        "points": 2
+      },
+      {
+        "label": [
+          "b) Evalúa el pliego y propone una corrección.",
+          "b) Beurteilen Sie die Ausschreibung und schlagen Sie eine Korrektur vor."
+        ],
+        "type": "written",
+        "model": [
+          "No cumple: 12 < 15 min a 600 W. Se necesita más batería o una USV cuya tabla demuestre al menos 15 min a esa carga; cambiar W/VA nominales por sí solo no prueba autonomía.",
+          "Nicht erfüllt: 12 < 15 min bei 600 W. Mehr Batterie oder eine USV mit belegten mindestens 15 min bei dieser Last ist nötig; andere Nenn-W/VA allein belegen keine Laufzeit."
+        ],
+        "criteria": [
+          [
+            "Rechaza por 12 < 15 min.",
+            "Ablehnung wegen 12 < 15 min."
+          ],
+          [
+            "Propone ampliación o alternativa con autonomía comprobada a 600 W.",
+            "Erweiterung oder Alternative mit nachgewiesener Laufzeit bei 600 W."
+          ]
+        ],
+        "points": 2
+      }
+    ],
+    "ref": [
+      "Práctica técnica propia de dimensionamiento y autonomía: Grundstufe 03b §3.9.1, pp. 375 y 382–384; Fachstufe 04b §4.3.5, pp. 357–358. No reproduce el formato ni alcance de KAIT Sommer 2023 · 2a.",
+      "Eigene technische Übung zu Auslegung und Laufzeit: Grundstufe 03b §3.9.1, S. 375 und 382–384; Fachstufe 04b §4.3.5, S. 357–358. Kein Format- oder Umfangsäquivalent zu KAIT Sommer 2023 · 2a."
+    ],
+    "hint": [
+      "Autonomía, espera y tiempo de apagado no son la misma magnitud.",
+      "Laufzeit, Wartezeit und Abschaltzeit sind verschiedene Größen."
+    ],
+    "visual": null,
+    "points": 4,
+    "core": false,
+    "short": [
+      "Tiempo de apagado",
+      "Abschaltzeit"
+    ]
+  },
+  {
+    "id": 17,
+    "title": [
+      "Tipos de hipervisor",
+      "Hypervisor-Typen"
+    ],
+    "case": [
+      "Un centro de formación prepara la virtualización de su servidor de archivos de producción y un laboratorio de pruebas en portátiles. Debe documentar ambas arquitecturas sin limitarse a una marca. Hoy todas las VMs productivas dependen de un solo host; se estudia cómo recuperarlas en otro equipo al fallar ese host.",
+      "Ein Bildungszentrum bereitet die Virtualisierung seines produktiven Fileservers und ein Testlabor auf Notebooks vor. Es soll beide Architekturen dokumentieren, ohne sich auf einen Hersteller festzulegen. Derzeit hängen alle produktiven VMs von einem Host ab; ihre Wiederherstellung auf einem anderen Gerät bei Hostausfall wird untersucht."
+    ],
+    "instruction": [
+      "a) Completa la tabla: explica la arquitectura, indica un uso razonable y un producto de cada tipo (8 puntos). b) Explica la consecuencia de perder el único host y propone una mejora con requisitos de clúster: capacidad, datos accesibles y conmutación probada (2 puntos propios adicionales).",
+      "a) Ergänzen Sie die Tabelle: Erläutern Sie stichwortartig beide Architekturen und geben Sie je ein sinnvolles Einsatzbeispiel sowie ein marktgängiges Produkt an (8 Punkte). b) Erläutern Sie die Folge des einzigen Hostausfalls und schlagen Sie eine Verbesserung mit Cluster-Voraussetzungen vor: Kapazität, erreichbare Daten und geprüftes Failover (2 zusätzliche eigene Punkte)."
+    ],
+    "headers": [
+      [
+        "Tipo",
+        "Casillas a completar"
+      ],
+      [
+        "Typ",
+        "Auszufüllende Angaben"
+      ]
+    ],
+    "rows": [
+      [
+        "1",
+        [
+          "Arquitectura, uso y producto",
+          "Architektur, Einsatz und Produkt"
+        ]
+      ],
+      [
+        "2",
+        [
+          "Arquitectura, uso y producto",
+          "Architektur, Einsatz und Produkt"
+        ]
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "Tipo 1: arquitectura",
+          "Typ 1: Architektur"
+        ],
+        "type": "written",
+        "model": [
+          "Hipervisor directamente en hardware; sin sistema operativo anfitrión debajo.",
+          "Hypervisor direkt auf Hardware, ohne darunterliegendes Wirtsbetriebssystem."
+        ],
+        "criteria": [
+          [
+            "Sitúa el hipervisor directamente sobre hardware.",
+            "Hypervisor direkt auf Hardware."
+          ],
+          [
+            "Distingue bare metal de aplicación alojada en un SO anfitrión.",
+            "Bare Metal wird von einer Anwendung auf einem Wirtsbetriebssystem unterschieden."
+          ]
+        ],
+        "points": 2
+      },
+      {
+        "label": [
+          "Tipo 2: arquitectura",
+          "Typ 2: Architektur"
+        ],
+        "type": "written",
+        "model": [
+          "Hipervisor ejecutado sobre un sistema operativo anfitrión ya instalado.",
+          "Hypervisor auf einem bereits installierten Wirtsbetriebssystem."
+        ],
+        "criteria": [
+          [
+            "Identifica el sistema operativo anfitrión.",
+            "Wirtsbetriebssystem wird genannt."
+          ],
+          [
+            "Sitúa el hipervisor encima de ese SO, no directamente sobre hardware.",
+            "Hypervisor wird über diesem OS, nicht direkt auf Hardware eingeordnet."
+          ]
+        ],
+        "points": 2
+      },
+      {
+        "label": [
+          "Tipo 1: uso",
+          "Typ 1: Einsatz"
+        ],
+        "type": "written",
+        "model": [
+          "VMs del servidor de archivos en producción.",
+          "Produktive Fileserver-VMs."
+        ],
+        "criteria": [
+          [
+            "Uso coherente en servidor/producción.",
+            "Sinnvoller Server-/Produktionseinsatz."
+          ]
+        ],
+        "points": 1
+      },
+      {
+        "label": [
+          "Tipo 2: uso",
+          "Typ 2: Einsatz"
+        ],
+        "type": "written",
+        "model": [
+          "Probar software en VMs de un portátil de formación.",
+          "Softwaretests in VMs auf einem Schulungsnotebook."
+        ],
+        "criteria": [
+          [
+            "Uso coherente en pruebas/desarrollo/puesto.",
+            "Sinnvoller Test-/Entwicklungs-/Arbeitsplatzeinsatz."
+          ]
+        ],
+        "points": 1
+      },
+      {
+        "label": [
+          "Tipo 1: producto",
+          "Typ 1: Produkt"
+        ],
+        "type": "written",
+        "model": [
+          "Microsoft Hyper-V; se aceptan KVM o VMware vSphere/ESXi como ejemplos adecuados.",
+          "Microsoft Hyper-V; KVM oder VMware vSphere/ESXi sind geeignete Alternativen."
+        ],
+        "criteria": [
+          [
+            "Nombra un producto apropiado al tipo 1.",
+            "Geeignetes Typ-1-Produkt wird genannt."
+          ]
+        ],
+        "points": 1
+      },
+      {
+        "label": [
+          "Tipo 2: producto",
+          "Typ 2: Produkt"
+        ],
+        "type": "written",
+        "model": [
+          "Oracle VirtualBox; se acepta VMware Workstation u otro ejemplo técnicamente correcto.",
+          "Oracle VirtualBox; VMware Workstation oder fachlich richtiges anderes Beispiel ist zulässig."
+        ],
+        "criteria": [
+          [
+            "Nombra un producto apropiado al tipo 2.",
+            "Geeignetes Typ-2-Produkt wird genannt."
+          ]
+        ],
+        "points": 1
+      },
+      {
+        "label": [
+          "b) Único host: consecuencia y mejora.",
+          "b) Ein Host: Folge und Verbesserung."
+        ],
+        "type": "written",
+        "model": [
+          "Al averiarse el host se detienen todas sus VMs. Un clúster con datos accesibles, capacidad y conmutación probadas permite reiniciar en otro host.",
+          "Bei Hostausfall stoppen alle seine VMs. Ein Cluster mit erreichbaren Daten, Kapazität und geprüftem Failover ermöglicht Neustarts auf einem anderen Host."
+        ],
+        "criteria": [
+          [
+            "Explica el fallo común de todas las VMs.",
+            "Der gemeinsame Ausfall aller VMs wird erklärt."
+          ],
+          [
+            "Propone clúster operativo con condiciones, sin prometer pausa cero.",
+            "Ein betriebsfähiger Cluster mit Voraussetzungen wird vorgeschlagen, ohne Nullunterbrechung zu versprechen."
+          ]
+        ],
+        "points": 2
+      }
+    ],
+    "ref": [
+      "a) Format angelehnt an KAIT Sommer 2022 · 4c: pregunta PDF p. 8, solución oficial PDF p. 5; alcance completo de arquitectura, uso y producto, 8 puntos. Desglose de criterios propio. b) Extensión propia de 2 puntos, fuera del original.",
+      "a) Format angelehnt an KAIT Sommer 2022 · 4c: Frage PDF S. 8, offizielle Lösung PDF S. 5; vollständiger Umfang Architektur, Einsatz und Produkt, 8 Punkte. Eigene Kriterienaufteilung. b) Eigene Erweiterung um 2 Punkte außerhalb des Originals."
+    ],
+    "hint": [
+      "Separar máquinas lógicas no separa sus dependencias físicas.",
+      "Logisch getrennte Maschinen trennen ihre physischen Abhängigkeiten nicht."
+    ],
+    "visual": null,
+    "points": 10,
+    "core": false,
+    "short": [
+      "Hipervisores",
+      "Hypervisor-Typen"
+    ],
+    "layout": "hypervisor-table"
+  },
+  {
+    "id": 18,
+    "title": [
+      "Plataforma para producción",
+      "Plattform für Produktion"
+    ],
+    "case": [
+      "Un fabricante debe seguir operando al caer Internet. Tolera como máximo 10 min por avería de un host. Las tres ofertas son compatibles con su aplicación.",
+      "Ein Hersteller muss bei Internetausfall weiterarbeiten. Ein Hostausfall darf höchstens 10 min unterbrechen. Alle drei Angebote unterstützen die Anwendung."
+    ],
+    "instruction": [
+      "a) Compara las ofertas, recomienda una con requisitos y consecuencias, y nombra un riesgo restante (4 puntos propios). b) Explica tres medidas técnicas distintas que aumenten la resistencia a fallos: función, fallo cubierto y condiciones (6 puntos).",
+      "a) Vergleichen Sie die Angebote, empfehlen Sie eines anhand von Anforderungen und Ausfallfolgen und nennen Sie ein Restrisiko (4 eigene Punkte). b) Erläutern Sie drei unterschiedliche technische Maßnahmen zur Erhöhung der Ausfallsicherheit: Funktion, abgedeckter Ausfall und Voraussetzungen (6 Punkte)."
+    ],
+    "headers": [
+      [
+        "Oferta",
+        "Internet",
+        "Recuperación ante host averiado"
+      ],
+      [
+        "Angebot",
+        "Internet",
+        "Wiederherstellung bei Hostausfall"
+      ]
+    ],
+    "rows": [
+      [
+        "A",
+        [
+          "Servidor local; no necesario",
+          "Lokaler Server; nicht nötig"
+        ],
+        "120 min"
+      ],
+      [
+        "B",
+        [
+          "Clúster local; no necesario",
+          "Lokaler Cluster; nicht nötig"
+        ],
+        [
+          "4 min probados; datos y rutas redundantes",
+          "4 min geprüft; redundante Daten und Pfade"
+        ]
+      ],
+      [
+        "C",
+        [
+          "Cloud; obligatorio, sin offline",
+          "Cloud; nötig, kein Offline-Modus"
+        ],
+        [
+          "Alta disponibilidad del proveedor",
+          "Provider-Hochverfügbarkeit"
+        ]
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "a) Recomendación justificada.",
+          "a) Begründete Empfehlung."
+        ],
+        "type": "written",
+        "model": [
+          "B: funciona sin Internet y su recuperación probada de 4 min cumple el límite de 10 min. A necesita 120 min y falla el límite. C deja de estar accesible al caer Internet. Un incendio del local sigue requiriendo protección adicional.",
+          "B: Funktioniert ohne Internet; geprüfte 4 min erfüllen die 10-min-Grenze. A braucht 120 min und verfehlt sie. C ist bei Internetausfall nicht erreichbar. Ein Brand am Standort benötigt weiterhin zusätzliche Absicherung."
+        ],
+        "criteria": [
+          [
+            "Elige B vinculando funcionamiento local con el requisito sin Internet.",
+            "B wird mit Bezug auf lokalen Betrieb ohne Internet gewählt."
+          ],
+          [
+            "Compara 4 con 10 min y descarta los 120 min de A.",
+            "4 und 10 min werden verglichen; die 120 min von A werden verworfen."
+          ],
+          [
+            "Explica por qué C falla el requisito de Internet.",
+            "Die Nichterfüllung des Internet-Ausfallkriteriums durch C wird erklärt."
+          ],
+          [
+            "Nombra un riesgo restante concreto o una prueba todavía necesaria.",
+            "Ein konkretes Restrisiko oder ein noch erforderlicher Nachweis wird genannt."
+          ]
+        ],
+        "points": 4
+      },
+      {
+        "label": [
+          "b1) Medida 1: explicación. ",
+          "b1) Maßnahme 1: Erläuterung."
+        ],
+        "type": "written",
+        "model": [
+          "Una USV para servidor, almacenamiento y red permite seguir durante cortes breves. W/VA y autonomía deben cubrir la carga; para cortes largos hay apagado coordinado.",
+          "Eine USV für Server, Speicher und Netzwerk überbrückt kurze Stromausfälle. W/VA und Laufzeit müssen zur Last passen; bei langen Ausfällen wird geordnet abgeschaltet."
+        ],
+        "criteria": [
+          [
+            "Explica una medida técnica distinta, su función y el fallo que cubre.",
+            "Eine unterschiedliche technische Maßnahme, ihre Funktion und der abgedeckte Ausfall werden erläutert."
+          ],
+          [
+            "Explica una condición o límite para que esa protección funcione; admite otra medida técnicamente equivalente al modelo.",
+            "Eine Voraussetzung oder Grenze für die Schutzwirkung wird erläutert; fachlich gleichwertige andere Maßnahme als das Muster zulässig."
+          ]
+        ],
+        "points": 2
+      },
+      {
+        "label": [
+          "b2) Medida 2: explicación. ",
+          "b2) Maßnahme 2: Erläuterung."
+        ],
+        "type": "written",
+        "model": [
+          "Un clúster HA detecta el fallo del host y reinicia las VMs en otro. Necesita capacidad superviviente, datos accesibles, red y conmutación probadas; reinicio no significa cero pausa.",
+          "Ein HA-Cluster erkennt einen Hostausfall und startet VMs auf einem anderen Host neu. Verbleibende Kapazität, erreichbare Daten, Netzwerk und geprüftes Failover sind nötig; Neustart bedeutet keine Nullunterbrechung."
+        ],
+        "criteria": [
+          [
+            "Explica una medida técnica distinta, su función y el fallo que cubre.",
+            "Eine unterschiedliche technische Maßnahme, ihre Funktion und der abgedeckte Ausfall werden erläutert."
+          ],
+          [
+            "Explica una condición o límite para que esa protección funcione; admite otra medida técnicamente equivalente al modelo.",
+            "Eine Voraussetzung oder Grenze für die Schutzwirkung wird erläutert; fachlich gleichwertige andere Maßnahme als das Muster zulässig."
+          ]
+        ],
+        "points": 2
+      },
+      {
+        "label": [
+          "b3) Medida 3: explicación. ",
+          "b3) Maßnahme 3: Erläuterung."
+        ],
+        "type": "written",
+        "model": [
+          "Rutas de red por dos switches con interfaces redundantes y failover mantienen acceso si falla uno. Ambas rutas deben alcanzar servidor y datos; dos cables al mismo switch no cubren su avería.",
+          "Netzwerkpfade über zwei Switches mit redundanten Schnittstellen und Failover erhalten bei Ausfall eines Switches den Zugriff. Beide Pfade müssen Server und Daten erreichen; zwei Kabel am selben Switch schützen nicht vor dessen Ausfall."
+        ],
+        "criteria": [
+          [
+            "Explica una medida técnica distinta, su función y el fallo que cubre.",
+            "Eine unterschiedliche technische Maßnahme, ihre Funktion und der abgedeckte Ausfall werden erläutert."
+          ],
+          [
+            "Explica una condición o límite para que esa protección funcione; admite otra medida técnicamente equivalente al modelo.",
+            "Eine Voraussetzung oder Grenze für die Schutzwirkung wird erläutert; fachlich gleichwertige andere Maßnahme als das Muster zulässig."
+          ]
+        ],
+        "points": 2
+      }
+    ],
+    "ref": [
+      "a) Decisión de plataforma propia. b) Format angelehnt an KAIT Sommer 2024 · 4c: pregunta PDF p. 10 (impresa 11), solución oficial PDF p. 4; tres medidas explicadas, 6 puntos. Rúbrica propia; admite otras respuestas técnicamente equivalentes.",
+      "a) Eigene Plattformentscheidung. b) Format angelehnt an KAIT Sommer 2024 · 4c: Frage PDF S. 10 (gedruckt 11), offizielle Lösung PDF S. 4; drei erläuterte Maßnahmen, 6 Punkte. Eigene Kriterien; fachlich gleichwertige andere Antworten zulässig."
+    ],
+    "hint": [
+      "No basta con decir «más disponible»: cita cada límite del caso.",
+      "„Verfügbarer“ allein reicht nicht: Beziehen Sie sich auf die Grenzen des Falls."
+    ],
+    "visual": null,
+    "points": 10,
+    "core": true,
+    "short": [
+      "Base de producción",
+      "Produktionsbasis"
+    ]
+  },
+  {
+    "id": 19,
+    "title": [
+      "Requisitos del proveedor",
+      "Anforderungen an den Provider"
+    ],
+    "case": [
+      "Una cooperativa quiere migrar su portal público a un proveedor cloud. El portal debe poder utilizarse también fuera del horario de oficina y afrontar campañas con más visitantes. Antes de pedir ofertas, el equipo debe formular requisitos al proveedor y explicar por qué sirven a ese servicio.",
+      "Eine Genossenschaft will ihren öffentlichen Webauftritt zu einem Cloud-Provider migrieren. Das Portal muss auch außerhalb der Bürozeit nutzbar sein und Kampagnen mit mehr Besuchern bewältigen. Vor der Angebotsanfrage soll das Team Anforderungen an den Provider formulieren und ihre Bedeutung für diesen Dienst erläutern."
+    ],
+    "instruction": [
+      "a) Explica un primer requisito al proveedor: concreta qué se exige, cómo ayuda al portal y qué condición o evidencia lo hace comprobable (3 puntos). b) Explica un segundo requisito distinto con el mismo alcance (3 puntos). Se admiten otros requisitos coherentes, no solo los modelos.",
+      "a) Erläutern Sie eine erste Anforderung an den Provider: konkretisieren Sie die Forderung, den Nutzen für den Webauftritt und eine überprüfbare Bedingung beziehungsweise einen Nachweis (3 Punkte). b) Erläutern Sie eine zweite, andere Anforderung mit gleichem Umfang (3 Punkte). Andere passende Anforderungen als die Muster sind zulässig."
+    ],
+    "headers": [
+      [
+        "Necesidad del portal",
+        "Contexto de la migración"
+      ],
+      [
+        "Bedarf des Webauftritts",
+        "Migrationskontext"
+      ]
+    ],
+    "rows": [
+      [
+        [
+          "Operación",
+          "Betrieb"
+        ],
+        [
+          "Acceso público fuera del horario de oficina.",
+          "Öffentlicher Zugriff außerhalb der Bürozeit."
+        ]
+      ],
+      [
+        [
+          "Demanda",
+          "Nachfrage"
+        ],
+        [
+          "Más visitantes durante campañas; requisitos se acuerdan antes de contratar.",
+          "Mehr Besucher während Kampagnen; Anforderungen werden vor Vertragsschluss vereinbart."
+        ]
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "a) Primer requisito: explicación.",
+          "a) Erste Anforderung: Erläuterung."
+        ],
+        "type": "written",
+        "model": [
+          "Exigir disponibilidad contractual y soporte con SLA claro. El portal debe ser accesible fuera de oficina; se necesitan alcance, período medido, exclusiones y atención de incidencias definidos. El contrato debe separar reacción de recuperación y aportar informes de disponibilidad; una respuesta de soporte no prueba reparación.",
+          "Vertragliche Verfügbarkeit und Support mit klarem SLA verlangen. Das Portal muss außerhalb der Bürozeit erreichbar sein; Umfang, Messzeitraum, Ausschlüsse und Störungsbearbeitung sind festzulegen. Reaktion und Wiederherstellung werden getrennt vereinbart und Verfügbarkeitsberichte geliefert; Supportreaktion beweist keine Reparatur."
+        ],
+        "criteria": [
+          [
+            "Formula un requisito concreto apropiado al proveedor.",
+            "Konkrete geeignete Provideranforderung wird formuliert."
+          ],
+          [
+            "Explica su función y beneficio para el portal, no solo un nombre.",
+            "Funktion und Nutzen für den Webauftritt werden erläutert, nicht nur benannt."
+          ],
+          [
+            "Concreta una condición o evidencia comprobable del requisito.",
+            "Überprüfbare Bedingung oder Nachweis wird konkretisiert."
+          ]
+        ],
+        "points": 3
+      },
+      {
+        "label": [
+          "b) Segundo requisito distinto: explicación.",
+          "b) Zweite unterschiedliche Anforderung: Erläuterung."
+        ],
+        "type": "written",
+        "model": [
+          "Exigir recursos escalables para las campañas. Aumentar instancias o capacidad ante más visitantes evita saturación; reducir después evita mantener recursos sobrantes. Antes de contratar se comprueban límites, plazo de ampliación y prueba de carga. También se acepta seguridad o facturación flexible si se explica y vincula al caso.",
+          "Skalierbare Ressourcen für Kampagnen verlangen. Mehr Instanzen oder Kapazität bei vielen Besuchern vermeiden Überlastung; anschließende Reduktion vermeidet dauerhaft unnötige Ressourcen. Grenzen, Erweiterungsdauer und Lasttest werden vor Vertragsschluss geprüft. Sicherheit oder flexible Abrechnung sind ebenfalls zulässig, wenn erläutert und fallbezogen."
+        ],
+        "criteria": [
+          [
+            "Formula un segundo requisito distinto y coherente.",
+            "Zweite unterschiedliche passende Anforderung wird formuliert."
+          ],
+          [
+            "Explica mecanismo y efecto sobre el portal.",
+            "Mechanismus und Wirkung auf den Webauftritt werden erläutert."
+          ],
+          [
+            "Concreta condición/evidencia; admite una alternativa técnicamente justificada.",
+            "Bedingung/Nachweis wird konkretisiert; fachlich begründete Alternative zulässig."
+          ]
+        ],
+        "points": 3
+      }
+    ],
+    "ref": [
+      "Format angelehnt an KAIT Sommer 2024 · 1ab: pregunta PDF p. 2, solución oficial PDF p. 2. Dos requisitos explicados, 6 puntos; situación y desglose de 3 puntos por explicación propios.",
+      "Format angelehnt an KAIT Sommer 2024 · 1ab: Frage PDF S. 2, offizielle Lösung PDF S. 2. Zwei erläuterte Anforderungen, 6 Punkte; eigene Situation und Kriterienaufteilung mit 3 Punkten je Erläuterung."
+    ],
+    "hint": [
+      "Un requisito dice qué debe aportar el proveedor. Explica después qué problema del portal resuelve y cómo se comprueba.",
+      "Eine Anforderung sagt, was der Provider leisten soll. Erläutern Sie dann das gelöste Problem des Webauftritts und den Nachweis."
+    ],
+    "visual": null,
+    "points": 6,
+    "core": false,
+    "short": [
+      "Proveedor: requisitos",
+      "Provider: Anforderungen"
+    ]
+  },
+  {
+    "id": 20,
+    "title": [
+      "Carga y consecuencias",
+      "Last und Ausfallfolgen"
+    ],
+    "case": [
+      "Un comercio online tiene picos de tráfico. Compara dos diseños; las cifras son datos del ensayo del caso, no ofertas reales.",
+      "Ein Onlinehändler hat Lastspitzen. Vergleichen Sie zwei Entwürfe; die Zahlen stammen aus dem Falltest und sind keine realen Angebote."
+    ],
+    "instruction": [
+      "a) Explica el escalado de cada opción, recomienda una para soportar la avería de una instancia e indica una prueba de datos o conmutación necesaria (4 puntos). b) Explica por qué el backup no mantiene el servicio activo (2 puntos).",
+      "a) Erläutern Sie die Skalierungsart je Option, empfehlen Sie eine zur Tolerierung eines Instanzausfalls und nennen Sie einen erforderlichen Daten- oder Failover-Test (4 Punkte). b) Erläutern Sie, warum Backup den Dienst nicht aktiv hält (2 Punkte)."
+    ],
+    "headers": [
+      [
+        "Diseño",
+        "Recursos y prueba"
+      ],
+      [
+        "Entwurf",
+        "Ressourcen und Test"
+      ]
+    ],
+    "rows": [
+      [
+        "A",
+        [
+          "Una VM ampliada de 4 a 8 CPU; fallo: caída completa",
+          "Eine VM von 4 auf 8 CPU erweitert; Ausfall: vollständige Unterbrechung"
+        ]
+      ],
+      [
+        "B",
+        [
+          "Tres instancias + dos balanceadores; con una caída, dos soportan el pico; datos replicados",
+          "Drei Instanzen + zwei Lastverteiler; zwei tragen bei Ausfall die Spitze; replizierte Daten"
+        ]
+      ],
+      [
+        [
+          "Backup externo",
+          "Externes Backup"
+        ],
+        [
+          "Restauración probada: 90 min",
+          "Geprüfte Wiederherstellung: 90 min"
+        ]
+      ]
+    ],
+    "fields": [
+      {
+        "label": [
+          "a) Escalado y recomendación",
+          "a) Skalierung und Empfehlung"
+        ],
+        "type": "written",
+        "model": [
+          "A escala verticalmente: aumenta recursos de una VM. B escala horizontalmente: añade instancias. B soporta la avería de una instancia porque las dos restantes y los balanceadores mantienen capacidad y rutas; hay que probar también la consistencia y conmutación de datos.",
+          "A skaliert vertikal: Mehr Ressourcen einer VM. B skaliert horizontal: Zusätzliche Instanzen. B toleriert einen Instanzausfall, weil zwei verbleibende Instanzen und Lastverteiler Kapazität und Pfade erhalten; Datenkonsistenz und Übernahme sind ebenfalls zu prüfen."
+        ],
+        "criteria": [
+          [
+            "Explica vertical como aumento de recursos de una instancia.",
+            "Vertikal wird als Ressourcenerhöhung einer Instanz erklärt."
+          ],
+          [
+            "Explica horizontal como más instancias.",
+            "Horizontal wird als Hinzufügen von Instanzen erklärt."
+          ],
+          [
+            "Elige B por capacidad superviviente y encaminamiento redundante.",
+            "B wird wegen verbleibender Kapazität und redundanter Verkehrsverteilung gewählt."
+          ],
+          [
+            "Nombra una dependencia de datos o una prueba de conmutación.",
+            "Eine Datenabhängigkeit oder ein Failover-Test wird genannt."
+          ]
+        ],
+        "points": 4
+      },
+      {
+        "label": [
+          "b) Papel del backup",
+          "b) Rolle des Backups"
+        ],
+        "type": "written",
+        "model": [
+          "El backup recupera datos después de pérdida o corrupción. Restaurarlo tarda 90 min; no ejecuta en ese momento la aplicación ni sustituye el failover.",
+          "Backup stellt Daten nach Verlust oder Beschädigung wieder her. Die Wiederherstellung dauert 90 min; es führt die Anwendung währenddessen nicht aus und ersetzt kein Failover."
+        ],
+        "criteria": [
+          [
+            "Distingue recuperación de datos de continuidad del servicio.",
+            "Datenwiederherstellung und Dienstkontinuität werden unterschieden."
+          ],
+          [
+            "Relaciona los 90 min de restauración con una interrupción.",
+            "Die 90 min Wiederherstellung werden mit einer Unterbrechung verknüpft."
+          ]
+        ],
+        "points": 2
+      }
+    ],
+    "ref": [
+      "Transferencia propia: tema de escalado de KAIT Sommer 2023 · 2b (pregunta anotada PDF p. 5; solución oficial original local PDF p. 3). No es equivalente al apartado completo de 6 puntos ni a Sommer 2024 · 4c; la variante completa de tres medidas está en T18 b).",
+      "Eigener Transfer: Skalierungsthema aus KAIT Sommer 2023 · 2b (annotierte Frage PDF S. 5; lokale offizielle Originallösung PDF S. 3). Kein Äquivalent zur vollständigen 6-Punkte-Teilaufgabe oder zu Sommer 2024 · 4c; vollständige Variante mit drei Maßnahmen in T18 b)."
+    ],
+    "hint": [
+      "La capacidad debe seguir siendo suficiente al perder una instancia.",
+      "Die Kapazität muss nach Ausfall einer Instanz weiterhin ausreichen."
+    ],
+    "visual": null,
+    "points": 6,
+    "core": false,
+    "short": [
+      "Carga y efectos",
+      "Last und Folgen"
+    ]
+  }
+];
+const UI={reviewDone:['Revisión registrada. Los puntos de explicación corresponden a tu valoración de los criterios.','Bewertung gespeichert. Die Erklärungspunkte entsprechen Ihrer Bewertung der Kriterien.'],sideTitle:['Disponibilidad y USV','Verfügbarkeit und USV'],learnLabel:['Entender · explicaciones','Verstehen · Erklärungen'],taskLabel:['Practicar · tareas 01–20','Üben · Aufgaben 01–20'],courseLabel:['Disponibilidad · energía · plataforma','Verfügbarkeit · Energie · Plattform'],prev:['← Anterior','← Zurück'],next:['Siguiente →','Weiter →'],notesButton:['Notas','Notizen'],sourcesButton:['Fuentes','Quellen'],exportButton:['Exportar','Exportieren'],saved:['Guardado local','Lokal gespeichert'],storageFail:['Sin guardado local: exporta','Kein lokales Speichern: exportieren'],notesTitle:['Notas de esta página','Notizen zu dieser Seite'],noteLabel:['Tus observaciones','Ihre Anmerkungen'],noteHelp:['Se conservan al navegar y se incluyen en la exportación.','Bleiben beim Navigieren erhalten und werden exportiert.'],close:['Cerrar','Schließen'],check:['Comprobar respuestas','Antworten prüfen'],openReview:['Abrir criterios y modelo','Kriterien und Muster öffnen'],hint:['Pista','Hinweis'],solution:['Solución','Lösung'],hideSolution:['Cerrar solución','Lösung schließen'],review:['Comparar explicación por puntos','Erklärung anhand der Punkte vergleichen'],finishReview:['Registrar revisión','Bewertung speichern'],blank:['Faltan respuestas. Completa las casillas; todavía no se abre la corrección.','Antworten fehlen. Ergänzen Sie die Felder; die Korrektur wird noch nicht geöffnet.'],pending:['Respuestas registradas; los textos aún no están evaluados. Abre criterios y modelo cuando quieras compararlos.','Antworten erfasst; Texte sind noch nicht bewertet. Öffnen Sie Kriterien und Muster zum Vergleichen.'],correct:['Correcto','Richtig'],wrong:['Revisa el resultado','Ergebnis prüfen'],written:['Revisión por criterio','Bewertung nach Kriterien'],auto:['Puntos automáticos','Automatische Punkte'],self:['Puntos de revisión propia','Selbstbewertete Punkte'],result:['Resultado','Ergebnis'],total:['Total','Gesamt'],assisted:['Con ayuda consultada','Mit aufgerufener Hilfe'],unaided:['Sin ayuda consultada en esta tarea','Ohne aufgerufene Hilfe bei dieser Aufgabe'],model:['Respuesta modelo','Musterantwort'],reviewNotice:['Compara significado, causa y consecuencia con tu respuesta. Cada criterio vale 1 punto. Tú o tu Ausbilder decidís: no hay evaluación automática del texto. Otra respuesta técnicamente equivalente también puede cumplir.','Vergleichen Sie Bedeutung, Ursache und Wirkung mit Ihrer Antwort. Jedes Kriterium ist 1 Punkt wert. Sie oder Ihr Ausbilder entscheiden; der Text wird nicht automatisch bewertet. Fachlich gleichwertige Antworten sind zulässig.'],choose:['Seleccionar…','Auswählen…'],yes:['1 · Cumple','1 · Erfüllt'],no:['0 · No cumple','0 · Nicht erfüllt'],rubricMissing:['Valora todos los criterios antes de registrar la revisión.','Bewerten Sie alle Kriterien vor dem Speichern.'],material:['Material de la tarea','Aufgabenmaterial'],answers:['Responde en las casillas','Antworten in den Feldern'],answer:['Respuesta','Antwort'],field:['Apartado','Teilaufgabe'],points:['Puntos','Punkte'],exercise:['Tarea','Aufgabe'],lesson:['Explicación','Erklärung'],core:['Para esta hora','Für diese Stunde'],extra:['Práctica extra','Zusatzübung'],checkHead:['Comprueba que lo entendiste','Prüfen Sie Ihr Verständnis'],compare:['Comparar y repasar','Vergleichen und wiederholen'],numericGuide:['Números sin unidad; coma o punto decimal. Escribe el procedimiento. Para practicar el examen, cambia a Deutsch y responde en alemán.','Zahlen ohne Einheit; Dezimalkomma oder Dezimalpunkt. Schreiben Sie den Rechenweg. Antworten Sie zur Prüfungsvorbereitung auf Deutsch.'],exported:['Exportación descargada','Export heruntergeladen']};
+const $=id=>document.getElementById(id), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let state={version:1,page:0,lang:'es',answers:{},notes:{},checks:{},tasks:{}};
+const KEY='fisi-ap2-2026-10-16-rev-v1';let storageOK=true;
+try{const raw=JSON.parse(localStorage.getItem(KEY)||'null');if(raw&&raw.version===1&&raw.answers&&raw.notes&&raw.tasks&&raw.checks)state={...state,...raw,page:Math.min(31,Math.max(0,Number(raw.page)||0)),lang:raw.lang==='de'?'de':'es'};}catch(e){storageOK=false;}
+const tx=k=>UI[k][state.lang==='de'?1:0];const tr=x=>Array.isArray(x)?x[state.lang==='de'?1:0]:x;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));storageOK=true;}catch(e){storageOK=false;} $('saveStatus').textContent=tx(storageOK?'saved':'storageFail');$('saveStatus').classList.toggle('warning',!storageOK);}
+function taskState(id){return state.tasks[id]||(state.tasks[id]={helped:false,checked:false,review:{},hint:false,solution:false});}
+function akey(id,f){return id+':'+f;}
+function nav(){['lessonNav','taskNav'].forEach(id=>$(id).replaceChildren());LESSONS.forEach((l,i)=>navButton('lessonNav',i,String(i+1).padStart(2,'0'),tr(l.short)));TASKS.forEach((t,i)=>navButton('taskNav',i+12,String(t.id).padStart(2,'0'),tr(t.short||t.title)));}
+function navButton(target,n,num,label){const b=document.createElement('button');b.className='nav-item'+(n===state.page?' current':'');b.dataset.go=n;b.innerHTML=`<span class="num">${num}</span><span>${esc(label)}</span>`;b.title=label;b.setAttribute('aria-label',(n<12?tx('lesson'):tx('exercise'))+' '+num+' · '+label);if(n===state.page)b.setAttribute('aria-current','page');b.addEventListener('click',()=>go(n));$(target).append(b);}
+function chrome(){document.documentElement.lang=state.lang;['sideTitle','learnLabel','taskLabel','courseLabel','prev','next','notesButton','sourcesButton','exportButton','notesTitle','noteLabel','noteHelp'].forEach(k=>$(k).textContent=tx(k));$('closeNotes').textContent=tx('close');$('closeSources').textContent=tx('close');$('sourcesTitle').textContent=tx('sourcesButton');$('prev').disabled=state.page===0;$('next').disabled=state.page===31;document.querySelector('[data-page-indicator]').textContent=`Seite ${state.page+1} / 32`;$('progress').style.width=((state.page+1)/32*100)+'%';$('langES').classList.toggle('selected',state.lang==='es');$('langDE').classList.toggle('selected',state.lang==='de');$('langES').setAttribute('aria-pressed',String(state.lang==='es'));$('langDE').setAttribute('aria-pressed',String(state.lang==='de'));document.querySelector('aside').setAttribute('aria-label',tr(['Navegación del taller','Navigation des Workshops']));document.querySelectorAll('nav')[0].setAttribute('aria-label',tx('learnLabel'));document.querySelectorAll('nav')[1].setAttribute('aria-label',tx('taskLabel'));nav();save();}
+function flow(labels){return '<div class="flow">'+labels.map((x,i)=>`${i?'<div class="arrow" aria-hidden="true">↓</div>':''}<div class="node">${esc(tr(x))}</div>`).join('')+'</div>';}
+function vcard(title,body,caption=''){return `<div class="visual-card"><div class="visual-title">${esc(tr(title))}</div>${body}${caption?`<p>${esc(tr(caption))}</p>`:''}</div>`;}
+function box(x,y,w,label,h=40){return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="5"/><text x="${x+w/2}" y="${y+h/2+4}" text-anchor="middle">${esc(tr(label))}</text>`;}
+function wire(d,bat=false){return `<path class="${bat?'battery':'wire'}" d="${d}" marker-end="url(#${bat?'bat':'arr'})"/>`;}
+function svg(body,vb,label){return `<svg viewBox="${vb}" role="img" aria-label="${esc(tr(label))}"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#1a7969"/></marker><marker id="bat" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#a76321"/></marker></defs>${body}</svg>`;}
+// Separate diagrams have their own marker namespace to avoid duplicate SVG IDs.
+let svgIndex=0;function uniqueSVG(s){const id=++svgIndex;return s.replaceAll('id="arr"',`id="arr${id}"`).replaceAll('id="bat"',`id="bat${id}"`).replaceAll('#arr)',`#arr${id})`).replaceAll('#bat)',`#bat${id})`);}
+function upsCircuit(type){let body='';if(type==='online'){body=box(10,20,70,['Red','Netz'])+box(110,20,112,['Rectificador','Gleichrichter'])+box(275,20,112,['Inversor','Wechselrichter'])+box(418,20,72,['Carga','Last'])+box(222,107,90,['Batería','Batterie'])+wire('M80 40H110')+wire('M222 40H275')+wire('M387 40H418')+wire('M245 40V107')+wire('M267 107V72H331V60',true);}else{body=box(10,20,70,['Red','Netz'])+box(115,20,105,type==='vi'?['AVR','AVR']:['Filtro','Filter'])+box(320,20,105,['Conmutador','Umschalter'])+box(458,20,72,['Carga','Last'])+box(100,110,106,['Rectificador','Gleichrichter'])+box(229,110,90,['Batería','Batterie'])+box(343,110,112,['Inversor','Wechselrichter'])+wire('M80 40H115')+wire('M220 40H320')+wire('M425 40H458')+wire('M94 40V130H100')+wire('M206 130H229')+wire('M319 130H343',true)+wire('M399 110V83H372V60',true);}
+return uniqueSVG(svg(body,type==='online'?'0 0 500 160':'0 0 540 160',['Camino eléctrico: línea continua normal; discontinua batería','Strompfad: durchgezogen normal; gestrichelt Batterie']));}
+function spof(){const body=box(12,76,100,['Cliente .10','Client .10'])+box(155,76,90,'SW1 .2')+box(290,14,95,'H1 .21')+box(290,137,95,'H2 .22')+box(444,76,105,'NAS1 .30')+wire('M112 96H155')+wire('M245 96H267V34H290')+wire('M245 96H267V157H290')+wire('M385 34H415V96H444')+wire('M385 157H415V96H444');return uniqueSVG(svg(body,'0 0 562 192',['Plano: cliente por SW1 a H1/H2; ambos dependen de NAS1. Red 10.20.0.0/24.','Plan: Client über SW1 zu H1/H2; beide benötigen NAS1. Netz 10.20.0.0/24.']));}
+function visual(k){switch(k){
+case 'chain':return vcard(['Todo el camino cuenta','Der gesamte Pfad zählt'],flow([['Caja','Kasse'],'Switch',['Aplicación en servidor','Anwendung auf Server'],['Datos','Daten']]),['Un fallo en una pieza necesaria detiene el servicio.','Ein Ausfall einer benötigten Komponente stoppt den Dienst.']);
+case 'uptime':return vcard(['100 horas requeridas','100 erforderliche Stunden'],'<div class="bar"><div class="up" style="width:98%">98 h</div><div class="down" style="width:2%"></div></div><div class="legend"><span>'+tr(['Disponible: 98 h','Verfügbar: 98 h'])+'</span><span>'+tr(['Caída: 2 h','Ausfall: 2 h'])+'</span></div><div class="formula">98 / 100 = 0,98 = 98 %</div>', ['La barra completa representa el período requerido.','Der gesamte Balken stellt den Bezugszeitraum dar.']);
+case 'budget':return vcard(['Un año de 365 días · 24/7','365-Tage-Jahr · 24/7'],'<div class="node">99,9 %</div><div class="metric">8,76 h</div><div class="node">99,99 %</div><div class="metric">52,56 min</div>', ['Cada nueve adicional reduce el presupuesto de caída.','Jede zusätzliche Neun verkleinert das Ausfallbudget.']);
+case 'powerpaths':return vcard(['Dos rutas de alimentación','Zwei Versorgungspfade'],'<div class="split">'+flow([['Ruta A','Pfad A'],['Fuente 1','Netzteil 1']])+flow([['Ruta B','Pfad B'],['Fuente 2','Netzteil 2']])+'</div><div class="arrow" aria-hidden="true">↓</div><div class="node">'+tr(['Mismo servidor','Derselbe Server'])+'</div>', ['Cada fuente debe soportar toda la carga. Una regleta común vuelve a unir el riesgo.','Jedes Netzteil muss die volle Last tragen. Eine gemeinsame Leiste verbindet das Risiko erneut.']);
+case 'capacity':return vcard(['Después de perder un host','Nach einem Hostausfall'],'<div class="node">'+tr(['Necesario: 120 GiB','Benötigt: 120 GiB'])+'</div><div class="bar"><div class="up" style="width:80%">96 GiB</div><div class="down" style="width:20%"></div></div><div class="legend"><span>'+tr(['Quedan 96 GiB','96 GiB bleiben'])+'</span><span>'+tr(['Faltan 24 GiB','24 GiB fehlen'])+'</span></div>', ['La franja oscura es el déficit, no capacidad disponible.','Der braune Anteil ist der Fehlbetrag, keine verfügbare Kapazität.']);
+case 'shutdown':return vcard(['Repartir 12 minutos de batería','12 Batterieminuten aufteilen'],flow([['Esperar: hasta 6 min','Warten: höchstens 6 min'],['Apagar: 4 min','Herunterfahren: 4 min'],['Reserva: 2 min','Reserve: 2 min']]),['El apagado termina antes de agotar la batería.','Die Abschaltung endet vor Batterieentladung.']);
+case 'ups':return vcard(['Tres caminos de alimentación','Drei Versorgungspfade'],['Offline · VFD','Line-interactive · VI','Online · VFI'].map((x,i)=>`<div class="circuit-title">${x}</div>${upsCircuit(['offline','vi','online'][i])}`).join(''),['Verde continuo: red normal. Marrón discontinuo: batería. Bypass omitido; explicado en el texto.','Grün durchgezogen: Netzbetrieb. Braun gestrichelt: Batterie. Bypass weggelassen; im Text erklärt.']);
+case 'limits':return vcard(['Una misma carga, dos magnitudes','Dieselbe Last, zwei Größen'],flow(['U = 230 V · I = 1 A','S = U × I = 230 VA','P = 184 W','FP = P / S = 0,8'])+'<p>'+tr(['La corriente total debe poder circular, aunque la energía media corresponda a 184 W.','Der gesamte Strom muss fließen können, obwohl die mittlere Energieübertragung 184 W entspricht.'])+'</p><div class="formula">P = S × FP<br>S = P / FP</div><p>'+tr(['La diferencia no representa pérdidas de 46 W. Para elegir una USV comprueba W, VA y después minutos.','Die Differenz bedeutet keine Verluste von 46 W. Zur USV-Auswahl W, VA und danach Minuten prüfen.'])+'</p>');
+case 'energy':return vcard(['Serie: una corriente, cuatro aportes de tensión','Reihe: ein Strom, vier Spannungsbeiträge'],'<div class="series-chain">'+[1,2,3,4].map(n=>'<div class="node">'+tr(['Batería ','Batterie '])+n+'<br>12 V · 7 Ah</div>').join('<div class="arrow" aria-hidden="true">↓</div>')+'</div><p>'+tr(['La misma corriente pasa por todas: 1 A durante 1 h retira 1 Ah de cada batería.','Derselbe Strom fließt durch alle: 1 A während 1 h entnimmt jeder Batterie 1 Ah.'])+'</p><div class="formula">4 × 12 V = 48 V<br>7 Ah<br>48 V × 7 Ah = 336 Wh</div><p>'+tr(['La tensión se suma; la capacidad de carga no. La energía sí aumenta cuatro veces.','Spannung addiert sich; Ladungskapazität nicht. Die Energie vervierfacht sich.'])+'</p>');
+case 'platform':return vcard(['Tres VMs, un host físico','Drei VMs, ein physischer Host'],'<div class="split"><div class="node">VM 1</div><div class="node">VM 2 + VM 3</div></div><div class="node" style="margin-top:12px">'+tr(['Hipervisor','Hypervisor'])+'</div><div class="node" style="margin-top:12px">'+tr(['Un host físico','Ein physischer Host'])+'</div>', ['Si la base física falla, las tres VMs comparten la caída.','Fällt die physische Grundlage aus, teilen alle drei VMs den Ausfall.']);
+case 'decision':return vcard(['Requisito → prueba → decisión','Anforderung → Nachweis → Entscheidung'],flow([['Máximo 10 min de caída','Höchstens 10 min Ausfall'],['Clúster: reinicio probado 4 min','Cluster: Neustart geprüft 4 min'],['Cumple ante fallo de un host','Erfüllt bei einem Hostausfall']]),['La conclusión vale para el fallo ensayado y las condiciones indicadas.','Die Aussage gilt für den geprüften Ausfall und die genannten Bedingungen.']);
+case 'operators':return vcard(['Del operador a tu respuesta','Vom Operator zur Antwort'],flow([['nennen · nombrar','nennen · benennen'],['erläutern · explicar función','erläutern · Funktion erklären'],['begründen · unir al requisito','begründen · Anforderungsbezug'],['berechnen · mostrar cálculo','berechnen · Rechenweg zeigen']]),['Escribe primero tu respuesta; abre después el modelo.','Schreiben Sie zuerst Ihre Antwort, öffnen Sie danach das Muster.']);
+}}
+function renderLesson(){const l=LESSONS[state.page];$('page').innerHTML=`<div class="eyebrow">${tx('lesson')} ${String(state.page+1).padStart(2,'0')}</div><h1>${esc(tr(l.title))}</h1><div class="lesson-layout ${l.visual==='ups'?'wide-diagrams':''}"><div><section class="reading">${tr(l.body).split('\n\n').map((p,i)=>`<p>${esc(p)}</p>${l.visual==='ups'?`<figure style="margin:12px 0 26px;padding:16px;background:#e2edea;border-radius:9px"><figcaption class="visual-title">${['Offline · VFD','Line-interactive · VI','Online · VFI'][i]}</figcaption>${upsCircuit(['offline','vi','online'][i])}</figure>`:''}`).join('')}${l.visual==='ups'?`<p class="small">${tr(['Verde continuo: red normal. Marrón discontinuo: batería. Bypass omitido en el dibujo; explicado arriba.','Grün durchgezogen: Netzbetrieb. Braun gestrichelt: Batterie. Bypass im Bild weggelassen; oben erklärt.'])}</p>`:''}</section><section class="check"><div class="check-head">${tx('checkHead')}</div><label for="checkAnswer">${esc(tr(l.check))}</label><textarea id="checkAnswer">${esc(state.checks[state.page]||'')}</textarea><button id="compareCheck" class="primary">${tx('compare')}</button><p class="model" id="checkModel" hidden>${esc(tr(l.answer))}</p></section></div><section>${l.visual==='ups'?'':visual(l.visual)}</section></div>`;$('checkAnswer').addEventListener('input',e=>{state.checks[state.page]=e.target.value;save();});$('compareCheck').addEventListener('click',()=>{$('checkModel').hidden=false;});}
+function table(t){return `<table><caption>${tx('material')}</caption><thead><tr>${tr(t.headers).map(h=>`<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${t.rows.map(row=>'<tr>'+row.map(c=>`<td>${esc(tr(c))}</td>`).join('')+'</tr>').join('')}</tbody></table>`;}
+
+function freeField(t,i){const f=t.fields[i],id='answer-'+i,val=state.answers[akey(t.id,i)]||'';return `<textarea id="${id}" data-field="${i}" maxlength="10000">${esc(val)}</textarea><div class="field-msg" id="msg-${i}"></div>`;}
+function answerSurface(t){
+ if(t.layout==='hypervisor-table')return `<table class="answer-table matrix"><caption>${tr(['a) Comparación completa · 8 puntos','a) Vollständiger Vergleich · 8 Punkte'])}</caption><thead><tr><th scope="col">${tx('field')}</th><th scope="col">Hypervisor Typ 1</th><th scope="col">Hypervisor Typ 2</th></tr></thead><tbody>${[['Arquitectura (4 puntos)','Architektur (4 Punkte)'],['Uso (2 puntos)','Einsatz (2 Punkte)'],['Producto (2 puntos)','Produkt (2 Punkte)']].map((row,j)=>`<tr><th scope="row">${tr(row)}</th>${[0,1].map(k=>`<td><label for="answer-${j*2+k}" class="small">${tr(t.fields[j*2+k].label)} · ${t.fields[j*2+k].points} ${tx('points')}</label>${freeField(t,j*2+k)}</td>`).join('')}</tr>`).join('')}</tbody></table>`+freeParts(t,[6]);
+ if(t.layout==='ups-table')return `<table class="answer-table matrix"><caption>${tx('answers')}</caption><thead><tr><th scope="col">${tr(['Tipo','Typ'])}</th><th scope="col">${tr(['Abreviatura (1 punto)','Abkürzung (1 Punkt)'])}</th><th scope="col">${tr(['Significado (1 punto)','Bedeutung (1 Punkt)'])}</th></tr></thead><tbody>${['Online','Offline','Line-interactive'].map((x,j)=>`<tr><th scope="row">${x}</th>${[0,1].map(k=>`<td><label for="answer-${j*2+k}" class="small">${tr(t.fields[j*2+k].label)}</label>${freeField(t,j*2+k)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+ if(t.id>=11)return freeParts(t,t.fields.map((_,i)=>i));
+ return `<table class="answer-table"><caption>${tx('answers')}</caption><thead><tr><th scope="col">${tx('field')}</th><th scope="col">${tx('answer')}</th><th scope="col">P</th></tr></thead><tbody>${t.fields.map((f,i)=>control(t,f,i)).join('')}</tbody></table>`;
+}
+function freeParts(t,ids){return `<div class="free-answers">${ids.map(i=>`<section class="part"><div class="part-head"><label for="answer-${i}">${esc(tr(t.fields[i].label))}</label><span>${t.fields[i].points} ${tx('points')}</span></div>${freeField(t,i)}</section>`).join('')}</div>`;}
+
+function control(t,f,i){const val=state.answers[akey(t.id,i)]||'',id='answer-'+i;let c=f.type==='written'?`<textarea id="${id}" data-field="${i}" maxlength="10000">${esc(val)}</textarea>`:f.type==='choice'?`<select id="${id}" data-field="${i}"><option value="">${tx('choose')}</option>${f.options.map(o=>`<option value="${esc(o[0])}" ${val===o[0]?'selected':''}>${esc(tr(o))}</option>`).join('')}</select>`:`<input id="${id}" data-field="${i}" inputmode="decimal" autocomplete="off" value="${esc(val)}" maxlength="80">`;return `<tr><td><label for="${id}">${esc(tr(f.label))}</label></td><td>${c}<div class="field-msg" id="msg-${i}"></div></td><td>${f.points}</td></tr>`;}
+function renderTask(){const t=TASKS[state.page-12],s=taskState(t.id);$('page').innerHTML=`<div class="exam-head"><div><div class="eyebrow">${tx('exercise')} ${String(t.id).padStart(2,'0')} · ${tx(t.core?'core':'extra')}</div><h1>${esc(tr(t.title))}</h1></div><div class="points">${t.points} ${tx('points')}</div></div><span class="badge">eigene Aufgabe, nicht offiziell IHK</span><span class="badge">${t.id<=10?tr(['Calentamiento guiado','Angeleitete Vorübung']):tr(['Desarrollo libre · puntos orientativos','Freie Ausarbeitung · orientierende Punkte'])}</span><div class="exam-layout ${t.visual?'wide-diagrams':''}"><section class="material"><p class="case">${esc(tr(t.case))}</p><p class="instructions">${esc(tr(t.instruction))}</p>${t.visual==='spof'?spof():t.visual==='circuits'?'<div class="circuit-title">A</div>'+upsCircuit('online')+'<div class="circuit-title">B</div>'+upsCircuit('offline'):''}${table(t)}<p class="source-note">${esc(tr(t.ref))}</p></section><section>${answerSurface(t)}<p class="small" style="margin:12px 0">${t.fields.some(f=>f.type==='number')?tx('numericGuide'):(t.id>=12&&t.id<=16?tr(['Escribe el desarrollo y las unidades en cada apartado. Responde en alemán al practicar el examen. Puntos orientativos propios; revisión manual por significado.','Schreiben Sie Rechenweg und Einheiten in jede Teilaufgabe. Üben Sie die Prüfungsantwort auf Deutsch. Eigene orientierende Punkte; manuelle Bewertung nach Bedeutung.']):tr(['Responde con tus palabras; al practicar el examen, escribe en alemán. Abre criterios y modelo cuando quieras comparar tu respuesta. Los textos requieren revisión manual por significado.','Antworten Sie in eigenen Worten; üben Sie die Prüfungsantwort auf Deutsch. Öffnen Sie Kriterien und Muster zum Vergleichen. Texte benötigen eine manuelle Bewertung nach Bedeutung.']))}</p><div class="actions"><button id="checkTask" class="primary">${tx('check')}</button><button id="reviewTask">${tx('openReview')}</button><button id="hintTask" aria-expanded="${s.hint}" aria-controls="hintBox">${tx('hint')}</button><button id="solutionTask" aria-expanded="${s.solution}" aria-controls="solutionBox">${tx(s.solution?'hideSolution':'solution')}</button></div><p id="hintBox" class="feedback" ${s.hint?'':'hidden'}>${esc(tr(t.hint))}</p><div id="feedback" class="feedback" role="status" hidden></div></section><section id="reviewBox" class="review" hidden></section><section id="solutionBox" class="solution" ${s.solution?'':'hidden'}>${solutionHTML(t)}</section></div>`;
+document.querySelectorAll('[data-field]').forEach(el=>el.addEventListener(el.tagName==='SELECT'?'change':'input',e=>{state.answers[akey(t.id,Number(e.target.dataset.field))]=e.target.value;if(s.reviewSeen)s.helped=true;s.reviewOpen=false;s.checked=false;s.review={};s.feedback=null;delete s.score;$('reviewBox').hidden=true;$('feedback').hidden=true;clearFields(t);save();}));$('checkTask').addEventListener('click',()=>checkTask(t));$('reviewTask').addEventListener('click',()=>{s.feedback=evaluate(t);s.checked=true;showFeedback(t);if(!s.feedback.blank){s.reviewOpen=true;s.helped=true;renderReview(t);}save();});$('hintTask').addEventListener('click',()=>{s.hint=!s.hint;if(s.hint)s.helped=true;$('hintBox').hidden=!s.hint;$('hintTask').setAttribute('aria-expanded',String(s.hint));save();});$('solutionTask').addEventListener('click',()=>{s.solution=!s.solution;if(s.solution)s.helped=true;$('solutionBox').hidden=!s.solution;$('solutionTask').textContent=tx(s.solution?'hideSolution':'solution');$('solutionTask').setAttribute('aria-expanded',String(s.solution));save();});if(s.checked){showFeedback(t);if(s.reviewOpen)renderReview(t);} }
+function parseNumber(v){const n=String(v).trim().replace(/\s/g,'').replace(',','.');return /^[-+]?\d+(\.\d+)?$/.test(n)?Number(n):NaN;}
+function evaluate(t){let blank=0,automatic=0;const results=[];t.fields.forEach((f,i)=>{const v=state.answers[akey(t.id,i)]||'';if(!v.trim()){blank++;results.push({blank:true,ok:false});return;}const ok=f.type==='number'?Math.abs(parseNumber(v)-f.answer)<=f.tol:f.type==='choice'?v===f.answer:null;if(ok)automatic+=f.points;results.push({ok});});return {blank,automatic,results};}
+function clearFields(t){t.fields.forEach((f,i)=>{$('answer-'+i).classList.remove('good','bad');$('answer-'+i).removeAttribute('aria-invalid');$('msg-'+i).textContent='';});}
+function checkTask(t){const s=taskState(t.id);s.feedback=evaluate(t);s.checked=true;showFeedback(t);$('reviewBox').hidden=true;s.reviewOpen=false;save();}
+function showFeedback(t){const s=taskState(t.id),r=s.feedback;if(!r)return;clearFields(t);r.results.forEach((r,i)=>{const f=t.fields[i],el=$('answer-'+i);if(f.type!=='written'&&!r.blank){el.classList.add(r.ok?'good':'bad');el.setAttribute('aria-invalid',String(!r.ok));}$('msg-'+i).textContent=r.blank?tr(['Vacío','Leer']):tx(f.type==='written'?'written':r.ok?'correct':'wrong');});$('feedback').hidden=false;$('feedback').innerHTML=r.blank?tx('blank'):`${t.fields.some(f=>f.type!=='written')?`${tx('auto')}: <b>${r.automatic} / ${t.fields.filter(f=>f.type!=='written').reduce((a,f)=>a+f.points,0)}</b><br>`:''}${tx(s.score===undefined?'pending':'reviewDone')}`;}
+function renderReview(t){const s=taskState(t.id);if(!s.feedback||s.feedback.blank){$('reviewBox').hidden=true;return;}$('reviewBox').hidden=false;s.reviewSeen=true;$('reviewBox').innerHTML=`<h2>${tx('review')}</h2><p class="small">${tx('reviewNotice')}</p>${t.fields.map((f,i)=>f.type==='written'?`<div class="review-block"><h3>${esc(tr(f.label))}</h3><p class="model"><b>${tx('model')}:</b> ${esc(tr(f.model))}</p>${f.criteria.map((c,j)=>`<div class="criterion"><label for="review-${i}-${j}">${esc(tr(c))}</label><select id="review-${i}-${j}" data-review="${i}:${j}"><option value="">${tx('choose')}</option><option value="1" ${s.review[i+':'+j]==='1'?'selected':''}>${tx('yes')}</option><option value="0" ${s.review[i+':'+j]==='0'?'selected':''}>${tx('no')}</option></select></div>`).join('')}</div>`:'').join('')}<button id="finishReview">${tx('finishReview')}</button><p id="reviewScore" class="feedback" role="status" ${s.score===undefined?'hidden':''}>${s.score===undefined?'':scoreHTML(t,s)}</p>`;document.querySelectorAll('[data-review]').forEach(el=>el.addEventListener('change',e=>{s.review[e.target.dataset.review]=e.target.value;delete s.score;$('reviewScore').hidden=true;save();}));$('finishReview').addEventListener('click',()=>{const keys=t.fields.flatMap((f,i)=>f.type==='written'?f.criteria.map((_,j)=>i+':'+j):[]);$('reviewScore').hidden=false;if(keys.some(k=>!['0','1'].includes(s.review[k]))){$('reviewScore').textContent=tx('rubricMissing');return;}s.score=s.feedback.automatic+keys.reduce((a,k)=>a+Number(s.review[k]),0);$('reviewScore').innerHTML=scoreHTML(t,s);showFeedback(t);save();});}
+function scoreHTML(t,s){const self=s.score-s.feedback.automatic;return `<span class="score">${tx('total')}: ${s.score} / ${t.points}</span><br>${tx('auto')}: ${s.feedback.automatic} · ${tx('self')}: ${self}<br>${tx(s.helped?'assisted':'unaided')}`;}
+function solutionHTML(t){return `<h2>${tx('model')}</h2>${t.fields.map(f=>`<p><b>${esc(tr(f.label))}:</b> ${esc(f.type==='written'?tr(f.model):f.type==='choice'?tr(f.options.find(o=>o[0]===f.answer)):String(f.answer).replace('.',','))}</p>`).join('')}<p class="small">${tr(['Los puntos de redacción dependen de cumplir los criterios, no de copiar las palabras.','Schreibpunkte hängen von der Erfüllung der Kriterien ab, nicht vom Kopieren der Wörter.'])}</p>`;}
+function render(){svgIndex=0;chrome();state.page<12?renderLesson():renderTask();}
+function go(n){if(n<0||n>31)return;state.page=n;render();window.scrollTo(0,0);}
+$('prev').addEventListener('click',()=>go(state.page-1));$('next').addEventListener('click',()=>go(state.page+1));document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>{state.lang=b.dataset.lang;render();}));
+$('notesButton').addEventListener('click',()=>{$('noteText').value=state.notes[state.page]||'';$('notesDialog').showModal();});$('noteText').addEventListener('input',e=>{state.notes[state.page]=e.target.value;save();});$('closeNotes').addEventListener('click',()=>$('notesDialog').close());$('closeSources').addEventListener('click',()=>$('sourcesDialog').close());
+$('sourcesButton').addEventListener('click',()=>{$('sourcesContent').innerHTML=state.lang==='es'?`<p><b>Libros locales:</b> Grundstufe LF3–5 (03b), §3.8.4, pp. 371–372; §3.9.1, pp. 373–385. Fachstufe LF8–9 (04b), §§4.3.3–4.3.5, pp. 345–358; §4.8, pp. 420–427. Zisler, capítulo 10.1, páginas PDF 461–471: requisitos, rutas y fallos.</p><p><b>Exámenes:</b> KAIT Sommer 2022 4c (solución oficial); Sommer 2023 2aa–ac/2b (pregunta anotada PDF pp. 4–5; solución oficial original local PDF p. 3); Sommer 2024 1aa–ab/4c (soluciones oficiales). Todas las tareas del taller son propias. T17 a), T18 b) y T19 cubren las variantes completas cotejadas. Solución original Sommer 2023 cotejada después de generar. T09–11/T20 conservan modelos y puntos propios; no se acredita equivalencia. Lista de exámenes cotejados en esta revisión.</p><p><b>Didáctica:</b> Rosenshine (2012), pp. 12–19; IES (2007), recomendaciones 2–4, pp. 9–16; Nation (2007), pp. 1–12; contrato didáctico, §§5–8. Mayer y Fiorella, Principles for Reducing Extraneous Processing in Multimedia Learning (Cambridge Handbook): solo resumen público, no capítulo completo. Coherencia, señalización y proximidad de texto/gráfico.</p><p><b>Contraste externo:</b> Eaton, UPS sizing guide; Microsoft Learn, Hyper-V architecture; Oracle, First Steps (VirtualBox User Manual 7.0). Contraste documentado de W/VA, hipervisor tipo 1 y plataforma hosted/tipo 2. Referencias y alcance en REPORTE-bibliografia.md; no se afirma una nueva consulta externa.</p>`:`<p><b>Lokale Bücher:</b> Grundstufe LF3–5 (03b), §3.8.4, S. 371–372; §3.9.1, S. 373–385. Fachstufe LF8–9 (04b), §§4.3.3–4.3.5, S. 345–358; §4.8, S. 420–427. Zisler, Kapitel 10.1, PDF-Seiten 461–471: Anforderungen, Pfade und Ausfälle.</p><p><b>Prüfungen:</b> KAIT Sommer 2022 4c (offizielle Lösung); Sommer 2023 2aa–ac/2b (annotierte Frage PDF S. 4–5; lokale offizielle Originallösung PDF S. 3); Sommer 2024 1aa–ab/4c (offizielle Lösungen). Alle Aufgaben sind selbst erstellt. T17 a), T18 b) und T19 decken die vollständig abgeglichenen Varianten ab. Originallösung Sommer 2023 nach Erstellung abgeglichen. T09–11/T20 behalten eigene Musterlösungen und Punkte; keine Gleichwertigkeit behauptet. Liste der in dieser Revision abgeglichenen Prüfungen.</p><p><b>Didaktik:</b> Rosenshine (2012), S. 12–19; IES (2007), Empfehlungen 2–4, S. 9–16; Nation (2007), S. 1–12; Didaktikvertrag, §§5–8. Mayer und Fiorella, Principles for Reducing Extraneous Processing in Multimedia Learning (Cambridge Handbook): nur öffentliches Abstract, nicht das vollständige Kapitel. Kohärenz, Signalisierung und Nähe von Text/Grafik.</p><p><b>Externer Abgleich:</b> Eaton, UPS sizing guide; Microsoft Learn, Hyper-V architecture; Oracle, First Steps (VirtualBox User Manual 7.0). Dokumentierter Abgleich von W/VA, Typ-1-Hypervisor und Hosted-/Typ-2-Plattform. Nachweise und Umfang in REPORTE-bibliografia.md; keine neue externe Konsultation behauptet.</p>`;$('sourcesDialog').showModal();});
+$('exportButton').addEventListener('click',()=>{const payload={workshop:'FISI AP2 · 2026-10-16',exportedAt:new Date().toISOString(),...state,taskTitles:TASKS.map(t=>({id:t.id,title:t.title,points:t.points})),scoring:'Numeric warm-ups automatic; all written answers self-assessed with explicit confirmation, never keywords.'};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const link=document.createElement('a'),url=URL.createObjectURL(blob);link.href=url;link.download='respuestas-notas-2026-10-16.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);$('saveStatus').textContent=tx('exported');});
+render();
+</script></body></html>
