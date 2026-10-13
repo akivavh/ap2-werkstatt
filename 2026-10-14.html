@@ -11,14 +11,16 @@
 *{box-sizing:border-box}html{font-size:17px}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5}button,input,textarea,select{font:inherit}button,a,input,textarea,select,summary{outline-offset:3px}button{cursor:pointer}button:disabled{cursor:default;opacity:.55}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #dc7d28}button{padding:.5rem .75rem;border:1px solid var(--edge);border-radius:4px;background:var(--paper);color:var(--ink);font-size:.875rem}button:hover:enabled{border-color:var(--accent);background:var(--accent-pale)}button.primary{background:var(--accent);border-color:var(--accent);color:white}button.primary:hover:enabled{background:#064e42}button.subtle{background:transparent}a{color:var(--accent)}[hidden]{display:none!important}h1,h2,h3,p,figure{margin:0}h1{font-family:var(--serif);font-size:2rem;line-height:1.18;letter-spacing:-.02em;font-weight:400;max-width:36ch}h2{font-size:1.25rem;line-height:1.3}h3{font-size:1rem}.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}.muted{color:var(--muted)}.kicker{font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;color:var(--accent);margin-bottom:.5rem}.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}.skip{position:fixed;top:-5rem;left:17rem;background:var(--paper);z-index:80;padding:.75rem}.skip:focus{top:.5rem}
 .sidebar{position:fixed;inset:0 auto 0 0;width:254px;background:var(--nav);color:#f1f5e9;padding:18px 16px;display:flex;flex-direction:column;z-index:20}.brand{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}.brand-stamp{display:grid;place-items:center;width:42px;height:42px;background:var(--lime);color:var(--nav);font:700 1.125rem var(--mono);border-radius:4px}.brand strong{display:block;font-size:1.25rem}.brand small{display:block;font-family:var(--mono);font-size:.75rem;color:var(--nav-muted)}.nav-section{margin-bottom:.75rem}.nav-label{font-size:.75rem;font-weight:600;margin-bottom:.4rem;color:var(--nav-muted)}.lesson-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}.lesson-nav button{display:grid;grid-template-columns:20px 1fr;align-items:center;gap:3px;text-align:left;padding:5px 4px;min-height:31px;background:#25484d;color:#e7f0e9;border:1px solid transparent;font-size:.7rem;line-height:1.25}.lesson-nav .index{font-family:var(--mono);font-size:.7rem}.sidebar button:hover:enabled{background:#3e615c;color:white}.sidebar button.active{background:var(--lime);color:#173238;border-color:var(--lime)}.task-group{margin-bottom:.6rem}.task-group .nav-label{font-weight:400;margin-bottom:4px}.task-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}.task-nav button{padding:5px 0;min-height:32px;line-height:1.2;font-family:var(--mono);font-size:.875rem;background:#25484d;color:#e7f0e9;border:1px solid transparent}.task-nav button[data-status="correct"]{border-bottom:3px solid #bbd987}.task-nav button[data-status="help"]{border-bottom:3px solid #ecc473}.task-nav button[data-status="seen"]{border-bottom:3px solid #a0cddd}.side-end{margin-top:auto;border-top:1px solid #52716e;padding-top:.5rem}.side-end button{width:100%;background:transparent;color:#e7f0e9;border-color:transparent;text-align:left;padding:.35rem 0;font-size:.75rem}.side-foot{font-size:.7rem;color:var(--nav-muted);margin-top:.5rem;line-height:1.4}
 .topbar{position:fixed;left:254px;right:0;top:0;height:66px;border-bottom:1px solid var(--line);background:var(--paper);z-index:15;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 28px}.topbrand{font-family:var(--mono);font-size:.75rem;letter-spacing:.04em}.topcontrols{display:flex;align-items:center;gap:.5rem}.topcontrols label{font-size:.75rem;color:var(--muted)}select{border:1px solid var(--edge);border-radius:4px;background:white;color:var(--ink);padding:.4rem .5rem;font-size:.875rem}.topcontrols button{font-size:.75rem}.footer{position:fixed;left:254px;right:0;bottom:0;background:var(--nav);color:#f1f5e9;height:64px;z-index:15;display:flex;align-items:center;justify-content:space-between;padding:0 28px;gap:1rem}.footer button{background:#f2f5e9;border-color:#f2f5e9;color:var(--nav);min-width:110px}.footer button.primary{background:var(--lime);border-color:var(--lime);color:var(--nav)}.footer-center{display:flex;align-items:center;gap:1rem}.footer .position{font-family:var(--mono);font-size:.875rem;white-space:nowrap}.footer .notes-button{min-width:0;background:transparent;color:#f1f5e9;border-color:#8aaba2;font-size:.75rem}
-main{margin:66px 0 64px 254px;height:calc(100vh - 130px);overflow:auto;padding:24px 28px 36px;scrollbar-gutter:stable}.page{max-width:1120px;margin:auto;min-width:0}.page-head{margin-bottom:1rem}.lead{font-size:1rem;color:var(--muted);max-width:84ch;margin-top:.5rem}.lesson-layout{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,1fr);gap:28px;align-items:start}.prose p{margin-bottom:.875rem;max-width:66ch}.prose p:last-child{margin-bottom:0}.visual-column{min-width:0}.figure-stage{padding:1rem;background:#eaf1e9;border:1px solid #a2b3a8;border-radius:10px}.figure-stage h2{font-family:var(--mono);font-size:.875rem;margin-bottom:.75rem}.figure-stage .stack{display:grid;gap:.75rem}.filebox{border:1px solid #809990;background:#fffef8;border-radius:4px;padding:.75rem;box-shadow:0 4px 12px #1732380c}.filebox.highlight{border:2px solid #096a59;background:#f7fbe8}.box-title{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;font-size:.875rem;font-weight:600;margin-bottom:.5rem}.files{display:flex;flex-wrap:wrap;gap:.5rem}.file{padding:.5rem .75rem;border:1px solid #698d81;background:#eaf5ee;color:#173238;font-family:var(--mono);font-size:1rem;border-radius:4px}.file.new{background:#e1eeb2;border-style:double;border-width:3px;padding:calc(.5rem - 2px) calc(.75rem - 2px)}.file.missing{border-style:dashed;background:#fff0e9;color:#92321f}.file.old{background:#fff0d3;border-color:#8d6e32}.arrowlabel{text-align:center;font-size:.75rem;color:var(--muted);padding:.25rem 0}.arrowlabel::before{content:'↓ ';font-weight:700}.parallel{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}.fig-note{font-size:.875rem;color:var(--muted);margin-top:.75rem}.figcaption{font-size:.875rem;color:var(--muted);margin-top:.75rem;line-height:1.4}.step-controls{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-top:.75rem}.step-controls button{font-size:.75rem}.step-position{font-family:var(--mono);font-size:.75rem}.comprehension{margin-top:1rem;border-top:1px solid var(--edge);padding-top:.75rem}.comprehension h3{font-size:.875rem;margin-bottom:.5rem}.comprehension p{font-size:.875rem;margin:.5rem 0}.comprehension summary{color:var(--accent);font-size:.875rem;cursor:pointer}.comprehension details{margin-top:.5rem}.check-answer{background:var(--amber-pale);padding:.75rem;border-radius:4px}.small-table{width:100%;border-collapse:collapse;font-size:.875rem}.small-table th,.small-table td{padding:.5rem;border-bottom:1px solid #bfcdc3;text-align:left}.small-table th{font-weight:600}.small-table td.changed{background:#e1eeb2;font-family:var(--mono)}.small-table td.stable{font-family:var(--mono)}.step-message{min-height:52px;font-size:.875rem;background:#fffef8;padding:.75rem;margin-top:.75rem;border:1px solid #a2b3a8;border-radius:4px}.bar-row{display:grid;grid-template-columns:60px 1fr 56px;align-items:center;gap:.5rem;margin:.5rem 0;font-size:.875rem}.bar-track{background:#d5e2d6;height:24px}.bar-fill{background:var(--accent);height:100%;min-width:0}.bar-value{text-align:right;font-family:var(--mono);font-size:.875rem}.phrase{padding:.75rem 0;border-bottom:1px solid #bbcbbf}.phrase p{font-size:.875rem;margin-top:.25rem}
+main{margin:66px 0 64px 254px;height:calc(100vh - 130px);overflow:auto;padding:24px 28px 36px;scrollbar-gutter:stable}.page{max-width:1120px;margin:auto;min-width:0}.page-head{margin-bottom:1rem}.lead{font-size:1rem;color:var(--muted);max-width:84ch;margin-top:.5rem}.lesson-layout{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,1fr);gap:28px;align-items:start}.prose p{margin-bottom:.875rem;max-width:66ch}.prose p:last-child{margin-bottom:0}.visual-column{min-width:0}.figure-stage{padding:1rem;background:#eaf1e9;border:1px solid #a2b3a8;border-radius:10px}.figure-stage h2{font-family:var(--mono);font-size:.875rem;margin-bottom:.75rem}.figure-stage .stack{display:grid;gap:.75rem}.filebox{border:1px solid #809990;background:#fffef8;border-radius:4px;padding:.75rem;box-shadow:0 4px 12px #1732380c}.filebox.highlight{border:2px solid #096a59;background:#f7fbe8}.box-title{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;font-size:.875rem;font-weight:600;margin-bottom:.5rem}.files{display:flex;flex-wrap:wrap;gap:.5rem}.file{padding:.5rem .75rem;border:1px solid #698d81;background:#eaf5ee;color:#173238;font-family:var(--mono);font-size:1rem;border-radius:4px}.file.new{background:#e1eeb2;border-style:double;border-width:3px;padding:calc(.5rem - 2px) calc(.75rem - 2px)}.file.missing{border-style:dashed;background:#fff0e9;color:#92321f}.file.old{background:#fff0d3;border-color:#8d6e32}.arrowlabel{text-align:center;font-size:.75rem;color:var(--muted);padding:.25rem 0}.arrowlabel::before{content:'↓ ';font-weight:700}.parallel{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}.fig-note{font-size:.875rem;color:var(--muted);margin-top:.75rem}.figcaption{font-size:.875rem;color:var(--muted);margin-top:.75rem;line-height:1.4}.step-controls{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-top:.75rem}.step-controls button{font-size:.75rem}.step-position{font-family:var(--mono);font-size:.75rem}.comprehension{margin-top:1rem;border-top:1px solid var(--edge);padding-top:.75rem}.comprehension h3{font-size:.875rem;margin-bottom:.5rem}.comprehension p{font-size:.875rem;margin:.5rem 0}.comprehension summary{color:var(--accent);font-size:.875rem;cursor:pointer}.comprehension details{margin-top:.5rem}.check-answer{background:var(--amber-pale);padding:.75rem;border-radius:4px}.small-table{width:100%;border-collapse:collapse;font-size:.875rem}.small-table th,.small-table td{padding:.5rem;border-bottom:1px solid #bfcdc3;text-align:left}.small-table th{font-weight:600}.small-table td.changed{background:#e1eeb2;font-family:var(--mono)}.small-table td.stable{font-family:var(--mono)}.step-message{min-height:52px;font-size:.875rem;background:#fffef8;padding:.75rem;margin-top:.75rem;border:1px solid #a2b3a8;border-radius:4px}.bar-row{display:grid;grid-template-columns:60px 1fr 82px;align-items:center;gap:.5rem;margin:.5rem 0;font-size:.875rem}.bar-track{background:#d5e2d6;height:24px}.bar-fill{background:var(--accent);height:100%;min-width:0}.bar-value{text-align:right;font-family:var(--mono);font-size:.875rem}.phrase{padding:.75rem 0;border-bottom:1px solid #bbcbbf}.phrase p{font-size:.875rem;margin-top:.25rem}
 .exam-meta{display:flex;justify-content:space-between;align-items:start;gap:1rem}.badge{display:inline-block;background:var(--amber-pale);color:#634214;border:1px solid #a38142;padding:.25rem .5rem;border-radius:4px;font: .7rem var(--mono)}.points{font-size:1rem;font-weight:600;white-space:nowrap}.scenario{max-width:94ch;margin-top:.75rem;margin-bottom:1rem}.sheet{background:var(--paper);border:1px solid #8eaaa0;border-radius:10px;overflow:hidden}.sheet-title{display:flex;justify-content:space-between;gap:1rem;padding:.75rem 1rem;background:#ecf2e8;border-bottom:1px solid #a2b9ac;font-size:.875rem}.sheet table{width:100%;border-collapse:collapse;font-size:.875rem}.sheet th{background:#f6f6ef;font-weight:600}.sheet td,.sheet th{padding:.5rem .75rem;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line)}.sheet tr:last-child td,.sheet tr:last-child th{border-bottom:0}.sheet .answers-row{background:#fcfcf3}.sheet input,.sheet select{width:100%;min-width:120px;max-width:380px;font-family:var(--mono);font-size:.875rem;padding:.45rem .5rem;border:1px solid #709081;border-radius:4px;color:var(--ink);background:white}.sheet .input-cell{width:38%}.sheet textarea{display:block;width:100%;min-height:122px;resize:vertical;padding:.75rem;color:var(--ink);background:repeating-linear-gradient(#fffef8 0,#fffef8 26px,#d7e1d9 27px,#fffef8 28px);border:1px solid #709081;border-radius:4px;line-height:28px;font-size:1rem}.sheet .writing-cell{padding:1rem}.sheet .point-cell{width:65px;text-align:center;font-family:var(--mono);white-space:nowrap}.entry-instruction{font-size:.75rem;color:var(--muted);margin-top:.5rem}.task-toolbar{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-top:1rem}.help-panel,.feedback{margin-top:.75rem;padding:1rem;background:var(--paper);border:1px solid #a3b6ac;border-radius:4px}.help-panel{background:var(--amber-pale);border-color:#ac8b50}.help-panel h2,.feedback h2{font-size:1rem;margin-bottom:.5rem}.help-panel p{margin:.5rem 0}.feedback-list{margin:.5rem 0 0;padding-left:1.25rem}.feedback-list li{margin:.35rem 0;font-size:.875rem}.feedback.correct{background:#eef6e9;border-color:#8ca979}.feedback.wrong{background:var(--risk-pale);border-color:#b98e78}.feedback.blank{background:var(--amber-pale);border-color:#ae934e}.field-result{font-size:.75rem;line-height:1.4;margin-top:.25rem}.field-result.wrong{color:#94321f}.field-result.correct{color:#126443}.assist-state{font-size:.75rem;color:var(--muted);margin-top:.5rem}.rubric{margin-top:.75rem}.criterion{display:flex;align-items:flex-start;gap:.5rem;padding:.5rem 0;border-top:1px solid #c7d4c5;font-size:.875rem}.criterion input{width:18px;height:18px;margin:3px 0 0;flex:none;accent-color:var(--accent)}.criterion label{flex:1}.manual-score{font-size:.875rem;margin-top:.5rem}.chart-material{padding:.75rem 1rem;border-bottom:1px solid var(--line)}.chart-material .bar-row{grid-template-columns:40px 1fr 72px;margin:.35rem 0}.chart-material .bar-track{height:16px}.log-material{font-family:var(--mono);background:#203a3b;color:#eef3e9;padding:1rem;font-size:.875rem;white-space:pre-wrap;border-bottom:1px solid #8eaaa0}.source-list{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.source-item{border-top:1px solid var(--edge);padding-top:.75rem}.source-item h2{font-size:1rem;margin-bottom:.5rem}.source-item p{font-size:.875rem;margin-bottom:.5rem}.closing{display:grid;grid-template-columns:1.2fr 1fr;gap:1.5rem}.closing textarea{width:100%;min-height:225px;font-size:1rem;line-height:1.6;padding:1rem;border:1px solid var(--edge);border-radius:4px}.closing .prompt-box{background:#eaf1e9;padding:1rem;border:1px solid #a3b6ac;border-radius:10px}.closing p{margin:.5rem 0}.closing .model-de{font-size:.875rem}.storage{font-size:.75rem;color:var(--muted);line-height:1.4}.status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1rem 0}.status-grid div{border-top:1px solid var(--edge);padding-top:.5rem;font-size:.875rem}.status-grid strong{font-size:1.625rem;display:block;font-family:var(--mono)}
 dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-width:760px;width:70vw;padding:1.5rem;background:var(--paper);box-shadow:0 24px 64px #14363b40;max-height:80vh;overflow:auto}dialog::backdrop{background:#17323880}.dialog-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1rem}dialog textarea{width:100%;height:220px;padding:1rem;font-size:1rem;border:1px solid var(--edge);border-radius:4px}dialog p{margin:.75rem 0}.export-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}.notice{font-size:.875rem;background:var(--accent-pale);border:1px solid #90ada2;padding:.75rem;border-radius:4px}.toast{position:fixed;top:76px;right:28px;max-width:440px;z-index:100;background:var(--nav);color:#f1f5e9;padding:.75rem 1rem;border-radius:4px;font-size:.875rem}.import-label{border:1px solid var(--edge);padding:.5rem .75rem;border-radius:4px;font-size:.875rem;cursor:pointer;display:inline-block}.noscript{margin-left:280px;margin-top:100px}.noscript p{max-width:60ch}.study-link{display:inline-block;font-size:.875rem;margin-top:.75rem}
 .topbar{height:56px}.footer{top:56px;bottom:auto;height:54px;background:#e8eee2;color:var(--ink);border-bottom:1px solid #b4c5b8}.footer button{background:var(--paper);border-color:#81968f;color:var(--ink)}.footer button.primary{background:var(--accent);border-color:var(--accent);color:white}.footer button.primary:hover:enabled{background:#064e42;color:white}.footer .notes-button{color:var(--ink);border-color:#81968f;background:var(--paper)}main{margin-top:110px;margin-bottom:0;height:calc(100vh - 110px)}.brand-stamp{font-size:.875rem;white-space:nowrap}.comprehension summary{padding-bottom:.25rem}
-.column-chart{display:grid;grid-template-columns:45px repeat(6,minmax(0,1fr));gap:12px;height:174px;margin:.75rem 0 .5rem}.column-axis{display:flex;flex-direction:column;justify-content:space-between;padding-bottom:25px;font-size:.75rem;font-family:var(--mono);color:var(--muted)}.column-slot{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;position:relative}.column-value{font-family:var(--mono);font-size:.875rem;margin-bottom:4px}.column-bar{background:var(--accent);width:45%;min-width:24px;max-width:54px}.column-label{font-size:.75rem;height:25px;padding-top:4px}.column-output{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.75rem;padding:.75rem 1rem 1rem}.column-output label{font-size:.875rem;display:block;margin-bottom:.25rem}.column-output input{min-width:0}.column-output .point-note{font-size:.7rem;color:var(--muted);margin-top:.25rem}.column-output-title{padding:.75rem 1rem;font-size:.875rem;border-top:1px solid var(--line)}.column-output .field-result{font-size:.75rem}
+.column-chart{display:grid;grid-template-columns:60px repeat(6,minmax(0,1fr));gap:12px;height:174px;margin:.75rem 0 .5rem}.column-axis{display:flex;flex-direction:column;justify-content:space-between;padding-bottom:25px;font-size:.75rem;font-family:var(--mono);color:var(--muted)}.column-slot{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;position:relative}.column-value{font-family:var(--mono);font-size:.875rem;margin-bottom:4px}.column-bar{background:var(--accent);width:45%;min-width:24px;max-width:54px}.column-label{font-size:.75rem;height:25px;padding-top:4px}.column-output{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.75rem;padding:.75rem 1rem 1rem}.column-output label{font-size:.875rem;display:block;margin-bottom:.25rem}.column-output input{min-width:0}.column-output .point-note{font-size:.7rem;color:var(--muted);margin-top:.25rem}.column-output-title{padding:.75rem 1rem;font-size:.875rem;border-top:1px solid var(--line)}.column-output .field-result{font-size:.75rem}
 @media(max-height:800px){.sidebar{padding-top:12px;padding-bottom:12px}.brand{margin-bottom:.75rem}.nav-section{margin-bottom:.5rem}.task-group{margin-bottom:.45rem}.side-foot{margin-top:.35rem}.page-head{margin-bottom:.75rem}main{padding-top:18px}.prose p{margin-bottom:.75rem}.comprehension{margin-top:.75rem}}
 @media print{.sidebar,.topbar,.footer,.task-toolbar,.step-controls,dialog,.toast,.skip{display:none!important}main{margin:0;height:auto;overflow:visible;padding:1rem}.page{max-width:none}body{background:white}.sheet,.figure-stage{break-inside:avoid}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+.column-output-chart{height:250px;padding:12px 18px 0;margin:0}.column-output-chart .column-slot{min-width:0}.column-output-chart input{max-width:100%;width:100%;min-width:0}.column-output-chart .column-axis{padding-bottom:80px}.column-output-chart .column-label{height:auto;min-height:25px}.column-output-chart .column-bar{flex-shrink:0}.provenance{font-size:.75rem;color:var(--muted);max-width:95ch;margin-top:.5rem}
+.column-chart:not(.column-output-chart) .column-axis{transform:translateY(10px)}
 </style>
 </head>
 <body>
@@ -101,8 +103,8 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
           "de": "Lies die Tabelle spaltenweise. Am Montag ändert sich nur A. Am Dienstag ändert sich nur B. Am Mittwoch ändert sich A erneut und D kommt hinzu. C bleibt unverändert. Der „Mittwochszustand“ besteht aus A3, B2, C1 und D1."
         },
         {
-          "es": "Supuestos para estas páginas: copia al final de cada día, destino de restauración vacío, archivos completos, sin borrados ni cambios de tamaño, sin compresión. Comparamos una cadena de completa + incrementales con otra de completa + diferenciales; no mezclamos ambas.",
-          "de": "Annahmen für diese Seiten: Sicherung am Ende jedes Tages, leeres Wiederherstellungsziel, ganze Dateien, keine Löschungen oder Größenänderungen, keine Kompression. Wir vergleichen eine Kette aus Vollbackup und inkrementellen Backups mit einer anderen aus Vollbackup und differenziellen Backups; wir mischen sie nicht."
+          "es": "Supuestos para estas páginas: copia al final de cada día, destino de restauración vacío, archivos completos, sin borrados ni cambios de tamaño, sin compresión ni deduplicación. Comparamos una cadena de completa + incrementales con otra de completa + diferenciales; no mezclamos ambas.",
+          "de": "Annahmen für diese Seiten: Sicherung am Ende jedes Tages, leeres Wiederherstellungsziel, ganze Dateien, keine Löschungen oder Größenänderungen, keine Kompression oder Deduplizierung. Wir vergleichen eine Kette aus Vollbackup und inkrementellen Backups mit einer anderen aus Vollbackup und differenziellen Backups; wir mischen sie nicht."
         }
       ],
       "visual": "states",
@@ -462,16 +464,28 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       },
       "paras": [
         {
-          "es": "Supón que A mide 4 GB, B 6 GB, C 10 GB y D 2 GB. Son gigabytes decimales. Copiamos archivos completos, sin compresión ni cambios de tamaño. El miércoles la completa guarda 4 + 6 + 10 + 2 = 22 GB; I3 guarda A y D: 4 + 2 = 6 GB; Δ3 guarda A, B y D: 4 + 6 + 2 = 12 GB.",
-          "de": "A ist 4 GB, B 6 GB, C 10 GB und D 2 GB groß. GB bezeichnet dezimale Gigabyte. Wir sichern ganze Dateien ohne Kompression und ohne Größenänderungen. Am Mittwoch sichert ein Vollbackup 4 + 6 + 10 + 2 = 22 GB; I3 sichert A und D: 4 + 2 = 6 GB; Δ3 sichert A, B und D: 4 + 6 + 2 = 12 GB."
+          "es": "Hasta ahora hemos elegido qué archivos copiar. Ahora medimos cuántos datos lógicos se copian: sumamos el contenido completo de cada archivo incluido. No contamos número de versiones, metadatos ni espacio físico del soporte. Un byte es una unidad de datos; aquí usamos GiB, gibibytes, una unidad binaria. 1 GiB = 1024 MiB = 2^30 bytes = 1 073 741 824 bytes. MiB significa mebibyte y 2^30 significa multiplicar 2 por sí mismo treinta veces.",
+          "de": "Bisher haben wir ausgewählt, welche Dateien gesichert werden. Jetzt messen wir die kopierte logische Datenmenge: den vollständigen Inhalt jeder enthaltenen Datei. Wir zählen weder Versionsnummern noch Metadaten oder den physischen Platz auf dem Medium. Ein Byte ist eine Dateneinheit; hier verwenden wir GiB, Gibibyte, eine binäre Einheit. 1 GiB = 1024 MiB = 2^30 Bytes = 1 073 741 824 Bytes. MiB bedeutet Mebibyte; 2^30 bedeutet, 2 dreißigmal mit sich selbst zu multiplizieren."
         },
         {
-          "es": "I1 guarda 4 GB, I2 6 GB e I3 6 GB. Sumar esos volúmenes da 16 GB, pero Δ3 mide 12 GB. ¿Por qué? A cambió dos veces y se copió dos veces en las incrementales; Δ3 contiene A3 una sola vez.",
-          "de": "I1 sichert 4 GB, I2 6 GB und I3 6 GB. Ihre Summe beträgt 16 GB, aber Δ3 ist 12 GB groß. Warum? A wurde zweimal geändert und in den inkrementellen Backups zweimal gesichert. Δ3 enthält A3 nur einmal."
+          "es": "En estos ejemplos propios fijamos A = 4 GiB, B = 6 GiB, C = 10 GiB y D = 2 GiB. Por ejemplo, A contiene 4 × 1 073 741 824 = 4 294 967 296 bytes. GiB no es GB: 1 GB decimal equivale a 1 000 000 000 bytes. Los tamaños se definen aquí en GiB; no se convierten conservando los bytes de una cantidad anterior en GB. Copiamos archivos completos, sin compresión, deduplicación, borrados ni cambios de tamaño.",
+          "de": "Für diese eigenen Beispiele legen wir A = 4 GiB, B = 6 GiB, C = 10 GiB und D = 2 GiB fest. A enthält beispielsweise 4 × 1 073 741 824 = 4 294 967 296 Bytes. GiB ist nicht GB: 1 dezimales GB entspricht 1 000 000 000 Bytes. Die Größen sind hier in GiB definiert; wir rechnen keine frühere GB-Menge unter Beibehaltung ihrer Bytes um. Wir sichern ganze Dateien ohne Kompression, Deduplizierung, Löschungen oder Größenänderungen."
         },
         {
-          "es": "En ejercicios con volúmenes diarios puedes acumularlos cuando representan datos nuevos o conjuntos de archivos distintos, sin solapamiento ni borrados. Ejemplo: lunes 3 GB nuevos, martes 5 GB nuevos, miércoles 2 GB nuevos → diferenciales 3, 8 y 10 GB. El volumen lógico no equivale necesariamente al espacio físico de un producto con compresión o deduplicación.",
-          "de": "Tagesvolumen darfst du addieren, wenn sie neue Daten oder disjunkte Dateimengen ohne Überschneidung und Löschung darstellen. Beispiel: Montag 3 GB neu, Dienstag 5 GB neu, Mittwoch 2 GB neu → differenziell 3, 8 und 10 GB. Das logische Volumen entspricht bei Kompression oder Deduplizierung nicht zwingend dem physischen Platzbedarf."
+          "es": "La completa del domingo F0 contiene A, B y C: sus contenidos son distintos y se copian todos, por eso sumamos 4 + 6 + 10 = 20 GiB. El miércoles la completa incluye también D: 20 + 2 = 22 GiB. I3 copia A y D: 4 + 2 = 6 GiB. Δ3 copia A, B y D: primero 4 + 6 = 10, después 10 + 2 = 12 GiB. C no está en Δ3 porque no cambió desde F0.",
+          "de": "Das Sonntagsvollbackup F0 enthält A, B und C: unterschiedliche Inhalte, die alle kopiert werden. Deshalb addieren wir 4 + 6 + 10 = 20 GiB. Am Mittwoch enthält ein Vollbackup auch D: 20 + 2 = 22 GiB. I3 kopiert A und D: 4 + 2 = 6 GiB. Δ3 kopiert A, B und D: zuerst 4 + 6 = 10, dann 10 + 2 = 12 GiB. C fehlt in Δ3, weil es seit F0 unverändert blieb."
+        },
+        {
+          "es": "I1 copia A2, 4 GiB; I2 copia B2, 6 GiB; I3 copia A3 y D1, 6 GiB. Son 16 GiB entre las tres copias, pero Δ3 solo tiene 12 GiB. A cambió dos veces: las incrementales guardan A2 y A3 en copias distintas; Δ3 guarda únicamente A3. Sumar todos los cambios contaría A dos veces al calcular esa diferencial.",
+          "de": "I1 kopiert A2, 4 GiB; I2 kopiert B2, 6 GiB; I3 kopiert A3 und D1, 6 GiB. Über drei Sicherungen sind das 16 GiB, aber Δ3 enthält nur 12 GiB. A änderte sich zweimal: Die inkrementellen Backups enthalten A2 und A3 in getrennten Sicherungen; Δ3 enthält nur A3. Alle Änderungen zu addieren würde A bei der Berechnung dieser differenziellen Sicherung doppelt zählen."
+        },
+        {
+          "es": "Puedes acumular los volúmenes diarios si representan archivos nuevos distintos, sin cambios posteriores, solapamientos ni borrados. Ejemplo: lunes 3 GiB nuevos, martes otros 5 GiB y miércoles otros 2 GiB. La diferencial guarda 3 GiB el lunes, 3 + 5 = 8 GiB el martes y 8 + 2 = 10 GiB el miércoles. Cada archivo aparece una sola vez dentro de esa copia. Con compresión o deduplicación, este volumen lógico no indica necesariamente el espacio físico ocupado.",
+          "de": "Tagesvolumen darfst du kumulieren, wenn es sich um unterschiedliche neue Dateien ohne spätere Änderungen, Überschneidungen oder Löschungen handelt. Beispiel: Montag 3 GiB neu, Dienstag weitere 5 GiB, Mittwoch weitere 2 GiB. Differenziell: Montag 3 GiB, Dienstag 3 + 5 = 8 GiB, Mittwoch 8 + 2 = 10 GiB. Jede Datei erscheint innerhalb dieser Sicherung einmal. Mit Kompression oder Deduplizierung entspricht dieses logische Volumen nicht unbedingt dem belegten physischen Platz."
+        },
+        {
+          "es": "Al restaurar leemos cada copia aplicada. F0 y Δ3 suman 20 + 12 = 32 GiB leídos; algunos contenidos de F0 se reemplazan después. El destino final solo tiene 22 GiB. Por eso distingue volumen de una copia, suma de todas las copias conservadas y datos leídos durante la restauración.",
+          "de": "Beim Restore lesen wir jede eingespielte Sicherung. F0 und Δ3 ergeben 20 + 12 = 32 GiB gelesene Daten; einige Inhalte aus F0 werden anschließend ersetzt. Der endgültige Zielbestand umfasst nur 22 GiB. Unterscheide deshalb die Größe einer Sicherung, die Summe aller aufbewahrten Sicherungen und die beim Restore gelesene Datenmenge."
         }
       ],
       "visual": "volumes",
@@ -480,12 +494,12 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
         "de": "Abb. 11 · Δ3 sichert A einmal; I1 + I2 + I3 zählt A zweimal."
       },
       "ask": {
-        "es": "Para restaurar F0 + Δ3, ¿cuántos GB se leen en este modelo?",
-        "de": "Wie viele GB werden für F0 + Δ3 in diesem Modell gelesen?"
+        "es": "Para restaurar F0 + Δ3, ¿cuántos GiB se leen en este modelo?",
+        "de": "Wie viele GiB werden für F0 + Δ3 in diesem Modell gelesen?"
       },
       "answer": {
-        "es": "20 + 12 = 32 GB. Se leen dos copias, aunque el destino final tenga 22 GB.",
-        "de": "20 + 12 = 32 GB. Zwei Sicherungen werden gelesen, obwohl der endgültige Zielbestand nur 22 GB umfasst."
+        "es": "20 + 12 = 32 GiB. Se leen dos copias, aunque el destino final tenga 22 GiB.",
+        "de": "20 + 12 = 32 GiB. Zwei Sicherungen werden gelesen, obwohl der endgültige Zielbestand nur 22 GiB umfasst."
       }
     },
     {
@@ -634,7 +648,11 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       "group": 0,
       "material": "table",
       "extra": null,
-      "anchor": "2022 Sommer · KAIT 4 ea"
+      "anchor": "2022 Sommer · KAIT 4 ea",
+      "provenance": {
+        "es": "Vorübung zu Sommer 2022 · KAIT 4 ea. Entrena solo una parte en casillas; la variante escrita completa está en la tarea 18.",
+        "de": "Vorübung zu Sommer 2022 · KAIT 4 ea. Übt nur einen Teil in Feldern; die vollständige schriftliche Variante steht in Aufgabe 18."
+      }
     },
     {
       "id": 2,
@@ -723,7 +741,11 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       "group": 0,
       "material": "table",
       "extra": null,
-      "anchor": "2022 Sommer · KAIT 4 ea"
+      "anchor": "2022 Sommer · KAIT 4 ea",
+      "provenance": {
+        "es": "Vorübung zu Sommer 2022 · KAIT 4 ea. Entrena solo una parte en casillas; la variante escrita completa está en la tarea 18.",
+        "de": "Vorübung zu Sommer 2022 · KAIT 4 ea. Übt nur einen Teil in Feldern; die vollständige schriftliche Variante steht in Aufgabe 18."
+      }
     },
     {
       "id": 3,
@@ -812,7 +834,11 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       "group": 0,
       "material": "table",
       "extra": null,
-      "anchor": "2022 Sommer · KAIT 4 ea"
+      "anchor": "2022 Sommer · KAIT 4 ea",
+      "provenance": {
+        "es": "Vorübung zu Sommer 2022 · KAIT 4 ea. Entrena solo una parte en casillas; la variante escrita completa está en la tarea 18.",
+        "de": "Vorübung zu Sommer 2022 · KAIT 4 ea. Übt nur einen Teil in Feldern; die vollständige schriftliche Variante steht in Aufgabe 18."
+      }
     },
     {
       "id": 4,
@@ -901,7 +927,11 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       "group": 0,
       "material": "table",
       "extra": null,
-      "anchor": "2022 Sommer · KAIT 4 ea"
+      "anchor": "2022 Sommer · KAIT 4 ea",
+      "provenance": {
+        "es": "Vorübung zu Sommer 2022 · KAIT 4 ea. Entrena solo una parte en casillas; la variante escrita completa está en la tarea 18.",
+        "de": "Vorübung zu Sommer 2022 · KAIT 4 ea. Übt nur einen Teil in Feldern; die vollständige schriftliche Variante steht in Aufgabe 18."
+      }
     },
     {
       "id": 5,
@@ -911,8 +941,8 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       },
       "company": "Bergblick Hotel GmbH",
       "scenario": {
-        "es": "El servidor de reservas se pierde después de I3. Todos los backups son válidos. Destino vacío; se desea el estado del miércoles a las 23:00. Escribe la secuencia mínima de IDs en orden, con → o comas.",
-        "de": "Der Reservierungsserver fällt nach I3 aus. Alle Backups sind gültig. Leeres Ziel; gewünscht ist Mittwoch 23:00 Uhr. Tragen Sie die minimale ID-Reihenfolge mit → oder Kommas ein."
+        "es": "El servidor de reservas se pierde después de I3. Todos los backups son válidos. El destino de la restauración está vacío. Se desea recuperar el estado del miércoles a las 23:00. Escribe la secuencia mínima de IDs en orden, con → o comas.",
+        "de": "Der Reservierungsserver fällt nach I3 aus. Alle Backups sind gültig. Das Wiederherstellungsziel ist leer. Gewünscht ist der Zustand vom Mittwoch um 23:00 Uhr. Tragen Sie die minimale ID-Reihenfolge mit → oder Kommas ein."
       },
       "headers": [
         {
@@ -980,7 +1010,11 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       "group": 1,
       "material": "table",
       "extra": null,
-      "anchor": "2022 Sommer · KAIT 4 ea"
+      "anchor": "2022 Sommer · KAIT 4 ea",
+      "provenance": {
+        "es": "Práctica complementaria propia de recuperación. Amplía los conceptos de Sommer 2022 · KAIT 4 ea; este apartado original no pide esta tarea ni tiene su formato.",
+        "de": "Eigene ergänzende Übung zu Wiederherstellung. Vertieft Konzepte aus Sommer 2022 · KAIT 4 ea; der Originalteil verlangt diese Aufgabe und dieses Format nicht."
+      }
     },
     {
       "id": 6,
@@ -1066,7 +1100,11 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       "group": 1,
       "material": "table",
       "extra": null,
-      "anchor": "2022 Sommer · KAIT 4 ea"
+      "anchor": "2022 Sommer · KAIT 4 ea",
+      "provenance": {
+        "es": "Práctica complementaria propia de recuperación. Amplía los conceptos de Sommer 2022 · KAIT 4 ea; este apartado original no pide esta tarea ni tiene su formato.",
+        "de": "Eigene ergänzende Übung zu Wiederherstellung. Vertieft Konzepte aus Sommer 2022 · KAIT 4 ea; der Originalteil verlangt diese Aufgabe und dieses Format nicht."
+      }
     },
     {
       "id": 7,
@@ -1145,7 +1183,11 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       "group": 1,
       "material": "table",
       "extra": null,
-      "anchor": "2022 Sommer · KAIT 4 ea"
+      "anchor": "2022 Sommer · KAIT 4 ea",
+      "provenance": {
+        "es": "Práctica complementaria propia de recuperación. Amplía los conceptos de Sommer 2022 · KAIT 4 ea; este apartado original no pide esta tarea ni tiene su formato.",
+        "de": "Eigene ergänzende Übung zu Wiederherstellung. Vertieft Konzepte aus Sommer 2022 · KAIT 4 ea; der Originalteil verlangt diese Aufgabe und dieses Format nicht."
+      }
     },
     {
       "id": 8,
@@ -1231,7 +1273,11 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       "group": 1,
       "material": "table",
       "extra": null,
-      "anchor": "2022 Sommer · KAIT 4 ea"
+      "anchor": "2022 Sommer · KAIT 4 ea",
+      "provenance": {
+        "es": "Práctica complementaria propia de recuperación. Amplía los conceptos de Sommer 2022 · KAIT 4 ea; este apartado original no pide esta tarea ni tiene su formato.",
+        "de": "Eigene ergänzende Übung zu Wiederherstellung. Vertieft Konzepte aus Sommer 2022 · KAIT 4 ea; der Originalteil verlangt diese Aufgabe und dieses Format nicht."
+      }
     },
     {
       "id": 9,
@@ -1314,7 +1360,11 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       "group": 2,
       "material": "log",
       "extra": null,
-      "anchor": "2022 Sommer · KAIT 4 ea"
+      "anchor": "2022 Sommer · KAIT 4 ea",
+      "provenance": {
+        "es": "Práctica complementaria propia de recuperación. Amplía los conceptos de Sommer 2022 · KAIT 4 ea; este apartado original no pide esta tarea ni tiene su formato.",
+        "de": "Eigene ergänzende Übung zu Wiederherstellung. Vertieft Konzepte aus Sommer 2022 · KAIT 4 ea; der Originalteil verlangt diese Aufgabe und dieses Format nicht."
+      }
     },
     {
       "id": 10,
@@ -1403,7 +1453,11 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       "group": 2,
       "material": "log",
       "extra": null,
-      "anchor": "2022 Sommer · KAIT 4 ea"
+      "anchor": "2022 Sommer · KAIT 4 ea",
+      "provenance": {
+        "es": "Práctica complementaria propia de recuperación. Amplía los conceptos de Sommer 2022 · KAIT 4 ea; este apartado original no pide esta tarea ni tiene su formato.",
+        "de": "Eigene ergänzende Übung zu Wiederherstellung. Vertieft Konzepte aus Sommer 2022 · KAIT 4 ea; der Originalteil verlangt diese Aufgabe und dieses Format nicht."
+      }
     },
     {
       "id": 11,
@@ -1432,7 +1486,10 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
           "A1, B1, C1"
         ],
         [
-          "Δ3 (base F0)",
+          {
+            "es": "Δ3 (base F0)",
+            "de": "Δ3 (Basis F0)"
+          },
           "A3, B2, D1"
         ]
       ],
@@ -1475,7 +1532,11 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       "group": 2,
       "material": "table",
       "extra": null,
-      "anchor": "2022 Sommer · KAIT 4 ea"
+      "anchor": "2022 Sommer · KAIT 4 ea",
+      "provenance": {
+        "es": "Práctica complementaria propia de recuperación. Amplía los conceptos de Sommer 2022 · KAIT 4 ea; este apartado original no pide esta tarea ni tiene su formato.",
+        "de": "Eigene ergänzende Übung zu Wiederherstellung. Vertieft Konzepte aus Sommer 2022 · KAIT 4 ea; der Originalteil verlangt diese Aufgabe und dieses Format nicht."
+      }
     },
     {
       "id": 12,
@@ -1567,7 +1628,11 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       "group": 2,
       "material": "table",
       "extra": null,
-      "anchor": "2022 Sommer · KAIT 4 ea"
+      "anchor": "2022 Sommer · KAIT 4 ea",
+      "provenance": {
+        "es": "Práctica complementaria propia de recuperación. Amplía los conceptos de Sommer 2022 · KAIT 4 ea; este apartado original no pide esta tarea ni tiene su formato.",
+        "de": "Eigene ergänzende Übung zu Wiederherstellung. Vertieft Konzepte aus Sommer 2022 · KAIT 4 ea; der Originalteil verlangt diese Aufgabe und dieses Format nicht."
+      }
     },
     {
       "id": 13,
@@ -1577,8 +1642,8 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       },
       "company": "Komet Medien GmbH",
       "scenario": {
-        "es": "F0 se realiza el domingo. Cada día se crean archivos distintos, sin modificaciones posteriores ni borrados. Los volúmenes de las incrementales se muestran en el gráfico. Calcule los volúmenes diferenciales y complete el plan en GB. Sin compresión.",
-        "de": "F0 wird sonntags erstellt. Täglich entstehen unterschiedliche Dateien ohne spätere Änderungen oder Löschungen. Die inkrementellen Volumen stehen im Diagramm. Berechnen Sie die differenziellen Volumen und ergänzen Sie den Wochenplan in GB. Ohne Kompression."
+        "es": "F0 se realiza el domingo. Cada día se crean archivos distintos, sin modificaciones posteriores ni borrados. Los volúmenes de las incrementales se muestran en el gráfico. Calcule los volúmenes diferenciales y complete el plan en GiB. Sin compresión. Cantidades de datos lógicos en GiB; sin compresión ni deduplicación. Introduce solo el número en cada casilla numérica; su unidad aparece en la etiqueta. Escriba el desarrollo de cada cálculo en su área de texto libre, con operaciones, datos y unidades. Las casillas numéricas solo comprueban resultados; compare el desarrollo manualmente con el modelo a petición.",
+        "de": "F0 wird sonntags erstellt. Täglich entstehen unterschiedliche Dateien ohne spätere Änderungen oder Löschungen. Die inkrementellen Volumen stehen im Diagramm. Berechnen Sie die differenziellen Volumen und ergänzen Sie den Wochenplan in GiB. Ohne Kompression. Logische Datenmengen in GiB; ohne Kompression oder Deduplizierung. In Zahlenfelder nur die Zahl eintragen; die Einheit steht am Feld. Der Rechenweg ist für jede Berechnung im zugehörigen freien Textfeld anzugeben, mit Ansatz, Daten und Einheiten. Zahlenfelder prüfen nur Ergebnisse; vergleichen Sie den Rechenweg auf Wunsch manuell mit dem Modell."
       },
       "headers": [
         {
@@ -1586,8 +1651,8 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
           "de": "Tag"
         },
         {
-          "es": "Datos nuevos en GB",
-          "de": "Neue Daten in GB"
+          "es": "Datos nuevos en GiB",
+          "de": "Neue Daten in GiB"
         }
       ],
       "rows": [
@@ -1619,8 +1684,8 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       "fields": [
         {
           "label": {
-            "es": "Lun · diferencial (GB)",
-            "de": "Mo · differenziell (GB)"
+            "es": "Lun · diferencial (GiB)",
+            "de": "Mo · differenziell (GiB)"
           },
           "answer": "4",
           "why": {
@@ -1628,12 +1693,13 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
             "de": "Addieren Sie die neuen Daten seit Sonntag einschließlich dieses Tages."
           },
           "kind": "number",
-          "points": 1
+          "points": 1,
+          "unit": "GiB"
         },
         {
           "label": {
-            "es": "Mar · diferencial (GB)",
-            "de": "Di · differenziell (GB)"
+            "es": "Mar · diferencial (GiB)",
+            "de": "Di · differenziell (GiB)"
           },
           "answer": "11",
           "why": {
@@ -1641,12 +1707,13 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
             "de": "Addieren Sie die neuen Daten seit Sonntag einschließlich dieses Tages."
           },
           "kind": "number",
-          "points": 1
+          "points": 1,
+          "unit": "GiB"
         },
         {
           "label": {
-            "es": "Mié · diferencial (GB)",
-            "de": "Mi · differenziell (GB)"
+            "es": "Mié · diferencial (GiB)",
+            "de": "Mi · differenziell (GiB)"
           },
           "answer": "14",
           "why": {
@@ -1654,12 +1721,13 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
             "de": "Addieren Sie die neuen Daten seit Sonntag einschließlich dieses Tages."
           },
           "kind": "number",
-          "points": 1
+          "points": 1,
+          "unit": "GiB"
         },
         {
           "label": {
-            "es": "Jue · diferencial (GB)",
-            "de": "Do · differenziell (GB)"
+            "es": "Jue · diferencial (GiB)",
+            "de": "Do · differenziell (GiB)"
           },
           "answer": "20",
           "why": {
@@ -1667,12 +1735,13 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
             "de": "Addieren Sie die neuen Daten seit Sonntag einschließlich dieses Tages."
           },
           "kind": "number",
-          "points": 1
+          "points": 1,
+          "unit": "GiB"
         },
         {
           "label": {
-            "es": "Vie · diferencial (GB)",
-            "de": "Fr · differenziell (GB)"
+            "es": "Vie · diferencial (GiB)",
+            "de": "Fr · differenziell (GiB)"
           },
           "answer": "22",
           "why": {
@@ -1680,12 +1749,13 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
             "de": "Addieren Sie die neuen Daten seit Sonntag einschließlich dieses Tages."
           },
           "kind": "number",
-          "points": 1
+          "points": 1,
+          "unit": "GiB"
         },
         {
           "label": {
-            "es": "Sáb · diferencial (GB)",
-            "de": "Sa · differenziell (GB)"
+            "es": "Sáb · diferencial (GiB)",
+            "de": "Sa · differenziell (GiB)"
           },
           "answer": "27",
           "why": {
@@ -1693,7 +1763,8 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
             "de": "Addieren Sie die neuen Daten seit Sonntag einschließlich dieses Tages."
           },
           "kind": "number",
-          "points": 1
+          "points": 1,
+          "unit": "GiB"
         }
       ],
       "hint": {
@@ -1701,13 +1772,18 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
         "de": "Dienstag schließt Montag ein; Mittwoch schließt beide vorherigen Tage ein."
       },
       "model": {
-        "es": "4; 4 + 7 = 11; 11 + 3 = 14; 14 + 6 = 20; 20 + 2 = 22; 22 + 5 = 27 GB.",
-        "de": "4; 4 + 7 = 11; 11 + 3 = 14; 14 + 6 = 20; 20 + 2 = 22; 22 + 5 = 27 GB."
+        "es": "4; 4 + 7 = 11; 11 + 3 = 14; 14 + 6 = 20; 20 + 2 = 22; 22 + 5 = 27 GiB.",
+        "de": "4; 4 + 7 = 11; 11 + 3 = 14; 14 + 6 = 20; 20 + 2 = 22; 22 + 5 = 27 GiB."
       },
       "group": 3,
       "material": "bars",
       "extra": null,
-      "anchor": "2023 Sommer · KAIT 4 a"
+      "anchor": "2023 Sommer · KAIT 4 a",
+      "provenance": {
+        "es": "Format angelehnt an Sommer 2023 · KAIT 4 a: gráfico diario, cálculo y plan semanal gráfico, 6 puntos. Datos propios binarios; el original usa GB.",
+        "de": "Format angelehnt an Sommer 2023 · KAIT 4 a: Tagesdiagramm, Berechnung und grafischer Wochenplan, 6 Punkte. Eigene binäre Daten; das Original verwendet GB."
+      },
+      "rechenweg": true
     },
     {
       "id": 14,
@@ -1717,8 +1793,8 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       },
       "company": "Digitalform CAD GmbH",
       "scenario": {
-        "es": "Se copian archivos completos sin compresión, con tamaños constantes y sin borrados. F0 contiene X1 (8 GB), Y1 (3 GB), Z1 (5 GB). El lunes cambia X; el martes cambia Y; el miércoles vuelve a cambiar X. Calcule el volumen de I3 y Δ3 en cadenas separadas.",
-        "de": "Ganze Dateien werden ohne Kompression gesichert; Größen bleiben konstant und es gibt keine Löschungen. F0 enthält X1 (8 GB), Y1 (3 GB), Z1 (5 GB). Montag ändert sich X, Dienstag Y und Mittwoch erneut X. Berechnen Sie I3 und Δ3 in getrennten Ketten."
+        "es": "Se copian archivos completos sin compresión, con tamaños constantes y sin borrados. F0 contiene X1 (8 GiB), Y1 (3 GiB), Z1 (5 GiB). El lunes cambia X; el martes cambia Y; el miércoles vuelve a cambiar X. Calcule el volumen de I3 y Δ3 en cadenas separadas. Cantidades de datos lógicos en GiB; sin compresión ni deduplicación. Introduce solo el número en cada casilla numérica; su unidad aparece en la etiqueta. Escriba el desarrollo de cada cálculo en su área de texto libre, con operaciones, datos y unidades. Las casillas numéricas solo comprueban resultados; compare el desarrollo manualmente con el modelo a petición.",
+        "de": "Ganze Dateien werden ohne Kompression gesichert; Größen bleiben konstant und es gibt keine Löschungen. F0 enthält X1 (8 GiB), Y1 (3 GiB), Z1 (5 GiB). Montag ändert sich X, Dienstag Y und Mittwoch erneut X. Berechnen Sie I3 und Δ3 in getrennten Ketten. Logische Datenmengen in GiB; ohne Kompression oder Deduplizierung. In Zahlenfelder nur die Zahl eintragen; die Einheit steht am Feld. Der Rechenweg ist für jede Berechnung im zugehörigen freien Textfeld anzugeben, mit Ansatz, Daten und Einheiten. Zahlenfelder prüfen nur Ergebnisse; vergleichen Sie den Rechenweg auf Wunsch manuell mit dem Modell."
       },
       "headers": [
         {
@@ -1738,24 +1814,24 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
         [
           "Mo",
           "X2",
-          "8 GB"
+          "8 GiB"
         ],
         [
           "Di",
           "Y2",
-          "3 GB"
+          "3 GiB"
         ],
         [
           "Mi",
           "X3",
-          "8 GB"
+          "8 GiB"
         ]
       ],
       "fields": [
         {
           "label": {
-            "es": "I3 (GB)",
-            "de": "I3 (GB)"
+            "es": "I3 (GiB)",
+            "de": "I3 (GiB)"
           },
           "answer": "8",
           "why": {
@@ -1763,12 +1839,13 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
             "de": "Seit Dienstag änderte sich nur X erneut."
           },
           "kind": "number",
-          "points": 1
+          "points": 1,
+          "unit": "GiB"
         },
         {
           "label": {
-            "es": "Δ3 (GB)",
-            "de": "Δ3 (GB)"
+            "es": "Δ3 (GiB)",
+            "de": "Δ3 (GiB)"
           },
           "answer": "11",
           "why": {
@@ -1776,7 +1853,8 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
             "de": "X3 und Y2 sind je einmal enthalten: 8 + 3. X2 wird nicht nochmals addiert."
           },
           "kind": "number",
-          "points": 1
+          "points": 1,
+          "unit": "GiB"
         }
       ],
       "hint": {
@@ -1784,13 +1862,18 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
         "de": "Listen Sie zuerst die enthaltenen Namen auf. Ein differenzielles Backup enthält je Name eine aktuelle Version."
       },
       "model": {
-        "es": "I3: X3 = 8 GB. Δ3: X3 + Y2 = 11 GB. Sumar 8 + 3 + 8 = 19 GB contaría X dos veces.",
-        "de": "I3: X3 = 8 GB. Δ3: X3 + Y2 = 11 GB. 8 + 3 + 8 = 19 GB würde X doppelt zählen."
+        "es": "I3: X3 = 8 GiB. Δ3: X3 + Y2 = 11 GiB. Sumar 8 + 3 + 8 = 19 GiB contaría X dos veces.",
+        "de": "I3: X3 = 8 GiB. Δ3: X3 + Y2 = 11 GiB. 8 + 3 + 8 = 19 GiB würde X doppelt zählen."
       },
       "group": 3,
       "material": "table",
       "extra": null,
-      "anchor": "2023 Sommer · KAIT 4 a (contraste de supuesto / Annahmenvergleich)"
+      "anchor": "2023 Sommer · KAIT 4 a (contraste de supuesto / Annahmenvergleich)",
+      "provenance": {
+        "es": "Práctica complementaria propia de volúmenes. Amplía los conceptos de Sommer 2023 · KAIT 4 a; este apartado original no pide esta tarea ni tiene su formato.",
+        "de": "Eigene ergänzende Übung zu Datenvolumen. Vertieft Konzepte aus Sommer 2023 · KAIT 4 a; der Originalteil verlangt diese Aufgabe und dieses Format nicht."
+      },
+      "rechenweg": true
     },
     {
       "id": 15,
@@ -1800,8 +1883,8 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       },
       "company": "Tannenhof Produktion GmbH",
       "scenario": {
-        "es": "El domingo se guardan 100 GB en F0. De lunes a jueves hay 10, 5, 15 y 10 GB de archivos nuevos distintos. Se conservan todas las copias, sin compresión ni deduplicación. Calcule el volumen total almacenado para dos estrategias separadas, incluida F0.",
-        "de": "Am Sonntag werden 100 GB in F0 gesichert. Montag bis Donnerstag entstehen 10, 5, 15 und 10 GB neuer, unterschiedlicher Dateien. Alle Sicherungen bleiben erhalten, ohne Kompression oder Deduplizierung. Berechnen Sie den gesamten gespeicherten Umfang für zwei getrennte Strategien einschließlich F0."
+        "es": "El domingo se guardan 100 GiB en F0. De lunes a jueves hay 10, 5, 15 y 10 GiB de archivos nuevos distintos. Se conservan todas las copias, sin compresión ni deduplicación. Calcule el volumen total almacenado para dos estrategias separadas, incluida F0. Cantidades de datos lógicos en GiB; sin compresión ni deduplicación. Introduce solo el número en cada casilla numérica; su unidad aparece en la etiqueta. Escriba el desarrollo de cada cálculo en su área de texto libre, con operaciones, datos y unidades. Las casillas numéricas solo comprueban resultados; compare el desarrollo manualmente con el modelo a petición.",
+        "de": "Am Sonntag werden 100 GiB in F0 gesichert. Montag bis Donnerstag entstehen 10, 5, 15 und 10 GiB neuer, unterschiedlicher Dateien. Alle Sicherungen bleiben erhalten, ohne Kompression oder Deduplizierung. Berechnen Sie den gesamten gespeicherten Umfang für zwei getrennte Strategien einschließlich F0. Logische Datenmengen in GiB; ohne Kompression oder Deduplizierung. In Zahlenfelder nur die Zahl eintragen; die Einheit steht am Feld. Der Rechenweg ist für jede Berechnung im zugehörigen freien Textfeld anzugeben, mit Ansatz, Daten und Einheiten. Zahlenfelder prüfen nur Ergebnisse; vergleichen Sie den Rechenweg auf Wunsch manuell mit dem Modell."
       },
       "headers": [
         {
@@ -1809,8 +1892,8 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
           "de": "Tag"
         },
         {
-          "es": "Datos nuevos en GB",
-          "de": "Neue Daten in GB"
+          "es": "Datos nuevos en GiB",
+          "de": "Neue Daten in GiB"
         }
       ],
       "rows": [
@@ -1834,8 +1917,8 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       "fields": [
         {
           "label": {
-            "es": "F0 + todas las incrementales (GB)",
-            "de": "F0 + alle inkrementellen Backups (GB)"
+            "es": "F0 + todas las incrementales (GiB)",
+            "de": "F0 + alle inkrementellen Backups (GiB)"
           },
           "answer": "140",
           "why": {
@@ -1843,20 +1926,22 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
             "de": "Addieren Sie 100 und die vier Tagesvolumen."
           },
           "kind": "number",
-          "points": 1
+          "points": 1,
+          "unit": "GiB"
         },
         {
           "label": {
-            "es": "F0 + todas las diferenciales (GB)",
-            "de": "F0 + alle differenziellen Backups (GB)"
+            "es": "F0 + todas las diferenciales (GiB)",
+            "de": "F0 + alle differenziellen Backups (GiB)"
           },
           "answer": "195",
           "why": {
-            "es": "Cada diferencial repite lo acumulado: 10, 15, 30 y 40 GB. Suma también 100.",
-            "de": "Jedes differenzielle Backup enthält den kumulierten Stand: 10, 15, 30 und 40 GB. Addieren Sie auch 100."
+            "es": "Cada diferencial repite lo acumulado: 10, 15, 30 y 40 GiB. Suma también 100.",
+            "de": "Jedes differenzielle Backup enthält den kumulierten Stand: 10, 15, 30 und 40 GiB. Addieren Sie auch 100."
           },
           "kind": "number",
-          "points": 1
+          "points": 1,
+          "unit": "GiB"
         }
       ],
       "hint": {
@@ -1864,13 +1949,18 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
         "de": "Unterscheiden Sie das Volumen des letzten Backups vom Platzbedarf aller aufbewahrten Sicherungen."
       },
       "model": {
-        "es": "Incremental: 100 + 10 + 5 + 15 + 10 = 140 GB. Diferencial: 100 + 10 + 15 + 30 + 40 = 195 GB.",
-        "de": "Inkrementell: 100 + 10 + 5 + 15 + 10 = 140 GB. Differenziell: 100 + 10 + 15 + 30 + 40 = 195 GB."
+        "es": "Incremental: 100 + 10 + 5 + 15 + 10 = 140 GiB. Diferencial: 100 + 10 + 15 + 30 + 40 = 195 GiB.",
+        "de": "Inkrementell: 100 + 10 + 5 + 15 + 10 = 140 GiB. Differenziell: 100 + 10 + 15 + 30 + 40 = 195 GiB."
       },
       "group": 3,
       "material": "bars",
       "extra": null,
-      "anchor": "2023 Sommer · KAIT 4 a (extensión / Erweiterung)"
+      "anchor": "2023 Sommer · KAIT 4 a (extensión / Erweiterung)",
+      "provenance": {
+        "es": "Práctica complementaria propia de volúmenes. Amplía los conceptos de Sommer 2023 · KAIT 4 a; este apartado original no pide esta tarea ni tiene su formato.",
+        "de": "Eigene ergänzende Übung zu Datenvolumen. Vertieft Konzepte aus Sommer 2023 · KAIT 4 a; der Originalteil verlangt diese Aufgabe und dieses Format nicht."
+      },
+      "rechenweg": true
     },
     {
       "id": 16,
@@ -1880,8 +1970,8 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       },
       "company": "Sternroute Versand GmbH",
       "scenario": {
-        "es": "Se guardó F0 = 80 GB. Después aparecen cada día archivos nuevos distintos, sin borrados: lunes 6 GB, martes 4 GB, miércoles 10 GB. Se desea el miércoles en un destino vacío. Calcule copias y GB leídos, sin compresión ni costes adicionales.",
-        "de": "F0 umfasst 80 GB. Danach entstehen täglich neue unterschiedliche Dateien ohne Löschungen: Montag 6 GB, Dienstag 4 GB, Mittwoch 10 GB. Ziel ist Mittwoch auf einem leeren Ziel. Berechnen Sie Sicherungsanzahl und gelesene GB, ohne Kompression oder Zusatzaufwand."
+        "es": "Se guardó F0 = 80 GiB. Después aparecen cada día archivos nuevos distintos, sin borrados: lunes 6 GiB, martes 4 GiB, miércoles 10 GiB. Se desea el miércoles en un destino vacío. Calcule copias y GiB leídos, sin compresión ni costes adicionales. Cantidades de datos lógicos en GiB; sin compresión ni deduplicación. Introduce solo el número en cada casilla numérica; su unidad aparece en la etiqueta. Escriba el desarrollo de cada cálculo en su área de texto libre, con operaciones, datos y unidades. Las casillas numéricas solo comprueban resultados; compare el desarrollo manualmente con el modelo a petición.",
+        "de": "F0 umfasst 80 GiB. Danach entstehen täglich neue unterschiedliche Dateien ohne Löschungen: Montag 6 GiB, Dienstag 4 GiB, Mittwoch 10 GiB. Ziel ist Mittwoch auf einem leeren Ziel. Berechnen Sie Sicherungsanzahl und gelesene GiB, ohne Kompression oder Zusatzaufwand. Logische Datenmengen in GiB; ohne Kompression oder Deduplizierung. In Zahlenfelder nur die Zahl eintragen; die Einheit steht am Feld. Der Rechenweg ist für jede Berechnung im zugehörigen freien Textfeld anzugeben, mit Ansatz, Daten und Einheiten. Zahlenfelder prüfen nur Ergebnisse; vergleichen Sie den Rechenweg auf Wunsch manuell mit dem Modell."
       },
       "headers": [
         {
@@ -1889,8 +1979,8 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
           "de": "Tag"
         },
         {
-          "es": "Datos nuevos en GB",
-          "de": "Neue Daten in GB"
+          "es": "Datos nuevos en GiB",
+          "de": "Neue Daten in GiB"
         }
       ],
       "rows": [
@@ -1923,8 +2013,8 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
         },
         {
           "label": {
-            "es": "Incremental: GB leídos",
-            "de": "Inkrementell: gelesene GB"
+            "es": "Incremental: GiB leídos",
+            "de": "Inkrementell: gelesene GiB"
           },
           "answer": "100",
           "why": {
@@ -1932,7 +2022,8 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
             "de": "Gelesen werden 80 + 6 + 4 + 10."
           },
           "kind": "number",
-          "points": 1
+          "points": 1,
+          "unit": "GiB"
         },
         {
           "label": {
@@ -1949,16 +2040,17 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
         },
         {
           "label": {
-            "es": "Diferencial: GB leídos",
-            "de": "Differenziell: gelesene GB"
+            "es": "Diferencial: GiB leídos",
+            "de": "Differenziell: gelesene GiB"
           },
           "answer": "100",
           "why": {
-            "es": "Δ3 reúne 20 GB; lee 80 + 20. El número de copias no determina por sí solo el volumen.",
-            "de": "Δ3 umfasst 20 GB; gelesen werden 80 + 20. Die Sicherungsanzahl allein bestimmt nicht das Volumen."
+            "es": "Δ3 reúne 20 GiB; lee 80 + 20. El número de copias no determina por sí solo el volumen.",
+            "de": "Δ3 umfasst 20 GiB; gelesen werden 80 + 20. Die Sicherungsanzahl allein bestimmt nicht das Volumen."
           },
           "kind": "number",
-          "points": 1
+          "points": 1,
+          "unit": "GiB"
         }
       ],
       "hint": {
@@ -1966,13 +2058,18 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
         "de": "Das sind zwei Fragen: Wie viele Sicherungen? Wie viele Daten enthalten sie?"
       },
       "model": {
-        "es": "Incremental: 4 copias, 100 GB. Diferencial: 2 copias, 100 GB. No se puede deducir la duración real solo de estas cifras.",
-        "de": "Inkrementell: 4 Sicherungen, 100 GB. Differenziell: 2 Sicherungen, 100 GB. Die tatsächliche Dauer lässt sich aus diesen Zahlen allein nicht ableiten."
+        "es": "Incremental: F0, I1, I2 e I3 son 1 + 3 = 4 copias; 80 + 6 + 4 + 10 = 100 GiB. Diferencial: F0 y Δ3 son 1 + 1 = 2 copias; Δ3 = 6 + 4 + 10 = 20 GiB, luego 80 + 20 = 100 GiB. Estas cifras no determinan la duración real.",
+        "de": "Inkrementell: F0, I1, I2 und I3 ergeben 1 + 3 = 4 Sicherungen; 80 + 6 + 4 + 10 = 100 GiB. Differenziell: F0 und Δ3 ergeben 1 + 1 = 2 Sicherungen; Δ3 = 6 + 4 + 10 = 20 GiB, also 80 + 20 = 100 GiB. Diese Zahlen bestimmen nicht die tatsächliche Dauer."
       },
       "group": 3,
       "material": "bars",
       "extra": null,
-      "anchor": "2023 Sommer · KAIT 4 a (extensión / Erweiterung)"
+      "anchor": "2023 Sommer · KAIT 4 a (extensión / Erweiterung)",
+      "provenance": {
+        "es": "Práctica complementaria propia de volúmenes. Amplía los conceptos de Sommer 2023 · KAIT 4 a; este apartado original no pide esta tarea ni tiene su formato.",
+        "de": "Eigene ergänzende Übung zu Datenvolumen. Vertieft Konzepte aus Sommer 2023 · KAIT 4 a; der Originalteil verlangt diese Aufgabe und dieses Format nicht."
+      },
+      "rechenweg": true
     },
     {
       "id": 17,
@@ -1982,8 +2079,8 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       },
       "company": "Blattwerk Agentur GmbH",
       "scenario": {
-        "es": "El servidor sigue funcionando. Solo se quiere extraer A2 del martes sin restaurar todo el servidor. El programa permite extracción de archivos individuales desde cada copia. Indique la copia que contiene A2 y si F0 contiene esa versión.",
-        "de": "Der Server läuft weiter. Nur A2 vom Dienstag soll extrahiert werden, ohne den ganzen Server wiederherzustellen. Das Programm erlaubt Einzeldateiextraktion aus jeder Sicherung. Nennen Sie die Sicherung mit A2 und ob F0 diese Version enthält."
+        "es": "El servidor sigue funcionando. Solo se quiere extraer A2 del martes sin restaurar todo el servidor. El programa permite extracción de archivos individuales desde cada copia. Indique la copia que contiene A2 y si F0 contiene esa versión. Explique en texto libre por qué esa copia permite extraer A2 y qué versión contiene F0. Redacte en alemán.",
+        "de": "Der Server läuft weiter. Nur A2 vom Dienstag soll extrahiert werden, ohne den ganzen Server wiederherzustellen. Das Programm erlaubt Einzeldateiextraktion aus jeder Sicherung. Nennen Sie die Sicherung mit A2 und ob F0 diese Version enthält. Erläutern Sie in freiem Text, warum diese Sicherung die Extraktion von A2 erlaubt und welche Version F0 enthält. Schreiben Sie auf Deutsch."
       },
       "headers": [
         {
@@ -2016,29 +2113,31 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       "fields": [
         {
           "label": {
-            "es": "Copia de la que extraer A2",
-            "de": "Sicherung zur Extraktion von A2"
+            "es": "Explicación en alemán",
+            "de": "Erläuterung auf Deutsch"
           },
-          "answer": "I2",
-          "why": {
-            "es": "I2 contiene explícitamente la versión solicitada.",
-            "de": "I2 enthält ausdrücklich die angeforderte Version."
+          "kind": "written",
+          "points": 2,
+          "answer": {
+            "es": "Extraigo A2 directamente de I2 porque esta copia contiene el archivo completo en la versión A2 y el programa permite extraer archivos individuales desde cada copia. F0 contiene A1, no A2, por lo que no proporciona la versión solicitada. Esta extracción individual no requiere restaurar todo el servidor. Para restaurar el estado completo del martes en un destino vacío, en cambio, hay que aplicar F0, I1 e I2 en ese orden.",
+            "de": "Ich extrahiere A2 direkt aus I2, weil diese Sicherung die vollständige Datei in der Version A2 enthält und das Programm die Einzeldateiextraktion aus jeder Sicherung erlaubt. F0 enthält A1 und nicht A2; es liefert daher nicht die gesuchte Version. Für diese Einzeldateiextraktion muss nicht der gesamte Server wiederhergestellt werden. Um dagegen den vollständigen Zustand vom Dienstag auf einem leeren Ziel wiederherzustellen, müssen F0, I1 und I2 in dieser Reihenfolge eingespielt werden."
           },
-          "kind": "set",
-          "points": 1
-        },
-        {
-          "label": {
-            "es": "¿F0 contiene A2? (sí/no)",
-            "de": "Enthält F0 A2? (ja/nein)"
-          },
-          "answer": "no",
-          "why": {
-            "es": "F0 tiene A1; no puede generar A2.",
-            "de": "F0 enthält A1 und kann A2 nicht erzeugen."
-          },
-          "kind": "boolean",
-          "points": 1
+          "rubric": [
+            {
+              "points": 1,
+              "text": {
+                "es": "Identifica I2 y explica que contiene directamente A2 para extracción individual.",
+                "de": "Nennt I2 und erläutert, dass es A2 direkt zur Einzeldateiextraktion enthält."
+              }
+            },
+            {
+              "points": 1,
+              "text": {
+                "es": "Explica que F0 contiene A1, no A2, por lo que no proporciona esa versión.",
+                "de": "Erläutert, dass F0 A1 statt A2 enthält und diese Version daher nicht liefert."
+              }
+            }
+          ]
         }
       ],
       "hint": {
@@ -2046,13 +2145,17 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
         "de": "Das Ziel ist eine einzelne Version, nicht der Zustand aller Dateien."
       },
       "model": {
-        "es": "Extraer A2 de I2. F0 no contiene A2. Para todo el martes sí harían falta F0, I1 e I2.",
-        "de": "A2 aus I2 extrahieren. F0 enthält A2 nicht. Für den gesamten Dienstag wären dagegen F0, I1 und I2 nötig."
+        "es": "Extraigo A2 directamente de I2 porque esta copia contiene el archivo completo en la versión A2 y el programa permite extraer archivos individuales desde cada copia. F0 contiene A1, no A2, por lo que no proporciona la versión solicitada. Esta extracción individual no requiere restaurar todo el servidor. Para restaurar el estado completo del martes en un destino vacío, en cambio, hay que aplicar F0, I1 e I2 en ese orden.",
+        "de": "Ich extrahiere A2 direkt aus I2, weil diese Sicherung die vollständige Datei in der Version A2 enthält und das Programm die Einzeldateiextraktion aus jeder Sicherung erlaubt. F0 enthält A1 und nicht A2; es liefert daher nicht die gesuchte Version. Für diese Einzeldateiextraktion muss nicht der gesamte Server wiederhergestellt werden. Um dagegen den vollständigen Zustand vom Dienstag auf einem leeren Ziel wiederherzustellen, müssen F0, I1 und I2 in dieser Reihenfolge eingespielt werden."
       },
       "group": 4,
       "material": "table",
       "extra": null,
-      "anchor": "2022 Sommer · KAIT 4 ea"
+      "anchor": "2022 Sommer · KAIT 4 ea",
+      "provenance": {
+        "es": "Práctica complementaria propia de recuperación. Amplía los conceptos de Sommer 2022 · KAIT 4 ea; este apartado original no pide esta tarea ni tiene su formato.",
+        "de": "Eigene ergänzende Übung zu Wiederherstellung. Vertieft Konzepte aus Sommer 2022 · KAIT 4 ea; der Originalteil verlangt diese Aufgabe und dieses Format nicht."
+      }
     },
     {
       "id": 18,
@@ -2062,33 +2165,39 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       },
       "company": "Falken IT GmbH",
       "scenario": {
-        "es": "Una empresa compara dos planes alternativos para sus documentos. Explique la referencia de las copias diarias y la secuencia necesaria para recuperar el miércoles en un destino vacío. Redacte la respuesta de examen en alemán.",
-        "de": "Ein Unternehmen vergleicht zwei alternative Pläne für Dokumente. Erläutern Sie den Bezugspunkt der Tagessicherungen und die nötige Reihenfolge für Mittwoch auf einem leeren Ziel. Formulieren Sie auf Deutsch."
+        "es": "La empresa prepara un concepto de copia de seguridad para sus documentos. Las copias diarias pueden ser incrementales o diferenciales. Explique ambos métodos respecto a una copia completa, incluyendo qué cambios guarda cada uno. Redacte en alemán.",
+        "de": "Das Unternehmen erstellt ein Datensicherungskonzept für seine Dokumente. Die Tagessicherungen können inkrementell oder differenziell erfolgen. Erläutern Sie beide Methoden mit Bezug zu einem Vollbackup und den jeweils gesicherten Änderungen. Schreiben Sie auf Deutsch."
       },
       "headers": [
         {
-          "es": "Plan propuesto",
-          "de": "Vorgeschlagener Plan"
+          "es": "Concepto de la empresa",
+          "de": "Datensicherungskonzept"
         },
         {
-          "es": "Copias programadas",
-          "de": "Geplante Sicherungen"
+          "es": "Condición",
+          "de": "Vorgabe"
         }
       ],
       "rows": [
         [
           {
-            "es": "Plan A",
-            "de": "Plan A"
+            "es": "Punto de partida",
+            "de": "Ausgangspunkt"
           },
-          "F0 (So) → I1 (Mo) → I2 (Di) → I3 (Mi)"
+          {
+            "es": "Completa válida del domingo; después, copias diarias.",
+            "de": "Gültiges Sonntagsvollbackup; danach Tagessicherungen."
+          }
         ],
         [
           {
-            "es": "Plan B",
-            "de": "Plan B"
+            "es": "Métodos a explicar",
+            "de": "Zu erläuternde Methoden"
           },
-          "F0 (So); Δ1 (Mo), Δ2 (Di), Δ3 (Mi)"
+          {
+            "es": "Incremental y diferencial",
+            "de": "Inkrementell und differenziell"
+          }
         ]
       ],
       "fields": [
@@ -2099,54 +2208,58 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
           },
           "kind": "written",
           "answer": {
-            "es": "La primera incremental guarda los cambios desde F0; las siguientes, desde la anterior incremental. Para el miércoles: F0 → I1 → I2 → I3. Cada diferencial guarda los cambios desde F0. Para el miércoles: F0 → Δ3. F0 aporta los archivos sin cambios.",
-            "de": "Das erste inkrementelle Backup sichert Änderungen seit F0; weitere sichern Änderungen seit dem vorherigen inkrementellen Backup. Für Mittwoch werden F0, I1, I2 und I3 in dieser Reihenfolge benötigt. Jedes differenzielle Backup sichert Änderungen seit F0. Für Mittwoch reichen F0 und Δ3 in dieser Reihenfolge. F0 liefert die unveränderten Dateien."
+            "es": "La primera incremental guarda archivos nuevos o modificados desde la última completa. Las siguientes guardan los cambios desde la incremental anterior. Cada diferencial guarda los archivos nuevos o modificados desde la última completa; conserva esa referencia cada día. Un archivo que cambió antes y no volvió a cambiar ya no entra en la siguiente incremental, pero sigue entrando en las diferenciales de esa base.",
+            "de": "Die erste inkrementelle Sicherung enthält neue oder geänderte Dateien seit dem letzten Vollbackup. Weitere inkrementelle Sicherungen enthalten Änderungen seit der vorherigen inkrementellen Sicherung. Jede differenzielle Sicherung enthält neue oder geänderte Dateien seit dem letzten Vollbackup; dieser Bezugspunkt bleibt täglich gleich. Eine zuvor geänderte und danach unveränderte Datei fehlt im nächsten inkrementellen Backup, bleibt aber in differenziellen Backups dieser Basis enthalten."
           },
           "points": 4,
           "rubric": [
             {
               "points": 1,
               "text": {
-                "es": "La primera incremental se refiere a F0.",
-                "de": "Das erste inkrementelle Backup bezieht sich auf F0."
+                "es": "Primera incremental: referencia a la última completa.",
+                "de": "Erste inkrementelle Sicherung: Bezug zum letzten Vollbackup."
               }
             },
             {
               "points": 1,
               "text": {
-                "es": "Las siguientes incrementales se refieren a la anterior; copia cambios.",
-                "de": "Weitere inkrementelle Backups beziehen sich auf den Vorgänger und sichern Änderungen."
+                "es": "Siguientes incrementales: referencia a la incremental anterior.",
+                "de": "Weitere inkrementelle Sicherungen: Bezug zur vorherigen inkrementellen Sicherung."
               }
             },
             {
               "points": 1,
               "text": {
-                "es": "Las diferenciales guardan cambios desde F0.",
-                "de": "Differenzielle Backups sichern Änderungen seit F0."
+                "es": "Incremental: guarda archivos nuevos o modificados desde su referencia.",
+                "de": "Inkrementell: neue oder geänderte Dateien seit dem Bezugspunkt."
               }
             },
             {
               "points": 1,
               "text": {
-                "es": "Restauración: F0, I1, I2, I3 frente a F0, Δ3; orden correcto y base necesaria.",
-                "de": "Restore: F0, I1, I2, I3 gegenüber F0, Δ3; richtige Reihenfolge und notwendige Basis."
+                "es": "Cada diferencial: archivos nuevos o modificados desde la última completa; referencia fija.",
+                "de": "Jede differenzielle Sicherung: neue oder geänderte Dateien seit dem letzten Vollbackup; unveränderter Bezugspunkt."
               }
             }
           ]
         }
       ],
       "hint": {
-        "es": "Organiza la respuesta en referencia, contenido y restauración para cada método.",
-        "de": "Gliedern Sie nach Bezugspunkt, Inhalt und Wiederherstellung je Verfahren."
+        "es": "Para cada método indica qué cambios se copian y respecto a qué copia. Distingue la primera incremental de las siguientes.",
+        "de": "Nennen Sie je Verfahren die gesicherten Änderungen und deren Bezugspunkt. Unterscheiden Sie die erste inkrementelle Sicherung von den folgenden."
       },
       "model": {
-        "es": "La primera incremental guarda los cambios desde F0; las siguientes, desde la anterior incremental. Para el miércoles: F0 → I1 → I2 → I3. Cada diferencial guarda los cambios desde F0. Para el miércoles: F0 → Δ3. F0 aporta los archivos sin cambios.",
-        "de": "Das erste inkrementelle Backup sichert Änderungen seit F0; weitere sichern Änderungen seit dem vorherigen inkrementellen Backup. Für Mittwoch werden F0, I1, I2 und I3 in dieser Reihenfolge benötigt. Jedes differenzielle Backup sichert Änderungen seit F0. Für Mittwoch reichen F0 und Δ3 in dieser Reihenfolge. F0 liefert die unveränderten Dateien."
+        "es": "La primera incremental guarda archivos nuevos o modificados desde la última completa. Las siguientes guardan los cambios desde la incremental anterior. Cada diferencial guarda los archivos nuevos o modificados desde la última completa; conserva esa referencia cada día. Un archivo que cambió antes y no volvió a cambiar ya no entra en la siguiente incremental, pero sigue entrando en las diferenciales de esa base.",
+        "de": "Die erste inkrementelle Sicherung enthält neue oder geänderte Dateien seit dem letzten Vollbackup. Weitere inkrementelle Sicherungen enthalten Änderungen seit der vorherigen inkrementellen Sicherung. Jede differenzielle Sicherung enthält neue oder geänderte Dateien seit dem letzten Vollbackup; dieser Bezugspunkt bleibt täglich gleich. Eine zuvor geänderte und danach unveränderte Datei fehlt im nächsten inkrementellen Backup, bleibt aber in differenziellen Backups dieser Basis enthalten."
       },
       "group": 4,
       "material": "table",
       "extra": null,
-      "anchor": "2022 Sommer · KAIT 4 ea"
+      "anchor": "2022 Sommer · KAIT 4 ea",
+      "provenance": {
+        "es": "Format angelehnt an Sommer 2022 · KAIT 4 ea: explicación escrita de ambos métodos respecto a la completa, 4 puntos.",
+        "de": "Format angelehnt an Sommer 2022 · KAIT 4 ea: schriftliche Erläuterung beider Verfahren mit Bezug zum Vollbackup, 4 Punkte."
+      }
     },
     {
       "id": 19,
@@ -2156,8 +2269,8 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       },
       "company": "Wellenberg Großhandel GmbH",
       "scenario": {
-        "es": "Cada noche solo se pueden copiar 12 GB. F0 del domingo mide 120 GB; cada día laborable aparecen 8 GB de archivos distintos y no hay más cambios. Todas las copias se conservan. Recomiende el método diario para lunes a viernes, calcule el tamaño del viernes y explique la consecuencia al restaurar el viernes. La completa del domingo tiene un intervalo propio suficiente.",
-        "de": "Nachts können höchstens 12 GB gesichert werden. F0 am Sonntag umfasst 120 GB. An jedem Werktag entstehen 8 GB unterschiedlicher neuer Dateien ohne weitere Änderungen. Alle Sicherungen bleiben erhalten. Empfehlen Sie das Tagesverfahren für Montag bis Freitag, berechnen Sie das Freitagsvolumen und erläutern Sie die Restore-Folge für Freitag. Für das Sonntagsvollbackup ist ein eigenes ausreichendes Zeitfenster vorgesehen."
+        "es": "Cada noche solo se pueden copiar 12 GiB. F0 del domingo mide 120 GiB; cada día laborable aparecen 8 GiB de archivos distintos y no hay más cambios. Todas las copias se conservan. Recomiende el método diario para lunes a viernes, calcule el tamaño del viernes y explique la consecuencia al restaurar el viernes. La completa del domingo tiene un intervalo propio suficiente. Cantidades de datos lógicos en GiB, sin compresión ni deduplicación. Indique explícitamente el desarrollo del volumen del viernes para ambos métodos y del martes diferencial, y compare con 12 GiB. Explique qué copias deben estar disponibles y ser válidas.",
+        "de": "Nachts können höchstens 12 GiB gesichert werden. F0 am Sonntag umfasst 120 GiB. An jedem Werktag entstehen 8 GiB unterschiedlicher neuer Dateien ohne weitere Änderungen. Alle Sicherungen bleiben erhalten. Empfehlen Sie das Tagesverfahren für Montag bis Freitag, berechnen Sie das Freitagsvolumen und erläutern Sie die Restore-Folge für Freitag. Für das Sonntagsvollbackup ist ein eigenes ausreichendes Zeitfenster vorgesehen. Logische Datenmengen in GiB, ohne Kompression oder Deduplizierung. Der Rechenweg ist anzugeben: Berechnen Sie das Freitagsvolumen beider Verfahren und das differenzielle Dienstagsvolumen und vergleichen Sie mit 12 GiB. Erläutern Sie, welche Sicherungen verfügbar und gültig sein müssen."
       },
       "headers": [
         {
@@ -2175,14 +2288,14 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
             "es": "Límite de la copia diaria",
             "de": "Grenze der Tagessicherung"
           },
-          "12 GB"
+          "12 GiB"
         ],
         [
           {
             "es": "Datos nuevos por día",
             "de": "Neue Daten pro Tag"
           },
-          "8 GB"
+          "8 GiB"
         ],
         [
           {
@@ -2200,30 +2313,30 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
           },
           "kind": "written",
           "answer": {
-            "es": "Recomiendo incrementales: cada copia diaria tiene 8 GB y cumple 12 GB. La diferencial del viernes tendría 5 × 8 = 40 GB y ya el martes tendría 16 GB. Para recuperar el viernes se necesitan F0, I1, I2, I3, I4 e I5, en orden y válidas.",
-            "de": "Ich empfehle inkrementelle Tagessicherungen: Jede umfasst 8 GB und bleibt unter 12 GB. Das differenzielle Freitagsbackup würde 5 × 8 = 40 GB umfassen; bereits Dienstag wären es 16 GB. Für Freitag werden F0, I1, I2, I3, I4 und I5 in dieser Reihenfolge benötigt. Alle müssen vorhanden und gültig sein."
+            "es": "Recomiendo incrementales: cada copia diaria tiene 8 GiB y cumple 12 GiB. La diferencial del viernes tendría 5 × 8 = 40 GiB y ya el martes tendría 2 × 8 = 16 GiB. Para recuperar el viernes se necesitan F0, I1, I2, I3, I4 e I5, en orden y válidas.",
+            "de": "Ich empfehle inkrementelle Tagessicherungen: Jede umfasst 8 GiB und bleibt unter 12 GiB. Das differenzielle Freitagsbackup würde 5 × 8 = 40 GiB umfassen; bereits Dienstag wären es 2 × 8 = 16 GiB. Für Freitag werden F0, I1, I2, I3, I4 und I5 in dieser Reihenfolge benötigt. Alle müssen vorhanden und gültig sein."
           },
           "points": 5,
           "rubric": [
             {
               "points": 1,
               "text": {
-                "es": "Recomienda incrementales por el límite de 12 GB.",
-                "de": "Empfiehlt inkrementelle Backups wegen der 12-GB-Grenze."
+                "es": "Recomienda incrementales por el límite de 12 GiB.",
+                "de": "Empfiehlt inkrementelle Backups wegen der 12-GiB-Grenze."
               }
             },
             {
               "points": 1,
               "text": {
-                "es": "Incremental del viernes: 8 GB; cumple el límite.",
-                "de": "Inkrementelles Freitagsbackup: 8 GB; Grenze eingehalten."
+                "es": "Incremental del viernes: 8 GiB; cumple el límite.",
+                "de": "Inkrementelles Freitagsbackup: 8 GiB; Grenze eingehalten."
               }
             },
             {
               "points": 1,
               "text": {
-                "es": "Diferencial del viernes: 40 GB; desde el martes supera 12 GB.",
-                "de": "Differenzielles Freitagsbackup: 40 GB; ab Dienstag über 12 GB."
+                "es": "Diferencial del viernes: 40 GiB; desde el martes supera 12 GiB.",
+                "de": "Differenzielles Freitagsbackup: 40 GiB; ab Dienstag über 12 GiB."
               }
             },
             {
@@ -2248,13 +2361,17 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
         "de": "Wenden Sie zuerst die Grenze auf beide Verfahren an. Begründen Sie danach die Restore-Anforderungen."
       },
       "model": {
-        "es": "Recomiendo incrementales: cada copia diaria tiene 8 GB y cumple 12 GB. La diferencial del viernes tendría 5 × 8 = 40 GB y ya el martes tendría 16 GB. Para recuperar el viernes se necesitan F0, I1, I2, I3, I4 e I5, en orden y válidas.",
-        "de": "Ich empfehle inkrementelle Tagessicherungen: Jede umfasst 8 GB und bleibt unter 12 GB. Das differenzielle Freitagsbackup würde 5 × 8 = 40 GB umfassen; bereits Dienstag wären es 16 GB. Für Freitag werden F0, I1, I2, I3, I4 und I5 in dieser Reihenfolge benötigt. Alle müssen vorhanden und gültig sein."
+        "es": "Recomiendo incrementales: cada copia diaria tiene 8 GiB y cumple 12 GiB. La diferencial del viernes tendría 5 × 8 = 40 GiB y ya el martes tendría 2 × 8 = 16 GiB. Para recuperar el viernes se necesitan F0, I1, I2, I3, I4 e I5, en orden y válidas.",
+        "de": "Ich empfehle inkrementelle Tagessicherungen: Jede umfasst 8 GiB und bleibt unter 12 GiB. Das differenzielle Freitagsbackup würde 5 × 8 = 40 GiB umfassen; bereits Dienstag wären es 2 × 8 = 16 GiB. Für Freitag werden F0, I1, I2, I3, I4 und I5 in dieser Reihenfolge benötigt. Alle müssen vorhanden und gültig sein."
       },
       "group": 4,
       "material": "table",
       "extra": null,
-      "anchor": "2022 Sommer · KAIT 4 ea + 2023 Sommer · KAIT 4 a (transferencia / Transfer)"
+      "anchor": "2022 Sommer · KAIT 4 ea + 2023 Sommer · KAIT 4 a (transferencia / Transfer)",
+      "provenance": {
+        "es": "Práctica complementaria propia de volúmenes. Amplía los conceptos de Sommer 2022 · KAIT 4 ea; este apartado original no pide esta tarea ni tiene su formato.",
+        "de": "Eigene ergänzende Übung zu Datenvolumen. Vertieft Konzepte aus Sommer 2022 · KAIT 4 ea; der Originalteil verlangt diese Aufgabe und dieses Format nicht."
+      }
     },
     {
       "id": 20,
@@ -2264,8 +2381,8 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       },
       "company": "Talblick Technik GmbH",
       "scenario": {
-        "es": "Después de un fallo el jueves a las 09:00, un operador propone restaurar solo Δ3. El conjunto incluye un manual que no cambió desde el domingo. Explique la secuencia correcta para el último estado disponible y qué datos del jueves se pueden recuperar. No hay registros de cambios adicionales.",
-        "de": "Nach einem Ausfall am Donnerstag um 09:00 Uhr schlägt ein Operator vor, nur Δ3 einzuspielen. Der Bestand enthält ein seit Sonntag unverändertes Handbuch. Erläutern Sie die richtige Reihenfolge für den letzten verfügbaren Zustand und welche Donnerstagsdaten wiederherstellbar sind. Zusätzliche Änderungsprotokolle gibt es nicht."
+        "es": "Después de un fallo el jueves a las 09:00, un operador propone restaurar solo Δ3. El conjunto incluye un manual que no cambió desde el domingo. Explique la secuencia correcta para el último estado disponible y qué datos del jueves se pueden recuperar. No hay registros de cambios adicionales. Proponga cómo comprobar los archivos y las versiones recuperados antes de volver a usar el servicio.",
+        "de": "Nach einem Ausfall am Donnerstag um 09:00 Uhr schlägt ein Operator vor, nur Δ3 einzuspielen. Der Bestand enthält ein seit Sonntag unverändertes Handbuch. Erläutern Sie die richtige Reihenfolge für den letzten verfügbaren Zustand und welche Donnerstagsdaten wiederherstellbar sind. Zusätzliche Änderungsprotokolle gibt es nicht. Beschreiben Sie, wie Sie die wiederhergestellten Dateien und Versionen vor der erneuten Nutzung des Dienstes prüfen."
       },
       "headers": [
         {
@@ -2369,7 +2486,11 @@ dialog{color:var(--ink);border:1px solid var(--edge);border-radius:10px;max-widt
       "group": 4,
       "material": "table",
       "extra": null,
-      "anchor": "2022 Sommer · KAIT 4 ea"
+      "anchor": "2022 Sommer · KAIT 4 ea",
+      "provenance": {
+        "es": "Práctica complementaria propia de recuperación. Amplía los conceptos de Sommer 2022 · KAIT 4 ea; este apartado original no pide esta tarea ni tiene su formato.",
+        "de": "Eigene ergänzende Übung zu Wiederherstellung. Vertieft Konzepte aus Sommer 2022 · KAIT 4 ea; der Originalteil verlangt diese Aufgabe und dieses Format nicht."
+      }
     }
   ]
 }</script>
@@ -2384,21 +2505,25 @@ const UI={
  close:L('Cierre escrito','Schriftlicher Abschluss'),sources:L('Fuentes y uso','Quellen und Nutzung'),side:L('Sin cronómetro · Offline\nNúmeros = navegación libre','Ohne Zeitlimit · Offline\nNummern = freie Navigation'),top:L('COPIAS Y RESTAURACIÓN','SICHERN UND WIEDERHERSTELLEN'),lang:L('Idioma','Sprache'),save:L('Exportar / importar','Export / Import'),prev:L('← Anterior','← Zurück'),next:L('Siguiente →','Weiter →'),notes:L('Notas','Notizen'),notesLabel:L('Notas de esta página (no se puntúan)','Notizen zu dieser Seite (ohne Bewertung)'),notesTitle:L('Tus notas','Deine Notizen'),dismiss:L('Cerrar','Schließen'),skip:L('Ir al contenido','Zum Inhalt'),
  check:L('Comprobar','Prüfen'),hint:L('Ver pista','Hinweis zeigen'),hideHint:L('Ocultar pista','Hinweis verbergen'),solution:L('Ver solución','Lösung zeigen'),hideSolution:L('Ocultar solución','Lösung verbergen'),material:L('Material de la tarea','Aufgabenmaterial'),answers:L('Completa las casillas de esta hoja','Ergänzen Sie die Felder dieses Blatts'),points:L('puntos','Punkte'),answer:L('Respuesta','Antwort'),field:L('Casilla de respuesta','Antwortfeld'),criterion:L('Criterios por punto','Kriterien je Punkt'),compare:L('Comparar con criterios','Mit Kriterien vergleichen'),writtenWarn:L('Sin puntuación automática. Compara cada criterio con tu texto; las casillas son tu autoevaluación, no una nota IHK.','Keine automatische Bewertung. Vergleichen Sie jedes Kriterium mit Ihrem Text. Die Auswahl ist eine Selbsteinschätzung, keine IHK-Note.'),blank:L('Completa las casillas vacías y comprueba de nuevo.','Füllen Sie die leeren Felder aus und prüfen Sie erneut.'),wrong:L('Revisa la relación indicada en cada casilla.','Prüfen Sie den angegebenen Zusammenhang in jedem Feld.'),correct:L('Las casillas comprobables son correctas.','Die prüfbaren Felder sind richtig.'),empty:L('Respuesta vacía','Antwort fehlt'),bad:L('Aún no es correcto','Noch nicht richtig'),good:L('Correcto','Richtig'),noHelp:L('Sin ayuda consultada','Ohne abgerufene Hilfe'),hintUsed:L('Pista consultada','Hinweis genutzt'),seen:L('Solución vista','Lösung gesehen'),pending:L('Sin comprobar','Noch nicht geprüft'),attempts:L('Comprobaciones','Prüfversuche'),model:L('Respuesta modelo','Musterantwort'),learn:L('Para pensar antes de seguir','Vor dem Weitergehen nachdenken'),compareAnswer:L('Comparar mi explicación','Meine Erklärung vergleichen'),
  input:L('Conjuntos: comas o espacios; el orden no importa. Secuencias: IDs en orden con → o comas (D3 también vale por Δ3). Números: sin unidad. ∅ = ausente.','Mengen: Kommas oder Leerzeichen, Reihenfolge beliebig. Abläufe: IDs in Reihenfolge mit → oder Kommas (D3 gilt auch für Δ3). Zahlen: ohne Einheit. ∅ = fehlt.'),yes:L('Sí','Ja'),no:L('No','Nein'),choose:L('Elige…','Wählen…'),
- storageOK:L('Guardado local en este navegador. Exporta para llevar tus respuestas a otro equipo.','Lokal in diesem Browser gespeichert. Exportieren Sie, um Antworten auf einen anderen Rechner mitzunehmen.'),storageFail:L('El navegador no permite guardar. Tus respuestas siguen en esta sesión; exporta antes de cerrar.','Der Browser erlaubt kein Speichern. Ihre Antworten bleiben in dieser Sitzung; exportieren Sie vor dem Schließen.'),storageLimits:L('El guardado local depende del navegador, del perfil y de la ubicación del HTML. No es un backup garantizado; se puede perder al borrar los datos del navegador. JSON permite recuperar la sesión; TXT permite leer respuestas y notas.','Die lokale Speicherung hängt von Browser, Profil und HTML-Pfad ab. Sie ist kein garantiertes Backup und kann beim Löschen der Browserdaten verloren gehen. JSON lädt die Sitzung wieder; TXT enthält lesbare Antworten und Notizen.'),saveTitle:L('Guardar tus respuestas y notas','Antworten und Notizen sichern'),saveInfo:L('Exporta el trabajo de todas las páginas, incluido el cierre escrito. Conserva el JSON para volver a cargarlo con este taller.','Exportieren Sie die Arbeit aller Seiten einschließlich des schriftlichen Abschlusses. Bewahren Sie JSON zum erneuten Laden in diesem Workshop auf.'),json:L('Descargar JSON','JSON herunterladen'),text:L('Descargar TXT','TXT herunterladen'),import:L('Importar JSON','JSON importieren'),importWarn:L('Importar sustituye la sesión actual. Exporta primero si quieres conservarla. Solo se aceptan archivos de esta versión del taller.','Importieren ersetzt die aktuelle Sitzung. Exportieren Sie zuerst, wenn Sie sie behalten möchten. Nur Dateien dieser Workshopversion werden angenommen.'),importOK:L('Sesión importada.','Sitzung importiert.'),importBad:L('Archivo incompatible o dañado. No se cambió tu sesión.','Datei inkompatibel oder beschädigt. Ihre Sitzung wurde nicht geändert.'),exportOK:L('Exportación descargada.','Export heruntergeladen.'),
+ storageOK:L('Guardado local en este navegador. Exporta para llevar tus respuestas a otro equipo.','Lokal in diesem Browser gespeichert. Exportieren Sie, um Antworten auf einen anderen Rechner mitzunehmen.'),storageFail:L('El navegador no permite guardar. Tus respuestas siguen en esta sesión; exporta antes de cerrar.','Der Browser erlaubt kein Speichern. Ihre Antworten bleiben in dieser Sitzung; exportieren Sie vor dem Schließen.'),storageLimits:L('El guardado local depende del navegador, del perfil y de la ubicación del HTML. No es un backup garantizado; se puede perder al borrar los datos del navegador. JSON permite recuperar la sesión; TXT permite leer respuestas y notas.','Die lokale Speicherung hängt von Browser, Profil und HTML-Pfad ab. Sie ist kein garantiertes Backup und kann beim Löschen der Browserdaten verloren gehen. JSON lädt die Sitzung wieder; TXT enthält lesbare Antworten und Notizen.'),saveTitle:L('Guardar tus respuestas y notas','Antworten und Notizen sichern'),saveInfo:L('Versión 2: tamaños propios definidos en GiB. Las sesiones anteriores en GB no se importan ni se modifican. Exporta el trabajo de todas las páginas, incluido el cierre escrito. Conserva el JSON para volver a cargarlo con este taller.','Version 2: eigene Größen in GiB definiert. Frühere GB-Sitzungen werden weder importiert noch verändert. Exportieren Sie die Arbeit aller Seiten einschließlich des schriftlichen Abschlusses. Bewahren Sie JSON zum erneuten Laden in diesem Workshop auf.'),json:L('Descargar JSON','JSON herunterladen'),text:L('Descargar TXT','TXT herunterladen'),import:L('Importar JSON','JSON importieren'),importWarn:L('Importar sustituye la sesión actual. Exporta primero si quieres conservarla. Solo se aceptan archivos de esta versión del taller.','Importieren ersetzt die aktuelle Sitzung. Exportieren Sie zuerst, wenn Sie sie behalten möchten. Nur Dateien dieser Workshopversion werden angenommen.'),importOK:L('Sesión importada.','Sitzung importiert.'),importBad:L('Archivo incompatible o dañado. No se cambió tu sesión.','Datei inkompatibel oder beschädigt. Ihre Sitzung wurde nicht geändert.'),exportOK:L('Exportación descargada.','Export heruntergeladen.'),
  lessonLabel:L('Explicación','Erklärung'),taskLabel:L('Tarea','Aufgabe'),extra:L('Práctica extra','Zusatzpraxis'),session:L('Selección para una hora','Auswahl für eine Stunde'),stepNext:L('Aplicar siguiente copia →','Nächste Sicherung einspielen →'),stepPrev:L('← Paso anterior','← Vorheriger Schritt'),destination:L('Destino de restauración','Wiederherstellungsziel'),emptyTarget:L('Vacío','Leer'),base:L('Base','Basis'),state:L('Estado','Zustand'),file:L('Archivo','Datei')
 };
-const STORAGE_KEY='fisi-backup-workshop-v1';
-let state={format:STORAGE_KEY,version:1,page:0,lang:'es',answers:{},notes:{},tasks:{},closing:'',closingRubric:[]},storageOK=true,frames={},toastTimer;
+const STORAGE_KEY='fisi-backup-workshop-v2-gib';
+let state={format:STORAGE_KEY,version:2,answerSchema:'free-prose-t17-v1',quantityUnit:'GiB',bytesPerGiB:1073741824,page:0,lang:'es',answers:{},notes:{},tasks:{},closing:'',closingRubric:[]},storageOK=true,frames={},toastTimer;
 function tx(v){return typeof v==='object'&&v!==null?v[state.lang]:String(v??'')}
 function cleanState(raw){
- if(!raw||raw.format!==STORAGE_KEY||raw.version!==1||!['es','de'].includes(raw.lang)||!Number.isInteger(raw.page)||raw.page<0||raw.page>=TOTAL||!raw.answers||Array.isArray(raw.answers)||!raw.notes||Array.isArray(raw.notes)||!raw.tasks||Array.isArray(raw.tasks))throw Error('Invalid state');
- const s={format:STORAGE_KEY,version:1,page:raw.page,lang:raw.lang,answers:{},notes:{},tasks:{},closing:typeof raw.closing==='string'?raw.closing.slice(0,30000):'',closingRubric:Array.isArray(raw.closingRubric)?raw.closingRubric.slice(0,4).map(x=>x===true):[]};
+ if(!raw||raw.format!==STORAGE_KEY||raw.version!==2||raw.quantityUnit!=='GiB'||raw.bytesPerGiB!==1073741824||!['es','de'].includes(raw.lang)||!Number.isInteger(raw.page)||raw.page<0||raw.page>=TOTAL||!raw.answers||Array.isArray(raw.answers)||!raw.notes||Array.isArray(raw.notes)||!raw.tasks||Array.isArray(raw.tasks))throw Error('Invalid state');
+ const s={format:STORAGE_KEY,version:2,answerSchema:'free-prose-t17-v1',quantityUnit:'GiB',bytesPerGiB:1073741824,page:raw.page,lang:raw.lang,answers:{},notes:{},tasks:{},closing:typeof raw.closing==='string'?raw.closing.slice(0,30000):'',closingRubric:Array.isArray(raw.closingRubric)?raw.closingRubric.slice(0,4).map(x=>x===true):[]};
  for(let i=0;i<TOTAL;i++)if(typeof raw.notes[i]==='string')s.notes[i]=raw.notes[i].slice(0,30000);
  for(const q of TASKS){
   const a=raw.answers[q.id]||{},m=raw.tasks[q.id]||{};s.answers[q.id]={};
-  q.fields.forEach((f,i)=>{if(typeof a[i]==='string')s.answers[q.id][i]=a[i].slice(0,f.kind==='written'?30000:500)});
+  const legacy17=q.id===17&&raw.answerSchema!=='free-prose-t17-v1'&&(typeof a[1]==='string'||/^(I2|yes|no|ja|nein|true|false)$/i.test(String(a[0]||'').trim()));
+  if(legacy17)s.legacyT17={answers:Object.fromEntries(['0','1'].filter(i=>typeof a[i]==='string').map(i=>[i,a[i].slice(0,500)])),reason:'Legacy closed T17; not a prose answer or manual score'};
+  q.fields.forEach((f,i)=>{if(!legacy17&&typeof a[i]==='string')s.answers[q.id][i]=a[i].slice(0,f.kind==='written'?30000:500);if(q.rechenweg&&typeof a['rw-'+i]==='string')s.answers[q.id]['rw-'+i]=a['rw-'+i].slice(0,30000)});
   s.tasks[q.id]={hint:m.hint===true,revealed:m.revealed===true,hintOpen:false,solutionOpen:false,checked:m.checked===true,attempts:Number.isInteger(m.attempts)&&m.attempts>=0?m.attempts:0,rubric:Array.isArray(m.rubric)?m.rubric.slice(0,10).map(x=>x===true):[]};
+  if(q.id===17&&raw.answerSchema!=='free-prose-t17-v1'){s.tasks[q.id].checked=false;s.tasks[q.id].rubric=[];}
  }
+ if(!s.legacyT17&&raw.legacyT17&&raw.legacyT17.answers){s.legacyT17={answers:Object.fromEntries(['0','1'].filter(i=>typeof raw.legacyT17.answers[i]==='string').map(i=>[i,raw.legacyT17.answers[i].slice(0,500)])),reason:'Legacy closed T17; not a prose answer or manual score'};}
  return s;
 }
 try{const saved=localStorage.getItem(STORAGE_KEY);if(saved)state=cleanState(JSON.parse(saved));}catch(e){storageOK=false;}
@@ -2428,7 +2553,7 @@ function relationFeedback(f,value){
  }
  return message;
 }
-function taskStatus(q){const m=meta(q);if(m.revealed)return 'seen';if(m.checked&&results(q).every(r=>r==='correct'))return m.hint?'help':'correct';return m.hint?'help':'pending'}
+function taskStatus(q){const m=meta(q);if(m.revealed)return 'seen';if(m.checked&&(!q.rechenweg||q.fields.every((f,i)=>String(answers(q)['rw-'+i]||'').trim()))&&results(q).every(r=>r==='correct'))return m.hint?'help':'correct';return m.hint?'help':'pending'}
 function statusText(q){const m=meta(q);return `${tx(m.revealed?UI.seen:m.hint?UI.hintUsed:UI.noHelp)} · ${tx(UI.attempts)}: ${m.attempts}`}
 function nav(){
  $('navigation').innerHTML=`<div class="nav-section"><div class="nav-label">${E(tx(UI.explain))}</div><div class="lesson-nav">${LESSONS.map((l,i)=>`<button data-jump="${i}" title="${E(tx(l.title))}" aria-label="${E(tx(UI.lessonLabel))} ${i+1}: ${E(tx(l.short))}" class="${state.page===i?'active':''}" ${state.page===i?'aria-current="page"':''}><span class="index">${String(i+1).padStart(2,'0')}</span><span>${E(tx(l.short))}</span></button>`).join('')}</div></div><div class="nav-label">${E(tx(UI.practice))}</div>${UI.groups.map((g,j)=>`<div class="task-group"><div class="nav-label">${E(tx(g))}</div><div class="task-nav">${TASKS.filter(q=>q.group===j).map(q=>`<button data-jump="${LESSONS.length+q.id-1}" data-task-nav="${q.id}" data-status="${taskStatus(q)}" title="${E(tx(q.title))}" aria-label="${E(tx(UI.taskLabel))} ${q.id}: ${E(tx(q.title))}" class="${state.page===LESSONS.length+q.id-1?'active':''}" ${state.page===LESSONS.length+q.id-1?'aria-current="page"':''}>${String(q.id).padStart(2,'0')}</button>`).join('')}</div></div>`).join('')}`;
@@ -2449,7 +2574,7 @@ function box(title,arr,sub='',cls=''){return `<div class="filebox ${cls}"><div c
 function table(headers,rows){return `<table class="small-table"><thead><tr>${headers.map(h=>`<th scope="col">${E(tx(h))}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map((v,i)=>`<${i===0?'th scope="row"':'td'}>${E(tx(v))}</${i===0?'th':'td'}>`).join('')}</tr>`).join('')}</tbody></table>`}
 const days=L(['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'],['So','Mo','Di','Mi','Do','Fr','Sa']);
 function dayValue(v){return typeof v==='string'?v.replace(/\b(So|Mo|Di|Mi|Do|Fr|Sa)\b/g,(m)=>tx(days)[['So','Mo','Di','Mi','Do','Fr','Sa'].indexOf(m)]):tx(v)}
-function bars(labels,values,max){return values.map((v,i)=>`<div class="bar-row"><span>${E(labels[i])}</span><div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width:${v/max*100}%"></div></div><span class="bar-value">${v} GB</span></div>`).join('')}
+function bars(labels,values,max){return values.map((v,i)=>`<div class="bar-row"><span>${E(labels[i])}</span><div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width:${v/max*100}%"></div></div><span class="bar-value">${v} GiB</span></div>`).join('')}
 function visual(l,index){
  let b='',label=tx(l.title);
  if(l.visual==='purpose') b=`<div class="stack">${box(tx(L('Lunes · original correcto','Montag · richtiges Original')),[tx(L('Oferta v1','Angebot v1'))])}<div class="arrowlabel">${E(tx(L('copiar a un soporte separado','auf getrenntes Medium sichern')))}</div>${box(tx(L('Copia que se conserva','Aufbewahrtes Backup')),[tx(L('Oferta v1','Angebot v1'))],'','highlight')}${box(tx(L('Martes · original sobrescrito','Dienstag · überschriebenes Original')),[tx(L('Oferta v2','Angebot v2'))],tx(L('error','Fehler')))}</div>`;
@@ -2470,7 +2595,7 @@ function visual(l,index){
  }
  if(l.visual==='missing')b=`<h2 class="mono">F0 → I1 → [I2 ?] → I3</h2>${box(tx(L('Destino tras saltarse I2','Ziel nach dem Überspringen von I2')),['A3','C1','D1'])}<div style="margin-top:.75rem">${files(['B1'],'old')}</div><p class="fig-note">${E(tx(L('Se necesita B2. B1 demuestra que falta una actualización.','B2 wird benötigt. B1 zeigt die fehlende Aktualisierung.')))}</p><div class="arrowlabel">${E(tx(L('B2 solo estaba en I2','B2 lag nur in I2')))}</div>${box('I2 · '+tx(L('ausente','fehlt')),['B2'])}`;
  if(l.visual==='target')b=`<div class="stack">${box(tx(L('Cadena antigua','Alte Kette')),['F0','I1','I2','I3'])}<div class="arrowlabel">${E(tx(L('crear nueva base completa','neue vollständige Basis erstellen')))}</div>${box(tx(L('Nueva cadena hasta el viernes','Neue Kette bis Freitag')),['F4','I5'],'','highlight')}</div><p class="fig-note">${E(tx(L('F4 contiene todo el jueves; I5 añade los cambios del viernes.','F4 enthält den ganzen Donnerstag; I5 ergänzt Freitagsänderungen.')))}</p>`;
- if(l.visual==='volumes')b=`<h2>${E(tx(L('Copias del miércoles · volumen lógico','Mittwochsbackups · logisches Volumen')))}</h2>${bars(['F3','I3','Δ3'],[22,6,12],22)}<p class="fig-note mono">A = 4 GB · B = 6 GB<br>C = 10 GB · D = 2 GB</p><div style="margin-top:.75rem">${box('Δ3',['A3','B2','D1'],'12 GB','highlight')}</div><p class="fig-note">${E(tx(L('A se cuenta una vez en Δ3, aunque cambió dos veces.','A zählt in Δ3 einmal, obwohl es zweimal geändert wurde.')))}</p>`;
+ if(l.visual==='volumes')b=`<h2>${E(tx(L('Copias del miércoles · volumen lógico','Mittwochsbackups · logisches Volumen')))}</h2>${bars(['F3','I3','Δ3'],[22,6,12],22)}<p class="fig-note mono">A = 4 GiB · B = 6 GiB<br>C = 10 GiB · D = 2 GiB</p><div style="margin-top:.75rem">${box('Δ3',['A3','B2','D1'],'12 GiB','highlight')}</div><p class="fig-note">${E(tx(L('A se cuenta una vez en Δ3, aunque cambió dos veces.','A zählt in Δ3 einmal, obwohl es zweimal geändert wurde.')))}</p>`;
  if(l.visual==='phrases')b=`<h2>${E(tx(L('Puente al alemán','Formulierungen auf Deutsch')))}</h2><div class="phrase"><strong lang="de">seit dem letzten Vollbackup</strong><p lang="es">desde la última copia completa</p></div><div class="phrase"><strong lang="de">seit der vorherigen inkrementellen Sicherung</strong><p lang="es">desde la copia incremental anterior</p></div><div class="phrase"><strong lang="de">in zeitlicher Reihenfolge wiederherstellen</strong><p lang="es">restaurar en orden cronológico</p></div><p class="fig-note">${E(tx(L('Primero entiende la relación; después expresa la misma idea en alemán.','Verstehen Sie zuerst den Zusammenhang und formulieren Sie ihn anschließend auf Deutsch.')))}</p>`;
  return `<figure><div class="figure-stage" role="group" aria-label="${E(label)}">${b}</div><figcaption class="figcaption">${E(tx(l.caption))}</figcaption></figure>`;
 }
@@ -2481,8 +2606,8 @@ function renderLesson(index){
  document.querySelectorAll('[data-step]').forEach(b=>b.onclick=()=>{frames[index]=(frames[index]||0)+(b.dataset.step==='next'?1:-1);renderLesson(index);});
 }
 function material(q){
- if(q.id===13)return `<div class="chart-material"><h2>${E(tx(L('Copia diaria incremental · datos nuevos (GB)','Inkrementelle Tagessicherung · neue Daten (GB)')))}</h2><figure><div class="column-chart" role="group" aria-label="${E(tx(q.headers[1]))}"><div class="column-axis"><span>8</span><span>4</span><span>0 GB</span></div>${q.rows.map(r=>`<div class="column-slot"><span class="column-value">${r[1]}</span><div class="column-bar" style="height:${r[1]/8*128}px" aria-hidden="true"></div><span class="column-label">${E(dayValue(r[0]))}</span></div>`).join('')}</div><figcaption class="entry-instruction">${E(tx(L('Escala de 0 a 8 GB. Archivos nuevos distintos cada día.','Skala von 0 bis 8 GB. Täglich unterschiedliche neue Dateien.')))}</figcaption></figure></div>`;
- if(q.material==='bars')return `<div class="chart-material"><h2>${E(tx(q.headers[1]))}</h2>${bars(q.rows.map(r=>dayValue(r[0])),q.rows.map(r=>r[1]),Math.max(...q.rows.map(r=>r[1])))}<p class="entry-instruction">${E(tx(L('Escala común desde 0 GB; cada etiqueta da el valor exacto.','Gemeinsame Skala ab 0 GB; die Beschriftung zeigt den genauen Wert.')))}</p></div>`;
+ if(q.id===13)return `<div class="chart-material"><h2>${E(tx(L('Copia diaria incremental · datos nuevos (GiB)','Inkrementelle Tagessicherung · neue Daten (GiB)')))}</h2><figure><div class="column-chart" role="group" aria-label="${E(tx(q.headers[1]))}"><div class="column-axis"><span>8</span><span>4</span><span>0 GiB</span></div>${q.rows.map(r=>`<div class="column-slot"><span class="column-value">${r[1]}</span><div class="column-bar" style="height:${r[1]/8*128}px" aria-hidden="true"></div><span class="column-label">${E(dayValue(r[0]))}</span></div>`).join('')}</div><figcaption class="entry-instruction">${E(tx(L('Escala de 0 a 8 GiB. Archivos nuevos distintos cada día.','Skala von 0 bis 8 GiB. Täglich unterschiedliche neue Dateien.')))}</figcaption></figure></div>`;
+ if(q.material==='bars')return `<div class="chart-material"><h2>${E(tx(q.headers[1]))}</h2>${bars(q.rows.map(r=>dayValue(r[0])),q.rows.map(r=>r[1]),Math.max(...q.rows.map(r=>r[1])))}<p class="entry-instruction">${E(tx(L('Escala común desde 0 GiB; cada etiqueta da el valor exacto.','Gemeinsame Skala ab 0 GiB; die Beschriftung zeigt den genauen Wert.')))}</p></div>`;
  if(q.material==='log')return `<div class="log-material" role="group" aria-label="${E(tx(UI.material))}">${q.rows.map(r=>r.map(v=>dayValue(v)).join('  |  ')).map(E).join('\n')}</div>`;
  return `<table><thead><tr>${q.headers.map(h=>`<th scope="col">${E(tx(h))}</th>`).join('')}</tr></thead><tbody>${q.rows.map(r=>`<tr>${r.map((v,i)=>`<${i===0?'th scope="row"':'td'}>${E(dayValue(v))}</${i===0?'th':'td'}>`).join('')}</tr>`).join('')}</tbody></table>`;
 }
@@ -2494,13 +2619,24 @@ function fieldInput(q,f,i){
 }
 function renderTask(q){
  const m=meta(q),points=q.fields.reduce((a,f)=>a+f.points,0),written=q.fields[0].kind==='written',inSession=[1,2,5,9,11,13].includes(q.id);
- $('page').innerHTML=`<div class="page-head"><div class="kicker">${E(tx(UI.taskLabel))} ${String(q.id).padStart(2,'0')} · ${E(tx(inSession?UI.session:UI.extra))}</div><div class="exam-meta"><div><h1>${E(tx(q.title))}</h1><p style="margin-top:.5rem"><span class="badge">eigene Aufgabe, nicht offiziell IHK</span></p></div><p class="points">${points} ${E(tx(UI.points))}</p></div><p class="scenario"><strong>${E(q.company)}.</strong> ${E(tx(q.scenario))}</p></div><section class="sheet" aria-label="${E(tx(UI.material))}"><div class="sheet-title"><span>${E(tx(UI.material))}</span><span class="mono">${E(tx(L('Hoja de trabajo','Arbeitsblatt')))} ${String(q.id).padStart(2,'0')}</span></div>${material(q)}<table class="answer-table"><thead><tr><th scope="col">${E(tx(UI.answers))}</th>${written?'':`<th scope="col">${E(tx(UI.answer))}</th>`}<th scope="col" class="point-cell">${E(tx(UI.points))}</th></tr></thead><tbody>${q.fields.map((f,i)=>written?`<tr class="answers-row"><td class="writing-cell">${fieldInput(q,f,i)}</td><td class="point-cell">${f.points}</td></tr>`:`<tr class="answers-row"><th scope="row" id="label-${i}">${E(tx(f.label))}</th><td class="input-cell">${fieldInput(q,f,i)}<p class="field-result" id="result-${i}" hidden></p></td><td class="point-cell">${f.points}</td></tr>`).join('')}</tbody></table></section><p class="entry-instruction">${E(tx(written?UI.writtenWarn:UI.input))}</p><div class="task-toolbar"><button id="check" class="primary">${E(tx(written?UI.compare:UI.check))}</button><button id="hint-toggle" aria-expanded="${m.hintOpen}" aria-controls="hint-panel">${E(tx(m.hintOpen?UI.hideHint:UI.hint))}</button><button id="solution-toggle" aria-expanded="${m.solutionOpen}" aria-controls="solution-panel">${E(tx(m.solutionOpen?UI.hideSolution:UI.solution))}</button></div><p class="assist-state" id="assist-state">${E(statusText(q))}</p><section id="feedback" class="feedback" role="status" hidden></section><section id="hint-panel" class="help-panel" ${m.hintOpen?'':'hidden'}><h2>${E(tx(UI.hintUsed))}</h2><p>${E(tx(q.hint))}</p></section><section id="solution-panel" class="help-panel" ${m.solutionOpen?'':'hidden'}><h2>${E(tx(UI.model))}</h2>${written?`<p class="model-de" lang="de">${E(q.model.de)}</p>${state.lang==='es'?`<p lang="es">${E(q.model.es)}</p>`:''}`:`<p>${E(tx(q.model))}</p>`}</section>`;
- if(q.id===13){$('page').querySelector('.answer-table').outerHTML=`<div class="column-output-title"><strong>${E(tx(L('Plan semanal · copia diferencial (GB)','Wochenplan · differenzielle Sicherung (GB)')))}</strong></div><div class="column-output">${q.fields.map((f,i)=>`<div><label id="label-${i}" for="answer-${i}">${E(dayValue(q.rows[i][0]))} · GB</label>${fieldInput(q,f,i)}<p class="field-result" id="result-${i}" hidden></p><p class="point-note">1 ${E(tx(L('punto','Punkt')))}</p></div>`).join('')}</div>`;}
- document.querySelectorAll('[data-field]').forEach(el=>el.addEventListener('input',()=>{answers(q)[el.dataset.field]=el.value;m.checked=false;if(written)m.rubric=[];persist();clearFeedback();$('assist-state').textContent=statusText(q);nav();}));
+ $('page').innerHTML=`<div class="page-head"><div class="kicker">${E(tx(UI.taskLabel))} ${String(q.id).padStart(2,'0')} · ${E(tx(inSession?UI.session:UI.extra))}</div><div class="exam-meta"><div><h1>${E(tx(q.title))}</h1><p style="margin-top:.5rem"><span class="badge">eigene Aufgabe, nicht offiziell IHK</span></p></div><p class="points">${points} ${E(tx(UI.points))}</p></div><p class="provenance">${E(tx(q.provenance))}</p><p class="scenario"><strong>${E(q.company)}.</strong> ${E(tx(q.scenario))}</p></div><section class="sheet" aria-label="${E(tx(UI.material))}"><div class="sheet-title"><span>${E(tx(UI.material))}</span><span class="mono">${E(tx(L('Hoja de trabajo','Arbeitsblatt')))} ${String(q.id).padStart(2,'0')}</span></div>${material(q)}<table class="answer-table"><thead><tr><th scope="col">${E(tx(UI.answers))}</th>${written?'':`<th scope="col">${E(tx(UI.answer))}</th>`}<th scope="col" class="point-cell">${E(tx(UI.points))}</th></tr></thead><tbody>${q.fields.map((f,i)=>written?`<tr class="answers-row"><td class="writing-cell">${fieldInput(q,f,i)}</td><td class="point-cell">${f.points}</td></tr>`:`<tr class="answers-row"><th scope="row" id="label-${i}">${E(tx(f.label))}</th><td class="input-cell">${fieldInput(q,f,i)}<p class="field-result" id="result-${i}" hidden></p></td><td class="point-cell">${f.points}</td></tr>`).join('')}</tbody></table></section><p class="entry-instruction">${E(tx(written?UI.writtenWarn:UI.input))}</p><div class="task-toolbar"><button id="check" class="primary">${E(tx(written?UI.compare:UI.check))}</button><button id="hint-toggle" aria-expanded="${m.hintOpen}" aria-controls="hint-panel">${E(tx(m.hintOpen?UI.hideHint:UI.hint))}</button><button id="solution-toggle" aria-expanded="${m.solutionOpen}" aria-controls="solution-panel">${E(tx(m.solutionOpen?UI.hideSolution:UI.solution))}</button></div><p class="assist-state" id="assist-state">${E(statusText(q))}</p><section id="feedback" class="feedback" role="status" hidden></section><section id="hint-panel" class="help-panel" ${m.hintOpen?'':'hidden'}><h2>${E(tx(UI.hintUsed))}</h2><p>${E(tx(q.hint))}</p></section><section id="solution-panel" class="help-panel" ${m.solutionOpen?'':'hidden'}><h2>${E(tx(UI.model))}</h2>${written?`<p class="model-de" lang="de">${E(q.model.de)}</p>${state.lang==='es'?`<p lang="es">${E(q.model.es)}</p>`:''}`:`<p>${E(tx(q.model))}</p>`}${q.rechenweg?`<h3>${E(tx(L('Criterios del desarrollo · comparación manual sin puntos adicionales','Rechenwegkriterien · manueller Vergleich ohne zusätzliche Punkte')))}</h3><p>${E(tx(L('Compruebe datos, operaciones, referencia temporal y unidades; justifique qué se suma o cuenta. No basta copiar el resultado.','Prüfen Sie Daten, Rechenansatz, zeitlichen Bezug und Einheiten; begründen Sie, was addiert oder gezählt wird. Das Ergebnis allein genügt nicht.')))}</p>${q.fields.map(f=>`<p><strong>${E(tx(f.label))}:</strong> ${E(tx(f.why))}</p>`).join('')}`:''}</section>`;
+ if(q.id===13){$('page').querySelector('.answer-table').outerHTML=`<div class="column-output-title"><strong>${E(tx(L('Plan semanal · copia diferencial (GiB)','Wochenplan · differenzielle Sicherung (GiB)')))}</strong><p class="entry-instruction">${E(tx(L('Las barras muestran tus entradas; la escala va de 0 a 40 GiB. Comprueba después para corregir.','Die Säulen zeigen Ihre Eingaben; Skala 0 bis 40 GiB. Prüfen Sie anschließend zur Korrektur.')))}</p></div><div class="column-chart column-output-chart" role="group" aria-label="${E(tx(L('Tu plan gráfico diferencial','Ihr differenzieller Diagrammplan')))}"><div class="column-axis"><span>40</span><span>20</span><span>0 GiB</span></div>${q.fields.map((f,i)=>`<div class="column-slot"><div id="output-bar-${i}" class="column-bar" aria-hidden="true"></div><label class="column-label" id="label-${i}" for="answer-${i}">${E(dayValue(q.rows[i][0]))} · GiB</label>${fieldInput(q,f,i)}<p class="point-note">1 ${E(tx(L('punto','Punkt')))}</p></div>`).join('')}</div><div style="padding:0 1rem 1rem">${q.fields.map((f,i)=>`<p class="field-result" id="result-${i}" hidden></p>`).join('')}<p id="chart-range" class="entry-instruction"></p></div>`;updateOutputChart(q);}
+ if(q.rechenweg){
+ const area=document.createElement('section');area.className='sheet rechenwege';area.setAttribute('aria-label',tx(L('Desarrollo libre de cada cálculo','Freier Rechenweg je Berechnung')));
+ area.innerHTML=`<div class="sheet-title">${E(tx(L('Desarrollo de cada cálculo · revisión manual, sin puntos automáticos','Rechenweg je Berechnung · manuelle Prüfung, keine automatischen Punkte')))}</div>${q.fields.map((f,i)=>`<div class="writing-cell"><label for="rw-${i}">${E(tx(f.label))} · ${E(tx(L('Desarrollo','Rechenweg')))}</label><textarea id="rw-${i}" data-rechenweg="${i}" spellcheck="true">${E(answers(q)['rw-'+i]||'')}</textarea></div>`).join('')}`;
+ $('page').querySelector('.sheet').after(area);
+ area.querySelectorAll('[data-rechenweg]').forEach(el=>el.oninput=()=>{answers(q)['rw-'+el.dataset.rechenweg]=el.value;m.checked=false;persist();clearFeedback();nav();});
+ }
+ document.querySelectorAll('[data-field]').forEach(el=>el.addEventListener('input',()=>{answers(q)[el.dataset.field]=el.value;if(q.id===13)updateOutputChart(q);m.checked=false;if(written)m.rubric=[];persist();clearFeedback();$('assist-state').textContent=statusText(q);nav();}));
  $('check').onclick=()=>{m.attempts++;m.checked=true;persist();showFeedback(q);$('assist-state').textContent=statusText(q);nav();};
  $('hint-toggle').onclick=()=>{m.hintOpen=!m.hintOpen;if(m.hintOpen)m.hint=true;persist();renderTask(q);nav();};
  $('solution-toggle').onclick=()=>{m.solutionOpen=!m.solutionOpen;if(m.solutionOpen)m.revealed=true;persist();renderTask(q);nav();};
  if(m.checked)showFeedback(q);
+}
+function updateOutputChart(q){
+ let out=false;
+ q.fields.forEach((f,i)=>{const v=String(answers(q)[i]||'').replace(',','.');const n=Number(v);const valid=/^\d+(\.\d+)?$/.test(v)&&n<=40;const b=$('output-bar-'+i);b.style.height=valid?(n/40*140)+'px':'0px';if(v&&!valid)out=true;});
+ $('chart-range').textContent=out?tx(L('Entrada no representable en esta escala: revisa números sin unidad entre 0 y 40 GiB.','Eingabe auf dieser Skala nicht darstellbar: Zahlen ohne Einheit zwischen 0 und 40 GiB prüfen.')):'';
 }
 function clearFeedback(){$('feedback').hidden=true;document.querySelectorAll('.field-result').forEach(e=>e.hidden=true)}
 function showFeedback(q){
@@ -2514,21 +2650,22 @@ function showFeedback(q){
  const all=res.every(r=>r==='correct'),blank=res.includes('blank');f.className='feedback '+(all?'correct':blank?'blank':'wrong');
  const score=q.fields.reduce((sum,x,i)=>sum+(res[i]==='correct'?x.points:0),0),max=q.fields.reduce((sum,x)=>sum+x.points,0);
  f.innerHTML=`<h2>${E(tx(all?UI.correct:blank?UI.blank:UI.wrong))}</h2><p>${score} / ${max} ${E(tx(UI.points))} · ${E(tx(L('puntuación de práctica','Übungsbewertung')))} · ${E(tx(m.revealed?UI.seen:m.hint?UI.hintUsed:UI.noHelp))}</p>`;
- q.fields.forEach((field,i)=>{const el=$('result-'+i);el.hidden=false;el.className='field-result '+res[i];el.textContent=tx(res[i]==='correct'?UI.good:res[i]==='blank'?UI.empty:UI.bad)+(res[i]==='wrong'?' · '+relationFeedback(field,answers(q)[i]):'');});
+ if(q.rechenweg)f.innerHTML+=`<p>${E(tx(L('Solo se comprueban los resultados numéricos. El desarrollo no recibe nota automática: complete cada área y compárela manualmente con las operaciones del modelo y las razones de cada campo al pedir la solución.','Nur Zahlenresultate werden geprüft. Der Rechenweg erhält keine automatische Note: Füllen Sie jedes Textfeld aus und vergleichen Sie es manuell mit den Modellrechnungen und Feldbegründungen nach Anforderung der Lösung.')))}</p>`;
+ q.fields.forEach((field,i)=>{const el=$('result-'+i);el.hidden=false;el.className='field-result '+res[i];el.textContent=(q.id===13?dayValue(q.rows[i][0])+' · ':'')+tx(res[i]==='correct'?UI.good:res[i]==='blank'?UI.empty:UI.bad)+(res[i]==='wrong'?' · '+relationFeedback(field,answers(q)[i]):'');});
 }
 function manualScore(q){const m=meta(q),r=q.fields[0].rubric,score=r.reduce((a,x,i)=>a+(m.rubric[i]?x.points:0),0);$('manual-score').textContent=tx(L('Autoevaluación','Selbsteinschätzung'))+`: ${score} / ${q.fields[0].points} `+tx(UI.points);}
 const closingCriteria=[L('Identifico el último estado disponible.','Ich benenne den letzten verfügbaren Zustand.'),L('Indico F0 → Δ2 en ese orden.','Ich nenne F0 → Δ2 in dieser Reihenfolge.'),L('Justifico la base con archivos sin cambios y la diferencial con cambios desde F0.','Ich begründe die Basis mit unveränderten Dateien und das differenzielle Backup mit Änderungen seit F0.'),L('Explico qué cambios no están guardados y propongo una prueba de restauración.','Ich erkläre ungesicherte Änderungen und schlage einen Wiederherstellungstest vor.')];
 function renderClosing(){
  const count=s=>TASKS.filter(q=>taskStatus(q)===s&&q.fields[0].kind!=='written'&&(s==='seen'||meta(q).checked&&results(q).every(r=>r==='correct'))).length;
- $('page').innerHTML=`<div class="page-head"><div class="kicker">${E(tx(L('Voluntario · sin nota automática','Freiwillig · ohne automatische Note')))}</div><h1>${E(tx(L('Explica por qué tu restauración funciona.','Erkläre, warum deine Wiederherstellung funktioniert.')))}</h1><p class="lead">${E(tx(L('Escribe en alemán, sin mirar la solución. Después compara tu razonamiento.','Schreiben Sie auf Deutsch, ohne die Lösung anzusehen. Vergleichen Sie danach Ihre Begründung.')))}</p></div><div class="closing"><div><div class="prompt-box"><p>${E(tx(L('Un servidor de documentos falla el miércoles a las 09:00. F0 es la completa válida del domingo a las 22:00. Δ1 y Δ2 son diferenciales válidas sobre F0, del lunes y martes a las 22:00. Un catálogo no cambió desde el domingo. No hay otros backups ni registros adicionales.','Ein Dokumentenserver fällt am Mittwoch um 09:00 Uhr aus. F0 ist das gültige Vollbackup vom Sonntag um 22:00 Uhr. Δ1 und Δ2 sind gültige differenzielle Backups auf Basis F0, Montag und Dienstag um 22:00 Uhr. Ein Katalog blieb seit Sonntag unverändert. Es gibt keine weiteren Backups oder Zusatzprotokolle.')))}</p><p lang="de"><strong>Beschreiben und begründen Sie die Wiederherstellung des letzten verfügbaren Zustands. Welche Daten fehlen? Wie prüfen Sie das Ergebnis?</strong></p>${state.lang==='es'?'<p lang="es">Describe y justifica la restauración del último estado disponible. ¿Qué datos faltan? ¿Cómo compruebas el resultado?</p>':''}</div><label for="closing-answer" style="display:block;margin:.75rem 0 .5rem">${E(tx(L('Tu explicación en alemán','Ihre Erläuterung auf Deutsch')))}</label><textarea id="closing-answer" lang="de">${E(state.closing)}</textarea></div><div><h2>${E(tx(UI.criterion))}</h2>${closingCriteria.map((r,i)=>`<div class="criterion"><input type="checkbox" id="closing-criterion-${i}" data-closing-criterion="${i}" ${state.closingRubric[i]?'checked':''}><label for="closing-criterion-${i}">${E(tx(r))}</label></div>`).join('')}<details class="comprehension"><summary>${E(tx(UI.model))}</summary><p class="model-de" lang="de">Der letzte verfügbare Zustand ist Dienstag 22:00 Uhr. Zuerst wird F0, danach Δ2 eingespielt. F0 liefert unter anderem den unveränderten Katalog; Δ2 liefert die Änderungen seit F0. Δ1 ist nicht nötig. Ungesicherte Änderungen nach Dienstag 22:00 Uhr fehlen. Vor der Freigabe prüfe ich Dateiversionen, Integrität und das Öffnen der Dateien.</p>${state.lang==='es'?'<p>El último estado es el martes a las 22:00. Primero F0, después Δ2. F0 aporta el catálogo sin cambios; Δ2 los cambios desde F0. Δ1 no hace falta. Faltan cambios posteriores al martes 22:00. Comprueba versiones, integridad y apertura antes de usar los datos.</p>':''}</details><div class="status-grid"><div><strong>${count('correct')}</strong>${E(tx(L('correctas sin ayuda','richtig ohne Hilfe')))}</div><div><strong>${count('help')}</strong>${E(tx(L('correctas con pista','richtig mit Hinweis')))}</div><div><strong>${count('seen')}</strong>${E(tx(UI.seen))}</div></div><p class="storage">${E(tx(L('Las cifras describen tus intentos en casillas cerradas, no dominio. Las respuestas abiertas solo tienen autoevaluación. La solución vista y la pista consultada se conservan como historial.','Die Zahlen beschreiben Versuche in geschlossenen Feldern, keine Beherrschung. Offene Antworten werden nur selbst eingeschätzt. Lösungseinsicht und Hinweise bleiben als Verlauf erhalten.')))}</p></div></div>`;
+ $('page').innerHTML=`<div class="page-head"><div class="kicker">${E(tx(L('Voluntario · sin nota automática','Freiwillig · ohne automatische Note')))}</div><h1>${E(tx(L('Explica por qué tu restauración funciona.','Erkläre, warum deine Wiederherstellung funktioniert.')))}</h1><p class="lead">${E(tx(L('Escribe en alemán, sin mirar la solución. Después compara tu razonamiento.','Schreiben Sie auf Deutsch, ohne die Lösung anzusehen. Vergleichen Sie danach Ihre Begründung.')))}</p></div><div class="closing"><div><div class="prompt-box"><p>${E(tx(L('Un servidor de documentos falla el miércoles a las 09:00. F0 es la completa válida del domingo a las 22:00. Δ1 y Δ2 son diferenciales válidas sobre F0, del lunes y martes a las 22:00. Un catálogo no cambió desde el domingo. No hay otros backups ni registros adicionales.','Ein Dokumentenserver fällt am Mittwoch um 09:00 Uhr aus. F0 ist das gültige Vollbackup vom Sonntag um 22:00 Uhr. Δ1 und Δ2 sind gültige differenzielle Backups auf Basis F0, Montag und Dienstag um 22:00 Uhr. Ein Katalog blieb seit Sonntag unverändert. Es gibt keine weiteren Backups oder Zusatzprotokolle.')))}</p><p lang="de"><strong>Beschreiben und begründen Sie die Wiederherstellung des letzten verfügbaren Zustands. Welche Daten fehlen? Wie prüfen Sie das Ergebnis?</strong></p>${state.lang==='es'?'<p lang="es">Describe y justifica la restauración del último estado disponible. ¿Qué datos faltan? ¿Cómo compruebas el resultado?</p>':''}</div><label for="closing-answer" style="display:block;margin:.75rem 0 .5rem">${E(tx(L('Tu explicación en alemán','Ihre Erläuterung auf Deutsch')))}</label><textarea id="closing-answer" lang="de">${E(state.closing)}</textarea></div><div><details class="comprehension"><summary>${E(tx(UI.model))}</summary><h2>${E(tx(UI.criterion))}</h2>${closingCriteria.map((r,i)=>`<div class="criterion"><input type="checkbox" id="closing-criterion-${i}" data-closing-criterion="${i}" ${state.closingRubric[i]?'checked':''}><label for="closing-criterion-${i}">${E(tx(r))}</label></div>`).join('')}<p class="model-de" lang="de">Der letzte verfügbare Zustand ist Dienstag 22:00 Uhr. Zuerst wird F0, danach Δ2 eingespielt. F0 liefert unter anderem den unveränderten Katalog; Δ2 liefert die Änderungen seit F0. Δ1 ist nicht nötig. Ungesicherte Änderungen nach Dienstag 22:00 Uhr fehlen. Vor der Freigabe prüfe ich Dateiversionen, Integrität und das Öffnen der Dateien.</p>${state.lang==='es'?'<p>El último estado es el martes a las 22:00. Primero F0, después Δ2. F0 aporta el catálogo sin cambios; Δ2 los cambios desde F0. Δ1 no hace falta. Faltan cambios posteriores al martes 22:00. Comprueba versiones, integridad y apertura antes de usar los datos.</p>':''}</details><div class="status-grid"><div><strong>${count('correct')}</strong>${E(tx(L('correctas sin ayuda','richtig ohne Hilfe')))}</div><div><strong>${count('help')}</strong>${E(tx(L('correctas con pista','richtig mit Hinweis')))}</div><div><strong>${count('seen')}</strong>${E(tx(UI.seen))}</div></div><p class="storage">${E(tx(L('Las cifras describen tus intentos en casillas cerradas, no dominio. Las respuestas abiertas solo tienen autoevaluación. La solución vista y la pista consultada se conservan como historial.','Die Zahlen beschreiben Versuche in geschlossenen Feldern, keine Beherrschung. Offene Antworten werden nur selbst eingeschätzt. Lösungseinsicht und Hinweise bleiben als Verlauf erhalten.')))}</p></div></div>`;
  $('closing-answer').oninput=e=>{state.closing=e.target.value;state.closingRubric=[];document.querySelectorAll('[data-closing-criterion]').forEach(el=>el.checked=false);persist();};document.querySelectorAll('[data-closing-criterion]').forEach(el=>el.onchange=()=>{state.closingRubric[Number(el.dataset.closingCriterion)]=el.checked;persist();});
 }
 function renderSources(){
  const items=[
  [L('Libro base','Grundlage aus dem Lehrbuch'),L('IT-Berufe · Grundstufe, Lernfelder 3–5 (2020), §3.8.2, páginas impresas 365–368 (PDF 89–92). Orden: riesgo de pérdida, copia separada, medios, métodos y comprobación. Las figuras de archivos se dibujaron con datos propios. Los libros son fuentes didácticas, no soluciones oficiales IHK.','IT-Berufe · Grundstufe, Lernfelder 3–5 (2020), §3.8.2, Druckseiten 365–368 (PDF 89–92). Reihenfolge: Verlustrisiko, getrennte Sicherung, Medien, Verfahren und Prüfung. Dateigrafiken wurden mit eigenen Daten neu gezeichnet. Lehrbücher sind didaktische Quellen, keine offiziellen IHK-Lösungen.')],
- [L('Relación con los exámenes','Prüfungsbezug'),L('Sommer 2022 · KAIT 4 ea, pregunta PDF 9 y solución oficial PDF 5: referencias de incremental y diferencial. Sommer 2023 · KAIT 4 a, pregunta PDF 10: volúmenes en gráfico y plan semanal. El PDF 2023 disponible tiene respuestas manuscritas no oficiales; no se usan como solución. Todas las tareas de este taller son propias, con puntuación de práctica.','Sommer 2022 · KAIT 4 ea, Aufgaben-PDF 9 und offizielles Lösungs-PDF 5: Bezugspunkte der Verfahren. Sommer 2023 · KAIT 4 a, Aufgaben-PDF 10: Volumendiagramm und Wochenplan. Das verfügbare 2023-PDF enthält nicht offizielle handschriftliche Antworten; sie wurden nicht als Lösung verwendet. Alle Workshopaufgaben und Übungspunkte sind eigene.')],
+ [L('Relación con los exámenes','Prüfungsbezug'),L('Sommer 2022 · KAIT 4 ea, pregunta PDF 9 y solución oficial PDF 5: referencias de incremental y diferencial. Sommer 2023 · KAIT 4 a, pregunta PDF 10: volúmenes en gráfico y plan semanal. El PDF 2023 disponible tiene respuestas manuscritas no oficiales; no se usan como solución. Tarea 13 reproduce el cálculo y plan gráfico con GiB propios; tarea 18 reproduce la explicación escrita. El resto es práctica previa o complementaria, según su etiqueta. Todas las tareas de este taller son propias, con puntuación de práctica.','Sommer 2022 · KAIT 4 ea, Aufgaben-PDF 9 und offizielles Lösungs-PDF 5: Bezugspunkte der Verfahren. Sommer 2023 · KAIT 4 a, Aufgaben-PDF 10: Volumendiagramm und Wochenplan. Das verfügbare 2023-PDF enthält nicht offizielle handschriftliche Antworten; sie wurden nicht als Lösung verwendet. Aufgabe 13 bildet Berechnung und Diagrammplan mit eigenen GiB-Daten ab; Aufgabe 18 die schriftliche Erläuterung. Die übrigen Aufgaben sind Vor- oder Ergänzungsübungen gemäß ihrer Kennzeichnung. Alle Workshopaufgaben und Übungspunkte sind eigene.')],
  [L('Cómo se enseña aquí','Didaktische Umsetzung'),L('Rosenshine (2012), pp. 12–19: pasos pequeños y práctica guiada. IES (2007), recomendaciones 2–5 y 7: ejemplos resueltos, texto con gráfico, concreto antes de abstracto, recuperación y justificación. Nation (2007), pp. 1–12: comprender, escribir y trabajar expresiones alemanas. Contrato didáctico local, §§5–8: español para construir significado y alemán después.','Rosenshine (2012), S. 12–19: kleine Schritte und angeleitete Übung. IES (2007), Empfehlungen 2–5 und 7: Lösungsbeispiele, Grafik mit Text, konkret vor abstrakt, Abruf und Begründung. Nation (2007), S. 1–12: Verstehen, Schreiben und deutsche Formulierungen. Lokaler didaktischer Vertrag, §§5–8: Bedeutung auf Spanisch aufbauen, danach Deutsch.')],
- [L('Texto y gráficos','Text und Abbildungen'),L('Mayer (1999), resumen público del artículo: texto próximo a lo representado y eliminación de adornos ajenos al mecanismo. Aquí las versiones aparecen junto a sus copias; cada gráfico sostiene una sola relación. Los pasos se controlan manualmente y no hay animación decorativa.','Mayer (1999), öffentliches Artikelabstract: Text nahe der zugehörigen Darstellung, keine sachfremde Dekoration. Versionen stehen bei ihren Sicherungen; jede Grafik erklärt einen Zusammenhang. Schritte werden manuell gesteuert; keine dekorative Animation.'),'https://www.benjamins.com/catalog/dd.1.1.02may'],
+ [L('Texto y gráficos','Text und Abbildungen'),L('Mayer (1999), referencia conservada de la versión anterior (sin nueva consulta externa): texto próximo a lo representado y eliminación de adornos ajenos al mecanismo. Aquí las versiones aparecen junto a sus copias; cada gráfico sostiene una sola relación. Los pasos se controlan manualmente y no hay animación decorativa.','Mayer (1999), aus der Vorversion übernommene Referenz (keine neue externe Recherche): Text nahe der zugehörigen Darstellung, keine sachfremde Dekoration. Versionen stehen bei ihren Sicherungen; jede Grafik erklärt einen Zusammenhang. Schritte werden manuell gesteuert; keine dekorative Animation.'),'https://www.benjamins.com/catalog/dd.1.1.02may'],
  [L('Corrección técnica de la errata','Technische Korrektur der Errata'),L('El libro p. 367 dice «completa o diferencial». Se corrige a completa Y diferencial correspondiente, en ese orden, para un destino vacío. Microsoft Learn muestra ese orden en SQL Server; se usa como comprobación técnica, sin convertir este taller en una lección de bases de datos.','Das Buch S. 367 nennt Vollbackup oder differenzielles Backup. Für ein leeres Ziel gilt: Vollbackup UND zugehöriges differenzielles Backup, in dieser Reihenfolge. Microsoft Learn zeigt diese Reihenfolge für SQL Server; technische Gegenprüfung, keine Datenbanklektion.'),'https://learn.microsoft.com/en-us/sql/relational-databases/backup-restore/restore-a-differential-database-backup-sql-server?view=sql-server-ver17'],
  [L('Contraste con documentación y formación','Abgleich mit Dokumentation und Ausbildung'),L('Bacula 15.0, Backup Strategies: cadena de completa e incrementales y necesidad de conservar soportes. LinkedIn Learning, Microsoft SQL Server 2022 Essential Training, fragmento público «Create a differential backup»: completa, cambio concreto y siguiente copia. Se reutiliza esa forma de explicar, con archivos en lugar de una base SQL.','Bacula 15.0, Backup Strategies: Vollbackup mit inkrementellen Folgesicherungen und Erhalt der Medien. LinkedIn Learning, Microsoft SQL Server 2022 Essential Training, öffentlicher Ausschnitt „Create a differential backup“: Vollbackup, konkrete Änderung, nächste Sicherung. Dieses Erklärmuster wird mit Dateien statt einer SQL-Datenbank verwendet.'),'https://www.bacula.org/15.0.x-manuals/en/main/Backup_Strategies.html']
  ];
@@ -2542,15 +2679,16 @@ $('notes-open').onclick=()=>{$('notes-text').value=state.notes[state.page]||'';$
 $('save-open').onclick=()=>{chrome();$('save-dialog').showModal();};$('save-close').onclick=()=>$('save-dialog').close();
 function toast(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,3500);}
 function download(content,type,name){const blob=new Blob([content],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast(tx(UI.exportOK));}
-$('export-json').onclick=()=>download(JSON.stringify(state,null,2),'application/json;charset=utf-8','backup-respuestas.json');
+$('export-json').onclick=()=>download(JSON.stringify({...state,answerContext:Object.fromEntries(TASKS.map(q=>[q.id,q.fields.map(f=>({label:f.label,kind:f.kind,unit:f.unit||null}))]))},null,2),'application/json;charset=utf-8','backup-respuestas-v2-gib.json');
 function exportText(){
- let lines=['BACKUP · RESPUESTAS / ANTWORTEN','Exportación / Export: '+new Date().toISOString(),''];
- for(const q of TASKS){lines.push(`\n${q.id}. ${tx(q.title)} · ${q.company}`,statusText(q));q.fields.forEach((f,i)=>lines.push(tx(f.label)+': '+(answers(q)[i]||'')));if(q.fields[0].kind==='written')lines.push('Autoevaluación / Selbsteinschätzung: '+JSON.stringify(meta(q).rubric));}
+ let lines=['BACKUP · RESPUESTAS / ANTWORTEN · VERSION 2','Datos lógicos / logische Daten: GiB · 1 GiB = 1073741824 bytes = 1024 MiB; entradas numéricas sin unidad / Zahlen ohne Einheit','Exportación / Export: '+new Date().toISOString(),''];
+ for(const q of TASKS){lines.push(`\n${q.id}. ${tx(q.title)} · ${q.company}`,statusText(q));q.fields.forEach((f,i)=>{lines.push(tx(f.label)+': '+(answers(q)[i]||''));if(q.rechenweg)lines.push('Rechenweg · '+tx(f.label)+': '+(answers(q)['rw-'+i]||''));});if(q.fields[0].kind==='written')lines.push('Autoevaluación / Selbsteinschätzung: '+JSON.stringify(meta(q).rubric));}
  lines.push('\nCierre en alemán / Abschluss auf Deutsch:\n'+state.closing,'Autoevaluación / Selbsteinschätzung: '+JSON.stringify(state.closingRubric));
+ if(state.legacyT17)lines.push('\nLegacy T17 (isoliert / aislado; keine Prosa-Punkte): '+JSON.stringify(state.legacyT17));
  for(const [page,note]of Object.entries(state.notes))lines.push(`\nNotas / Notizen · Seite ${Number(page)+1}:\n${note}`);
  return lines.join('\n');
 }
-$('export-text').onclick=()=>download(exportText(),'text/plain;charset=utf-8','backup-respuestas.txt');
+$('export-text').onclick=()=>download(exportText(),'text/plain;charset=utf-8','backup-respuestas-v2-gib.txt');
 $('import-file').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>2000000)throw Error('Too large');const candidate=cleanState(JSON.parse(await file.text()));state=candidate;frames={};persist();$('save-dialog').close();render();$('main').scrollTop=0;toast(tx(UI.importOK));}catch(err){toast(tx(UI.importBad));}finally{e.target.value='';}};
 render();
 </script>
